@@ -255,13 +255,7 @@ export default function FrenchTransfersDirectoryPage() {
               )}
               target="_blank"
               rel="noopener"
-              className="btn btn-gold btn-lg"
-              style={{
-                textDecoration: "none",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
+              className="btn btn-gold btn-lg no-ring"
             >
               <Icon name="whatsapp" size={18} /> Discuter sur WhatsApp
             </a>

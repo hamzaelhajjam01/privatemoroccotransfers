@@ -886,8 +886,7 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
               )}
               target="_blank"
               rel="noopener"
-              className="btn btn-gold btn-lg"
-              style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}
+              className="btn btn-gold btn-lg no-ring"
             >
               <Icon name="whatsapp" size={18} /> Réserver sur WhatsApp
             </a>

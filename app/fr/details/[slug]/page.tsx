@@ -67,7 +67,7 @@ export default async function ListingPage({ params }: Props) {
                 <strong>€{l.fromEur}</strong>
                 <span>/ trajet · ≈ {Math.round(l.fromEur * EUR_RATE)} MAD</span>
               </div>
-              <button type="button" className="btn btn-gold btn-lg mt-24" data-wa={waMsg}><Icon name="whatsapp" size={18} />Réserver sur WhatsApp</button>
+              <button type="button" className="btn btn-gold btn-lg no-ring mt-24" data-wa={waMsg}><Icon name="whatsapp" size={18} />Réserver sur WhatsApp</button>
             </div>
             <div className="listing-photo scene" style={{ backgroundImage: `url(${scene(l.modelKey)})` }} role="img" aria-label={`${l.model} avec chauffeur à ${l.cityFr}`} />
           </div>
@@ -90,7 +90,7 @@ export default async function ListingPage({ params }: Props) {
                 <li><span><Icon name="globe" size={16} />Langues</span><span>{l.languages.join(", ")}</span></li>
                 <li><span><Icon name="shield-check" size={16} />Annulation</span><span>Gratuite jusqu&apos;à 48 h</span></li>
               </ul>
-              <button type="button" className="btn btn-gold" data-wa={waMsg}><Icon name="whatsapp" size={18} />Réserver sur WhatsApp</button>
+              <button type="button" className="btn btn-gold no-ring" data-wa={waMsg}><Icon name="whatsapp" size={18} />Réserver sur WhatsApp</button>
               <Link href="/calculator" className="link-arrow mt-16">Calculer un autre trajet →</Link>
             </div>
           </aside>

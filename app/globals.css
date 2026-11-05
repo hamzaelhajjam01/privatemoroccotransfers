@@ -87,15 +87,22 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 
 /* ── Buttons (Storey: flat box, label left, dotted ring right) ── */
 .btn {
-  display: inline-flex; align-items: center; justify-content: space-between; gap: 32px;
-  min-width: 220px; padding: 16px 18px 16px 20px; font-size: var(--fs-ui);
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-width: 220px; padding: 16px 20px; font-size: var(--fs-ui); line-height: 1;
   cursor: pointer; border: 1px solid transparent; transition: background .2s, color .2s;
+  text-decoration: none; vertical-align: middle; box-sizing: border-box;
 }
 .btn::after {
   content: ''; width: 18px; height: 18px; border-radius: 50%;
   border: 2px dotted currentColor; flex-shrink: 0;
 }
-.btn.no-ring::after { display: none; }
+.btn.no-ring::after,
+.btn:has(.ic)::after,
+.btn:has(svg)::after,
+.btn.btn-center::after {
+  display: none !important;
+  content: none !important;
+}
 .btn-black, .btn-gold, .btn-whatsapp { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .btn-black:hover, .btn-gold:hover, .btn-whatsapp:hover { background: var(--muted); border-color: var(--muted); }
 .btn-white { background: var(--white); color: var(--black); }
@@ -103,7 +110,7 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 .btn-outline, .btn-outline-white { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn-outline:hover, .btn-outline-white:hover { background: var(--ink); color: var(--paper); }
 .btn-whatsapp { width: 100%; }
-.btn-lg { padding: 20px 22px 20px 24px; }
+.btn-lg { padding: 18px 28px; }
 .link-arrow { display: inline-flex; gap: 10px; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 
 /* ── Header (transparent over hero, black elsewhere) ── */
@@ -697,9 +704,33 @@ html.lenis, html.lenis body { height: auto; }
 .vehicle-cancel { display: flex; align-items: center; gap: 8px; }
 .detail-specs li span:first-child { display: inline-flex; align-items: center; gap: 8px; }
 .detail-specs .ic { color: var(--gold-deep); }
-.btn .ic + * , .btn .ic { margin-right: 0; }
-.btn:has(> .ic) { justify-content: flex-start; }
-.btn > .ic { margin-right: 10px; }
+/* ── Buttons with icons: center horizontally & vertically, clean gap, no pseudo-icon ── */
+.btn:has(.ic),
+.btn:has(svg),
+.btn.has-icon,
+.btn.btn-center {
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+.btn:has(.ic)::after,
+.btn:has(svg)::after,
+.btn.has-icon::after,
+.btn.no-ring::after,
+.btn.btn-center::after {
+  display: none !important;
+  content: none !important;
+}
+.btn > .ic,
+.btn > svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: 0;
+  margin: 0 !important;
+  flex-shrink: 0;
+  align-self: center;
+}
 .footer-col ul li a { display: inline-flex; align-items: center; gap: 10px; }
 .footer-col .ic { color: var(--gold); }
 /* floating WhatsApp: icon + label, ring stays */
@@ -739,8 +770,8 @@ body:has(.site-header.hide) .filter-bar { top: 0; }
 .booking-widget-tabs::-webkit-scrollbar { display: none; }
 
 /* ═══ UX pass: tire button icon, dropdowns, focus & press states ═══ */
-/* tire replaces the dotted ring on every button; it rolls on hover */
-.btn::after, .wa-float-btn::after {
+/* tire replaces the dotted ring on text buttons; it rolls on hover */
+.btn:not(.no-ring):not(:has(.ic)):not(:has(svg)):not(.btn-center)::after, .wa-float-btn::after {
   content: ""; width: 18px; height: 18px; border: 0; border-radius: 0; flex-shrink: 0;
   background-color: currentColor;
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000'%3E%3Ccircle cx='12' cy='12' r='10' stroke-width='2.6'/%3E%3Ccircle cx='12' cy='12' r='10.6' stroke-width='1.2' stroke-dasharray='1.6 1.73'/%3E%3Ccircle cx='12' cy='12' r='6' stroke-width='1.3'/%3E%3Ccircle cx='12' cy='12' r='1.7' fill='%23000' stroke='none'/%3E%3Cpath stroke-width='1.3' stroke-linecap='round' d='M12 10.3V6.2M13.6 11.5l3.9-1.3M13 13.4l2.4 3.3M11 13.4l-2.4 3.3M10.4 11.5l-3.9-1.3'/%3E%3C/svg%3E") center / contain no-repeat;
