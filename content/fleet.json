@@ -1,0 +1,270 @@
+[
+ {
+  "slug": "skoda-octavia",
+  "model": "Škoda Octavia",
+  "category": "Sedan",
+  "passengers": 4,
+  "bags": 3,
+  "fromEur": 30,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-12ffa761f472764ceba2.webp",
+  "listingSlugs": {
+   "Marrakech": "skoda-octavia-marrakech-with-driver",
+   "Casablanca": "skoda-octavia-casablanca-with-driver",
+   "Agadir": "skoda-octavia-agadir-with-driver",
+   "Fes": "skoda-octavia-fes-with-driver",
+   "Tangier": "skoda-octavia-tangier-with-driver",
+   "Rabat": "skoda-octavia-rabat-with-driver",
+   "Essaouira": "skoda-octavia-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/skoda-octavia.jpg"
+ },
+ {
+  "slug": "mercedes-e-class",
+  "model": "Mercedes E-Class",
+  "category": "Business",
+  "passengers": 4,
+  "bags": 3,
+  "fromEur": 50,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-8198c8faf913a35a0806.webp",
+  "listingSlugs": {
+   "Marrakech": "mercedes-e-class-marrakech-with-driver",
+   "Casablanca": "mercedes-e-class-casablanca-with-driver",
+   "Agadir": "mercedes-e-class-agadir-with-driver",
+   "Fes": "mercedes-e-class-fes-with-driver",
+   "Tangier": "mercedes-e-class-tangier-with-driver",
+   "Rabat": "mercedes-e-class-rabat-with-driver",
+   "Essaouira": "mercedes-e-class-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/mercedes-e-class.jpg"
+ },
+ {
+  "slug": "bmw-5-series",
+  "model": "BMW 5 Series",
+  "category": "Business",
+  "passengers": 4,
+  "bags": 4,
+  "fromEur": 50,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-74220b126cde328982c8.webp",
+  "listingSlugs": {
+   "Marrakech": "bmw-5-series-marrakech-with-driver",
+   "Casablanca": "bmw-5-series-casablanca-with-driver",
+   "Agadir": "bmw-5-series-agadir-with-driver",
+   "Fes": "bmw-5-series-fes-with-driver",
+   "Tangier": "bmw-5-series-tangier-with-driver",
+   "Rabat": "bmw-5-series-rabat-with-driver",
+   "Essaouira": "bmw-5-series-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/bmw-5-series.jpg"
+ },
+ {
+  "slug": "hyundai-tucson",
+  "model": "Hyundai Tucson",
+  "category": "SUV",
+  "passengers": 4,
+  "bags": 4,
+  "fromEur": 45,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-8f2c1d849ba532a85b8a.webp",
+  "listingSlugs": {
+   "Marrakech": "hyundai-tucson-marrakech-with-driver",
+   "Casablanca": "hyundai-tucson-casablanca-with-driver",
+   "Agadir": "hyundai-tucson-agadir-with-driver",
+   "Fes": "hyundai-tucson-fes-with-driver",
+   "Tangier": "hyundai-tucson-tangier-with-driver",
+   "Rabat": "hyundai-tucson-rabat-with-driver",
+   "Essaouira": "hyundai-tucson-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/hyundai-tucson.jpg"
+ },
+ {
+  "slug": "toyota-prado",
+  "model": "Toyota Prado",
+  "category": "SUV",
+  "passengers": 4,
+  "bags": 4,
+  "fromEur": 55,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-0d420ea4c413a700b5c3.webp",
+  "listingSlugs": {
+   "Marrakech": "toyota-prado-marrakech-with-driver",
+   "Casablanca": "toyota-prado-casablanca-with-driver",
+   "Agadir": "toyota-prado-agadir-with-driver",
+   "Fes": "toyota-prado-fes-with-driver",
+   "Tangier": "toyota-prado-tangier-with-driver",
+   "Rabat": "toyota-prado-rabat-with-driver",
+   "Essaouira": "toyota-prado-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/toyota-prado.jpg"
+ },
+ {
+  "slug": "mercedes-vito",
+  "model": "Mercedes Vito",
+  "category": "Van",
+  "passengers": 8,
+  "bags": 6,
+  "fromEur": 40,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-4e2e6618f388afa1bc09.webp",
+  "listingSlugs": {
+   "Marrakech": "mercedes-vito-marrakech-with-driver",
+   "Casablanca": "mercedes-vito-casablanca-with-driver",
+   "Agadir": "mercedes-vito-agadir-with-driver",
+   "Fes": "mercedes-vito-fes-with-driver",
+   "Tangier": "mercedes-vito-tangier-with-driver",
+   "Rabat": "mercedes-vito-rabat-with-driver",
+   "Essaouira": "mercedes-vito-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/mercedes-vito.jpg"
+ },
+ {
+  "slug": "ford-tourneo",
+  "model": "Ford Tourneo",
+  "category": "Van",
+  "passengers": 8,
+  "bags": 6,
+  "fromEur": 40,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-f3c278fe6e971ac6baad.webp",
+  "listingSlugs": {
+   "Marrakech": "ford-tourneo-marrakech-with-driver",
+   "Casablanca": "ford-tourneo-casablanca-with-driver",
+   "Agadir": "ford-tourneo-agadir-with-driver",
+   "Fes": "ford-tourneo-fes-with-driver",
+   "Tangier": "ford-tourneo-tangier-with-driver",
+   "Rabat": "ford-tourneo-rabat-with-driver",
+   "Essaouira": "ford-tourneo-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/ford-tourneo.jpg"
+ },
+ {
+  "slug": "renault-trafic",
+  "model": "Renault Trafic",
+  "category": "Van",
+  "passengers": 8,
+  "bags": 8,
+  "fromEur": 40,
+  "cities": [
+   "Agadir"
+  ],
+  "image": "/img/listings/image-701672d95771010a8345.webp",
+  "listingSlugs": {
+   "Agadir": "renault-trafic-agadir-with-driver"
+  },
+  "scene": "/img/fleet-scenes/renault-trafic.jpg"
+ },
+ {
+  "slug": "mercedes-sprinter",
+  "model": "Mercedes Sprinter",
+  "category": "Minibus",
+  "passengers": 16,
+  "bags": 14,
+  "fromEur": 60,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-332096ad5e00074d9f6d.webp",
+  "listingSlugs": {
+   "Marrakech": "mercedes-sprinter-marrakech-with-driver",
+   "Casablanca": "mercedes-sprinter-casablanca-with-driver",
+   "Agadir": "mercedes-sprinter-agadir-with-driver",
+   "Fes": "mercedes-sprinter-fes-with-driver",
+   "Tangier": "mercedes-sprinter-tangier-with-driver",
+   "Rabat": "mercedes-sprinter-rabat-with-driver",
+   "Essaouira": "mercedes-sprinter-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/mercedes-sprinter.jpg"
+ },
+ {
+  "slug": "ford-transit",
+  "model": "Ford Transit",
+  "category": "Minibus",
+  "passengers": 16,
+  "bags": 14,
+  "fromEur": 60,
+  "cities": [
+   "Marrakech",
+   "Casablanca",
+   "Agadir",
+   "Fes",
+   "Tangier",
+   "Rabat",
+   "Essaouira"
+  ],
+  "image": "/img/listings/image-0ca9d4442ce233b4babd.webp",
+  "listingSlugs": {
+   "Marrakech": "ford-transit-marrakech-with-driver",
+   "Casablanca": "ford-transit-casablanca-with-driver",
+   "Agadir": "ford-transit-agadir-with-driver",
+   "Fes": "ford-transit-fes-with-driver",
+   "Tangier": "ford-transit-tangier-with-driver",
+   "Rabat": "ford-transit-rabat-with-driver",
+   "Essaouira": "ford-transit-essaouira-with-driver"
+  },
+  "scene": "/img/fleet-scenes/ford-transit.jpg"
+ }
+]

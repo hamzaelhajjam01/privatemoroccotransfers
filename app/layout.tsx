@@ -1,0 +1,177 @@
+import type { Metadata } from "next";
+import { IBM_Plex_Mono, Inter_Tight } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import CookieBanner from "@/components/CookieBanner";
+import SiteScripts from "@/components/SiteScripts";
+import Motion from "@/components/Motion";
+import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
+import "./globals.css";
+
+const interTight = Inter_Tight({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-inter-tight" });
+const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-plex-mono" });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Private Morocco Transfers — Fixed Price Airport & Intercity Chauffeurs",
+    template: "%s | Private Morocco Transfers",
+  },
+  description:
+    "Reliable private transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity transfers & private drivers. Door-to-door, licensed English-speaking chauffeurs, instant WhatsApp booking.",
+  keywords: [
+    "Morocco private transfers",
+    "private driver Morocco",
+    "Marrakech airport transfer",
+    "Casablanca to Marrakech transfer",
+    "Morocco chauffeur service",
+    "Essaouira to Marrakech taxi",
+    "private taxi Morocco",
+  ],
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    siteName: "Private Morocco Transfers",
+    type: "website",
+    url: SITE_URL,
+    title: "Private Morocco Transfers — Guaranteed Fixed Price Chauffeur Services",
+    description:
+      "Door-to-door private transfers and chauffeur service across Morocco. All-inclusive flat rates, licensed English-speaking drivers, 24/7 WhatsApp confirmation.",
+    images: [
+      {
+        url: "/img/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Private Morocco Transfers — Chauffeur Services in Morocco",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Private Morocco Transfers — Fixed Price Chauffeurs",
+    description: "Door-to-door private transfers across Morocco. Instant WhatsApp booking.",
+    images: ["/img/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    other: {
+      "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "",
+    },
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["TaxiService", "LocalBusiness"],
+      "@id": `${SITE_URL}/#service`,
+      name: "Private Morocco Transfers",
+      alternateName: "Morocco Private Transfers",
+      url: SITE_URL,
+      telephone: `+${WHATSAPP_NUMBER}`,
+      email: "contact@privatemoroccotransfers.com",
+      image: `${SITE_URL}/brand/logo-gold.svg`,
+      priceRange: "€30 - €380",
+      currenciesAccepted: "EUR, MAD, USD, GBP",
+      paymentAccepted: "Cash, Credit Card",
+      aggregateRating: SCHEMA_AGGREGATE_RATING,
+      review: SCHEMA_REVIEWS_EN,
+      areaServed: {
+        "@type": "Country",
+        name: "Morocco",
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Marrakech",
+        addressRegion: "Marrakech-Safi",
+        addressCountry: "MA",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "00:00",
+        closes: "23:59",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Private Transfers in Morocco",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Airport Transfers",
+              description: "Door-to-door airport pickups with flight tracking and 45-min free waiting.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "City-to-City Intercity Transfers",
+              description: "Private highway transfers between all Moroccan cities with scenic photo stops.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Day Excursions & Day Trips",
+              description: "Private full-day trips to Ourika Valley, Ouzoud Waterfalls, Essaouira, and Agafay.",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Private Morocco Transfers",
+      description: "Fixed-price private transfers and chauffeur service across Morocco.",
+      publisher: {
+        "@id": `${SITE_URL}/#service`,
+      },
+    },
+  ],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className={`${interTight.variable} ${plexMono.variable}`}>
+      <body suppressHydrationWarning>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <WhatsAppFloat />
+        <CookieBanner />
+        <SiteScripts />
+        <Motion />
+      </body>
+    </html>
+  );
+}

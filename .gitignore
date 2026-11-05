@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.env*.local
+.env
+next-env.d.ts
+*.tsbuildinfo
+_to_delete
+old-static-site
+final MPD
+logo favicon
