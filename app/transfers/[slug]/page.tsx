@@ -686,25 +686,23 @@ export default async function TransferRoutePage({ params }: Props) {
       {/* Sister Agency Partner Block (Storey Architecture Dark Section) */}
       <section className="section dark" style={{ borderTop: "1px solid var(--rule-dark)" }}>
         <div className="container">
-          <div className="split" style={{ alignItems: "center" }}>
+          <div style={{ maxWidth: "780px" }}>
+            <span className="section-label" style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}>
+              Morocco Travel Partner · Desert Expeditions
+            </span>
+            <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
+              Planning a Sahara desert tour or multi-day itinerary?
+            </h2>
+            <p className="statement muted" style={{ fontSize: "18px", lineHeight: 1.45, marginBottom: "28px" }}>
+              Looking beyond single transfer legs? Our sister agency <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> organizes immersive 3-to-10 day private road trips through the High Atlas, Ait Benhaddou, and luxury desert glamping in the golden dunes of Merzouga.
+            </p>
             <div>
-              <span className="section-label" style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}>
-                Morocco Travel Partner · Desert Expeditions
-              </span>
-              <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
-                Planning a Sahara desert tour or multi-day itinerary?
-              </h2>
-              <p className="statement muted" style={{ fontSize: "18px", lineHeight: 1.45, maxWidth: "600px" }}>
-                Looking beyond single transfer legs? Our sister agency <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> organizes immersive 3-to-10 day private road trips through the High Atlas, Ait Benhaddou, and luxury desert glamping in the golden dunes of Merzouga.
-              </p>
-            </div>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <a
                 href="https://roammorocco.tours"
                 target="_blank"
                 rel="noopener"
                 className="btn btn-white"
-                style={{ minWidth: "260px" }}
+                style={{ minWidth: "240px" }}
               >
                 Explore Roam Morocco
               </a>

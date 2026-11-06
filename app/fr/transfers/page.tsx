@@ -181,32 +181,30 @@ export default function FrenchTransfersDirectoryPage() {
       {/* Desert Tours Cross-Promotion */}
       <section className="section dark" style={{ borderTop: "1px solid var(--rule-dark)" }}>
         <div className="container">
-          <div className="split" style={{ alignItems: "center" }}>
+          <div style={{ maxWidth: "780px" }}>
+            <span
+              className="section-label"
+              style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}
+            >
+              Partenaire Voyages · Expéditions Désert
+            </span>
+            <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
+              Vous rêvez des dunes dorées du Sahara ou d'un grand tour du Maroc ?
+            </h2>
+            <p
+              className="statement muted"
+              style={{ fontSize: "18px", lineHeight: 1.45, marginBottom: "28px" }}
+            >
+              Pour vos projets d'itinéraires complets de 3 à 10 jours avec bivouac de luxe dans le désert de Merzouga, notre agence sœur{" "}
+              <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> conçoit des circuits privés exclusifs avec chauffeurs-guides francophones.
+            </p>
             <div>
-              <span
-                className="section-label"
-                style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}
-              >
-                Partenaire Voyages · Expéditions Désert
-              </span>
-              <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
-                Vous rêvez des dunes dorées du Sahara ou d'un grand tour du Maroc ?
-              </h2>
-              <p
-                className="statement muted"
-                style={{ fontSize: "18px", lineHeight: 1.45, maxWidth: "600px" }}
-              >
-                Pour vos projets d'itinéraires complets de 3 à 10 jours avec bivouac de luxe dans le désert de Merzouga, notre agence sœur{" "}
-                <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> conçoit des circuits privés exclusifs avec chauffeurs-guides francophones.
-              </p>
-            </div>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <a
                 href="https://roammorocco.tours"
                 target="_blank"
                 rel="noopener"
                 className="btn btn-white"
-                style={{ minWidth: "260px" }}
+                style={{ minWidth: "240px" }}
               >
                 Découvrir Roam Morocco
               </a>

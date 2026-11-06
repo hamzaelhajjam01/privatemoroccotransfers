@@ -748,25 +748,23 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
       {/* Sister Agency Partner Block (Storey Architecture Dark Section) */}
       <section className="section dark" style={{ borderTop: "1px solid var(--rule-dark)" }}>
         <div className="container">
-          <div className="split" style={{ alignItems: "center" }}>
+          <div style={{ maxWidth: "780px" }}>
+            <span className="section-label" style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}>
+              Partenaire Voyages Maroc · Expéditions Désert
+            </span>
+            <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
+              Vous prévoyez un circuit dans le désert ou un itinéraire sur mesure ?
+            </h2>
+            <p className="statement muted" style={{ fontSize: "18px", lineHeight: 1.45, marginBottom: "28px" }}>
+              Au-delà des transferts ponctuels, notre agence sœur <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> conçoit des road-trips privés de 3 à 10 jours à travers le Haut Atlas, Aït Ben Haddou et les dunes de Merzouga avec bivouac de luxe.
+            </p>
             <div>
-              <span className="section-label" style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}>
-                Partenaire Voyages Maroc · Expéditions Désert
-              </span>
-              <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
-                Vous prévoyez un circuit dans le désert ou un itinéraire sur mesure ?
-              </h2>
-              <p className="statement muted" style={{ fontSize: "18px", lineHeight: 1.45, maxWidth: "600px" }}>
-                Au-delà des transferts ponctuels, notre agence sœur <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> conçoit des road-trips privés de 3 à 10 jours à travers le Haut Atlas, Aït Ben Haddou et les dunes de Merzouga avec bivouac de luxe.
-              </p>
-            </div>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <a
                 href="https://roammorocco.tours"
                 target="_blank"
                 rel="noopener"
                 className="btn btn-white"
-                style={{ minWidth: "260px" }}
+                style={{ minWidth: "240px" }}
               >
                 Découvrir Roam Morocco
               </a>
