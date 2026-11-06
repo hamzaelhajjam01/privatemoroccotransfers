@@ -24,12 +24,12 @@ export default function TransferDirectory({
   lang = "en",
 }: {
   routes: RouteItem[];
-  lang?: "en" | "fr";
+  lang?: string;
 }) {
   const [selectedCity, setSelectedCity] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const isFr = lang === "fr";
-  const linkPrefix = isFr ? "/fr/transfers/" : "/transfers/";
+  const linkPrefix = lang === "en" ? "/transfers/" : `/${lang}/transfers/`;
 
   const filteredRoutes = useMemo(() => {
     return routes.filter((route) => {

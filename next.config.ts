@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    cpus: 4,
+  },
   // Old .html links keep working after the move to Next.js
   async redirects() {
     return [

@@ -100,5 +100,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  return [...hubs, ...routes, ...frRoutes, ...frListings, ...cities, ...blogPosts];
+  const OTHER_LANGS = ["es", "it", "de", "ar", "pt", "nl"];
+
+  const localizedRoutes: MetadataRoute.Sitemap = OTHER_LANGS.flatMap((lang) => [
+    {
+      url: `${SITE_URL}/${lang}/transfers`,
+      lastModified: now,
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    ...ALL_ROUTES.map((r) => ({
+      url: `${SITE_URL}/${lang}/transfers/${r.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+  ]);
+
+  return [...hubs, ...routes, ...frRoutes, ...localizedRoutes, ...frListings, ...cities, ...blogPosts];
 }
