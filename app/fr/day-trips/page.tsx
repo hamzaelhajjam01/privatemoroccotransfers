@@ -47,7 +47,7 @@ const DAY_TRIPS = [
     priceEur: 75,
     priceMad: 825,
     desc: "Villages berbères suspendus, coopératives d'huile d'argan et balade rafraîchissante le long de la rivière de montagne.",
-    bg: "/img/textures/tadelakt-warm.jpg",
+    bg: "/img/hero-day-trips.jpg",
   },
   {
     category: "nature",
@@ -57,7 +57,7 @@ const DAY_TRIPS = [
     priceEur: 120,
     priceMad: 1320,
     desc: "Les plus hautes chutes d'eau d'Afrique du Nord, avec singes magots en liberté et traversée en barque traditionnelle.",
-    bg: "/img/textures/zelige-geometric.jpg",
+    bg: "/img/blog/day-trips.jpg",
   },
   {
     category: "coastal",
@@ -77,7 +77,7 @@ const DAY_TRIPS = [
     priceEur: 80,
     priceMad: 880,
     desc: "Désert de pierres et de collines arides à 45 minutes de Marrakech. Coucher de soleil magique et dîner sous tente nomade en option.",
-    bg: "/img/textures/leather-saddle.jpg",
+    bg: "/img/blog/sahara-merzouga.jpg",
   },
   {
     category: "mountain",
@@ -87,7 +87,7 @@ const DAY_TRIPS = [
     priceEur: 85,
     priceMad: 935,
     desc: "Au cœur du parc national du Toubkal. Paysages alpins, terrasses agricoles et authenticité de la vie montagnarde berbère.",
-    bg: "/img/textures/carved-plaster.jpg",
+    bg: "/img/hero-city-to-city.jpg",
   },
   {
     category: "heritage",
@@ -97,7 +97,7 @@ const DAY_TRIPS = [
     priceEur: 190,
     priceMad: 2090,
     desc: "Passage spectaculaire du col du Tizi n'Tichka et visite du ksar fortifié classé UNESCO où ont été tournés Gladiator et Game of Thrones.",
-    bg: "/img/routes/marrakech-merzouga.jpg",
+    bg: "/img/fleet-scenes/toyota-prado.jpg",
   },
 ];
 

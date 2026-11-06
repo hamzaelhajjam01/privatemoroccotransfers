@@ -16,6 +16,19 @@ type Props = {
   intro?: string;
   /** Slugs that have a photo in public/img/fleet */
   photos?: string[];
+  /** Explicit language code override */
+  lang?: LanguageCode;
+};
+
+const CATEGORY_NAMES: Record<LanguageCode, Record<string, string>> = {
+  en: { Sedan: "Sedan", Business: "Business", SUV: "SUV", Van: "Van", Minibus: "Minibus" },
+  fr: { Sedan: "Berline", Business: "Berline Affaires", SUV: "SUV", Van: "Van / Monospace", Minibus: "Minibus" },
+  es: { Sedan: "Sedán", Business: "Ejecutivo", SUV: "SUV", Van: "Monovolumen", Minibus: "Minibús" },
+  it: { Sedan: "Berlina", Business: "Business Class", SUV: "SUV", Van: "Van / Monovolume", Minibus: "Minibus" },
+  de: { Sedan: "Limousine", Business: "Business Class", SUV: "SUV", Van: "Van", Minibus: "Minibus" },
+  ar: { Sedan: "سيدان", Business: "درجة رجال الأعمال", SUV: "دفع رباعي", Van: "فان عائلي", Minibus: "حافلة صغيرة" },
+  pt: { Sedan: "Sedã", Business: "Executivo", SUV: "SUV", Van: "Carrinha / Van", Minibus: "Miniautocarro" },
+  nl: { Sedan: "Sedan", Business: "Business Class", SUV: "SUV", Van: "Minivan", Minibus: "Minibus" },
 };
 
 const FLEET_I18N: Record<
@@ -184,23 +197,28 @@ function VehicleCard({
   const photo = v.scene ?? v.image ?? (hasPhoto ? `/img/fleet/${v.slug}.jpg` : undefined);
   const detail = listingFor(v, city);
   const fleetHubUrl = lang === "en" ? "/fleet" : `/${lang}/fleet`;
+  const localizedCat = (CATEGORY_NAMES[lang] && CATEGORY_NAMES[lang][v.category]) || v.category;
 
   return (
     <article className="vehicle-card">
       <Link
-        href={detail ? `/fr/details/${detail}` : fleetHubUrl}
+        href={detail && lang === "fr" ? `/fr/details/${detail}` : fleetHubUrl}
         className={`vehicle-img${v.scene ? " scene" : photo ? " has-photo" : " no-photo"}`}
         style={photo ? { backgroundImage: `url(${photo})` } : undefined}
         aria-label={`${v.model} — details`}
       >
         {!photo && <span className="vehicle-ph">{v.model}</span>}
-        <span className="vehicle-cat">{v.category}</span>
+        <span className="vehicle-cat">{localizedCat}</span>
         <span className="vehicle-fixed">{t.fixedPrice}</span>
       </Link>
       <div className="vehicle-body">
         <p className="vehicle-kicker">{t.kicker(where)}</p>
         <h3 className="vehicle-model">
-          {detail ? <Link href={`/fr/details/${detail}`}>{v.model}</Link> : v.model}
+          {detail && lang === "fr" ? (
+            <Link href={`/fr/details/${detail}`}>{v.model}</Link>
+          ) : (
+            <Link href={fleetHubUrl}>{v.model}</Link>
+          )}
         </h3>
         <ul className="vehicle-specs">
           <li>
@@ -215,7 +233,7 @@ function VehicleCard({
             <Icon name="snowflake" size={14} />
             {t.ac}
           </li>
-          <li>{v.category}</li>
+          <li>{localizedCat}</li>
         </ul>
         <p className="vehicle-cancel">
           <Icon name="shield-check" size={16} />
@@ -247,9 +265,10 @@ export default function FleetByCity({
   heading,
   intro,
   photos = [],
+  lang: propLang,
 }: Props) {
   const pathname = usePathname();
-  const lang = getLangFromPathname(pathname);
+  const lang = propLang || getLangFromPathname(pathname);
   const t = FLEET_I18N[lang] || FLEET_I18N.en;
 
   const [active, setActive] = useState<FleetCity | "all">(city ?? "all");

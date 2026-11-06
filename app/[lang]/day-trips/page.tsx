@@ -19,26 +19,63 @@ export function generateStaticParams() {
 const DAY_TRIPS = [
   {
     title: {
-      es: "Valle de Ourika y Cascadas de Setti Fatma",
-      it: "Valle dell'Ourika e Cascate di Setti Fatma",
-      de: "Ourika-Tal & Setti Fatma Wasserfälle",
-      ar: "وادي أوريكا وشلالات ستي فاطمة",
-      pt: "Vale de Ourika e Cascatas de Setti Fatma",
-      nl: "Ourika-vallei & Setti Fatma Watervallen",
+      es: "Essaouira Mogador desde Marrakech",
+      it: "Essaouira da Marrakech",
+      de: "Essaouira ab Marrakesch",
+      ar: "مدينة الصويرة انطلاقاً من مراكش",
+      pt: "Essaouira a partir de Marraquexe",
+      nl: "Essaouira vanuit Marrakech",
     },
+    distance: "176 km",
+    duration: "10h",
+    priceEur: 120,
+    priceMad: 1320,
+    bg: "/img/routes/marrakech-essaouira.jpg",
+  },
+  {
+    title: {
+      es: "Valle de Ourika y Cascadas",
+      it: "Valle dell'Ourika e Cascate",
+      de: "Ourika-Tal & Wasserfälle",
+      ar: "وادي أوريكا وشلالات ستي فاطمة",
+      pt: "Vale de Ourika e Cascatas",
+      nl: "Ourika-vallei & Watervallen",
+    },
+    distance: "60 km",
     duration: "8h",
-    pax: "1–4",
     priceEur: 75,
     priceMad: 825,
-    desc: {
-      es: "Aldeas bereberes tradicionales, cooperativas de argán y caminata junto al río del Alto Atlas.",
-      it: "Villaggi berberi tipici, cooperative di argan e passeggiata rilassante lungo il fiume dell'Alto Atlante.",
-      de: "Traditionelle Berberdörfer, Arganöl-Kooperativen und erfrischender Spaziergang am Gebirgsfluss.",
-      ar: "قرى أمازيغية أصيلة، تعاونيات زيت الأركان، وجولات منعشة بمحاذاة وادي الأطلس الكبير.",
-      pt: "Aldeias berberes tradicionais, cooperativas de argão e passeio refrescante ao longo do rio.",
-      nl: "Traditionele Berberdorpen, argan-coöperaties en wandeling langs de bergrivier van de Hoge Atlas.",
+    bg: "/img/hero-day-trips.jpg",
+  },
+  {
+    title: {
+      es: "Montañas del Atlas y Valle de Imlil",
+      it: "Montagne dell'Atlante e Imlil",
+      de: "Atlasgebirge & Imlil-Tal",
+      ar: "جبال الأطلس الكبير ومنطقة إمليل",
+      pt: "Montanhas do Atlas e Imlil",
+      nl: "Atlasgebergte & Imlil-vallei",
     },
-    bg: "/img/textures/tadelakt-warm.jpg",
+    distance: "65 km",
+    duration: "8h",
+    priceEur: 85,
+    priceMad: 935,
+    bg: "/img/hero-city-to-city.jpg",
+  },
+  {
+    title: {
+      es: "Aït Ben Haddou y Ouarzazate",
+      it: "Aït Ben Haddou e Ouarzazate",
+      de: "Aït Ben Haddou & Ouarzazate",
+      ar: "قصر آيت بن حدو ومدينة ورزازات",
+      pt: "Aït Ben Haddou e Ouarzazate",
+      nl: "Aït Ben Haddou & Ouarzazate",
+    },
+    distance: "200 km",
+    duration: "11h",
+    priceEur: 180,
+    priceMad: 1980,
+    bg: "/img/fleet-scenes/toyota-prado.jpg",
   },
   {
     title: {
@@ -49,88 +86,26 @@ const DAY_TRIPS = [
       pt: "Cascatas de Ouzoud (110 metros)",
       nl: "Ouzoud Watervallen (110 meter)",
     },
+    distance: "150 km",
     duration: "9h",
-    pax: "1–4",
     priceEur: 120,
     priceMad: 1320,
-    desc: {
-      es: "Las cascadas más altas del norte de África, macacos en libertad y paseo en barca tradicional.",
-      it: "Le cascate più spettacolari del Nord Africa, scimmie macaco in libertà e giro in barca tipica.",
-      de: "Die höchsten Wasserfälle Nordafrikas mit freilebenden Berberaffen und traditioneller Bootsfahrt.",
-      ar: "أعلى شلالات في شمال إفريقيا مع قرود المكاك البرية وجولات بالقوارب التقليدية.",
-      pt: "As maiores quedas de água do Norte de África, macacos em liberdade e passeio de barco típico.",
-      nl: "De hoogste watervallen van Noord-Afrika met wilde berberapen en traditioneel boottochtje.",
-    },
-    bg: "/img/textures/zelige-geometric.jpg",
+    bg: "/img/blog/day-trips.jpg",
   },
   {
     title: {
-      es: "Essaouira Mogador (Excursión Día Completo)",
-      it: "Essaouira Mogador (Giornata Intera)",
-      de: "Essaouira Mogador (Ganztagesausflug)",
-      ar: "مدينة الصويرة موكادور (يوم كامل)",
-      pt: "Essaouira Mogador (Passeio de Dia Inteiro)",
-      nl: "Essaouira Mogador (Dagtocht)",
+      es: "Desierto de Agafay, Puesta de Sol y Cena",
+      it: "Deserto di Agafay, Tramonto e Cena",
+      de: "Agafay-Wüste, Sonnenuntergang & Dinner",
+      ar: "صحراء أكافاي، غروب الشمس وعشاء فاخر",
+      pt: "Deserto de Agafay, Pôr do Sol e Jantar",
+      nl: "Agafay Woestijn, Zonsondergang & Diner",
     },
-    duration: "10h",
-    pax: "1–4",
-    priceEur: 160,
-    priceMad: 1760,
-    desc: {
-      es: "Murallas marítimas históricas, puerto pesquero, medina protegida por la UNESCO y pescado fresco.",
-      it: "Bastioni sul mare, vivace porto peschereccio, medina patrimonio UNESCO e pesce freschissimo.",
-      de: "Historische Festungsmauern am Meer, Fischerhafen, UNESCO-Altstadt und frischer Atlantikfisch.",
-      ar: "أسوار تاريخية تواجه المحيط، ميناء صيد حيوي، وسوق السمك الطازج بالمدينة العتيقة.",
-      pt: "Muralhas marítimas históricas, porto de pesca tradicional e peixe fresco à beira do oceano.",
-      nl: "Historische stadsmuren aan zee, vissershaven, UNESCO-werelderfgoed medina en verse vis.",
-    },
-    bg: "/img/routes/marrakech-essaouira.jpg",
-  },
-  {
-    title: {
-      es: "Desierto de Agafay (Puesta de Sol y Cena)",
-      it: "Deserto di Agafay (Tramonto e Cena)",
-      de: "Agafay-Wüste (Sonnenuntergang & Dinner)",
-      ar: "صحراء أكافاي (غروب الشمس وعشاء فاخر)",
-      pt: "Deserto de Agafay (Pôr do Sol e Jantar)",
-      nl: "Agafay Woestijn (Zonsondergang & Diner)",
-    },
+    distance: "40 km",
     duration: "5h",
-    pax: "1–4",
     priceEur: 70,
     priceMad: 770,
-    desc: {
-      es: "Paisaje lunar a solo 45 min de Marrakech, paseo en dromedario opcional y cena bajo las estrellas.",
-      it: "Paesaggio desertico a soli 45 minuti da Marrakech, dromedari facoltativi e cena sotto le stelle.",
-      de: "Faszinierende Steinwüste nur 45 Min. von Marrakesch entfernt, Dromedar-Ritt und Dinner unterm Sternenhimmel.",
-      ar: "طبيعة صحراوية ساحرة تبعد 45 دقيقة فقط عن مراكش مع إمكانية ركوب الجمال وعشاء في الخيام.",
-      pt: "Paisagem desértica a apenas 45 min de Marraquexe, dromedários opcionais e jantar sob as estrelas.",
-      nl: "Steenwoestijn op slechts 45 min van Marrakech, optionele dromedarisrit en diner onder de sterren.",
-    },
-    bg: "/img/textures/carved-plaster.jpg",
-  },
-  {
-    title: {
-      es: "Aït Ben Haddou y Ouarzazate (La Ruta de las Kasbahs)",
-      it: "Aït Ben Haddou e Ouarzazate (La Via delle Kasbah)",
-      de: "Aït Ben Haddou & Ouarzazate (Kasbah-Route)",
-      ar: "آيت بن حدو وورزازات (طريق القصبات التاريخية)",
-      pt: "Aït Ben Haddou e Ouarzazate (A Rota das Kasbahs)",
-      nl: "Aït Ben Haddou & Ouarzazate (Kasbah Route)",
-    },
-    duration: "11h",
-    pax: "1–4",
-    priceEur: 180,
-    priceMad: 1980,
-    desc: {
-      es: "Paso del Atlas Tizi n'Tichka, kasbah fortaleza de Gladiador y Juego de Tronos, y estudios de cine.",
-      it: "Traversata dell'Alto Atlante, ksar millenario set de Il Gladiatore e famosi studi cinematografici.",
-      de: "Über den Tizi n'Tichka Pass, weltberühmte Filmkulisse aus Gladiator und Filmstudios von Ouarzazate.",
-      ar: "عبور جبال الأطلس، زيارة قصبة آيت بن حدو الشهيرة عالمياً واستوديوهات السينما بورزازات.",
-      pt: "Passagem pelo Alto Atlas, kasbah histórica cenário de Gladiador e estúdios de cinema.",
-      nl: "Over de Hoge Atlas naar het filmdecor van Gladiator en de beroemde filmstudio's in Ouarzazate.",
-    },
-    bg: "/img/textures/brass-lantern.jpg",
+    bg: "/img/blog/sahara-merzouga.jpg",
   },
 ];
 
@@ -145,6 +120,16 @@ const CONTENT: Record<
     h1: string;
     h1Sub: string;
     sub: string;
+    sectionTag: string;
+    sectionH2: string;
+    btnCalc: string;
+    badgeDayTrip: string;
+    badgeFixed: string;
+    incDriver: string;
+    incAc: string;
+    incCancel: string;
+    from: string;
+    perVehicleReturn: string;
     bookTrip: string;
     ctaH2: string;
     ctaP: string;
@@ -161,11 +146,21 @@ const CONTENT: Record<
     h1: "Excursiones Privadas",
     h1Sub: "de un Día en Marruecos",
     sub: "Descubra los parajes más impresionantes de Marruecos con su propio conductor privado. Salida desde su hotel y regreso por la tarde con total flexibilidad.",
-    bookTrip: "Consultar excursión",
+    sectionTag: "Todas las Opciones",
+    sectionH2: "Excursiones disponibles",
+    btnCalc: "Calculadora de Precios",
+    badgeDayTrip: "Excursión",
+    badgeFixed: "Precio Fijo",
+    incDriver: "Chófer, gasolina y peajes incluidos",
+    incAc: "Vehículo con aire acondicionado",
+    incCancel: "Cancelación gratuita hasta 48h",
+    from: "Desde",
+    perVehicleReturn: "por vehículo, ida y vuelta",
+    bookTrip: "Reservar",
     ctaH2: "¿Desea un día a su propio ritmo?",
     ctaP: "Personalizamos los horarios, paradas y restaurantes según sus preferencias. Escríbanos por WhatsApp.",
     ctaWa: "Reservar excursión en WhatsApp",
-    waText: "¡Hola! Quisiera información y reservar una excursión privada de un día en Marruecos. ¿Podrían informarme de las opciones y tarifas?",
+    waText: "¡Hola! Quisiera reservar una excursión de un día en Marruecos",
   },
   it: {
     title: `Escursioni Giornaliere in Marocco con Autista Privato | ${SITE_NAME}`,
@@ -176,11 +171,21 @@ const CONTENT: Record<
     h1: "Escursioni Private",
     h1Sub: "in Giornata in Marocco",
     sub: "Esplorate la natura e i borghi più autentici del Marocco con il vostro autista privato dedicato. Partenza dall'alloggio e rientro in serata.",
-    bookTrip: "Prenota escursione",
+    sectionTag: "Tutte le Opzioni",
+    sectionH2: "Escursioni disponibili",
+    btnCalc: "Calcolatore Tariffe",
+    badgeDayTrip: "Escursione",
+    badgeFixed: "Prezzo Fisso",
+    incDriver: "Autista, carburante e pedaggi inclusi",
+    incAc: "Aria condizionata",
+    incCancel: "Cancellazione gratuita fino a 48h",
+    from: "Da",
+    perVehicleReturn: "per veicolo, andata e ritorno",
+    bookTrip: "Prenota",
     ctaH2: "Volete organizzare una giornata personalizzata?",
     ctaP: "Concordiamo orari, soste e itinerari su misura per voi e la vostra famiglia. Risposta immediata su WhatsApp.",
     ctaWa: "Prenota su WhatsApp",
-    waText: "Buongiorno! Vorrei prenotare un'escursione giornaliera privata in Marocco. Potete indicarmi tariffe e dettagli?",
+    waText: "Buongiorno! Vorrei prenotare un'escursione in Marocco",
   },
   de: {
     title: `Tagesausflüge in Marokko mit Privatchauffeur | ${SITE_NAME}`,
@@ -191,11 +196,21 @@ const CONTENT: Record<
     h1: "Private Tagesausflüge",
     h1Sub: "in Marokko",
     sub: "Erleben Sie spektakuläre Natur und Weltkulturerbestätten mit Ihrem persönlichen Chauffeur. Entspannte Abholung am Hotel und Rückkehr am Abend.",
-    bookTrip: "Ausflug anfragen",
+    sectionTag: "Alle Optionen",
+    sectionH2: "Verfügbare Ausflüge",
+    btnCalc: "Tarifrechner",
+    badgeDayTrip: "Tagesausflug",
+    badgeFixed: "Festpreis",
+    incDriver: "Chauffeur, Treibstoff und Maut inklusive",
+    incAc: "Klimatisiertes Fahrzeug",
+    incCancel: "Kostenlose Stornierung bis 48 Std.",
+    from: "Ab",
+    perVehicleReturn: "pro Fahrzeug, Hin & Rückfahrt",
+    bookTrip: "Buchen",
     ctaH2: "Möchten Sie Ihren eigenen Tag gestalten?",
     ctaP: "Wir passen Zeiten, Route und Fotostopps komplett an Ihre Reisewünsche an. Schreiben Sie uns einfach auf WhatsApp.",
     ctaWa: "Ausflug auf WhatsApp buchen",
-    waText: "Guten Tag! Ich interessiere mich für einen privaten Tagesausflug in Marokko. Können Sie mir die Optionen und Festpreise senden?",
+    waText: "Guten Tag! Ich möchte einen Tagesausflug in Marokko buchen",
   },
   ar: {
     title: `رحلات وجولات يومية خاصة في المغرب مع سائق خاص | ${SITE_NAME}`,
@@ -206,11 +221,21 @@ const CONTENT: Record<
     h1: "رحلات سياحية خاصة",
     h1Sub: "ليوم كامل في المغرب",
     sub: "استكشف أروع معالم المغرب الطبيعية والتاريخية مع سائق خاص مخصص لك ولعائلتك طوال اليوم، مع مرونة تامة في أوقات التوقف والعودة.",
-    bookTrip: "حجز الرحلة",
+    sectionTag: "كافة الخيارات",
+    sectionH2: "الرحلات اليومية المتاحة",
+    btnCalc: "حاسبة الأسعار",
+    badgeDayTrip: "جولة يومية",
+    badgeFixed: "سعر ثابت",
+    incDriver: "السائق والوقود ورسوم الطرق مشمولة",
+    incAc: "سيارة حديثة ومكيفة بالكامل",
+    incCancel: "إلغاء مجاني حتى 48 ساعة",
+    from: "ابتداءً من",
+    perVehicleReturn: "لكل سيارة بالكامل (ذهاب وعودة)",
+    bookTrip: "احجز الآن",
     ctaH2: "هل ترغب في تنظيم برنامج يومي خاص بكم؟",
     ctaP: "نقوم بتخصيص المسارات ومواعيد الانطلاق حسب راحتكم تماماً. تواصل فوري ومباشر عبر واتساب.",
     ctaWa: "حجز عبر واتساب",
-    waText: "السلام عليكم، أود حجز رحلة يومية خاصة مع سائق في المغرب. هل يمكنكم تزويدي بالأسعار والخيارات المتاحة؟",
+    waText: "السلام عليكم، أود حجز رحلة يومية خاصة في المغرب",
   },
   pt: {
     title: `Passeios de um Dia em Marrocos com Motorista Privado | ${SITE_NAME}`,
@@ -221,11 +246,21 @@ const CONTENT: Record<
     h1: "Passeios Privados",
     h1Sub: "de um Dia em Marrocos",
     sub: "Descubra as mais belas paisagens de Marrocos com o seu próprio motorista. Partida do hotel pela manhã e regresso ao fim da tarde.",
-    bookTrip: "Ver passeio",
+    sectionTag: "Todas as Opções",
+    sectionH2: "Passeios disponíveis",
+    btnCalc: "Calculadora de Preços",
+    badgeDayTrip: "Passeio de um dia",
+    badgeFixed: "Preço Fixo",
+    incDriver: "Motorista, combustível e portagens",
+    incAc: "Ar condicionado",
+    incCancel: "Cancelamento gratuito até 48h",
+    from: "A partir de",
+    perVehicleReturn: "por veículo, ida e volta",
+    bookTrip: "Reservar",
     ctaH2: "Deseja um roteiro à sua medida?",
     ctaP: "Ajustamos horários, paragens e restaurantes de acordo com a sua preferência. Fale connosco no WhatsApp.",
     ctaWa: "Reservar no WhatsApp",
-    waText: "Olá! Gostaria de fazer um passeio privado de um dia em Marrocos. Poderiam enviar-me as opções e preços fixos?",
+    waText: "Olá! Gostaria de reservar um passeio privado de um dia em Marrocos",
   },
   nl: {
     title: `Dagtochten in Marokko met Privéchauffeur | ${SITE_NAME}`,
@@ -236,11 +271,21 @@ const CONTENT: Record<
     h1: "Exclusieve Dagtochten",
     h1Sub: "in Marokko",
     sub: "Ontdek adembenemende berglandschappen, watervallen en kuststeden met uw eigen privéchauffeur. Ophalen bij uw riad en 's avonds ontspannen terug.",
-    bookTrip: "Dagtocht aanvragen",
+    sectionTag: "Alle Opties",
+    sectionH2: "Beschikbare dagtochten",
+    btnCalc: "Tarieven Calculator",
+    badgeDayTrip: "Dagtocht",
+    badgeFixed: "Vaste Prijs",
+    incDriver: "Chauffeur, brandstof en tolwegen",
+    incAc: "Airconditioning inbegrepen",
+    incCancel: "Gratis annuleren tot 48 uur",
+    from: "Vanaf",
+    perVehicleReturn: "per voertuig, heen en terug",
+    bookTrip: "Boeken",
     ctaH2: "Wilt u uw eigen dagindeling bepalen?",
     ctaP: "Wij stemmen vertrektijden, stops en bezienswaardigheden geheel af op uw wensen. Chat direct met ons op WhatsApp.",
     ctaWa: "Dagtocht via WhatsApp boeken",
-    waText: "Hallo! Ik wil graag een privédagtocht boeken in Marokko. Kunt u mij de mogelijkheden en vaste tarieven laten weten?",
+    waText: "Hallo! Ik wil graag een privédagtocht boeken in Marokko",
   },
 };
 
@@ -284,6 +329,7 @@ export default async function LocalizedDayTripsPage({ params }: Props) {
 
   const c = CONTENT[lang] || CONTENT.es;
   const homeUrl = `/${lang}`;
+  const calcUrl = `/${lang}/calculator`;
   const isRtl = lang === "ar";
 
   return (
@@ -310,50 +356,61 @@ export default async function LocalizedDayTripsPage({ params }: Props) {
 
       <section className="section">
         <div className="container">
-          <div className="listings-grid">
+          <div className="section-header">
+            <div>
+              <span className="section-label">{c.sectionTag}</span>
+              <h2 className="heading-lg" style={{ margin: 0 }}>
+                {c.sectionH2}
+              </h2>
+            </div>
+            <Link href={calcUrl} className="btn btn-outline">
+              {c.btnCalc}
+            </Link>
+          </div>
+
+          <div className="listing-grid">
             {DAY_TRIPS.map((item, idx) => {
               const localizedTitle =
                 item.title[lang as keyof typeof item.title] || item.title.es;
-              const localizedDesc =
-                item.desc[lang as keyof typeof item.desc] || item.desc.es;
 
               return (
-                <article key={idx} className="listing-card">
+                <div key={idx} className="listing-card">
                   <div
                     className="listing-img"
                     style={{ backgroundImage: `url(${item.bg})` }}
                   >
-                    <span className="listing-badge">
-                      {item.duration} · {item.pax} pax
-                    </span>
+                    <span className="listing-badge">{c.badgeDayTrip}</span>
+                    <span className="listing-fixed-badge">{c.badgeFixed}</span>
                   </div>
                   <div className="listing-body">
                     <h3 className="listing-title">{localizedTitle}</h3>
-                    <p
-                      style={{
-                        fontSize: "0.88rem",
-                        color: "var(--muted)",
-                        marginBottom: "16px",
-                      }}
-                    >
-                      {localizedDesc}
-                    </p>
+                    <div className="listing-features">
+                      <span className="feature-tag">{item.distance}</span>
+                      <span className="feature-tag">{item.duration}</span>
+                    </div>
+                    <ul className="listing-includes">
+                      <li>{c.incDriver}</li>
+                      <li>{c.incAc}</li>
+                      <li>{c.incCancel}</li>
+                    </ul>
                     <div className="listing-footer">
                       <div>
-                        <span className="listing-from">From</span>
-                        <span className="listing-price">€{item.priceEur}</span>
-                        <span className="listing-mad">≈ {item.priceMad} MAD</span>
+                        <div className="listing-price-from">{c.from}</div>
+                        <div className="listing-price-amount">
+                          €{item.priceEur} ({item.priceMad} MAD)
+                        </div>
+                        <div className="listing-price-unit">{c.perVehicleReturn}</div>
                       </div>
                       <button
                         type="button"
-                        className="btn btn-gold btn-sm"
-                        data-wa={`${c.waText} (${localizedTitle})`}
+                        className="btn btn-black"
+                        data-wa={`${c.waText}: ${localizedTitle} (€${item.priceEur})`}
                       >
                         {c.bookTrip}
                       </button>
                     </div>
                   </div>
-                </article>
+                </div>
               );
             })}
           </div>
@@ -369,7 +426,7 @@ export default async function LocalizedDayTripsPage({ params }: Props) {
               {c.ctaWa}
             </button>
             <Link href={`/${lang}/transfers`} className="btn btn-outline-white btn-lg">
-              {c.bookTrip}
+              {c.sectionH2}
             </Link>
           </div>
         </div>

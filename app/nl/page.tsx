@@ -288,7 +288,7 @@ export default function DutchHomePage() {
         </div>
       </section>
 
-      <Fleet />
+      <Fleet lang="nl" />
 
       <Reviews items={DUTCH_REVIEWS} />
 

@@ -251,7 +251,7 @@ export default function ArabicHomePage() {
         </div>
       </section>
 
-      <Fleet />
+      <Fleet lang="ar" />
 
       <Reviews items={ARABIC_REVIEWS} />
 

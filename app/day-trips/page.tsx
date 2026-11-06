@@ -285,7 +285,7 @@ export default function DayTripsPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/textures/tadelakt.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/day-trips.jpg)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>

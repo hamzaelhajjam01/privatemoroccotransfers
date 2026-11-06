@@ -303,7 +303,7 @@ export default function GermanHomePage() {
         </div>
       </section>
 
-      <Fleet />
+      <Fleet lang="de" />
 
       <Reviews items={GERMAN_REVIEWS} />
 

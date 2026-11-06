@@ -104,7 +104,7 @@ export default function MultiDayToursPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/textures/zellige.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-city-to-city.jpg)" }}>
                 <span className="listing-badge">
                   {"5 days"}
                 </span>

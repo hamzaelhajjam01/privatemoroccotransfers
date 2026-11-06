@@ -379,7 +379,7 @@ export default function FrenchHomePage() {
         </div>
       </section>
 
-      <Fleet />
+      <Fleet lang="fr" />
 
       <Reviews items={FRENCH_REVIEWS} />
 

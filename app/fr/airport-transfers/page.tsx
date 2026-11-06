@@ -48,7 +48,7 @@ const AIRPORT_LISTINGS = [
     type: "Berline Confort",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/textures/brass-lantern.jpg",
+    bg: "/img/blog/airport-transfer.jpg",
   },
   {
     category: "marrakech",
@@ -59,7 +59,7 @@ const AIRPORT_LISTINGS = [
     type: "Berline Confort",
     priceEur: 35,
     priceMad: 385,
-    bg: "/img/textures/carved-plaster.jpg",
+    bg: "/img/fleet-scenes/mercedes-e-class.jpg",
   },
   {
     category: "casablanca",
@@ -70,7 +70,7 @@ const AIRPORT_LISTINGS = [
     type: "Berline Confort",
     priceEur: 40,
     priceMad: 440,
-    bg: "/img/textures/tadelakt-warm.jpg",
+    bg: "/img/fleet-scenes/bmw-5-series.jpg",
   },
   {
     category: "casablanca",
@@ -81,7 +81,7 @@ const AIRPORT_LISTINGS = [
     type: "Berline Confort",
     priceEur: 150,
     priceMad: 1650,
-    bg: "/img/routes/marrakech-casablanca.jpg",
+    bg: "/img/hero-city-to-city.jpg",
   },
   {
     category: "agadir",
@@ -103,7 +103,7 @@ const AIRPORT_LISTINGS = [
     type: "Berline Confort",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/textures/zelige-geometric.jpg",
+    bg: "/img/fleet-scenes/skoda-octavia.jpg",
   },
   {
     category: "tangier",
@@ -114,7 +114,7 @@ const AIRPORT_LISTINGS = [
     type: "Berline Confort",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/textures/leather-saddle.jpg",
+    bg: "/img/fleet-scenes/mercedes-vito.jpg",
   },
   {
     category: "rabat",
@@ -125,7 +125,7 @@ const AIRPORT_LISTINGS = [
     type: "Berline Confort",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/textures/carved-plaster.jpg",
+    bg: "/img/fleet-scenes/mercedes-sprinter.jpg",
   },
 ];
 

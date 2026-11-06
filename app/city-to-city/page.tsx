@@ -178,7 +178,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/textures/zellige.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-merzouga.jpg)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>
@@ -224,7 +224,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/textures/zellige.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-casablanca.jpg)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>
@@ -316,7 +316,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/textures/tadelakt.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-rabat.jpg)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>

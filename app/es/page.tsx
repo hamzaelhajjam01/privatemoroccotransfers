@@ -331,7 +331,7 @@ export default function SpanishHomePage() {
         </div>
       </section>
 
-      <Fleet />
+      <Fleet lang="es" />
 
       <Reviews items={SPANISH_REVIEWS} />
 

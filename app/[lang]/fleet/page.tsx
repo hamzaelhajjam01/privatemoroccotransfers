@@ -211,7 +211,7 @@ export default async function LocalizedFleetPage({ params }: Props) {
 
       <section className="section fleet-section">
         <div className="wrap">
-          <Fleet heading={c.fleetHeading} intro={c.fleetIntro} />
+          <Fleet heading={c.fleetHeading} intro={c.fleetIntro} lang={lang as LanguageCode} />
         </div>
       </section>
 

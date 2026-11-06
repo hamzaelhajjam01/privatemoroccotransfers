@@ -289,7 +289,7 @@ export default function PortugueseHomePage() {
         </div>
       </section>
 
-      <Fleet />
+      <Fleet lang="pt" />
 
       <Reviews items={PORTUGUESE_REVIEWS} />
 

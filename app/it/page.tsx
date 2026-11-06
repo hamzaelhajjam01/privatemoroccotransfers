@@ -302,7 +302,7 @@ export default function ItalianHomePage() {
         </div>
       </section>
 
-      <Fleet />
+      <Fleet lang="it" />
 
       <Reviews items={ITALIAN_REVIEWS} />
 

@@ -28,17 +28,9 @@ const CITY_ROUTES = [
     },
     slug: "marrakech-to-essaouira",
     distance: "180 km",
-    duration: "2h30",
+    duration: "~2.5h",
     priceEur: 90,
     priceMad: 990,
-    desc: {
-      es: "Ruta directa por autopista y costa. Posibilidad de parada para fotografiar cabras en los argán.",
-      it: "Autostrada e costa atlantica. Possibilità di sosta fotografica per le capre sugli arganier.",
-      de: "Moderne Autobahn & Küstenstraße. Fotostopp bei den Ziegen auf den Arganbäumen möglich.",
-      ar: "طريق سريع وساحلي حديث. وقفات تصوير مميزة عند شجر الأركان والماعز.",
-      pt: "Autoestrada moderna e costa atlântica. Paragem fotográfica junto aos argãos com cabras.",
-      nl: "Snelweg en kustroute. Fotostop mogelijk bij de geiten in de arganbomen.",
-    },
     bg: "/img/routes/marrakech-essaouira.jpg",
   },
   {
@@ -52,17 +44,9 @@ const CITY_ROUTES = [
     },
     slug: "marrakech-to-agadir",
     distance: "240 km",
-    duration: "3h00",
+    duration: "~3h",
     priceEur: 135,
     priceMad: 1485,
-    desc: {
-      es: "Autopista A3 cruzando el Alto Atlas. Llegada directa a su hotel, resort o surf camp.",
-      it: "Autostrada A3 attraverso l'Alto Atlante. Raggiungete direttamente il vostro hotel o surf camp.",
-      de: "Moderne A3 Autobahn über den Hohen Atlas. Direkter Transfer zu Ihrem Resort oder Surfcamp.",
-      ar: "الطريق السيار A3 عبر جبال الأطلس الكبير. توصيل مباشر إلى فندقكم أو مخيم ركوب الأمواج.",
-      pt: "Autoestrada moderna A3 através do Alto Atlas. Deixamos à porta do resort ou surf camp.",
-      nl: "Moderne A3 snelweg door de Hoge Atlas. Directe afzetting bij uw resort of surf camp.",
-    },
     bg: "/img/routes/marrakech-agadir.jpg",
   },
   {
@@ -76,18 +60,10 @@ const CITY_ROUTES = [
     },
     slug: "casablanca-to-marrakech",
     distance: "240 km",
-    duration: "2h45",
+    duration: "~2.5h",
     priceEur: 150,
     priceMad: 1650,
-    desc: {
-      es: "La ruta interurbana más solicitada. Servicio puerta a puerta entre centro o aeropuerto y riad.",
-      it: "Il tragitto più richiesto del Marocco. Porta a porta da aeroporto o hotel al vostro riad.",
-      de: "Marokkos gefragteste Fernstrecke. Tür-zu-Tür-Service ab Flughafen oder Hotel bis zum Riad.",
-      ar: "الخط الأكثر طلباً في المغرب. توصيل من الباب إلى الباب من الفندق أو المطار إلى الرياض.",
-      pt: "O percurso mais procurado em Marrocos. Serviço porta a porta do aeroporto ou hotel ao riad.",
-      nl: "De populairste intercity route van Marokko. Deur-tot-deur vanaf luchthaven of hotel naar riad.",
-    },
-    bg: "/img/routes/casablanca-marrakech.jpg",
+    bg: "/img/hero-city-to-city.jpg",
   },
   {
     title: {
@@ -100,17 +76,9 @@ const CITY_ROUTES = [
     },
     slug: "fes-to-chefchaouen",
     distance: "200 km",
-    duration: "3h45",
+    duration: "~3.5h",
     priceEur: 120,
     priceMad: 1320,
-    desc: {
-      es: "Paso escénico por las montañas del Rif. Paradas para café y fotos panorámicas incluidas.",
-      it: "Panoramica traversata delle montagne del Rif. Soste per foto e caffè a piacere.",
-      de: "Malerische Route durch das Rif-Gebirge. Stopps für Fotos und Erfrischungen inklusive.",
-      ar: "مسار جبلي ساحر عبر جبال الريف الشامخة مع وقفات لالتقاط الصور والاستراحة.",
-      pt: "Travessia panorâmica pelas montanhas do Rife. Paragens para fotos e café incluídas.",
-      nl: "Schilderachtige tocht door het Rifgebergte met stops voor foto's en ontspanning.",
-    },
     bg: "/img/blog/chefchaouen.jpg",
   },
   {
@@ -124,17 +92,9 @@ const CITY_ROUTES = [
     },
     slug: "marrakech-to-merzouga",
     distance: "560 km",
-    duration: "9h00",
+    duration: "~9h",
     priceEur: 330,
     priceMad: 3630,
-    desc: {
-      es: "Cruzando el Tizi n'Tichka (2.260 m), Valle del Dades y Gargantas del Todra hacia las dunas.",
-      it: "Passo del Tizi n'Tichka (2.260 m), Valle del Dades e Gole del Todra verso l'Erg Chebbi.",
-      de: "Über den Tizi n'Tichka Pass (2.260 m), Dades-Tal und Todra-Schluchten zu den Riesendünen.",
-      ar: "عبور ممر تيزي نتيشكا (2260م) ووادي دادس ومضايق تودغى وصولاً لكثبان الرمال الذهبية.",
-      pt: "Passagem pelo Tizi n'Tichka (2.260 m), Vale do Dades e Gargantas do Todra até ao deserto.",
-      nl: "Over de Tizi n'Tichka pas (2.260 m), Dades-vallei en Todrakloof naar de Sahara zandduinen.",
-    },
     bg: "/img/routes/marrakech-merzouga.jpg",
   },
   {
@@ -148,17 +108,9 @@ const CITY_ROUTES = [
     },
     slug: "tangier-to-chefchaouen",
     distance: "115 km",
-    duration: "2h00",
+    duration: "~2h",
     priceEur: 80,
     priceMad: 880,
-    desc: {
-      es: "Conexión directa desde el puerto, estación del AVE o aeropuerto hacia la Perla Azul.",
-      it: "Collegamento diretto da porto, stazione TGV o aeroporto verso la Perla Blu del Rif.",
-      de: "Direkter Transfer ab Hafen, TGV-Bahnhof oder Flughafen zur Blauen Perle Marokkos.",
-      ar: "توصيل مباشر من ميناء طنجة أو محطة قطار البراق أو المطار إلى الجوهرة الزرقاء.",
-      pt: "Ligação direta do porto, estação TGV ou aeroporto até à Pérola Azul de Marrocos.",
-      nl: "Directe rit vanaf haven, TGV-station of vliegveld naar de Blauwe Parel van Marokko.",
-    },
     bg: "/img/blog/tangier-medina.jpg",
   },
 ];
@@ -174,6 +126,17 @@ const CONTENT: Record<
     h1: string;
     h1Sub: string;
     sub: string;
+    sectionTag: string;
+    sectionH2: string;
+    btnDirectory: string;
+    badgeCity: string;
+    badgeFixed: string;
+    vehicleType: string;
+    incDriver: string;
+    incTolls: string;
+    incCancel: string;
+    from: string;
+    perVehicle: string;
     viewTransfer: string;
     ctaH2: string;
     ctaP: string;
@@ -190,11 +153,22 @@ const CONTENT: Record<
     h1: "Traslados Entre Ciudades",
     h1Sub: "en Todo Marruecos",
     sub: "Viaje con total comodidad entre ciudades marroquíes en vehículos modernos con conductores profesionales bilingües. Combustible, peajes y paradas panorámicas incluidos.",
-    viewTransfer: "Ver ruta y tarifas",
+    sectionTag: "Principales Rutas",
+    sectionH2: "Rutas entre ciudades disponibles",
+    btnDirectory: "Ver catálogo de más de 150 rutas ↗",
+    badgeCity: "Interurbano",
+    badgeFixed: "Precio Fijo",
+    vehicleType: "Berlina / SUV",
+    incDriver: "Chófer y gasolina incluidos",
+    incTolls: "Peajes y aire acondicionado incluidos",
+    incCancel: "Cancelación gratuita hasta 48h",
+    from: "Desde",
+    perVehicle: "por vehículo",
+    viewTransfer: "Ver Tarifas",
     ctaH2: "¿Necesita un trayecto personalizado?",
     ctaP: "Conectamos cualquier riad, aeropuerto, hotel o campamento en Marruecos. Pida presupuesto fijo en WhatsApp.",
     ctaWa: "Pedir tarifa en WhatsApp",
-    waText: "¡Hola! Me gustaría cotizar un traslado entre ciudades en Marruecos. ¿Podrían informarme del precio fijo?",
+    waText: "¡Hola! Me gustaría cotizar un traslado entre ciudades en Marruecos",
   },
   it: {
     title: `Trasferimenti Tra Città in Marocco — Prezzi Fissi Garantiti | ${SITE_NAME}`,
@@ -205,11 +179,22 @@ const CONTENT: Record<
     h1: "Collegamenti Tra Città",
     h1Sub: "in Marocco",
     sub: "Viaggiate comodamente tra tutte le città marocchine su veicoli moderni e climatizzati. Autisti professionisti, carburante, pedaggi e soste foto inclusi.",
-    viewTransfer: "Vedi dettagli tratta",
+    sectionTag: "Tratte Principali",
+    sectionH2: "Collegamenti interurbani disponibili",
+    btnDirectory: "Visualizza tutte le 150+ tratte ↗",
+    badgeCity: "Interurbano",
+    badgeFixed: "Prezzo Fisso",
+    vehicleType: "Berlina / SUV",
+    incDriver: "Autista e carburante inclusi",
+    incTolls: "Pedaggi e aria condizionata inclusi",
+    incCancel: "Cancellazione gratuita fino a 48h",
+    from: "Da",
+    perVehicle: "per veicolo",
+    viewTransfer: "Vedi Tariffe",
     ctaH2: "Avete in programma un itinerario speciale?",
     ctaP: "Colleghiamo qualsiasi riad, hotel, aeroporto o accampamento nel Sahara. Richiedete il prezzo su WhatsApp.",
     ctaWa: "Richiedi tariffa su WhatsApp",
-    waText: "Buongiorno! Vorrei prenotare un collegamento tra città in Marocco. Potete confermarmi tariffa e disponibilità?",
+    waText: "Buongiorno! Vorrei prenotare un collegamento tra città in Marocco",
   },
   de: {
     title: `Fernstrecken & Stadt-zu-Stadt Transfers Marokko | ${SITE_NAME}`,
@@ -220,11 +205,22 @@ const CONTENT: Record<
     h1: "Stadt-zu-Stadt Transfers",
     h1Sub: "in Marokko",
     sub: "Reisen Sie entspannt und sicher zwischen allen marokkanischen Reisezielen. Inklusive Treibstoff, Autobahnmaut und Fotostopps nach Ihren Wünschen.",
-    viewTransfer: "Details & Festpreise",
+    sectionTag: "Wichtigste Strecken",
+    sectionH2: "Verfügbare Fernstrecken",
+    btnDirectory: "Alle 150+ Strecken ansehen ↗",
+    badgeCity: "Fernstrecke",
+    badgeFixed: "Festpreis",
+    vehicleType: "Limousine / SUV",
+    incDriver: "Chauffeur & Treibstoff inklusive",
+    incTolls: "Mautgebühren & Klimaanlage inklusive",
+    incCancel: "Kostenlose Stornierung bis 48 Std.",
+    from: "Ab",
+    perVehicle: "pro Fahrzeug",
+    viewTransfer: "Tarife ansehen",
     ctaH2: "Benötigen Sie eine individuelle Reiseroute?",
     ctaP: "Wir verbinden jedes Hotel, jeden Flughafen und jedes Wüstencamp in ganz Marokko. Direkte Preisauskunft auf WhatsApp.",
     ctaWa: "Festpreis per WhatsApp anfragen",
-    waText: "Guten Tag! Ich interessiere mich für einen Stadt-zu-Stadt Transfer in Marokko. Können Sie mir ein Festpreisangebot zusenden?",
+    waText: "Guten Tag! Ich interessiere mich für einen Stadt-zu-Stadt Transfer in Marokko",
   },
   ar: {
     title: `خدمات التنقل الخاص والتوصيل بين المدن بالمغرب | ${SITE_NAME}`,
@@ -235,11 +231,22 @@ const CONTENT: Record<
     h1: "خدمات التوصيل الخاص",
     h1Sub: "بين كافة المدن المغربية",
     sub: "سافر بأعلى درجات الراحة والأمان بين مختلف مدن المملكة في سيارات حديثة ومكيفة، مع سائقين مرخصين ووقفات استراحة حسب طلبكم.",
-    viewTransfer: "تفاصيل المسار والأسعار",
+    sectionTag: "أهم خطوط السير",
+    sectionH2: "رحلات الربط المتاحة بين المدن",
+    btnDirectory: "عرض دليل كافة الرحلات (أكثر من 150 خط) ↗",
+    badgeCity: "بين المدن",
+    badgeFixed: "سعر ثابت",
+    vehicleType: "صالون / SUV",
+    incDriver: "السائق والوقود مشمولان",
+    incTolls: "رسوم الطرق والتكييف مشمولة",
+    incCancel: "إلغاء مجاني حتى 48 ساعة",
+    from: "ابتداءً من",
+    perVehicle: "لكل سيارة",
+    viewTransfer: "عرض الأسعار",
     ctaH2: "هل لديك خط سير مخصص أو رحلة خاصة؟",
     ctaP: "نوفر التنقل بين أي فندق أو مطار أو مخيم صحراوي بالمغرب. احصل على عرض سعر ثابت وفوري عبر واتساب.",
     ctaWa: "طلب سعر عبر واتساب",
-    waText: "السلام عليكم، أود الاستفسار عن رحلة وتوصيل بين المدن في المغرب. هل يمكنكم تأكيد السعر الثابت والتوافر؟",
+    waText: "السلام عليكم، أود الاستفسار عن رحلة وتوصيل بين المدن في المغرب",
   },
   pt: {
     title: `Viagens Entre Cidades em Marrocos — Preços Fixos | ${SITE_NAME}`,
@@ -250,11 +257,22 @@ const CONTENT: Record<
     h1: "Transfers Entre Cidades",
     h1Sub: "em Todo o Marrocos",
     sub: "Viaje com total tranquilidade e conforto por Marrocos em viaturas modernas com motoristas experientes. Portagens, combustível e paragens incluídos.",
-    viewTransfer: "Ver rota e preço",
+    sectionTag: "Principais Rotas",
+    sectionH2: "Viagens entre cidades disponíveis",
+    btnDirectory: "Ver catálogo de mais de 150 rotas ↗",
+    badgeCity: "Entre Cidades",
+    badgeFixed: "Preço Fixo",
+    vehicleType: "Berlina / SUV",
+    incDriver: "Motorista e combustível incluídos",
+    incTolls: "Portagens e ar condicionado incluídos",
+    incCancel: "Cancelamento gratuito até 48h",
+    from: "A partir de",
+    perVehicle: "por veículo",
+    viewTransfer: "Ver Tarifas",
     ctaH2: "Precisa de um percurso personalizado?",
     ctaP: "Fazemos ligações entre qualquer riad, aeroporto, hotel ou acampamento no Saara. Fale connosco no WhatsApp.",
     ctaWa: "Pedir cotação no WhatsApp",
-    waText: "Olá! Gostaria de consultar o preço para uma viagem entre cidades em Marrocos. Poderiam confirmar a tarifa?",
+    waText: "Olá! Gostaria de consultar o preço para uma viagem entre cidades em Marrocos",
   },
   nl: {
     title: `Stad naar Stad Transfers Marokko — Vaste All-In Tarieven | ${SITE_NAME}`,
@@ -265,11 +283,22 @@ const CONTENT: Record<
     h1: "Stad naar Stad Vervoer",
     h1Sub: "in Heel Marokko",
     sub: "Reis comfortabel en zorgeloos tussen Marokkaanse steden in moderne wagens met airco. Inclusief brandstof, tolwegen en fotostops onderweg.",
-    viewTransfer: "Route bekijken & tarieven",
+    sectionTag: "Populaire Routes",
+    sectionH2: "Beschikbare ritten tussen steden",
+    btnDirectory: "Bekijk alle 150+ routes ↗",
+    badgeCity: "Stad naar Stad",
+    badgeFixed: "Vaste Prijs",
+    vehicleType: "Sedan / SUV",
+    incDriver: "Chauffeur & brandstof inbegrepen",
+    incTolls: "Tolwegen & airconditioning inbegrepen",
+    incCancel: "Gratis annuleren tot 48 uur",
+    from: "Vanaf",
+    perVehicle: "per voertuig",
+    viewTransfer: "Tarieven Bekijken",
     ctaH2: "Heeft u een specifieke route in gedachten?",
     ctaP: "Wij verzorgen transfers tussen ieder hotel, vliegveld of woestijnkamp in Marokko. Vraag nu uw vaste prijs aan via WhatsApp.",
     ctaWa: "Vaste prijs via WhatsApp aanvragen",
-    waText: "Hallo! Ik wil graag een transfer tussen steden boeken in Marokko. Kunt u mij de vaste prijs en beschikbaarheid doorgeven?",
+    waText: "Hallo! Ik wil graag een transfer tussen steden boeken in Marokko",
   },
 };
 
@@ -339,49 +368,74 @@ export default async function LocalizedCityToCityPage({ params }: Props) {
 
       <section className="section">
         <div className="container">
-          <div className="listings-grid">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "32px",
+              flexWrap: "wrap",
+              gap: "16px",
+            }}
+          >
+            <div>
+              <span className="section-label">{c.sectionTag}</span>
+              <h2 className="heading-lg" style={{ margin: 0 }}>
+                {c.sectionH2}
+              </h2>
+            </div>
+            <Link href={`/${lang}/transfers`} className="btn btn-outline">
+              {c.btnDirectory}
+            </Link>
+          </div>
+
+          <div className="listing-grid">
             {CITY_ROUTES.map((item) => {
               const localizedTitle =
                 item.title[lang as keyof typeof item.title] || item.title.es;
-              const localizedDesc =
-                item.desc[lang as keyof typeof item.desc] || item.desc.es;
               const routeUrl = `/${lang}/transfers/${item.slug}`;
 
               return (
-                <article key={item.slug} className="listing-card">
+                <div key={item.slug} className="listing-card">
                   <div
                     className="listing-img"
                     style={{ backgroundImage: `url(${item.bg})` }}
                   >
-                    <span className="listing-badge">
-                      {item.distance} · {item.duration}
-                    </span>
+                    <span className="listing-badge">{c.badgeCity}</span>
+                    <span className="listing-fixed-badge">{c.badgeFixed}</span>
                   </div>
                   <div className="listing-body">
                     <h3 className="listing-title">
                       <Link href={routeUrl}>{localizedTitle}</Link>
                     </h3>
-                    <p
-                      style={{
-                        fontSize: "0.88rem",
-                        color: "var(--muted)",
-                        marginBottom: "16px",
-                      }}
-                    >
-                      {localizedDesc}
-                    </p>
+                    <div className="listing-features">
+                      <span className="feature-tag">{item.distance}</span>
+                      <span className="feature-tag">{item.duration}</span>
+                      <span className="feature-tag">{c.vehicleType}</span>
+                    </div>
+                    <ul className="listing-includes">
+                      <li>{c.incDriver}</li>
+                      <li>{c.incTolls}</li>
+                      <li>{c.incCancel}</li>
+                    </ul>
                     <div className="listing-footer">
                       <div>
-                        <span className="listing-from">From</span>
-                        <span className="listing-price">€{item.priceEur}</span>
-                        <span className="listing-mad">≈ {item.priceMad} MAD</span>
+                        <div className="listing-price-from">{c.from}</div>
+                        <div className="listing-price-amount">
+                          €{item.priceEur} ({item.priceMad} MAD)
+                        </div>
+                        <div className="listing-price-unit">{c.perVehicle}</div>
                       </div>
-                      <Link href={routeUrl} className="btn btn-gold btn-sm">
+                      <Link
+                        href={routeUrl}
+                        className="btn btn-gold"
+                        style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}
+                      >
                         {c.viewTransfer}
                       </Link>
                     </div>
                   </div>
-                </article>
+                </div>
               );
             })}
           </div>
