@@ -16,6 +16,11 @@ export const metadata: Metadata = {
       "es": `${SITE_URL}/es`,
       "en": `${SITE_URL}/`,
       "fr": `${SITE_URL}/fr`,
+      "it": `${SITE_URL}/it`,
+      "de": `${SITE_URL}/de`,
+      "ar": `${SITE_URL}/ar`,
+      "pt": `${SITE_URL}/pt`,
+      "nl": `${SITE_URL}/nl`,
       "x-default": `${SITE_URL}/`,
     },
   },
@@ -129,6 +134,7 @@ export default function SpanishHomePage() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
+            <h1 className="visually-hidden">{"Chófer Privado y Traslados en Marruecos — Tarifas Fijas Garantizadas"}</h1>
             <HeroLines />
             <p>
               {"Private Morocco Transfers es el servicio de chófer privado de referencia para viajar por Marruecos con total tranquilidad — precios fijos garantizados, conductores profesionales y traslados cómodos puerta a puerta desde el aeropuerto hasta el Sahara."}

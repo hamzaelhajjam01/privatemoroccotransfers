@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       "fr": `${SITE_URL}/fr`,
       "es": `${SITE_URL}/es`,
       "it": `${SITE_URL}/it`,
+      "ar": `${SITE_URL}/ar`,
+      "pt": `${SITE_URL}/pt`,
+      "nl": `${SITE_URL}/nl`,
       "x-default": `${SITE_URL}/`,
     },
   },
@@ -124,6 +127,7 @@ export default function GermanHomePage() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
+            <h1 className="visually-hidden">{"Privatchauffeur und Transfers in Marokko — Garantierte Festpreise"}</h1>
             <HeroLines />
             <p>
               {"Private Morocco Transfers ist Ihr verlässlicher privater Chauffeurservice für entspanntes Reisen durch Marokko — garantierte Festpreise, lizenzierte Fahrer und erstklassiger Komfort von den Flughäfen bis in die Sahara."}

@@ -17,6 +17,10 @@ export const metadata: Metadata = {
       "en": `${SITE_URL}/`,
       "fr": `${SITE_URL}/fr`,
       "es": `${SITE_URL}/es`,
+      "de": `${SITE_URL}/de`,
+      "ar": `${SITE_URL}/ar`,
+      "pt": `${SITE_URL}/pt`,
+      "nl": `${SITE_URL}/nl`,
       "x-default": `${SITE_URL}/`,
     },
   },
@@ -123,6 +127,7 @@ export default function ItalianHomePage() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
+            <h1 className="visually-hidden">{"Autista Privato e Trasferimenti in Marocco — Tariffe Fisse Garantite"}</h1>
             <HeroLines />
             <p>
               {"Private Morocco Transfers è il servizio di autista privato ideale per vivere il Marocco in totale relax — prezzi fissi garantiti, autisti professionisti con licenza e viaggi sereni porta a porta dall'aeroporto al Sahara."}

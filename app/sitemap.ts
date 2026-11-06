@@ -17,20 +17,15 @@ const STATIC_HUBS = [
   { path: "/transfers", priority: 0.95, changeFrequency: "daily" as const },
   { path: "/fr/transfers", priority: 0.95, changeFrequency: "daily" as const },
   { path: "/airport-transfers", priority: 0.9, changeFrequency: "weekly" as const },
-  { path: "/fr/airport-transfers", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/city-to-city", priority: 0.9, changeFrequency: "weekly" as const },
-  { path: "/fr/city-to-city", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/day-trips", priority: 0.9, changeFrequency: "weekly" as const },
-  { path: "/fr/day-trips", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/multi-day-tours", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/calculator", priority: 0.9, changeFrequency: "weekly" as const },
-  { path: "/fr/calculator", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/fleet", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/faq", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.6, changeFrequency: "monthly" as const },
-  { path: "/fr/contact", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/terms", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/privacy", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/cancellation", priority: 0.4, changeFrequency: "yearly" as const },
@@ -100,6 +95,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
+  const LOCALIZED_HUBS = ["airport-transfers", "city-to-city", "day-trips", "fleet", "calculator", "faq", "about", "contact"];
+  const ALL_LANGS = ["fr", "es", "it", "de", "ar", "pt", "nl"];
+
+  const localizedHubEntries: MetadataRoute.Sitemap = ALL_LANGS.flatMap((lang) =>
+    LOCALIZED_HUBS.map((hub) => ({
+      url: `${SITE_URL}/${lang}/${hub}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
+    }))
+  );
+
   const OTHER_LANGS = ["es", "it", "de", "ar", "pt", "nl"];
 
   const localizedRoutes: MetadataRoute.Sitemap = OTHER_LANGS.flatMap((lang) => [
@@ -117,5 +124,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ]);
 
-  return [...hubs, ...routes, ...frRoutes, ...localizedRoutes, ...frListings, ...cities, ...blogPosts];
+  return [...hubs, ...localizedHubEntries, ...routes, ...frRoutes, ...localizedRoutes, ...frListings, ...cities, ...blogPosts];
 }

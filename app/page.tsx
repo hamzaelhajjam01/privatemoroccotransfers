@@ -97,6 +97,7 @@ export default function Home() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
+            <h1 className="visually-hidden">{"Private Morocco Transfers — Fixed Price Airport & Intercity Chauffeurs"}</h1>
             <HeroLines />
             <p>
               {"Private Morocco Transfers is a premier private chauffeur service for travelers who want Morocco to feel effortless — guaranteed fixed prices, licensed drivers and calm, comfortable door-to-door journeys from the airport to the Sahara."}

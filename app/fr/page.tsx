@@ -157,6 +157,7 @@ export default function FrenchHomePage() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
+            <h1 className="visually-hidden">{"Chauffeur Privé et Transferts au Maroc — Prix Fixes Garantis"}</h1>
             <HeroLines />
             <p>
               {"Private Morocco Transfers est votre service de chauffeur privé de référence au Maroc — prix fixes garantis, chauffeurs agréés et voyages sereins de l'aéroport jusqu'au désert du Sahara."}

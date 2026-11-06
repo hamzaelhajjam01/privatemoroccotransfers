@@ -17,11 +17,11 @@ const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400"], variable: 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Private Morocco Transfers — Fixed Price Airport & Intercity Chauffeurs",
+    default: "Private Morocco Transfers — Fixed Price Chauffeur Services",
     template: "%s | Private Morocco Transfers",
   },
   description:
-    "Reliable private transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity transfers & private drivers. Door-to-door, licensed English-speaking chauffeurs, instant WhatsApp booking.",
+    "Reliable private transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed drivers, 24/7 WhatsApp booking.",
   keywords: [
     "Morocco private transfers",
     "private driver Morocco",

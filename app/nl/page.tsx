@@ -16,6 +16,11 @@ export const metadata: Metadata = {
       "nl": `${SITE_URL}/nl`,
       "en": `${SITE_URL}/`,
       "fr": `${SITE_URL}/fr`,
+      "es": `${SITE_URL}/es`,
+      "it": `${SITE_URL}/it`,
+      "de": `${SITE_URL}/de`,
+      "ar": `${SITE_URL}/ar`,
+      "pt": `${SITE_URL}/pt`,
       "x-default": `${SITE_URL}/`,
     },
   },
@@ -122,6 +127,7 @@ export default function DutchHomePage() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
+            <h1 className="visually-hidden">{"Privé Chauffeur & Transfers in Marokko — Gegarandeerde Vaste Prijzen"}</h1>
             <HeroLines />
             <p>
               {"Private Morocco Transfers is dé toonaangevende privéchauffeur service voor reizigers in Marokko — gegarandeerde vaste prijzen, ervaren chauffeurs en comfortabele deur-tot-deur ritten van het vliegveld tot de Sahara."}

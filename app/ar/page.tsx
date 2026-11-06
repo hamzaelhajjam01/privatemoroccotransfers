@@ -16,6 +16,11 @@ export const metadata: Metadata = {
       "ar": `${SITE_URL}/ar`,
       "en": `${SITE_URL}/`,
       "fr": `${SITE_URL}/fr`,
+      "es": `${SITE_URL}/es`,
+      "it": `${SITE_URL}/it`,
+      "de": `${SITE_URL}/de`,
+      "pt": `${SITE_URL}/pt`,
+      "nl": `${SITE_URL}/nl`,
       "x-default": `${SITE_URL}/`,
     },
   },
@@ -87,6 +92,7 @@ export default function ArabicHomePage() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
+            <h1 className="visually-hidden">{"خدمة سائق خاص وتوصيل في المغرب — أسعار ثابتة مضمونة"}</h1>
             <HeroLines />
             <p>
               {"برايفت مورو ترانسفيرز هي وجهتكم الأولى لخدمات السائق الخاص والتوصيل الراقي في المغرب — أسعار ثابتة ومضمونة، سائقون محترفون ومرخصون، ورحلات مريحة وآمنة من المطارات إلى أعماق الصحراء."}
