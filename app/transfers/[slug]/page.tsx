@@ -6,6 +6,8 @@ import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, whatsappUrl } from "@/lib/site";
 import { EUR_RATE } from "@/lib/pricing";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 import Icon from "@/components/Icon";
+import VehiclePriceTag from "@/components/VehiclePriceTag";
+import StickyMobileBookingBar from "@/components/StickyMobileBookingBar";
 
 export type RouteItem = {
   slug: string;
@@ -321,8 +323,7 @@ export default async function TransferRoutePage({ params }: Props) {
                 <div className="vehicle-foot" style={{ marginTop: "auto" }}>
                   <div>
                     <span className="vehicle-from">Total fixed rate</span>
-                    <span className="vehicle-price">€{route.price_sedan}</span>
-                    <span className="vehicle-eur">≈ {madSedan.toLocaleString()} MAD</span>
+                    <VehiclePriceTag priceEur={route.price_sedan} />
                   </div>
                   <a
                     href={whatsappUrl(
@@ -387,8 +388,7 @@ export default async function TransferRoutePage({ params }: Props) {
                 <div className="vehicle-foot" style={{ marginTop: "auto" }}>
                   <div>
                     <span className="vehicle-from">Total fixed rate</span>
-                    <span className="vehicle-price">€{route.price_van}</span>
-                    <span className="vehicle-eur">≈ {madVan.toLocaleString()} MAD</span>
+                    <VehiclePriceTag priceEur={route.price_van} />
                   </div>
                   <a
                     href={whatsappUrl(
@@ -427,8 +427,7 @@ export default async function TransferRoutePage({ params }: Props) {
                 <div className="vehicle-foot" style={{ marginTop: "auto" }}>
                   <div>
                     <span className="vehicle-from">Total fixed rate</span>
-                    <span className="vehicle-price">€{route.price_minibus}</span>
-                    <span className="vehicle-eur">≈ {madMinibus.toLocaleString()} MAD</span>
+                    <VehiclePriceTag priceEur={route.price_minibus} />
                   </div>
                   <a
                     href={whatsappUrl(
@@ -830,6 +829,15 @@ export default async function TransferRoutePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <StickyMobileBookingBar
+        from={route.from}
+        to={route.to}
+        priceSedan={route.price_sedan}
+        waUrl={whatsappUrl(
+          `Salam! I would like to book a private transfer from ${route.from} to ${route.to} (Comfort Sedan - €${route.price_sedan}).`
+        )}
+      />
     </>
   );
 }

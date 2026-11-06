@@ -11,6 +11,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [currency, setCurrency] = useState<string>("EUR");
 
   useEffect(() => {
     let last = window.scrollY;
@@ -32,7 +33,28 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("pmt_currency");
+      if (saved) setCurrency(saved);
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  const handleCurrencyChange = (c: string) => {
+    setCurrency(c);
+    try {
+      localStorage.setItem("pmt_currency", c);
+      window.dispatchEvent(new CustomEvent("pmt_currency_changed", { detail: c }));
+    } catch {
+      // ignore
+    }
+  };
 
   const isFr = pathname.startsWith("/fr");
   const enUrl = isFr ? pathname.replace(/^\/fr/, "") || "/" : pathname;
@@ -54,6 +76,19 @@ export default function Header() {
             ))}
           </div>
           <div className="nav-right">
+            <div className="currency-toggle">
+              <select
+                value={currency}
+                onChange={(e) => handleCurrencyChange(e.target.value)}
+                aria-label="Select Currency"
+                className="currency-select"
+              >
+                <option value="EUR">EUR (€)</option>
+                <option value="USD">USD ($)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="MAD">MAD (DH)</option>
+              </select>
+            </div>
             <div className="lang-toggle">
               {isFr ? (
                 <>
@@ -76,6 +111,20 @@ export default function Header() {
         <Link href="/">Home</Link>
         {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
         <Link href="/contact">Book</Link>
+        <div style={{ marginTop: "24px", display: "flex", gap: "12px", alignItems: "center" }}>
+          <span style={{ fontSize: "14px", color: "var(--muted)" }}>Currency:</span>
+          <select
+            value={currency}
+            onChange={(e) => handleCurrencyChange(e.target.value)}
+            className="currency-select"
+            style={{ fontSize: "14px", padding: "6px 10px" }}
+          >
+            <option value="EUR">EUR (€)</option>
+            <option value="USD">USD ($)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="MAD">MAD (DH)</option>
+          </select>
+        </div>
       </div>
     </>
   );

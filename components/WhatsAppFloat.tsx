@@ -27,8 +27,20 @@ export default function WhatsAppFloat() {
       <div className={`wa-popup${open ? " open" : ""}`}>
         <div className="wa-popup-title">Select a service</div>
         {OPTIONS.map((o) => (
-          <div key={o.label} className="wa-popup-link" role="button" tabIndex={0} onClick={() => openWhatsApp(o.msg)}>
-            <span>{o.label}</span><span className="wa-badge">Fast reply</span>
+          <div
+            key={o.label}
+            className="wa-popup-link"
+            role="button"
+            tabIndex={0}
+            onClick={() =>
+              openWhatsApp(o.msg, {
+                label: `WhatsApp Float: ${o.label}`,
+                route: typeof window !== "undefined" ? window.location.pathname : "/",
+              })
+            }
+          >
+            <span>{o.label}</span>
+            <span className="wa-badge">Fast reply</span>
           </div>
         ))}
       </div>

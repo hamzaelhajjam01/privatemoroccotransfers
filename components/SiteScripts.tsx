@@ -7,7 +7,7 @@
  * so it works on every route without per-page wiring.
  */
 import { useEffect } from "react";
-import { openWhatsApp } from "@/lib/site";
+import { openWhatsApp, trackWhatsAppLead } from "@/lib/site";
 
 const val = (root: ParentNode, sel: string) =>
   ((root.querySelector(sel) as HTMLInputElement | null)?.value ?? "").trim();
@@ -35,8 +35,19 @@ export default function SiteScripts() {
       const wa = t.closest<HTMLElement>("[data-wa]");
       if (wa) {
         e.preventDefault();
-        openWhatsApp(wa.dataset.wa || "Hello, I would like a quote for a private driver in Morocco.");
+        openWhatsApp(
+          wa.dataset.wa || "Hello, I would like a quote for a private driver in Morocco.",
+          { label: wa.textContent?.trim() || "Button WhatsApp Click", route: window.location.pathname }
+        );
         return;
+      }
+
+      const waLink = t.closest<HTMLAnchorElement>('a[href*="wa.me"]');
+      if (waLink) {
+        trackWhatsAppLead({
+          label: waLink.textContent?.trim() || "WhatsApp Link Click",
+          route: window.location.pathname,
+        });
       }
 
       const q = t.closest(".faq-question");
@@ -94,11 +105,17 @@ export default function SiteScripts() {
         e.preventDefault();
         const from = val(form, "[name=from]"), to = val(form, "[name=to]");
         if (!from || !to) { alert("Please fill in From and To."); return; }
-        openWhatsApp(`Hello, I'd like a fixed price quote:\n\nFrom: ${from}\nTo: ${to}\nDate: ${val(form, "[name=date]") || "TBD"}\nPassengers: ${val(form, "[name=passengers]")}\n\nThank you!`);
+        openWhatsApp(
+          `Hello, I'd like a fixed price quote:\n\nFrom: ${from}\nTo: ${to}\nDate: ${val(form, "[name=date]") || "TBD"}\nPassengers: ${val(form, "[name=passengers]")}\n\nThank you!`,
+          { route: `${from} → ${to}`, label: "Hero Booking Widget" }
+        );
       } else if (form.id === "briefForm") {
         e.preventDefault();
         const v = (n: string) => val(form, `[name=${n}]`);
-        openWhatsApp(`Hello, I'd like a fixed price:\n\nName: ${v("name")}\nEmail: ${v("email") || "—"}\nService: ${v("service")}\nRoute: ${v("route")}\nDate / passengers: ${v("date") || "TBD"}\nNotes: ${v("notes") || "—"}`);
+        openWhatsApp(
+          `Hello, I'd like a fixed price:\n\nName: ${v("name")}\nEmail: ${v("email") || "—"}\nService: ${v("service")}\nRoute: ${v("route")}\nDate / passengers: ${v("date") || "TBD"}\nNotes: ${v("notes") || "—"}`,
+          { route: v("route") || "Trip Brief", label: "Trip Brief Form" }
+        );
       } else if (form.id === "contactForm") {
         e.preventDefault();
       }

@@ -38,6 +38,7 @@ const BLOG_SLUGS = [
   "airport-transfer",
   "day-trips",
   "driver-cost",
+  "grand-taxi-vs-private-driver",
   "marrakech-essaouira",
   "sahara-merzouga",
 ];

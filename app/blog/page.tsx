@@ -74,6 +74,32 @@ export default function BlogPage() {
       <section className="section">
         <div className="container">
           <div className="blog-grid">
+            <div className="blog-card" data-category="tips">
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver.jpg)" }}>
+                <div className="blog-img-label" style={{ display: "none" }}>
+                  {"Transport · Morocco"}
+                </div>
+              </div>
+              <span className="blog-tag">
+                {"Morocco Tips"}
+              </span>
+              <h3 className="blog-title">
+                <Link href="/blog/grand-taxi-vs-private-driver">
+                  {"Grand Taxi vs Private Driver in Morocco: The 2026 Honest Comparison"}
+                </Link>
+              </h3>
+              <p className="blog-excerpt">
+                {"Luggage limits, shared seating, air conditioning, and price breakdowns. Everything you need to decide between a grand taxi and a private chauffeur."}
+              </p>
+              <div className="blog-meta">
+                <span>
+                  {"2026-11-06"}
+                </span>
+                <span>
+                  {"7 min read"}
+                </span>
+              </div>
+            </div>
             <div className="blog-card" data-category="route">
               <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.jpg)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>

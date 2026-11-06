@@ -28,7 +28,13 @@ export default function Calculator() {
   function book() {
     if (!result) return;
     openWhatsApp(
-      `Hello! I used your website price calculator:\n\n• Route: ${result.from} → ${result.to}${result.roundTrip ? " (Round Trip)" : ""}\n• Vehicle: ${result.vehicle}\n• Fixed Price: €${result.eur} (${result.mad.toLocaleString("en-US")} MAD)\n\nCan you confirm availability and arrange this booking?`
+      `Hello! I used your website price calculator:\n\n• Route: ${result.from} → ${result.to}${result.roundTrip ? " (Round Trip)" : ""}\n• Vehicle: ${result.vehicle}\n• Fixed Price: €${result.eur} (${result.mad.toLocaleString("en-US")} MAD)\n\nCan you confirm availability and arrange this booking?`,
+      {
+        route: `${result.from} → ${result.to}${result.roundTrip ? " (Round Trip)" : ""}`,
+        label: `Calculator Quote: ${result.vehicle}`,
+        value: result.eur,
+        currency: "EUR",
+      }
     );
   }
 

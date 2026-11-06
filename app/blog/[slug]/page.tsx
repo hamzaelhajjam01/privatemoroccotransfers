@@ -4,6 +4,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 import * as AirportTransfer from "@/content/blog/airport-transfer";
 import * as DayTrips from "@/content/blog/day-trips";
 import * as DriverCost from "@/content/blog/driver-cost";
+import * as GrandTaxiVsPrivateDriver from "@/content/blog/grand-taxi-vs-private-driver";
 import * as MarrakechEssaouira from "@/content/blog/marrakech-essaouira";
 import * as SaharaMerzouga from "@/content/blog/sahara-merzouga";
 
@@ -11,6 +12,7 @@ const PAGES = {
   "airport-transfer": AirportTransfer,
   "day-trips": DayTrips,
   "driver-cost": DriverCost,
+  "grand-taxi-vs-private-driver": GrandTaxiVsPrivateDriver,
   "marrakech-essaouira": MarrakechEssaouira,
   "sahara-merzouga": SaharaMerzouga,
 } as const;
