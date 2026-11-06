@@ -35,7 +35,7 @@ const ARABIC_SERVICES = [
     text: "استقبال شخصي مع لوحة باسمكم في صالة الوصول بجميع مطارات المغرب (مراكش، كازابلانكا، طنجة، أكادير، فاس). متابعة مباشرة للرحلات و45 دقيقة انتظار مجاني.",
     meta: ["ابتداءً من 30€", "مراكش · كازا · طنجة · أكادير"],
     image: "/img/blog/airport-transfer.jpg",
-    href: "/airport-transfers",
+    href: "/ar/airport-transfers",
     cta: "تفاصيل توصيل المطارات",
   },
   {
@@ -43,7 +43,7 @@ const ARABIC_SERVICES = [
     text: "من مراكش إلى الصويرة، من الدار البيضاء إلى فاس، من طنجة إلى شفشاون. سيارات حديثة ومريحة من الباب إلى الباب مع وقفات استراحة وتصوير حسب رغبتكم.",
     meta: ["سعر ثابت للسيارة بالكامل", "جميع مدن المغرب"],
     image: "/img/routes/marrakech-merzouga.jpg",
-    href: "/city-to-city",
+    href: "/ar/city-to-city",
     cta: "عرض خطوط السير",
   },
   {
@@ -51,7 +51,7 @@ const ARABIC_SERVICES = [
     text: "وادي أوريكا، شلالات أوزود، صحراء أكافاي، أو جبال الأطلس الكبير: يوم كامل مع سائقكم الخاص المخصص لكم ولعائلتكم مع العودة للفندق مساءً.",
     meta: ["من مراكش، فاس، أكادير", "يوم كامل خاص"],
     image: "/img/blog/day-trips.jpg",
-    href: "/day-trips",
+    href: "/ar/day-trips",
     cta: "استكشف الرحلات اليومية",
   },
   {
@@ -59,7 +59,7 @@ const ARABIC_SERVICES = [
     text: "برامج 3 أو 5 أو 7 أيام مع نفس السائق والمركبة الفاخرة: كثبان مرزوكة، القرى التاريخية وقصور الأطلس.",
     meta: ["3 · 5 · 7 أيام", "برامج مخصصة بالكامل"],
     image: "/img/fleet-scenes/toyota-prado.jpg",
-    href: "/transfers",
+    href: "/ar/transfers",
     cta: "عرض البرامج الخاصة",
   },
 ];
@@ -85,76 +85,73 @@ export default function ArabicHomePage() {
   return (
     <div dir="rtl" style={{ fontFamily: "inherit" }}>
       <HeroCarousel>
-        <div className="wrap hero-wrap">
-          <div className="hero-head">
+        <div className="hero-bottom">
+          <div className="hero-statement">
             <HeroLines />
-            <p className="hero-sub">
-              {"خدمة سائق خاص وتوصيل فاخر في المغرب. أسعار ثابتة ومضمونة، سائقون محترفون ومرخصون، وبدون أي عربون مسبق للرحلات الأقل من 300 يورو."}
+            <p>
+              {"برايفت مورو ترانسفيرز هي وجهتكم الأولى لخدمات السائق الخاص والتوصيل الراقي في المغرب — أسعار ثابتة ومضمونة، سائقون محترفون ومرخصون، ورحلات مريحة وآمنة من المطارات إلى أعماق الصحراء."}
             </p>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" }}>
+              <Link href="/ar/transfers" className="btn btn-gold">
+                {"جميع خطوط السير"}
+              </Link>
+              <Link href="/ar/city-to-city" className="btn btn-white">
+                {"بين المدن"}
+              </Link>
+            </div>
           </div>
-          <div className="hero-booking">
-            <form id="heroBookingForm" className="booking-card">
-              <div className="booking-fields">
-                <div className="booking-field">
-                  <label htmlFor="bk-from">{"نقطة الانطلاق"}</label>
-                  <input
-                    id="bk-from"
-                    name="from"
-                    type="text"
-                    required
-                    placeholder="مثال: مطار مراكش، الفندق..."
-                    autoComplete="off"
-                  />
+          <div className="booking-widget">
+            <div className="booking-widget-tabs">
+              <div className="booking-tab active">
+                {"توصيل المطار"}
+              </div>
+              <div className="booking-tab">
+                {"بين المدن"}
+              </div>
+              <div className="booking-tab">
+                {"جولة يومية"}
+              </div>
+              <Link className="booking-tab" href="/ar/calculator">
+                {"حاسبة الأسعار"}
+              </Link>
+            </div>
+            <h2 className="widget-question">
+              {"من أين تود أن نبدأ رحلتك؟"}
+            </h2>
+            <form id="bookingWidget">
+              <label className="field-label">
+                {"نقطة الانطلاق"}
+              </label>
+              <input className="field-input" name="from" type="text" placeholder="مثال: مطار مراكش (RAK)" />
+              <label className="field-label">
+                {"الوجهة"}
+              </label>
+              <input className="field-input" name="to" type="text" placeholder="مثال: فندق، رياض، أو مدينة أخرى..." />
+              <div className="field-row">
+                <div>
+                  <label className="field-label">
+                    {"التاريخ"}
+                  </label>
+                  <input className="field-input" name="date" type="date" />
                 </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-to">{"الوجهة"}</label>
-                  <input
-                    id="bk-to"
-                    name="to"
-                    type="text"
-                    required
-                    placeholder="مثال: الصويرة، كازابلانكا، أكادير..."
-                    autoComplete="off"
-                  />
-                </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-date">{"التاريخ"}</label>
-                  <input id="bk-date" name="date" type="date" />
-                </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-passengers">{"عدد الركاب"}</label>
-                  <select id="bk-passengers" name="passengers" defaultValue="2">
-                    <option value="1">{"راكب واحد"}</option>
-                    <option value="2">{"راكبان"}</option>
-                    <option value="3">{"3 ركاب"}</option>
-                    <option value="4">{"4 ركاب"}</option>
-                    <option value="5-7">{"5 إلى 7 ركاب (فان عائلي)"}</option>
-                    <option value="8+">{"8 ركاب فأكثر (ميني باص)"}</option>
+                <div>
+                  <label className="field-label">
+                    {"عدد الركاب"}
+                  </label>
+                  <select className="calc-select" name="passengers">
+                    <option>{"1–3 (صالون فاخرة)"}</option>
+                    <option>{"4–5 (SUV)"}</option>
+                    <option>{"6–8 (فان عائلي)"}</option>
                   </select>
                 </div>
               </div>
-              <button
-                type="submit"
-                className="btn btn-gold btn-lg no-ring"
-                style={{ width: "100%", justifyContent: "center" }}
-              >
-                {"الحصول على سعر ثابت فوري"}
+              <button type="submit" className="btn btn-whatsapp">
+                {"الحصول على سعر ثابت عبر واتساب"}
               </button>
+              <p className="field-note">
+                {"يفتح واتساب مباشرة مع تفاصيل رحلتك. لا يلزم دفع أي عربون للحصول على السعر."}
+              </p>
             </form>
-          </div>
-          <div className="hero-stats">
-            <div>
-              <b>{"150+"}</b>
-              <span>{"خط سير ومدينة بالمغرب"}</span>
-            </div>
-            <div>
-              <b>{"100%"}</b>
-              <span>{"أسعار ثابتة شاملة بالكامل"}</span>
-            </div>
-            <div>
-              <b>{"0%"}</b>
-              <span>{"عربون مسبق تحت 300€"}</span>
-            </div>
           </div>
         </div>
       </HeroCarousel>

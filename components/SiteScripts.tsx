@@ -101,14 +101,43 @@ export default function SiteScripts() {
 
     function onSubmit(e: SubmitEvent) {
       const form = e.target as HTMLFormElement;
-      if (form.id === "bookingWidget") {
+      if (form.id === "bookingWidget" || form.id === "heroBookingForm") {
         e.preventDefault();
         const from = val(form, "[name=from]"), to = val(form, "[name=to]");
-        if (!from || !to) { alert("Please fill in From and To."); return; }
-        openWhatsApp(
-          `Hello, I'd like a fixed price quote:\n\nFrom: ${from}\nTo: ${to}\nDate: ${val(form, "[name=date]") || "TBD"}\nPassengers: ${val(form, "[name=passengers]")}\n\nThank you!`,
-          { route: `${from} → ${to}`, label: "Hero Booking Widget" }
-        );
+        const isFr = location.pathname.startsWith("/fr");
+        const isEs = location.pathname.startsWith("/es");
+        const isIt = location.pathname.startsWith("/it");
+        const isDe = location.pathname.startsWith("/de");
+        const isAr = location.pathname.startsWith("/ar");
+        const isPt = location.pathname.startsWith("/pt");
+        const isNl = location.pathname.startsWith("/nl");
+
+        if (!from || !to) {
+          const alertMsg = isFr ? "Veuillez renseigner le départ et l'arrivée."
+            : isEs ? "Por favor complete el origen y el destino."
+            : isIt ? "Si prega di indicare partenza e destinazione."
+            : isDe ? "Bitte geben Sie Abfahrtsort und Zielort an."
+            : isAr ? "يرجى تحديد مكان الانطلاق والوجهة."
+            : isPt ? "Por favor preencha o local de partida e de destino."
+            : isNl ? "Vul alstublieft vertrek en bestemming in."
+            : "Please fill in From and To.";
+          alert(alertMsg);
+          return;
+        }
+
+        const date = val(form, "[name=date]") || "TBD";
+        const pass = val(form, "[name=passengers]") || "1–3";
+
+        let text = `Hello, I'd like a fixed price quote:\n\nFrom: ${from}\nTo: ${to}\nDate: ${date}\nPassengers: ${pass}\n\nThank you!`;
+        if (isFr) text = `Bonjour! Je souhaite obtenir un devis à tarif fixe:\n\nDépart: ${from}\nArrivée: ${to}\nDate: ${date}\nPassagers: ${pass}\n\nMerci!`;
+        else if (isEs) text = `¡Hola! Me gustaría consultar un precio fijo:\n\nOrigen: ${from}\nDestino: ${to}\nFecha: ${date}\nPasajeros: ${pass}\n\n¡Gracias!`;
+        else if (isIt) text = `Buongiorno! Vorrei un preventivo a prezzo fisso:\n\nPartenza: ${from}\nDestinazione: ${to}\nData: ${date}\nPasseggeri: ${pass}\n\nGrazie!`;
+        else if (isDe) text = `Guten Tag! Ich möchte ein Festpreisangebot anfragen:\n\nAbfahrtsort: ${from}\nZielort: ${to}\nDatum: ${date}\nPassagiere: ${pass}\n\nVielen Dank!`;
+        else if (isAr) text = `السلام عليكم! أود الاستفسار عن سعر ثابت لرحلة:\n\nالانطلاق: ${from}\nالوجهة: ${to}\nالتاريخ: ${date}\nالركاب: ${pass}\n\nشكراً لكم!`;
+        else if (isPt) text = `Olá! Gostaria de um orçamento com preço fixo:\n\nPartida: ${from}\nDestino: ${to}\nData: ${date}\nPassageiros: ${pass}\n\nObrigado!`;
+        else if (isNl) text = `Hallo! Ik wil graag een offerte voor een vaste prijs:\n\nVertrek: ${from}\nBestemming: ${to}\nDatum: ${date}\nPassagiers: ${pass}\n\nBedankt!`;
+
+        openWhatsApp(text, { route: `${from} → ${to}`, label: "Hero Booking Widget" });
       } else if (form.id === "briefForm") {
         e.preventDefault();
         const v = (n: string) => val(form, `[name=${n}]`);

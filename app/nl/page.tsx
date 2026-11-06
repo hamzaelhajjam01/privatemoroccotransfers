@@ -66,7 +66,7 @@ const DUTCH_SERVICES = [
     text: "Persoonlijk welkom met naambord in de aankomsthal op alle Marokkaanse luchthavens. Live vluchtmonitoring en 45 minuten gratis wachttijd.",
     meta: ["Vanaf €30", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.jpg",
-    href: "/airport-transfers",
+    href: "/nl/airport-transfers",
     cta: "Luchthaventransfers bekijken",
   },
   {
@@ -74,7 +74,7 @@ const DUTCH_SERVICES = [
     text: "Van Marrakech naar Essaouira, Casablanca naar Fes, Agadir naar Marrakech. Deur-tot-deur in comfortabele auto's met fotostops naar keuze.",
     meta: ["Vaste prijs per voertuig", "Heel Marokko"],
     image: "/img/routes/marrakech-merzouga.jpg",
-    href: "/city-to-city",
+    href: "/nl/city-to-city",
     cta: "Routes bekijken",
   },
   {
@@ -82,7 +82,7 @@ const DUTCH_SERVICES = [
     text: "Ourika-vallei, Ouzoud-watervallen, Essaouira of de Agafay-woestijn: een volledige dag met uw eigen privéchauffeur, 's avonds weer terug in uw riad.",
     meta: ["Vanaf Marrakech, Fes, Agadir", "Hele dag"],
     image: "/img/blog/day-trips.jpg",
-    href: "/day-trips",
+    href: "/nl/day-trips",
     cta: "Dagtochten ontdekken",
   },
   {
@@ -90,7 +90,7 @@ const DUTCH_SERVICES = [
     text: "Rondreizen van 3, 5 of 7 dagen door Marokko met dezelfde chauffeur en wagen: Sahara woestijn, koningssteden en Hoge Atlas.",
     meta: ["3 · 5 · 7 dagen", "Op maat"],
     image: "/img/fleet-scenes/toyota-prado.jpg",
-    href: "/transfers",
+    href: "/nl/transfers",
     cta: "Rondreizen ontdekken",
   },
 ];
@@ -120,76 +120,73 @@ export default function DutchHomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqLd) }}
       />
       <HeroCarousel>
-        <div className="wrap hero-wrap">
-          <div className="hero-head">
+        <div className="hero-bottom">
+          <div className="hero-statement">
             <HeroLines />
-            <p className="hero-sub">
-              {"Luchthaventransfers, intercity vervoer en privéchauffeur in Marokko. Gegarandeerde vaste prijzen, ervaren chauffeurs en 0% aanbetaling onder €300."}
+            <p>
+              {"Private Morocco Transfers is dé toonaangevende privéchauffeur service voor reizigers in Marokko — gegarandeerde vaste prijzen, ervaren chauffeurs en comfortabele deur-tot-deur ritten van het vliegveld tot de Sahara."}
             </p>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" }}>
+              <Link href="/nl/transfers" className="btn btn-gold">
+                {"Alle routes bekijken"}
+              </Link>
+              <Link href="/nl/city-to-city" className="btn btn-white">
+                {"Stad naar Stad"}
+              </Link>
+            </div>
           </div>
-          <div className="hero-booking">
-            <form id="heroBookingForm" className="booking-card">
-              <div className="booking-fields">
-                <div className="booking-field">
-                  <label htmlFor="bk-from">{"Vertreklocatie"}</label>
-                  <input
-                    id="bk-from"
-                    name="from"
-                    type="text"
-                    required
-                    placeholder="Bijv. Luchthaven Marrakech, Hotel..."
-                    autoComplete="off"
-                  />
+          <div className="booking-widget">
+            <div className="booking-widget-tabs">
+              <div className="booking-tab active">
+                {"Luchthaventransfer"}
+              </div>
+              <div className="booking-tab">
+                {"Stad naar Stad"}
+              </div>
+              <div className="booking-tab">
+                {"Dagtocht"}
+              </div>
+              <Link className="booking-tab" href="/nl/calculator">
+                {"Tarieven"}
+              </Link>
+            </div>
+            <h2 className="widget-question">
+              {"Waar kunnen we u ophalen?"}
+            </h2>
+            <form id="bookingWidget">
+              <label className="field-label">
+                {"Vertreklocatie"}
+              </label>
+              <input className="field-input" name="from" type="text" placeholder="bijv. Luchthaven Marrakech (RAK)" />
+              <label className="field-label">
+                {"Bestemming"}
+              </label>
+              <input className="field-input" name="to" type="text" placeholder="bijv. Medina van Marrakech, Hotel, Riad..." />
+              <div className="field-row">
+                <div>
+                  <label className="field-label">
+                    {"Datum"}
+                  </label>
+                  <input className="field-input" name="date" type="date" />
                 </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-to">{"Bestemming"}</label>
-                  <input
-                    id="bk-to"
-                    name="to"
-                    type="text"
-                    required
-                    placeholder="Bijv. Essaouira, Casablanca, Agadir..."
-                    autoComplete="off"
-                  />
-                </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-date">{"Datum"}</label>
-                  <input id="bk-date" name="date" type="date" />
-                </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-passengers">{"Passagiers"}</label>
-                  <select id="bk-passengers" name="passengers" defaultValue="2">
-                    <option value="1">{"1 passagier"}</option>
-                    <option value="2">{"2 passagiers"}</option>
-                    <option value="3">{"3 passagiers"}</option>
-                    <option value="4">{"4 passagiers"}</option>
-                    <option value="5-7">{"5 tot 7 passagiers (Van)"}</option>
-                    <option value="8+">{"8+ passagiers (Minibus)"}</option>
+                <div>
+                  <label className="field-label">
+                    {"Passagiers"}
+                  </label>
+                  <select className="calc-select" name="passengers">
+                    <option>{"1–3 (sedan)"}</option>
+                    <option>{"4–5 (SUV)"}</option>
+                    <option>{"6–8 (minibus)"}</option>
                   </select>
                 </div>
               </div>
-              <button
-                type="submit"
-                className="btn btn-gold btn-lg no-ring"
-                style={{ width: "100%", justifyContent: "center" }}
-              >
-                {"Vaste prijs direct aanvragen"}
+              <button type="submit" className="btn btn-whatsapp">
+                {"Vaste prijs aanvragen via WhatsApp"}
               </button>
+              <p className="field-note">
+                {"Opent WhatsApp met uw reisgegevens. Geen aanbetaling nodig voor een offerte."}
+              </p>
             </form>
-          </div>
-          <div className="hero-stats">
-            <div>
-              <b>{"150+"}</b>
-              <span>{"Routes & Steden in Marokko"}</span>
-            </div>
-            <div>
-              <b>{"100%"}</b>
-              <span>{"All-inclusive Vaste Prijzen"}</span>
-            </div>
-            <div>
-              <b>{"0%"}</b>
-              <span>{"Aanbetaling onder €300"}</span>
-            </div>
           </div>
         </div>
       </HeroCarousel>

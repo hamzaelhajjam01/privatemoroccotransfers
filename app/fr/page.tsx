@@ -155,76 +155,73 @@ export default function FrenchHomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqLd) }}
       />
       <HeroCarousel>
-        <div className="wrap hero-wrap">
-          <div className="hero-head">
+        <div className="hero-bottom">
+          <div className="hero-statement">
             <HeroLines />
-            <p className="hero-sub">
-              {"Transferts aéroport, liaisons intervilles et chauffeurs privés à travers le Maroc. Prix fixes garantis, chauffeurs professionnels bilingues, 0% d'acompte."}
+            <p>
+              {"Private Morocco Transfers est votre service de chauffeur privé de référence au Maroc — prix fixes garantis, chauffeurs agréés et voyages sereins de l'aéroport jusqu'au désert du Sahara."}
             </p>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "16px" }}>
+              <Link href="/fr/transfers" className="btn btn-gold">
+                {"Toutes les liaisons"}
+              </Link>
+              <Link href="/fr/city-to-city" className="btn btn-white">
+                {"Intervilles"}
+              </Link>
+            </div>
           </div>
-          <div className="hero-booking">
-            <form id="heroBookingForm" className="booking-card">
-              <div className="booking-fields">
-                <div className="booking-field">
-                  <label htmlFor="bk-from">{"Lieu de départ"}</label>
-                  <input
-                    id="bk-from"
-                    name="from"
-                    type="text"
-                    required
-                    placeholder="Ex. Aéroport Marrakech, Hôtel..."
-                    autoComplete="off"
-                  />
+          <div className="booking-widget">
+            <div className="booking-widget-tabs">
+              <div className="booking-tab active">
+                {"Transfert Aéroport"}
+              </div>
+              <div className="booking-tab">
+                {"Intervilles"}
+              </div>
+              <div className="booking-tab">
+                {"Excursion"}
+              </div>
+              <Link className="booking-tab" href="/fr/calculator">
+                {"Calculateur"}
+              </Link>
+            </div>
+            <h2 className="widget-question">
+              {"Où devons-nous venir vous chercher ?"}
+            </h2>
+            <form id="bookingWidget">
+              <label className="field-label">
+                {"Lieu de départ"}
+              </label>
+              <input className="field-input" name="from" type="text" placeholder="ex. Aéroport Marrakech (RAK)" />
+              <label className="field-label">
+                {"Destination"}
+              </label>
+              <input className="field-input" name="to" type="text" placeholder="ex. Médina de Marrakech, Hôtel, Riad..." />
+              <div className="field-row">
+                <div>
+                  <label className="field-label">
+                    {"Date"}
+                  </label>
+                  <input className="field-input" name="date" type="date" />
                 </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-to">{"Destination"}</label>
-                  <input
-                    id="bk-to"
-                    name="to"
-                    type="text"
-                    required
-                    placeholder="Ex. Essaouira, Casablanca, Agadir..."
-                    autoComplete="off"
-                  />
-                </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-date">{"Date"}</label>
-                  <input id="bk-date" name="date" type="date" />
-                </div>
-                <div className="booking-field">
-                  <label htmlFor="bk-passengers">{"Passagers"}</label>
-                  <select id="bk-passengers" name="passengers" defaultValue="2">
-                    <option value="1">{"1 passager"}</option>
-                    <option value="2">{"2 passagers"}</option>
-                    <option value="3">{"3 passagers"}</option>
-                    <option value="4">{"4 passagers"}</option>
-                    <option value="5-7">{"5 à 7 passagers (Van)"}</option>
-                    <option value="8+">{"8+ passagers (Minibus)"}</option>
+                <div>
+                  <label className="field-label">
+                    {"Passagers"}
+                  </label>
+                  <select className="calc-select" name="passengers">
+                    <option>{"1–3 (berline)"}</option>
+                    <option>{"4–5 (SUV)"}</option>
+                    <option>{"6–8 (van)"}</option>
                   </select>
                 </div>
               </div>
-              <button
-                type="submit"
-                className="btn btn-gold btn-lg no-ring"
-                style={{ width: "100%", justifyContent: "center" }}
-              >
-                {"Obtenir un tarif fixe garanti"}
+              <button type="submit" className="btn btn-whatsapp">
+                {"Obtenir mon tarif fixe sur WhatsApp"}
               </button>
+              <p className="field-note">
+                {"Ouvre WhatsApp avec les détails de votre trajet. Aucun paiement d'avance pour le devis."}
+              </p>
             </form>
-          </div>
-          <div className="hero-stats">
-            <div>
-              <b>{"150+"}</b>
-              <span>{"Liaisons & Villes au Maroc"}</span>
-            </div>
-            <div>
-              <b>{"100%"}</b>
-              <span>{"Prix Fermes & Tout Compris"}</span>
-            </div>
-            <div>
-              <b>{"0%"}</b>
-              <span>{"Acompte sous 300 €"}</span>
-            </div>
           </div>
         </div>
       </HeroCarousel>
