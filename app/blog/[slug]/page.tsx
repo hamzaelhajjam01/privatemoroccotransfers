@@ -7,6 +7,8 @@ import * as DriverCost from "@/content/blog/driver-cost";
 import * as GrandTaxiVsPrivateDriver from "@/content/blog/grand-taxi-vs-private-driver";
 import * as MarrakechEssaouira from "@/content/blog/marrakech-essaouira";
 import * as SaharaMerzouga from "@/content/blog/sahara-merzouga";
+import * as GettingAroundMorocco from "@/content/blog/getting-around-morocco";
+import * as FesTanneriesGuide from "@/content/blog/fes-tanneries-guide";
 
 const PAGES = {
   "airport-transfer": AirportTransfer,
@@ -15,6 +17,8 @@ const PAGES = {
   "grand-taxi-vs-private-driver": GrandTaxiVsPrivateDriver,
   "marrakech-essaouira": MarrakechEssaouira,
   "sahara-merzouga": SaharaMerzouga,
+  "getting-around-morocco": GettingAroundMorocco,
+  "fes-tanneries-guide": FesTanneriesGuide,
 } as const;
 
 type Slug = keyof typeof PAGES;

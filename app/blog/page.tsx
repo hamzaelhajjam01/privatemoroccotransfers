@@ -75,6 +75,58 @@ export default function BlogPage() {
         <div className="container">
           <div className="blog-grid">
             <div className="blog-card" data-category="tips">
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around-morocco.jpg)" }}>
+                <div className="blog-img-label" style={{ display: "none" }}>
+                  {"Transport · 2026 Guide"}
+                </div>
+              </div>
+              <span className="blog-tag">
+                {"Morocco Tips"}
+              </span>
+              <h3 className="blog-title">
+                <Link href="/blog/getting-around-morocco">
+                  {"Getting Around Morocco in 2026: Train, Bus, Grand Taxi or Private Driver?"}
+                </Link>
+              </h3>
+              <p className="blog-excerpt">
+                {"High-speed Al Boraq trains, CTM coaches, grand taxis, or a dedicated chauffeur. Full breakdown of costs, comfort, and luggage space."}
+              </p>
+              <div className="blog-meta">
+                <span>
+                  {"2026-11-06"}
+                </span>
+                <span>
+                  {"9 min read"}
+                </span>
+              </div>
+            </div>
+            <div className="blog-card" data-category="tips">
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/fes-tanneries-guide.jpg)" }}>
+                <div className="blog-img-label" style={{ display: "none" }}>
+                  {"Fes · Culture"}
+                </div>
+              </div>
+              <span className="blog-tag">
+                {"Morocco Tips"}
+              </span>
+              <h3 className="blog-title">
+                <Link href="/blog/fes-tanneries-guide">
+                  {"Visiting the Fes Chouara Tanneries: 2026 Guide, Scams to Avoid & Day Trips"}
+                </Link>
+              </h3>
+              <p className="blog-excerpt">
+                {"The mint leaf ritual, rooftop terraces, treading vats, avoiding faux guides, and booking day trips to Volubilis, Meknes, and Chefchaouen."}
+              </p>
+              <div className="blog-meta">
+                <span>
+                  {"2026-11-06"}
+                </span>
+                <span>
+                  {"8 min read"}
+                </span>
+              </div>
+            </div>
+            <div className="blog-card" data-category="tips">
               <div className="blog-img" style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver.jpg)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Transport · Morocco"}

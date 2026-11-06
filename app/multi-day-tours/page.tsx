@@ -221,6 +221,180 @@ export default function MultiDayToursPage() {
                 </div>
               </div>
             </div>
+            <div className="listing-card">
+              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.jpg)" }}>
+                <span className="listing-badge">
+                  {"3 or 4 days"}
+                </span>
+                <span className="listing-fixed-badge">
+                  {"Fixed price"}
+                </span>
+              </div>
+              <div className="listing-body">
+                <h3 className="listing-title">
+                  {"Fes to Marrakech Desert Tour"}
+                </h3>
+                <div className="listing-features">
+                  <span className="feature-tag">
+                    {"Fes"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Azrou"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Merzouga"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Todra"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Marrakech"}
+                  </span>
+                </div>
+                <ul className="listing-includes">
+                  <li>
+                    {"Same driver & vehicle throughout"}
+                  </li>
+                  <li>
+                    {"Driver accommodation & meals included"}
+                  </li>
+                  <li>
+                    {"All fuel, highway toll fees & A/C"}
+                  </li>
+                </ul>
+                <div className="listing-footer">
+                  <div>
+                    <div className="listing-price-from">
+                      {"From"}
+                    </div>
+                    <div className="listing-price-amount">
+                      {"€580 (6,380 MAD)"}
+                    </div>
+                    <div className="listing-price-unit">
+                      {"per vehicle"}
+                    </div>
+                  </div>
+                  <button className="btn btn-black" data-wa="Hello, I am interested in the Fes to Marrakech Sahara Desert Tour.">
+                    {"Book"}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="listing-card">
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.jpg)" }}>
+                <span className="listing-badge">
+                  {"8 days"}
+                </span>
+                <span className="listing-fixed-badge">
+                  {"Fixed price"}
+                </span>
+              </div>
+              <div className="listing-body">
+                <h3 className="listing-title">
+                  {"Morocco Jewish Heritage Private Tour"}
+                </h3>
+                <div className="listing-features">
+                  <span className="feature-tag">
+                    {"Casablanca"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Rabat"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Fes"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Marrakech"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Essaouira"}
+                  </span>
+                </div>
+                <ul className="listing-includes">
+                  <li>
+                    {"Beth-El, Ibn Danan & Slat Alfassiyine Synagogues"}
+                  </li>
+                  <li>
+                    {"Historic Mellahs & sacred cemeteries"}
+                  </li>
+                  <li>
+                    {"Dedicated English-speaking driver"}
+                  </li>
+                </ul>
+                <div className="listing-footer">
+                  <div>
+                    <div className="listing-price-from">
+                      {"From"}
+                    </div>
+                    <div className="listing-price-amount">
+                      {"€1,280 (14,080 MAD)"}
+                    </div>
+                    <div className="listing-price-unit">
+                      {"per vehicle"}
+                    </div>
+                  </div>
+                  <button className="btn btn-black" data-wa="Hello, I am interested in the 8-day Morocco Jewish Heritage Tour.">
+                    {"Book"}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="listing-card">
+              <div className="listing-img" style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-vito.jpg)" }}>
+                <span className="listing-badge">
+                  {"4 days"}
+                </span>
+                <span className="listing-fixed-badge">
+                  {"Fixed price"}
+                </span>
+              </div>
+              <div className="listing-body">
+                <h3 className="listing-title">
+                  {"Tangier & Northern Morocco Circuit"}
+                </h3>
+                <div className="listing-features">
+                  <span className="feature-tag">
+                    {"Tangier"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Chefchaouen"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Volubilis"}
+                  </span>
+                  <span className="feature-tag">
+                    {"Fes"}
+                  </span>
+                </div>
+                <ul className="listing-includes">
+                  <li>
+                    {"Tangier Port or Airport greeting"}
+                  </li>
+                  <li>
+                    {"Overnight in Chefchaouen blue medina"}
+                  </li>
+                  <li>
+                    {"Volubilis Roman ruins & imperial Fes"}
+                  </li>
+                </ul>
+                <div className="listing-footer">
+                  <div>
+                    <div className="listing-price-from">
+                      {"From"}
+                    </div>
+                    <div className="listing-price-amount">
+                      {"€640 (7,040 MAD)"}
+                    </div>
+                    <div className="listing-price-unit">
+                      {"per vehicle"}
+                    </div>
+                  </div>
+                  <button className="btn btn-black" data-wa="Hello, I am interested in the 4-day Tangier & Northern Morocco Circuit.">
+                    {"Book"}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
           <div style={{ textAlign: "center", marginTop: "40px" }}>
             <p style={{ fontSize: "0.9rem", color: "var(--grey-500)" }}>

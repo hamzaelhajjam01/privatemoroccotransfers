@@ -7,8 +7,8 @@ import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Private Morocco Transfers — Fixed Price Airport & Intercity Chauffeurs" },
-  description: "Reliable private transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed English-speaking drivers, 24/7 WhatsApp booking.",
+  title: { absolute: "Private Driver in Morocco & Airport Transfers — Fixed Prices | Private Morocco Transfers" },
+  description: "Reliable private driver and transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed English-speaking drivers, 24/7 WhatsApp booking.",
   alternates: {
     canonical: SITE_URL,
     languages: {
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Private Morocco Transfers — Fixed Price Airport & Intercity Chauffeurs",
-    description: "Reliable private transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed English-speaking drivers, 24/7 WhatsApp booking.",
+    title: "Private Driver in Morocco & Airport Transfers — Fixed Prices",
+    description: "Reliable private driver and transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed English-speaking drivers, 24/7 WhatsApp booking.",
     url: SITE_URL,
     siteName: SITE_NAME,
     type: "website",
@@ -97,7 +97,7 @@ export default function Home() {
       <HeroCarousel>
         <div className="hero-bottom">
           <div className="hero-statement">
-            <h1 className="visually-hidden">{"Private Morocco Transfers — Fixed Price Airport & Intercity Chauffeurs"}</h1>
+            <h1 className="visually-hidden">{"Private Driver in Morocco & Fixed-Price Airport Transfers"}</h1>
             <HeroLines />
             <p>
               {"Private Morocco Transfers is a premier private chauffeur service for travelers who want Morocco to feel effortless — guaranteed fixed prices, licensed drivers and calm, comfortable door-to-door journeys from the airport to the Sahara."}

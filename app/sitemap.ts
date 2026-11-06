@@ -48,6 +48,8 @@ const BLOG_SLUGS = [
   "grand-taxi-vs-private-driver",
   "marrakech-essaouira",
   "sahara-merzouga",
+  "getting-around-morocco",
+  "fes-tanneries-guide",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
