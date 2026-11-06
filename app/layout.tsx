@@ -92,9 +92,44 @@ const jsonLd = {
       paymentAccepted: "Cash, Credit Card",
       aggregateRating: SCHEMA_AGGREGATE_RATING,
       review: SCHEMA_REVIEWS_EN,
-      areaServed: {
-        "@type": "Country",
-        name: "Morocco",
+      areaServed: [
+        {
+          "@type": "Country",
+          name: "Morocco",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Marrakech-Safi",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Casablanca-Settat",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Fès-Meknès",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Tanger-Tétouan-Al Hoceïma",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Souss-Massa",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Rabat-Salé-Kénitra",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Drâa-Tafilalet",
+        },
+      ],
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 31.6295,
+        longitude: -7.9811,
       },
       address: {
         "@type": "PostalAddress",
