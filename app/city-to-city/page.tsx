@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: "Fixed-price intercity transfers between all major Moroccan cities. Marrakech to Essaouira, Casablanca to Marrakech, Fes to Chefchaouen. Flat rates per car, tolls and fuel included.",
   alternates: {
     canonical: `${SITE_URL}/city-to-city`,
+    languages: {
+      "en": `${SITE_URL}/city-to-city`,
+      "fr": `${SITE_URL}/fr/city-to-city`,
+      "x-default": `${SITE_URL}/city-to-city`,
+    },
   },
 };
 

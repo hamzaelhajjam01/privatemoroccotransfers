@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   description: "Reliable private transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed English-speaking drivers, 24/7 WhatsApp booking.",
   alternates: {
     canonical: SITE_URL,
+    languages: {
+      "en": SITE_URL,
+      "fr": `${SITE_URL}/fr`,
+      "es": `${SITE_URL}/es`,
+      "it": `${SITE_URL}/it`,
+      "de": `${SITE_URL}/de`,
+      "ar": `${SITE_URL}/ar`,
+      "pt": `${SITE_URL}/pt`,
+      "nl": `${SITE_URL}/nl`,
+      "x-default": SITE_URL,
+    },
   },
   openGraph: {
     title: "Private Morocco Transfers — Fixed Price Airport & Intercity Chauffeurs",

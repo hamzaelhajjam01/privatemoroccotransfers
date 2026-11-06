@@ -16,17 +16,17 @@ export default function Footer() {
           <h4>{isFr ? "Services" : "Services"}</h4>
           <ul>
             <li>
-              <Link href="/airport-transfers">
+              <Link href={isFr ? "/fr/airport-transfers" : "/airport-transfers"}>
                 {isFr ? "Transferts Aéroport" : "Airport Transfers"}
               </Link>
             </li>
             <li>
-              <Link href="/city-to-city">
+              <Link href={isFr ? "/fr/city-to-city" : "/city-to-city"}>
                 {isFr ? "Liaisons Ville à Ville" : "City-to-City Transfers"}
               </Link>
             </li>
             <li>
-              <Link href="/day-trips">
+              <Link href={isFr ? "/fr/day-trips" : "/day-trips"}>
                 {isFr ? "Excursions d'une Journée" : "Day Trips & Excursions"}
               </Link>
             </li>
@@ -53,7 +53,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/calculator">
+              <Link href={isFr ? "/fr/calculator" : "/calculator"}>
                 {isFr ? "Calculateur de Tarif" : "Price Calculator"}
               </Link>
             </li>
@@ -128,7 +128,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <Link href="/contact">
+              <Link href={isFr ? "/fr/contact" : "/contact"}>
                 <Icon name="map-pin" size={16} />
                 {"Marrakech & Casablanca, Morocco"}
               </Link>

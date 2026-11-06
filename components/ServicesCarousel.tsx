@@ -39,7 +39,18 @@ export const SERVICES = [
   },
 ];
 
-export default function ServicesCarousel() {
+type Props = {
+  items?: Array<{
+    title: string;
+    text: string;
+    meta: string[];
+    image: string;
+    href: string;
+    cta: string;
+  }>;
+};
+
+export default function ServicesCarousel({ items = SERVICES }: Props) {
   const track = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -97,13 +108,13 @@ export default function ServicesCarousel() {
   return (
     <div className="svc-carousel">
       <div className="svc-controls">
-        <span className="svc-count"><b>{String(index + 1).padStart(2, "0")}</b> / {String(SERVICES.length).padStart(2, "0")}</span>
+        <span className="svc-count"><b>{String(index + 1).padStart(2, "0")}</b> / {String(items.length).padStart(2, "0")}</span>
         <div className="svc-progress" aria-hidden="true"><i style={{ transform: `scaleX(${Math.max(0.08, progress)})` }} /></div>
         <div className="svc-arrows">
           <button type="button" aria-label="Previous service" onClick={() => go(index - 1)} disabled={index === 0}>
             <Icon name="arrow-right" size={20} className="flip-x" />
           </button>
-          <button type="button" aria-label="Next service" onClick={() => go(index + 1)} disabled={index === SERVICES.length - 1}>
+          <button type="button" aria-label="Next service" onClick={() => go(index + 1)} disabled={index === items.length - 1}>
             <Icon name="arrow-right" size={20} />
           </button>
         </div>
@@ -122,8 +133,8 @@ export default function ServicesCarousel() {
         aria-roledescription="carousel"
         aria-label="Our services"
       >
-        {SERVICES.map((s, i) => (
-          <article key={s.title} className={`svc-card${i === index ? " is-active" : ""}`} aria-label={`${i + 1} of ${SERVICES.length}: ${s.title}`}>
+        {items.map((s, i) => (
+          <article key={s.title} className={`svc-card${i === index ? " is-active" : ""}`} aria-label={`${i + 1} of ${items.length}: ${s.title}`}>
             <div className="svc-card-img" style={{ backgroundImage: `url(${s.image})` }} />
             <div className="svc-card-body">
               <span className="svc-card-num">{String(i + 1).padStart(2, "0")}</span>

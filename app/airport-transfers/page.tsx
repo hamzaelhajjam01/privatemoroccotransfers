@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: "Reliable airport transfers across Morocco with guaranteed fixed prices. Marrakech (RAK), Casablanca (CMN), Agadir (AGA), Fes (FEZ), Tangier (TNG). 45-min free wait time and flight tracking included.",
   alternates: {
     canonical: `${SITE_URL}/airport-transfers`,
+    languages: {
+      "en": `${SITE_URL}/airport-transfers`,
+      "fr": `${SITE_URL}/fr/airport-transfers`,
+      "x-default": `${SITE_URL}/airport-transfers`,
+    },
   },
 };
 

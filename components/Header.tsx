@@ -1,17 +1,55 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NAV } from "@/lib/nav";
+import {
+  getLangFromPathname,
+  getLocalizedPath,
+  LANGUAGES,
+  LANGUAGE_CODES,
+  TRANSLATIONS,
+  LanguageCode,
+} from "@/lib/i18n";
 
 export default function Header() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const router = useRouter();
+  const isHome = pathname === "/" || LANGUAGE_CODES.some((l) => pathname === `/${l}`);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [currency, setCurrency] = useState<string>("EUR");
+
+  const currentLang = getLangFromPathname(pathname);
+  const t = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+
+  const navLinks = [
+    {
+      href: currentLang === "en" ? "/transfers" : `/${currentLang}/transfers`,
+      label: t.nav.transfers,
+    },
+    {
+      href: currentLang === "en" ? "/airport-transfers" : `/${currentLang}/airport-transfers`,
+      label: t.nav.airports,
+    },
+    {
+      href: currentLang === "en" ? "/city-to-city" : `/${currentLang}/city-to-city`,
+      label: t.nav.city_to_city,
+    },
+    {
+      href: currentLang === "en" ? "/day-trips" : `/${currentLang}/day-trips`,
+      label: t.nav.day_trips,
+    },
+    {
+      href: currentLang === "en" ? "/calculator" : `/${currentLang}/calculator`,
+      label: t.nav.prices,
+    },
+    {
+      href: "/blog",
+      label: t.nav.journal,
+    },
+  ];
 
   useEffect(() => {
     let last = window.scrollY;
@@ -22,7 +60,6 @@ export default function Header() {
       requestAnimationFrame(() => {
         const y = window.scrollY;
         setScrolled(y > 10);
-        // hide when scrolling down past the first screen, show again when scrolling up
         if (Math.abs(y - last) > 6) setHidden(y > last && y > 400);
         last = y;
         ticking = false;
@@ -56,23 +93,40 @@ export default function Header() {
     }
   };
 
-  const isFr = pathname.startsWith("/fr");
-  const enUrl = isFr ? pathname.replace(/^\/fr/, "") || "/" : pathname;
-  const frUrl = isFr ? pathname : pathname.startsWith("/transfers") ? `/fr${pathname}` : "/fr/transfers";
+  const handleLanguageChange = (targetLang: LanguageCode) => {
+    const targetUrl = getLocalizedPath(pathname, targetLang);
+    router.push(targetUrl);
+  };
 
-  const cls = ["site-header", isHome && "overlay", scrolled && "scrolled", hidden && !open && "hide"].filter(Boolean).join(" ");
+  const homeUrl = currentLang === "en" ? "/" : `/${currentLang}`;
+  const contactUrl = currentLang === "en" ? "/contact" : `/${currentLang}/contact`;
+
+  const cls = [
+    "site-header",
+    isHome && "overlay",
+    scrolled && "scrolled",
+    hidden && !open && "hide",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <>
       <header className={cls}>
         <nav className="nav-inner">
-          <Link href="/" className="logo" aria-label="Private Morocco Transfers — home">
+          <Link href={homeUrl} className="logo" aria-label="Private Morocco Transfers — home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand/logo-white.svg" alt="Private Morocco Transfers" width={209} height={40} />
           </Link>
           <div className="nav-links">
-            {NAV.map((n) => (
-              <Link key={n.href} href={n.href} className={pathname.startsWith(n.href) ? "active" : undefined}>{n.label}</Link>
+            {navLinks.map((n) => (
+              <Link
+                key={n.href}
+                href={n.href}
+                className={pathname.startsWith(n.href) ? "active" : undefined}
+              >
+                {n.label}
+              </Link>
             ))}
           </div>
           <div className="nav-right">
@@ -90,40 +144,78 @@ export default function Header() {
               </select>
             </div>
             <div className="lang-toggle">
-              {isFr ? (
-                <>
-                  <Link href={enUrl} style={{ color: "inherit", textDecoration: "none" }}>EN</Link> / <span style={{ fontWeight: 600 }}>FR</span>
-                </>
-              ) : (
-                <>
-                  <span style={{ fontWeight: 600 }}>EN</span> / <Link href={frUrl} style={{ color: "inherit", textDecoration: "none" }}>FR</Link>
-                </>
-              )}
+              <select
+                value={currentLang}
+                onChange={(e) => handleLanguageChange(e.target.value as LanguageCode)}
+                aria-label="Select Language"
+                className="currency-select"
+              >
+                {LANGUAGE_CODES.map((code) => (
+                  <option key={code} value={code}>
+                    {LANGUAGES[code].flag} {code.toUpperCase()}
+                  </option>
+                ))}
+              </select>
             </div>
-            <Link href="/contact" className="btn">Book</Link>
-            <button type="button" className="hamburger" aria-label="Open menu" onClick={() => setOpen(true)} />
+            <Link href={contactUrl} className="btn">
+              {t.nav.book}
+            </Link>
+            <button
+              type="button"
+              className="hamburger"
+              aria-label="Open menu"
+              onClick={() => setOpen(true)}
+            />
           </div>
         </nav>
       </header>
 
       <div className={`mobile-nav${open ? " open" : ""}`} aria-hidden={!open}>
-        <button type="button" className="mobile-nav-close" aria-label="Close menu" onClick={() => setOpen(false)}>✕</button>
-        <Link href="/">Home</Link>
-        {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
-        <Link href="/contact">Book</Link>
-        <div style={{ marginTop: "24px", display: "flex", gap: "12px", alignItems: "center" }}>
-          <span style={{ fontSize: "14px", color: "var(--muted)" }}>Currency:</span>
-          <select
-            value={currency}
-            onChange={(e) => handleCurrencyChange(e.target.value)}
-            className="currency-select"
-            style={{ fontSize: "14px", padding: "6px 10px" }}
-          >
-            <option value="EUR">EUR (€)</option>
-            <option value="USD">USD ($)</option>
-            <option value="GBP">GBP (£)</option>
-            <option value="MAD">MAD (DH)</option>
-          </select>
+        <button
+          type="button"
+          className="mobile-nav-close"
+          aria-label="Close menu"
+          onClick={() => setOpen(false)}
+        >
+          ✕
+        </button>
+        <Link href={homeUrl}>Home</Link>
+        {navLinks.map((n) => (
+          <Link key={n.href} href={n.href}>
+            {n.label}
+          </Link>
+        ))}
+        <Link href={contactUrl}>{t.nav.book}</Link>
+        <div style={{ marginTop: "24px", display: "flex", flexDirection: "column", gap: "12px" }}>
+          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+            <span style={{ fontSize: "14px", color: "var(--muted)" }}>Language:</span>
+            <select
+              value={currentLang}
+              onChange={(e) => handleLanguageChange(e.target.value as LanguageCode)}
+              className="currency-select"
+              style={{ fontSize: "14px", padding: "6px 10px" }}
+            >
+              {LANGUAGE_CODES.map((code) => (
+                <option key={code} value={code}>
+                  {LANGUAGES[code].flag} {LANGUAGES[code].nativeName} ({code.toUpperCase()})
+                </option>
+              ))}
+            </select>
+          </div>
+          <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
+            <span style={{ fontSize: "14px", color: "var(--muted)" }}>Currency:</span>
+            <select
+              value={currency}
+              onChange={(e) => handleCurrencyChange(e.target.value)}
+              className="currency-select"
+              style={{ fontSize: "14px", padding: "6px 10px" }}
+            >
+              <option value="EUR">EUR (€)</option>
+              <option value="USD">USD ($)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="MAD">MAD (DH)</option>
+            </select>
+          </div>
         </div>
       </div>
     </>

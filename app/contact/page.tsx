@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description: "Book a private driver in Morocco. Send your route and dates and get a fixed price on WhatsApp within 2 hours. No payment needed to book.",
   alternates: {
     canonical: "https://www.privatemoroccotransfers.com/contact",
+    languages: {
+      "en": "https://www.privatemoroccotransfers.com/contact",
+      "fr": "https://www.privatemoroccotransfers.com/fr/contact",
+      "x-default": "https://www.privatemoroccotransfers.com/contact",
+    },
   },
 };
 

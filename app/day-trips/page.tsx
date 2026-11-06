@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: "Book a private driver for full-day excursions across Morocco: Atlas Mountains, Ourika Valley, Essaouira, Agafay Desert, Ouzoud Waterfalls. Fixed prices per vehicle.",
   alternates: {
     canonical: `${SITE_URL}/day-trips`,
+    languages: {
+      "en": `${SITE_URL}/day-trips`,
+      "fr": `${SITE_URL}/fr/day-trips`,
+      "x-default": `${SITE_URL}/day-trips`,
+    },
   },
 };
 

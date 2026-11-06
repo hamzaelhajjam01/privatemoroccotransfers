@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: "Calculate the exact fixed price for your private driver in Morocco. Instant price for any route — Marrakech, Casablanca, Agadir, Fes and more.",
   alternates: {
     canonical: `${SITE_URL}/calculator`,
+    languages: {
+      "en": `${SITE_URL}/calculator`,
+      "fr": `${SITE_URL}/fr/calculator`,
+      "x-default": `${SITE_URL}/calculator`,
+    },
   },
   openGraph: {
     title: "Morocco Private Transfer Price Calculator | Instant Fixed Rates",

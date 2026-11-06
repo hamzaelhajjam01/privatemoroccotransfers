@@ -34,8 +34,8 @@ function Who({ r }: { r: Review }) {
   );
 }
 
-export default function Reviews() {
-  const [main, ...rest] = REVIEWS;
+export default function Reviews({ items = REVIEWS }: { items?: Review[] }) {
+  const [main, ...rest] = items;
   return (
     <section className="section dark reviews">
       <div className="wrap">
