@@ -64,8 +64,8 @@ export default function TripFinder({
   }, [whatsappNumber, assetBase, leadEndpoint, currentLang, isRTL, t]);
 
   return (
-    <div ref={rootRef} className={`tf ${jost.variable}`} dir={t.dir}>
-      <main className="app" id="brief" aria-live="polite">
+    <div ref={rootRef} className={`tf ${jost.variable}`} dir={t.dir} data-lenis-prevent="true">
+      <main className="app" id="brief" aria-live="polite" data-lenis-prevent="true">
         <div className="gl" id="gl">
           <div className="deck" id="deck">
             <i className="dk-amb" />
@@ -115,7 +115,7 @@ export default function TripFinder({
             </div>
           </div>
         </div>
-        <div className="stage" id="stage" />
+        <div className="stage" id="stage" data-lenis-prevent="true" />
       </main>
     </div>
   );

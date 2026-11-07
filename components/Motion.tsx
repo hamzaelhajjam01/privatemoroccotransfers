@@ -84,6 +84,17 @@ export default function Motion() {
     return () => { cancelAnimationFrame(id); lenis.destroy(); };
   }, []);
 
+  // Pause Lenis on trip-finder so inner scroll containers scroll natively
+  useEffect(() => {
+    const lenis = (window as unknown as { __lenis?: Lenis }).__lenis;
+    if (!lenis) return;
+    if (pathname?.includes("trip-finder")) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
+  }, [pathname]);
+
   // Reveals, word splits, counters, parallax — re-run on every page
   useEffect(() => {
     const root = document.documentElement;

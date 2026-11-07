@@ -160,13 +160,29 @@ const W = (() => {
   const deckEl=$("#deck"), stackEl=deckEl.querySelector(".dk-stack"), ambEls=[...deckEl.querySelectorAll(".dk-amb")];
   const DK={top:null,name:null,amb:0};
   function deckLayout(){const W=deckEl.clientWidth,H=deckEl.clientHeight; if(!W||!H) return;
-    const wideNow=W>1023, x0=wideNow?(isRTL?0:Math.min(580,W*.5)):0, top=wideNow?96:64, bot=wideNow?H-40:Math.max(top+200,H-16);
-    const bw=W-(wideNow?Math.min(580,W*.5):0)-(wideNow?48:32), bh=bot-top, horiz=wideNow||bw*.96>=520;
-    const ar=horiz?(wideNow?.6:.45):.98, w=horiz?Math.min(bw*(wideNow?.88:.97),bh*.96/ar,wideNow?820:940):Math.min(bw*.96,bh*.98/ar,420);
-    deckEl.classList.toggle("narrow",!wideNow); deckEl.classList.toggle("horiz",horiz); stackEl.style.width=w+"px"; deckEl.style.setProperty("--cs",(w/(horiz?580:330)).toFixed(3));
-    const h=DK.top?DK.top.offsetHeight:w*ar;
-    const leftPos = wideNow ? (isRTL ? ((W - Math.min(580, W * .5) - w) / 2) : (x0 + (W - x0 - w) / 2)) : ((W - w) / 2);
-    Object.assign(stackEl.style,{height:h+"px",left:leftPos+"px",top:(top+(bh-h)/2)+"px"});
+    const wideNow=W>1023;
+    const isMobile=!wideNow && W<640;
+    const horiz=!wideNow; // Desktop: vertical card. Mobile/Tablet: horizontal card.
+    const x0=wideNow?(isRTL?0:Math.min(580,W*.5)):0;
+    const top=wideNow?96:(isMobile?50:54);
+    const bot=wideNow?H-40:Math.max(top+(isMobile?190:220),H-(isMobile?10:14));
+    const bw=W-(wideNow?Math.min(580,W*.5):0)-(wideNow?48:(isMobile?20:32));
+    const bh=bot-top;
+    const ar=horiz?0.54:1.24;
+    const w=wideNow
+      ? Math.min(bw*.9, bh*.92/ar, 480)
+      : (isMobile ? Math.min(W - 20, 420) : Math.min(bw * .95, 740));
+    deckEl.classList.toggle("narrow",!wideNow);
+    deckEl.classList.toggle("horiz",horiz);
+    stackEl.style.width=w+"px";
+    const baseW = wideNow ? 340 : (isMobile ? 310 : 480);
+    deckEl.style.setProperty("--cs",(w/baseW).toFixed(3));
+    const h=DK.top?DK.top.offsetHeight:Math.round(w*ar);
+    const leftPos = wideNow
+      ? (isRTL ? ((W - Math.min(580, W * .5) - w) / 2) : (x0 + (W - x0 - w) / 2))
+      : ((W - w) / 2);
+    const topPos = top + Math.max(0, (bh - h) / 2);
+    Object.assign(stackEl.style,{height:h+"px",left:leftPos+"px",top:topPos+"px"});
   }
   observe(new ResizeObserver(deckLayout)).observe(deckEl);
   function cardEl(name,info){const el=document.createElement("article"); el.className="dk-card";
@@ -663,6 +679,11 @@ function showResult(q){
     if(stacked&&pj.classList.contains("has")&&G) G.fromTo(pj,{opacity:0},{opacity:1,duration:.4,ease:"power2.out"});};
   const req=()=>{if(!raf)raf=requestAnimationFrame(check);};
   on(window,"scroll",req,{passive:true}); on(stage,"scroll",req,{passive:true});
+  on(app,"wheel",(e)=>{
+    if(innerWidth>1023&&!e.target.closest("#stage")){
+      stage.scrollTop+=e.deltaY;
+    }
+  },{passive:true});
 })();
 
 render(1);
