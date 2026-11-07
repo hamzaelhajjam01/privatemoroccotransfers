@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: { absolute: "Cookie Policy | Morocco Private Drivers" },
-  description: "How Morocco Private Drivers uses cookies on this website.",
+  title: { absolute: "Cookie Policy | Private Morocco Transfers" },
+  description: "How Private Morocco Transfers uses cookies on this website.",
 };
 
 export default function CookiePage() {

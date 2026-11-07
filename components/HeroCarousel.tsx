@@ -39,7 +39,7 @@ export default function HeroCarousel({ children }: { children: React.ReactNode }
 
   return (
     <HeroCtx.Provider value={{ index, count: HERO_SLIDES.length, go, playing }}>
-      <section className="hero" aria-roledescription="carousel" aria-label="Morocco Private Drivers">
+      <section className="hero" aria-roledescription="carousel" aria-label="Private Morocco Transfers">
         <div className="hero-media">
           {HERO_SLIDES.map((s, i) => (
             <div

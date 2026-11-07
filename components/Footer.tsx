@@ -363,8 +363,8 @@ export default function Footer() {
         <img
           src="/brand/logo-gold.svg"
           alt="Private Morocco Transfers"
-          width={1128}
-          height={204}
+          width={1200}
+          height={230}
         />
       </div>
 

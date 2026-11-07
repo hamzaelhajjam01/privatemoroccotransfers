@@ -1,5 +1,5 @@
 /**
- * Morocco Private Drivers icon set — 24×24, 1.5px line, round caps.
+ * Private Morocco Transfers icon set — 24×24, 1.5px line, round caps.
  * Line icons use currentColor; brand marks (whatsapp, google) are filled.
  * Line paths adapted from Lucide (ISC). WhatsApp & Google marks from Simple Icons (CC0).
  * Exported as files in public/brand/icons/ (gold) by scripts/export-icons.mjs.
