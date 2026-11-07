@@ -46,6 +46,10 @@ export default function Header() {
       label: t.nav.prices,
     },
     {
+      href: currentLang === "en" ? "/trip-finder" : `/${currentLang}/trip-finder`,
+      label: (t.nav as Record<string, string>).trip_finder || "Trip Finder",
+    },
+    {
       href: "/blog",
       label: t.nav.journal,
     },

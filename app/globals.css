@@ -312,15 +312,29 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 
 /* ── Floating WhatsApp ── */
 .wa-float { position: fixed; right: var(--g); bottom: var(--g); z-index: 900; }
-.wa-float-btn { display: flex; align-items: center; gap: 18px; padding: 12px 14px 12px 18px; background: #000; color: #fff; border: 1px solid #333; cursor: pointer; font-size: 0; }
-.wa-float-btn::before { content: 'WhatsApp'; font-size: 15px; }
-.wa-float-btn::after { content: ''; width: 16px; height: 16px; border-radius: 50%; border: 2px dotted #fff; }
+.wa-float-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  background: var(--gold);
+  color: #000;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+.wa-float-btn:hover { background: #D6B67E; border-color: #D6B67E; }
+.wa-float-btn:active { transform: scale(0.98); }
+.wa-float-btn .ic { display: block; flex-shrink: 0; margin: 0; }
 .wa-popup { display: none; position: absolute; right: 0; bottom: 56px; width: 260px; background: #fff; color: #000; border: 1px solid #000; }
 .wa-popup.open { display: block; }
 .wa-popup-title { font-family: var(--mono); font-size: 12px; text-transform: uppercase; padding: 12px 14px; border-bottom: 1px solid #DADADA; color: #6B6B6B; }
 .wa-popup-link { display: flex; justify-content: space-between; padding: 14px; border-bottom: 1px solid #DADADA; cursor: pointer; font-size: 16px; }
 .wa-popup-link:last-child { border-bottom: 0; }
-.wa-popup-link:hover { background: #000; color: #fff; }
+.wa-popup-link:hover { background: var(--gold); color: #000; }
 .wa-badge { font-size: 13px; opacity: .6; }
 
 /* ── Sticky Mobile Booking Bar ── */
@@ -582,7 +596,6 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
   .booking-widget { padding: 20px; max-width: none; }
   .hero { padding-top: 96px; }
   .footer-grid { grid-template-columns: 1fr; }
-  .wa-float-btn::before { content: 'Chat'; }
 }
 
 /* support topic cards (was inline hover JS) */
@@ -845,11 +858,31 @@ html.lenis, html.lenis body { height: auto; }
 }
 .footer-col ul li a { display: inline-flex; align-items: center; gap: 10px; }
 .footer-col .ic { color: var(--gold); }
-/* floating WhatsApp: icon + label, ring stays */
-.wa-float-btn { font-size: 15px; }
-.wa-float-btn::before { content: none; }
-.wa-float-btn .ic { margin-right: -6px; }
-@media (max-width: 720px) { .wa-float-btn span { display: none; } .wa-float-btn::after { display: none; } .wa-float-btn { padding: 14px; } }
+/* floating WhatsApp: centered icon on mobile, label + icon on desktop */
+.wa-float-btn::before { content: none !important; display: none !important; }
+.wa-float-btn .ic { margin: 0; }
+@media (max-width: 768px) {
+  .wa-float-btn {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .wa-float-btn span { display: none !important; }
+  .wa-float-btn::after { display: none !important; content: none !important; }
+  .wa-float-btn .ic {
+    margin: 0 !important;
+    display: block !important;
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+  }
+}
 
 /* ── Reviews ── */
 .reviews .rev-stars { display: flex; gap: 3px; margin-top: 24px; }
