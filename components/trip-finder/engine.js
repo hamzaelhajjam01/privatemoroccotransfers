@@ -164,8 +164,8 @@ const W = (() => {
     const isMobile=!wideNow && W<640;
     const horiz=!wideNow; // Desktop: vertical card. Mobile/Tablet: horizontal card.
     const x0=wideNow?(isRTL?0:Math.min(580,W*.5)):0;
-    const top=wideNow?96:(isMobile?50:54);
-    const bot=wideNow?H-40:Math.max(top+(isMobile?190:220),H-(isMobile?10:14));
+    const top=wideNow?96:(isMobile?66:76);
+    const bot=wideNow?H-40:Math.max(top+(isMobile?210:250),H-(isMobile?20:28));
     const bw=W-(wideNow?Math.min(580,W*.5):0)-(wideNow?48:(isMobile?20:32));
     const bh=bot-top;
     const ar=horiz?0.54:1.24;
