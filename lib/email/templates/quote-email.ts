@@ -44,6 +44,8 @@ I would like to confirm availability and finalize my booking.`;
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
   <title>Your Quote: ${route}</title>
   <!--[if mso]>
   <style type="text/css">
@@ -62,12 +64,12 @@ I would like to confirm availability and finalize my booking.`;
           
           <!-- Brand Header -->
           <tr>
-            <td style="padding: 32px 36px 24px; text-align: center; border-bottom: 1px solid #221f1a; background: linear-gradient(180deg, #1a1714 0%, #141414 100%);">
-              <span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #d6b67e; font-weight: 600; display: block; margin-bottom: 6px;">
+            <td style="padding: 32px 36px 24px; text-align: center; border-bottom: 1px solid #2a241c; background: linear-gradient(180deg, #1a1714 0%, #141414 100%);">
+              <span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #d6b67e; font-weight: 600; display: block; margin-bottom: 8px;">
                 MOROCCO PRIVATE CHAUFFEUR SERVICE
               </span>
-              <h1 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: #ffffff;">
-                Private Morocco Transfers
+              <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: #d6b67e; line-height: 1.25;">
+                <span style="color: #d6b67e;">Private Morocco Transfers</span>
               </h1>
             </td>
           </tr>
@@ -94,8 +96,8 @@ I would like to confirm availability and finalize my booking.`;
                     <span style="display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #d6b67e; margin-bottom: 4px;">
                       ${tripType}
                     </span>
-                    <h2 style="margin: 0; font-size: 19px; font-weight: 600; color: #ffffff; line-height: 1.3;">
-                      ${route}
+                    <h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #d6b67e; line-height: 1.3;">
+                      <span style="color: #d6b67e;">${route}</span>
                     </h2>
                   </td>
                 </tr>
@@ -131,13 +133,13 @@ I would like to confirm availability and finalize my booking.`;
                 <!-- Price Row -->
                 <tr>
                   <td style="padding: 24px; text-align: center; background: radial-gradient(circle at center, #262016 0%, #1a1a1a 100%);">
-                    <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #a5a5a5; display: block; margin-bottom: 6px;">
+                    <span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #d6b67e; display: block; margin-bottom: 6px; font-weight: 600;">
                       Guaranteed Fixed Price
                     </span>
                     <div style="font-size: 42px; font-weight: 700; color: #d6b67e; letter-spacing: -0.02em; line-height: 1;">
                       €${priceEur}
                     </div>
-                    <span style="font-size: 13px; color: #8c8c8c; display: block; margin-top: 6px;">
+                    <span style="font-size: 13px; color: #c4b091; display: block; margin-top: 6px;">
                       ≈ ${priceMad.toLocaleString()} MAD per private vehicle (not per person)
                     </span>
                   </td>

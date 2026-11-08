@@ -21,7 +21,7 @@ export function generateAdminAlertHtml(lead: QuoteLeadData): string {
   <div style="max-width: 580px; margin: 0 auto; background: #ffffff; border-radius: 10px; border: 1px solid #e4e4e7; overflow: hidden;">
     <div style="background: #18181b; padding: 20px 24px; color: #ffffff;">
       <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #d6b67e; font-weight: 600;">NEW WEBSITE LEAD</span>
-      <h2 style="margin: 4px 0 0; font-size: 18px; color: #ffffff;">Trip Quote: ${route} (€${priceEur})</h2>
+      <h2 style="margin: 4px 0 0; font-size: 18px; color: #d6b67e; font-weight: 700;">Trip Quote: ${route} (€${priceEur})</h2>
     </div>
 
     <div style="padding: 24px;">
