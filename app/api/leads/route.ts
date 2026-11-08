@@ -1,12 +1,16 @@
 import { NextResponse } from "next/server";
+import { processLead, QuoteLeadData } from "@/lib/email";
 
 /**
- * Receives the "Email me this quote" form from the trip finder.
+ * Receives the "Email me this quote" form from the Trip Finder.
  *
  * Body: { name, email, marketingConsent, consentText, createdAt, quote: {...}, source }
  *
- * Right now it validates the lead, logs it, and (if LEADS_WEBHOOK_URL is set) forwards it as JSON.
- * Swap the forwarding part for your email tool (Brevo, Mailchimp, Resend...) or database.
+ * Dispatches:
+ * 1. Branded luxury HTML quote email to the customer.
+ * 2. Instant lead notification to admin/dispatch.
+ * 3. Sync to Resend Audience/Marketing contacts if consent was given.
+ * 4. Webhook forwarding if LEADS_WEBHOOK_URL is set.
  */
 const isEmail = (v: unknown) => typeof v === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
 
@@ -22,25 +26,34 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "invalid_email" }, { status: 422 });
   }
 
-  const lead = {
+  const quote = typeof body.quote === "object" && body.quote !== null ? (body.quote as QuoteLeadData["quote"]) : null;
+
+  const lead: QuoteLeadData = {
     name: String(body.name ?? "").slice(0, 120),
     email: String(body.email).trim().toLowerCase(),
     marketingConsent: body.marketingConsent === true,
-    // keep the exact wording the person agreed to, and when (needed for GDPR proof of consent)
     consentText: body.marketingConsent === true ? String(body.consentText ?? "") : null,
-    consentAt: body.marketingConsent === true ? String(body.createdAt ?? new Date().toISOString()) : null,
-    quote: body.quote ?? null,
+    createdAt: String(body.createdAt ?? new Date().toISOString()),
+    quote,
     source: String(body.source ?? "trip_finder"),
-    receivedAt: new Date().toISOString(),
   };
 
+  // 1. Process email delivery and marketing audience sync via Resend
+  const emailResult = await processLead(lead);
+
+  // 2. Forward to external webhook if configured (Zapier, Make, Google Sheets)
   const hook = process.env.LEADS_WEBHOOK_URL;
   if (hook) {
-    const res = await fetch(hook, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(lead) });
-    if (!res.ok) return NextResponse.json({ ok: false, error: "forward_failed" }, { status: 502 });
-  } else {
-    console.log("[trip-finder lead]", JSON.stringify(lead));
+    try {
+      await fetch(hook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...lead, receivedAt: new Date().toISOString() }),
+      });
+    } catch (err) {
+      console.error("[leads webhook] Failed to forward:", err);
+    }
   }
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, email: emailResult });
 }
