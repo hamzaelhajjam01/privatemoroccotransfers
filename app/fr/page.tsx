@@ -166,9 +166,19 @@ export default function FrenchHomePage() {
               <Link href="/fr/transfers" className="btn btn-gold">
                 {"Toutes les liaisons"}
               </Link>
-              <Link href="/fr/city-to-city" className="btn btn-white">
-                {"Intervilles"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/fr/trip-finder"
+                  className="btn btn-white"
+                  title="Trouver un Trajet — Calculez votre itinéraire, véhicule et tarif fixe garanti en 30 secondes"
+                >
+                  {"Trouver un Trajet"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"Tarif Immédiat"}</span>
+                  <span>{"Trouvez votre trajet, véhicule & prix fixe"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">

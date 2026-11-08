@@ -106,9 +106,19 @@ export default function Home() {
               <Link href="/transfers" className="btn btn-gold">
                 {"Browse All Routes"}
               </Link>
-              <Link href="/city-to-city" className="btn btn-white">
-                {"City-to-City"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/trip-finder"
+                  className="btn btn-white"
+                  title="Interactive Trip Finder — Find your route, vehicle & get an instant fixed price quote in 30 seconds"
+                >
+                  {"Trip Finder"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"Instant Quote"}</span>
+                  <span>{"Find your route, vehicle & fixed price"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">

@@ -101,9 +101,19 @@ export default function ArabicHomePage() {
               <Link href="/ar/transfers" className="btn btn-gold">
                 {"جميع خطوط السير"}
               </Link>
-              <Link href="/ar/city-to-city" className="btn btn-white">
-                {"بين المدن"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/ar/trip-finder"
+                  className="btn btn-white"
+                  title="محدد الرحلات — احسب مسارك ونوع السيارة والسعر الثابت المضمون خلال 30 ثانية"
+                >
+                  {"محدد الرحلات"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"سعر فوري"}</span>
+                  <span>{"اختر مسارك، سيارتك واحصل على السعر الثابت"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">

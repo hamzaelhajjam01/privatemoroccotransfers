@@ -136,9 +136,19 @@ export default function PortugueseHomePage() {
               <Link href="/pt/transfers" className="btn btn-gold">
                 {"Ver todos os trajetos"}
               </Link>
-              <Link href="/pt/city-to-city" className="btn btn-white">
-                {"Entre Cidades"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/pt/trip-finder"
+                  className="btn btn-white"
+                  title="Planeador de Viagem — Calcule o seu trajeto, veículo e preço fixo garantido em 30 segundos"
+                >
+                  {"Planeador de Viagem"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"Preço Direto"}</span>
+                  <span>{"Encontre o seu trajeto, veículo & preço fixo"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">

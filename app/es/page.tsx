@@ -143,9 +143,19 @@ export default function SpanishHomePage() {
               <Link href="/es/transfers" className="btn btn-gold">
                 {"Ver todos los trayectos"}
               </Link>
-              <Link href="/es/city-to-city" className="btn btn-white">
-                {"Interurbanos"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/es/trip-finder"
+                  className="btn btn-white"
+                  title="Buscador de Viaje — Calcule su ruta, vehículo y precio fijo garantizado en 30 segundos"
+                >
+                  {"Buscador de Viaje"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"Precio Directo"}</span>
+                  <span>{"Encuentre su ruta, vehículo y precio fijo"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">

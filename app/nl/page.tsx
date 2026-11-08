@@ -136,9 +136,19 @@ export default function DutchHomePage() {
               <Link href="/nl/transfers" className="btn btn-gold">
                 {"Alle routes bekijken"}
               </Link>
-              <Link href="/nl/city-to-city" className="btn btn-white">
-                {"Stad naar Stad"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/nl/trip-finder"
+                  className="btn btn-white"
+                  title="Reisplanner — Bereken uw route, voertuig en gegarandeerde vaste prijs in 30 seconden"
+                >
+                  {"Reisplanner"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"Directe Prijs"}</span>
+                  <span>{"Vind uw route, voertuig & vaste prijs"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">

@@ -136,9 +136,19 @@ export default function ItalianHomePage() {
               <Link href="/it/transfers" className="btn btn-gold">
                 {"Tutti i tragitti"}
               </Link>
-              <Link href="/it/city-to-city" className="btn btn-white">
-                {"Interurbani"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/it/trip-finder"
+                  className="btn btn-white"
+                  title="Trova Viaggio — Calcola percorso, veicolo e tariffa fissa garantita in 30 secondi"
+                >
+                  {"Trova Viaggio"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"Tariffa Subito"}</span>
+                  <span>{"Trova tragitto, veicolo & tariffa fissa"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">

@@ -136,9 +136,19 @@ export default function GermanHomePage() {
               <Link href="/de/transfers" className="btn btn-gold">
                 {"Alle Strecken ansehen"}
               </Link>
-              <Link href="/de/city-to-city" className="btn btn-white">
-                {"Fernstrecken"}
-              </Link>
+              <div className="cta-tooltip-wrapper">
+                <Link
+                  href="/de/trip-finder"
+                  className="btn btn-white"
+                  title="Reise-Finder — Route, Fahrzeug und garantierten Festpreis in 30 Sekunden berechnen"
+                >
+                  {"Reise-Finder"}
+                </Link>
+                <div className="cta-tooltip" role="tooltip">
+                  <span className="cta-tooltip-badge">{"Sofortpreis"}</span>
+                  <span>{"Finden Sie Route, Fahrzeug & Festpreis"}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="booking-widget">
