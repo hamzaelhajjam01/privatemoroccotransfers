@@ -8,7 +8,6 @@ import CookieBanner from "@/components/CookieBanner";
 import SiteScripts from "@/components/SiteScripts";
 import Motion from "@/components/Motion";
 import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 import "./globals.css";
 
 const interTight = Inter_Tight({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-inter-tight" });
@@ -90,8 +89,6 @@ const jsonLd = {
       priceRange: "€30 - €380",
       currenciesAccepted: "EUR, MAD, USD, GBP",
       paymentAccepted: "Cash, Credit Card",
-      aggregateRating: SCHEMA_AGGREGATE_RATING,
-      review: SCHEMA_REVIEWS_EN,
       areaServed: [
         {
           "@type": "Country",

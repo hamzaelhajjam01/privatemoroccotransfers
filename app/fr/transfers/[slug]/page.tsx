@@ -188,25 +188,20 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
     ],
   };
 
-  const taxiServiceLd = {
+  const productLd = {
     "@context": "https://schema.org",
-    "@type": ["TaxiService", "TouristInformationCenter"],
+    "@type": "Product",
     name: `Transfert Privé de ${fromFr} à ${toFr}`,
     inLanguage: "fr",
     description: `Service de transfert privé avec chauffeur professionnel entre ${fromFr} et ${toFr}. Tarif garanti tout compris.`,
+    image: `${SITE_URL}/cars/mercedes-vito.webp`,
     url: `${SITE_URL}/fr/transfers/${route.slug}`,
-    provider: {
-      "@type": "LocalBusiness",
+    brand: {
+      "@type": "Brand",
       name: SITE_NAME,
-      telephone: `+${WHATSAPP_NUMBER}`,
-      url: SITE_URL,
     },
     aggregateRating: SCHEMA_AGGREGATE_RATING,
     review: SCHEMA_REVIEWS_FR,
-    areaServed: {
-      "@type": "Country",
-      name: "Morocco",
-    },
     offers: [
       {
         "@type": "Offer",
@@ -214,6 +209,7 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
         price: route.price_sedan,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/fr/transfers/${route.slug}`,
       },
       {
         "@type": "Offer",
@@ -221,6 +217,7 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
         price: route.price_van,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/fr/transfers/${route.slug}`,
       },
       {
         "@type": "Offer",
@@ -228,8 +225,28 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
         price: route.price_minibus,
         priceCurrency: "EUR",
         availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/fr/transfers/${route.slug}`,
       },
     ],
+  };
+
+  const taxiServiceLd = {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    name: `Service Chauffeur Privé ${fromFr} à ${toFr}`,
+    inLanguage: "fr",
+    description: `Service de transfert privé avec chauffeur professionnel entre ${fromFr} et ${toFr}.`,
+    url: `${SITE_URL}/fr/transfers/${route.slug}`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: SITE_NAME,
+      telephone: `+${WHATSAPP_NUMBER}`,
+      url: SITE_URL,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Morocco",
+    },
   };
 
   const frFaqs = [
@@ -271,6 +288,7 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
   return (
     <div lang="fr">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 

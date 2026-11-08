@@ -146,10 +146,51 @@ export default async function TransferRoutePage({ params }: Props) {
     ],
   };
 
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: route.h1 || `Private Transfer from ${route.from} to ${route.to}`,
+    description: route.seoDescription,
+    image: `${SITE_URL}/cars/mercedes-vito.webp`,
+    url: `${SITE_URL}/transfers/${route.slug}`,
+    brand: {
+      "@type": "Brand",
+      name: SITE_NAME,
+    },
+    aggregateRating: SCHEMA_AGGREGATE_RATING,
+    review: SCHEMA_REVIEWS_EN,
+    offers: [
+      {
+        "@type": "Offer",
+        name: `Comfort Sedan (1–4 pax) — ${route.from} to ${route.to}`,
+        price: route.price_sedan,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/transfers/${route.slug}`,
+      },
+      {
+        "@type": "Offer",
+        name: `Spacious Van (5–7 pax) — ${route.from} to ${route.to}`,
+        price: route.price_van,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/transfers/${route.slug}`,
+      },
+      {
+        "@type": "Offer",
+        name: `Private Minibus (8–14 pax) — ${route.from} to ${route.to}`,
+        price: route.price_minibus,
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/transfers/${route.slug}`,
+      },
+    ],
+  };
+
   const taxiServiceLd = {
     "@context": "https://schema.org",
-    "@type": ["TaxiService", "TouristInformationCenter"],
-    name: route.h1 || `Private Transfer from ${route.from} to ${route.to}`,
+    "@type": "TaxiService",
+    name: `Private Driver Service ${route.from} to ${route.to}`,
     description: route.seoDescription,
     url: `${SITE_URL}/transfers/${route.slug}`,
     provider: {
@@ -158,35 +199,10 @@ export default async function TransferRoutePage({ params }: Props) {
       telephone: `+${WHATSAPP_NUMBER}`,
       url: SITE_URL,
     },
-    aggregateRating: SCHEMA_AGGREGATE_RATING,
-    review: SCHEMA_REVIEWS_EN,
     areaServed: {
       "@type": "Country",
       name: "Morocco",
     },
-    offers: [
-      {
-        "@type": "Offer",
-        name: `Comfort Sedan (1–4 pax) — ${route.from} to ${route.to}`,
-        price: route.price_sedan,
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock",
-      },
-      {
-        "@type": "Offer",
-        name: `Spacious Van (5–7 pax) — ${route.from} to ${route.to}`,
-        price: route.price_van,
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock",
-      },
-      {
-        "@type": "Offer",
-        name: `Private Minibus (8–14 pax) — ${route.from} to ${route.to}`,
-        price: route.price_minibus,
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock",
-      },
-    ],
   };
 
   const faqLd =
@@ -208,6 +224,7 @@ export default async function TransferRoutePage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiServiceLd) }} />
       {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
 

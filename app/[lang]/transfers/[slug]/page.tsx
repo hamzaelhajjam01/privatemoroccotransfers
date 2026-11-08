@@ -334,6 +334,24 @@ export default async function LocalizedRoutePage({ params }: Props) {
         ],
       },
       {
+        "@type": "Product",
+        name: u.h1(fromName, toName),
+        image: `${SITE_URL}/cars/mercedes-vito.webp`,
+        url: `${SITE_URL}/${lang}/transfers/${route.slug}`,
+        brand: {
+          "@type": "Brand",
+          name: SITE_NAME,
+        },
+        aggregateRating: SCHEMA_AGGREGATE_RATING,
+        offers: {
+          "@type": "Offer",
+          price: route.price_sedan,
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/${lang}/transfers/${route.slug}`,
+        },
+      },
+      {
         "@type": "TaxiService",
         name: u.h1(fromName, toName),
         provider: {
@@ -341,11 +359,9 @@ export default async function LocalizedRoutePage({ params }: Props) {
           name: SITE_NAME,
           url: SITE_URL,
         },
-        aggregateRating: SCHEMA_AGGREGATE_RATING,
-        offers: {
-          "@type": "Offer",
-          price: route.price_sedan,
-          priceCurrency: "EUR",
+        areaServed: {
+          "@type": "Country",
+          name: "Morocco",
         },
       },
     ],
