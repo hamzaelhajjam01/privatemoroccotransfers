@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Become a Partner Driver | Private Morocco Transfers" },
   description: "Professional driver in Morocco? Join our partner network and receive international bookings for airport transfers, day trips and tours.",
+  alternates: {
+    canonical: `${SITE_URL}/become-a-driver`,
+  },
 };
 
 export default function BecomeADriverPage() {

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Cookie Policy | Private Morocco Transfers" },
   description: "How Private Morocco Transfers uses cookies on this website.",
+  alternates: {
+    canonical: `${SITE_URL}/cookie`,
+  },
 };
 
 export default function CookiePage() {

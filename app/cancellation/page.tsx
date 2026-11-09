@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Cancellation Policy | Private Morocco Transfers" },
   description: "Free cancellation up to 48 hours before pickup. Full cancellation policy for private driver bookings in Morocco.",
+  alternates: {
+    canonical: `${SITE_URL}/cancellation`,
+  },
 };
 
 export default function CancellationPage() {

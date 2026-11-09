@@ -64,12 +64,12 @@ I would like to confirm availability and finalize my booking.`;
           
           <!-- Brand Header -->
           <tr>
-            <td style="padding: 32px 36px 24px; text-align: center; border-bottom: 1px solid #2a241c; background: linear-gradient(180deg, #1a1714 0%, #141414 100%);">
-              <span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #d6b67e; font-weight: 600; display: block; margin-bottom: 8px;">
+            <td bgcolor="#141414" style="padding: 32px 36px 24px; text-align: center; border-bottom: 1px solid #2a241c; background-color: #141414;">
+              <span style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #d6b67e !important; -webkit-text-fill-color: #d6b67e !important; font-weight: 600; display: block; margin-bottom: 8px;">
                 MOROCCO PRIVATE CHAUFFEUR SERVICE
               </span>
-              <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: #d6b67e; line-height: 1.25;">
-                <span style="color: #d6b67e;">Private Morocco Transfers</span>
+              <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: #d6b67e !important; -webkit-text-fill-color: #d6b67e !important; line-height: 1.25;">
+                <span style="color: #d6b67e !important; -webkit-text-fill-color: #d6b67e !important; display: inline-block;">Private Morocco Transfers</span>
               </h1>
             </td>
           </tr>

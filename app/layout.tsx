@@ -30,9 +30,6 @@ export const metadata: Metadata = {
     "Essaouira to Marrakech taxi",
     "private taxi Morocco",
   ],
-  alternates: {
-    canonical: SITE_URL,
-  },
   openGraph: {
     siteName: "Private Morocco Transfers",
     type: "website",

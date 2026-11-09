@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Support & Help Center | Private Morocco Transfers" },
   description: "Help with bookings, prices, cancellations, airport transfers and vehicles. Contact our team on WhatsApp.",
+  alternates: {
+    canonical: `${SITE_URL}/support`,
+  },
 };
 
 export default function SupportPage() {

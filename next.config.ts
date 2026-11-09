@@ -7,6 +7,17 @@ const nextConfig: NextConfig = {
   // Old .html links keep working after the move to Next.js
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "privatemoroccotransfers.com",
+          },
+        ],
+        destination: "https://www.privatemoroccotransfers.com/:path*",
+        permanent: true,
+      },
       { source: "/index.html", destination: "/", permanent: true },
       { source: "/city-to-city.html", destination: "/city-to-city", permanent: true },
       { source: "/city-:slug.html", destination: "/cities/:slug", permanent: true },
