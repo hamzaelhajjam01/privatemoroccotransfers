@@ -247,6 +247,11 @@ export default function Footer() {
         <div className="footer-col">
           <h4>{t.colServices}</h4>
           <ul>
+            {currentLang === "en" && (
+              <li>
+                <Link href="/private-driver">{"Private Driver"}</Link>
+              </li>
+            )}
             <li>
               <Link href={getUrl("/airport-transfers")}>{t.airportTransfers}</Link>
             </li>

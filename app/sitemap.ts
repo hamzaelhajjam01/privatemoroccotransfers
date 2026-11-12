@@ -19,6 +19,7 @@ const STATIC_HUBS = [
   { path: "/airport-transfers", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/city-to-city", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/day-trips", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/private-driver", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/multi-day-tours", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/calculator", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/fleet", priority: 0.8, changeFrequency: "monthly" as const },
