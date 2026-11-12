@@ -257,7 +257,7 @@ export default function Footer() {
               <Link href={getUrl("/day-trips")}>{t.dayTrips}</Link>
             </li>
             <li>
-              <Link href="/multi-day-tours">{t.privateTours}</Link>
+              <Link href={getUrl("/multi-day-tours")}>{t.privateTours}</Link>
             </li>
             <li>
               <Link href={getUrl("/transfers")}>{t.allRoutes}</Link>
@@ -349,12 +349,7 @@ export default function Footer() {
             </li>
           </ul>
           <div className="footer-social">
-            <Link
-              href={getUrl("/multi-day-tours")}
-              title="Multi-Day Private Tours Morocco"
-            >
-              {"Multi-Day Private Tours ↗"}
-            </Link>
+            <Link href={getUrl("/multi-day-tours")}>{t.privateTours}</Link>
           </div>
         </div>
       </div>

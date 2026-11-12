@@ -101,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  const LOCALIZED_HUBS = ["airport-transfers", "city-to-city", "day-trips", "trip-finder", "fleet", "calculator", "faq", "about", "contact"];
+  const LOCALIZED_HUBS = ["airport-transfers", "city-to-city", "day-trips", "multi-day-tours", "trip-finder", "fleet", "calculator", "faq", "about", "contact"];
   const ALL_LANGS = ["fr", "es", "it", "de", "ar", "pt", "nl"];
 
   const localizedHubEntries: MetadataRoute.Sitemap = ALL_LANGS.flatMap((lang) =>
