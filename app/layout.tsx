@@ -69,7 +69,7 @@ const jsonLd = {
       "@type": ["TaxiService", "LocalBusiness"],
       "@id": `${SITE_URL}/#service`,
       name: "Private Morocco Transfers",
-      alternateName: "Morocco Private Transfers",
+      alternateName: ["PMT", "PMT Private Morocco Transfers"],
       url: SITE_URL,
       telephone: `+${WHATSAPP_NUMBER}`,
       email: "contact@privatemoroccotransfers.com",

@@ -349,14 +349,12 @@ export default function Footer() {
             </li>
           </ul>
           <div className="footer-social">
-            <a
-              href="https://roammorocco.tours"
-              target="_blank"
-              rel="noopener"
-              title="Desert Tours Partner"
+            <Link
+              href={getUrl("/multi-day-tours")}
+              title="Multi-Day Private Tours Morocco"
             >
-              {"Partner: Roam Morocco Tours ↗"}
-            </a>
+              {"Multi-Day Private Tours ↗"}
+            </Link>
           </div>
         </div>
       </div>

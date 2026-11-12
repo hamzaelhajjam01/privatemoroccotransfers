@@ -108,16 +108,16 @@ export default function Content() {
             {"Looking for a Sahara Desert Expedition?"}
           </p>
           <span style={{ fontSize: "14px", color: "var(--muted)" }}>
-            {"Multi-day private road trips and luxury desert camps with Roam Morocco Tours."}
+            {"Multi-day private road trips and luxury desert glamping with dedicated private drivers."}
           </span>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <Link href="/transfers/marrakech-to-merzouga" className="btn btn-white" style={{ minWidth: "0", padding: "12px 20px" }}>
             {"Direct Transfer (€360)"}
           </Link>
-          <a href="https://roammorocco.tours" target="_blank" rel="noopener" className="btn btn-gold" style={{ minWidth: "0", padding: "12px 20px" }}>
-            {"3-Day Desert Tour ↗"}
-          </a>
+          <Link href="/multi-day-tours" className="btn btn-gold" style={{ minWidth: "0", padding: "12px 20px" }}>
+            {"Multi-Day Tours ↗"}
+          </Link>
         </div>
       </div>
       <section className="section" style={{ background: "var(--grey-100)" }}>

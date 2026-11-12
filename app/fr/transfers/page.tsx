@@ -177,7 +177,7 @@ export default function FrenchTransfersDirectoryPage() {
         </div>
       </section>
 
-      {/* Desert Tours Cross-Promotion */}
+      {/* Section Circuits Privés & Désert */}
       <section className="section dark" style={{ borderTop: "1px solid var(--rule-dark)" }}>
         <div className="container">
           <div style={{ maxWidth: "780px" }}>
@@ -185,7 +185,7 @@ export default function FrenchTransfersDirectoryPage() {
               className="section-label"
               style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}
             >
-              Partenaire Voyages · Expéditions Désert
+              Circuits Privés · Expéditions Désert
             </span>
             <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
               Vous rêvez des dunes dorées du Sahara ou d'un grand tour du Maroc ?
@@ -194,19 +194,16 @@ export default function FrenchTransfersDirectoryPage() {
               className="statement muted"
               style={{ fontSize: "18px", lineHeight: 1.45, marginBottom: "28px" }}
             >
-              Pour vos projets d'itinéraires complets de 3 à 10 jours avec bivouac de luxe dans le désert de Merzouga, notre agence sœur{" "}
-              <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> conçoit des circuits privés exclusifs avec chauffeurs-guides francophones.
+              Pour vos projets d'itinéraires complets de 3 à 10 jours avec bivouac de luxe dans le désert de Merzouga, notre équipe conçoit des circuits privés exclusifs avec chauffeurs-guides professionnels.
             </p>
             <div>
-              <a
-                href="https://roammorocco.tours"
-                target="_blank"
-                rel="noopener"
+              <Link
+                href="/multi-day-tours"
                 className="btn btn-white"
                 style={{ minWidth: "240px" }}
               >
-                Découvrir Roam Morocco
-              </a>
+                Découvrir Nos Circuits Privés
+              </Link>
             </div>
           </div>
         </div>

@@ -158,31 +158,28 @@ export default function TransfersDirectoryPage() {
         </div>
       </section>
 
-      {/* Partner Tour Promo (Storey Architecture Dark Section) */}
+      {/* Multi-Day Desert & Imperial Cities Tours Section */}
       <section className="section dark" style={{ borderTop: "1px solid var(--rule-dark)" }}>
         <div className="container">
           <div style={{ maxWidth: "780px" }}>
             <span className="section-label" style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}>
-              Sahara Desert Expeditions · Partner Agency
+              Sahara Desert Expeditions · Custom Circuits
             </span>
             <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
               Looking for multi-day desert tours across Morocco?
             </h2>
             <p className="statement muted" style={{ fontSize: "18px", lineHeight: 1.45, marginBottom: "28px" }}>
-              Need more than point-to-point transfers? Discover curated 3-to-10 day private circuits through the High Atlas,
-              Ait Benhaddou, Todra Gorge, and luxury desert glamping in Erg Chebbi with our partner{" "}
-              <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong>.
+              Need more than point-to-point transfers? Discover curated 3-to-10 day private road trips through the High Atlas,
+              Ait Benhaddou, Todra Gorge, and luxury desert glamping in Erg Chebbi with our dedicated private chauffeur team.
             </p>
             <div>
-              <a
-                href="https://roammorocco.tours"
-                target="_blank"
-                rel="noopener"
+              <Link
+                href="/multi-day-tours"
                 className="btn btn-white"
                 style={{ minWidth: "240px" }}
               >
-                Explore Roam Morocco
-              </a>
+                Explore Multi-Day Tours
+              </Link>
             </div>
           </div>
         </div>

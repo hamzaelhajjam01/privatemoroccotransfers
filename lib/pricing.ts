@@ -111,7 +111,7 @@ function parseHours(durStr: string): number {
   return 1;
 }
 
-/** Distance matrix fallback for city pairs when not directly in Roam Morocco routes list */
+/** Distance matrix fallback for city pairs when not directly in standard routes list */
 const DISTANCE_MATRIX: Record<string, number> = {
   "marrakech-essaouira": 180,
   "marrakech-agadir": 240,
@@ -210,7 +210,7 @@ export function quote(
         break;
     }
   } else {
-    // Dynamic fallback calibrated to Roam Morocco market rates
+    // Dynamic fallback calibrated to market rates
     const fromC = cleanCity(from);
     const toC = cleanCity(to);
     const pairKey1 = `${fromC}-${toC}`;

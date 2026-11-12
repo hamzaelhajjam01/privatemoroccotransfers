@@ -749,29 +749,27 @@ export default async function TransferRoutePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Sister Agency Partner Block (Storey Architecture Dark Section) */}
+      {/* Multi-Day Tours Section */}
       <section className="section dark" style={{ borderTop: "1px solid var(--rule-dark)" }}>
         <div className="container">
           <div style={{ maxWidth: "780px" }}>
             <span className="section-label" style={{ color: "var(--muted)", marginBottom: "16px", display: "inline-block" }}>
-              Morocco Travel Partner · Desert Expeditions
+              Sahara Desert Expeditions · Multi-Day Road Trips
             </span>
             <h2 className="heading-lg" style={{ color: "var(--white)", marginBottom: "20px" }}>
               Planning a Sahara desert tour or multi-day itinerary?
             </h2>
             <p className="statement muted" style={{ fontSize: "18px", lineHeight: 1.45, marginBottom: "28px" }}>
-              Looking beyond single transfer legs? Our sister agency <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong> organizes immersive 3-to-10 day private road trips through the High Atlas, Ait Benhaddou, and luxury desert glamping in the golden dunes of Merzouga.
+              Looking beyond single transfer legs? We organize immersive 3-to-10 day private road trips through the High Atlas, Ait Benhaddou, and luxury desert glamping in the golden dunes of Merzouga with dedicated private chauffeurs.
             </p>
             <div>
-              <a
-                href="https://roammorocco.tours"
-                target="_blank"
-                rel="noopener"
+              <Link
+                href="/multi-day-tours"
                 className="btn btn-white"
                 style={{ minWidth: "240px" }}
               >
-                Explore Roam Morocco
-              </a>
+                Explore Multi-Day Tours
+              </Link>
             </div>
           </div>
         </div>
