@@ -4815,51 +4815,6 @@
     "popular": false
   },
   {
-    "slug": "marrakech-to-marrakech",
-    "from": "Marrakech",
-    "to": "Marrakech",
-    "fromRaw": "Marrakech",
-    "toRaw": "Marrakech",
-    "distance": "10 km",
-    "duration": "20 min",
-    "price_sedan": 30,
-    "price_van": 40,
-    "price_minibus": 60,
-    "highway": "Scenic Moroccan Highway",
-    "highlights": [
-      "Private door-to-door transfer in a dedicated, air-conditioned vehicle",
-      "Professional licensed Moroccan chauffeur with fluent English and French",
-      "All highway tolls, fuel, parking, and luggage assistance included in flat rate",
-      "Free infant, toddler, or child booster seats available on request"
-    ],
-    "faqs": [
-      {
-        "q": "How much does a private transfer from Marrakech to Marrakech cost?",
-        "a": "A private transfer from Marrakech to Marrakech starts at €30 for a private comfort sedan (1–4 passengers), €40 for a spacious van (5–7 passengers), and €60 for a private minibus (8–14 passengers). All rates are flat per vehicle, including fuel, highway tolls, and luggage care."
-      },
-      {
-        "q": "How long does the drive between Marrakech and Marrakech take?",
-        "a": "The drive covers approximately 10 km and takes about 20 min in our private vehicle. Unlike crowded group buses or train connections, you enjoy a direct, door-to-door journey without unscheduled detours."
-      },
-      {
-        "q": "Can we stop for photos, coffee, or lunch along the way?",
-        "a": "Yes! Because this is a 100% private chauffeur service, you set the pace. Your driver will gladly pause at scenic panoramic viewpoints, clean highway rest areas for fresh orange juice or Moroccan mint tea, or local cooperatives upon request."
-      },
-      {
-        "q": "Are child safety seats available?",
-        "a": "Yes, we provide certified ISOFIX infant car seats and child booster seats free of charge. Simply let us know your children's ages when confirming your booking via WhatsApp."
-      },
-      {
-        "q": "How do I book and pay for this transfer?",
-        "a": "You can reserve instantly via WhatsApp with zero prepayment for bookings of 3,300 MAD (€300) or less (pay in cash directly to your driver upon arrival). Bookings exceeding 3,300 MAD (€300) require a 30% confirmation deposit. Plus, enjoy a 10% discount on your return trip when booking round-trip transfers."
-      }
-    ],
-    "seoTitle": "Private Transfer Marrakech to Marrakech | Fixed Price €30 | Private Morocco Transfers",
-    "seoDescription": "Book a private transfer from Marrakech to Marrakech with Private Morocco Transfers. Fixed rate €30, licensed professional chauffeur, air-conditioned vehicle, door-to-door service.",
-    "h1": "Private Transfer from Marrakech to Marrakech",
-    "popular": false
-  },
-  {
     "slug": "marrakech-to-palmeraie-marrakech",
     "from": "Marrakech",
     "to": "Palmeraie (Marrakech)",

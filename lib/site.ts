@@ -35,26 +35,36 @@ const TITLE_PREFIX: Record<string, string> = {
   nl: "Transfer",
 };
 
+// Per-language "to" connector. Keeps each language's route titles in its own
+// words (no English "to" in a German title) and makes titles distinct across
+// languages, so the same route no longer shares one title in 5 languages.
+const TITLE_CONNECTOR: Record<string, string> = {
+  en: "to",
+  fr: "vers",
+  es: "a",
+  it: "a",
+  de: "nach",
+  pt: "para",
+  nl: "naar",
+  ar: "←",
+};
+
 function compactPlace(name: string): string {
   return name.replace(/\s*\([^)]*\)/g, "").trim();
 }
 
-/** Keeps route meta titles under ~65 characters while preserving route endpoints, rate, and brand. */
+/**
+ * Route meta title: "{prefix} {from} {connector} {to} €{price}".
+ * No brand suffix on route pages — the route and rate are the keywords, and the
+ * 28-char brand suffix pushed most titles past Google's ~60-char display cap.
+ */
 export function buildRouteMetaTitle(from: string, to: string, priceEur: number, lang: string = "en"): string {
   const prefix = TITLE_PREFIX[lang] || "Transfer";
-  const arrow = lang === "ar" ? "←" : "to";
-  const full = `${prefix} ${from} ${arrow} ${to} €${priceEur} | ${SITE_NAME}`;
-  if (full.length <= 65) return full;
+  const conn = TITLE_CONNECTOR[lang] || "to";
+  const full = `${prefix} ${from} ${conn} ${to} €${priceEur}`;
+  if (full.length <= 60) return full;
 
-  const fShort = compactPlace(from);
-  const tShort = compactPlace(to);
-  const withPrefix = `${prefix} ${fShort} → ${tShort} €${priceEur} | ${SITE_NAME}`;
-  if (withPrefix.length <= 65) return withPrefix;
-
-  const concise = `${fShort} → ${tShort} €${priceEur} | ${SITE_NAME}`;
-  if (concise.length <= 65) return concise;
-
-  return `${fShort} → ${tShort} €${priceEur}`;
+  return `${prefix} ${compactPlace(from)} ${conn} ${compactPlace(to)} €${priceEur}`;
 }
 
 export function whatsappUrl(message: string) {
