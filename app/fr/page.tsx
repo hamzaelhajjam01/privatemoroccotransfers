@@ -394,31 +394,29 @@ export default function FrenchHomePage() {
 
       <Reviews items={FRENCH_REVIEWS} />
 
-      {/* Partner Banner */}
+      {/* Multi-Day Tours Banner */}
       <section className="section" style={{ background: "#0a0a0a", borderTop: "1px solid var(--rule-dark)", borderBottom: "1px solid var(--rule-dark)" }}>
         <div className="wrap">
           <div style={{ maxWidth: "860px", margin: "0 auto", padding: "40px 0" }}>
             <span style={{ fontFamily: "var(--mono)", fontSize: "12px", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--gold)" }}>
-              {"Partenaire Voyage Maroc · Expéditions Sahara"}
+              {"Circuits privés · Expéditions Sahara"}
             </span>
             <h2 className="huge" style={{ color: "var(--white)", marginTop: "16px", marginBottom: "20px" }}>
               {"Vous préparez un circuit dans le désert ou un voyage itinérant ?"}
             </h2>
             <p className="statement muted" style={{ marginBottom: "28px" }}>
-              {"Pour les séjours de 3 à 10 jours combinant le Haut Atlas, les gorges du Dadès, Aït Ben Haddou et le bivouac de luxe dans les dunes de Merzouga, notre agence sœur "}
-              <strong style={{ color: "var(--white)" }}>Roam Morocco Tours</strong>
-              {" conçoit des itinéraires privés entièrement personnalisés."}
+              {"Pour les séjours de 3 à 10 jours combinant le Haut Atlas, les gorges du Dadès, Aït Ben Haddou et le bivouac dans les dunes de Merzouga, "}
+              <strong style={{ color: "var(--white)" }}>{SITE_NAME}</strong>
+              {" organise des circuits privés avec votre propre chauffeur et un itinéraire entièrement personnalisé."}
             </p>
             <div>
-              <a
-                href="https://roammorocco.tours"
-                target="_blank"
-                rel="noopener"
+              <Link
+                href="/multi-day-tours"
                 className="btn btn-white no-ring"
                 style={{ padding: "14px 28px", fontSize: "15px" }}
               >
-                {"Découvrir Roam Morocco Tours"}
-              </a>
+                {"Voir nos circuits privés"}
+              </Link>
             </div>
           </div>
         </div>

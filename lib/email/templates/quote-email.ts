@@ -214,7 +214,7 @@ I would like to confirm availability and finalize my booking.`;
               </p>
               <p style="margin: 0; font-size: 11px; color: #404040; line-height: 1.4;">
                 You received this email because you requested a quote on our website.<br>
-                ${lead.marketingConsent ? "You also opted in to receive travel updates and tips from Morocco Private Transfers." : ""}
+                ${lead.marketingConsent ? `You also opted in to receive travel updates and tips from ${SITE_NAME}.` : ""}
               </p>
             </td>
           </tr>
