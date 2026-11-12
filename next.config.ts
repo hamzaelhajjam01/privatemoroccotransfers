@@ -4,13 +4,6 @@ const nextConfig: NextConfig = {
   experimental: {
     cpus: 4,
   },
-  // Serve the AI-crawler text files as UTF-8 so €, – and accents are not garbled
-  async headers() {
-    return ["/llms.txt", "/llms-full.txt"].map((source) => ({
-      source,
-      headers: [{ key: "Content-Type", value: "text/plain; charset=utf-8" }],
-    }));
-  },
   // Old .html links keep working after the move to Next.js
   async redirects() {
     return [
