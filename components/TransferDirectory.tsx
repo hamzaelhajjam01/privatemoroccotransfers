@@ -6,7 +6,7 @@ import Icon from "./Icon";
 import { EUR_RATE } from "@/lib/pricing";
 import { whatsappUrl } from "@/lib/site";
 import { getLocalizedPlace, type LanguageCode } from "@/lib/i18n";
-import type { RouteItem } from "@/app/transfers/[slug]/page";
+import type { RouteItem } from "@/app/(en)/transfers/[slug]/page";
 
 const CITIES = [
   "All",
