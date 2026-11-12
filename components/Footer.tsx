@@ -4,13 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "./Icon";
 import { getLangFromPathname, LanguageCode } from "@/lib/i18n";
-import { WHATSAPP_NUMBER } from "@/lib/site";
+import { WHATSAPP_NUMBER, GBP_REVIEW_URL } from "@/lib/site";
 
 const FOOTER_I18N: Record<
   LanguageCode,
   {
     colServices: string;
     colCompany: string;
+    leaveReview: string;
     colCities: string;
     colContact: string;
     airportTransfers: string;
@@ -36,6 +37,7 @@ const FOOTER_I18N: Record<
   en: {
     colServices: "Services",
     colCompany: "Company",
+    leaveReview: "Leave a Google review",
     colCities: "Cities",
     colContact: "Get in Touch",
     airportTransfers: "Airport Transfers",
@@ -60,6 +62,7 @@ const FOOTER_I18N: Record<
   fr: {
     colServices: "Services",
     colCompany: "Entreprise",
+    leaveReview: "Laisser un avis Google",
     colCities: "Villes",
     colContact: "Contact",
     airportTransfers: "Transferts Aéroport",
@@ -84,6 +87,7 @@ const FOOTER_I18N: Record<
   es: {
     colServices: "Servicios",
     colCompany: "Empresa",
+    leaveReview: "Deje una reseña en Google",
     colCities: "Ciudades",
     colContact: "Contacto",
     airportTransfers: "Traslados de Aeropuerto",
@@ -108,6 +112,7 @@ const FOOTER_I18N: Record<
   it: {
     colServices: "Servizi",
     colCompany: "Azienda",
+    leaveReview: "Lascia una recensione Google",
     colCities: "Città",
     colContact: "Contatto",
     airportTransfers: "Transfer Aeroporto",
@@ -132,6 +137,7 @@ const FOOTER_I18N: Record<
   de: {
     colServices: "Leistungen",
     colCompany: "Unternehmen",
+    leaveReview: "Google-Bewertung abgeben",
     colCities: "Städte",
     colContact: "Kontakt",
     airportTransfers: "Flughafentransfers",
@@ -156,6 +162,7 @@ const FOOTER_I18N: Record<
   ar: {
     colServices: "الخدمات",
     colCompany: "عن الشركة",
+    leaveReview: "اترك تقييماً على Google",
     colCities: "المدن",
     colContact: "تواصل معنا",
     airportTransfers: "استقبال وتوصيل المطارات",
@@ -180,6 +187,7 @@ const FOOTER_I18N: Record<
   pt: {
     colServices: "Serviços",
     colCompany: "Empresa",
+    leaveReview: "Deixe uma avaliação no Google",
     colCities: "Cidades",
     colContact: "Contacto",
     airportTransfers: "Transfers de Aeroporto",
@@ -204,6 +212,7 @@ const FOOTER_I18N: Record<
   nl: {
     colServices: "Diensten",
     colCompany: "Bedrijf",
+    leaveReview: "Laat een Google-review achter",
     colCities: "Steden",
     colContact: "Contact",
     airportTransfers: "Luchthaventransfers",
@@ -355,6 +364,9 @@ export default function Footer() {
           </ul>
           <div className="footer-social">
             <Link href={getUrl("/multi-day-tours")}>{t.privateTours}</Link>
+            <a href={GBP_REVIEW_URL} target="_blank" rel="noopener">
+              {t.leaveReview}
+            </a>
           </div>
         </div>
       </div>

@@ -9,10 +9,10 @@ import {
   whatsappUrl,
   buildMultilingualAlternates,
   buildRouteMetaTitle,
+  buildRouteMetaDescription,
 } from "@/lib/site";
 import { buildDirectionalRouteCopy } from "@/lib/route-copy";
 import { EUR_RATE } from "@/lib/pricing";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 import Icon from "@/components/Icon";
 import VehiclePriceTag from "@/components/VehiclePriceTag";
 import StickyMobileBookingBar from "@/components/StickyMobileBookingBar";
@@ -99,7 +99,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const toFr = getFrPlace(route.to);
 
   const title = buildRouteMetaTitle(fromFr, toFr, route.price_sedan, "fr");
-  const description = `Réservez votre transfert privé de ${fromFr} à ${toFr} avec ${SITE_NAME}. Tarif fixe garanti €${route.price_sedan}, chauffeur professionnel bilingue, accueil aéroport ou hôtel, péages et carburant inclus, 0% d'acompte. WhatsApp 24/7.`;
+  const description = buildRouteMetaDescription(fromFr, toFr, route.price_sedan, "fr");
   const canonicalUrl = `${SITE_URL}/fr/transfers/${route.slug}`;
 
   return {
@@ -190,18 +190,16 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
 
   const productLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     name: `Transfert Privé de ${fromFr} à ${toFr}`,
     inLanguage: "fr",
     description: `Service de transfert privé avec chauffeur professionnel entre ${fromFr} et ${toFr}. Tarif garanti tout compris.`,
     image: `${SITE_URL}/cars/mercedes-vito.webp`,
     url: `${SITE_URL}/fr/transfers/${route.slug}`,
-    brand: {
-      "@type": "Brand",
-      name: SITE_NAME,
-    },
-    aggregateRating: SCHEMA_AGGREGATE_RATING,
-    review: SCHEMA_REVIEWS_FR,
+    provider: {
+        "@type": "LocalBusiness",
+        name: SITE_NAME,
+      },
     offers: [
       {
         "@type": "Offer",

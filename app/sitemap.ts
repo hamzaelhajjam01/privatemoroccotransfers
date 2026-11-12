@@ -58,7 +58,8 @@ const BLOG_SLUGS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // Stable content date, not build time, so Google isn't told every URL changed on each deploy.
+  const now = new Date("2026-11-12");
 
   const hubs: MetadataRoute.Sitemap = STATIC_HUBS.map((h) => ({
     url: `${SITE_URL}${h.path}`,

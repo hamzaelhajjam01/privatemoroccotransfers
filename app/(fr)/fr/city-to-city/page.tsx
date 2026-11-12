@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Transferts Intervilles Maroc — Prix Fixes Garantis" },
@@ -20,13 +19,13 @@ const jsonLd = {
       ],
     },
     {
-      "@type": "Product",
+      "@type": "Service",
       name: "Transferts Intervilles au Maroc",
       description: "Liaisons privées directes de ville à ville au Maroc avec chauffeurs professionnels agréés, carburant et péages inclus.",
       image: `${SITE_URL}/cars/mercedes-vito.webp`,
       url: `${SITE_URL}/fr/city-to-city`,
-      brand: {
-        "@type": "Brand",
+      provider: {
+        "@type": "LocalBusiness",
         name: SITE_NAME,
       },
       offers: {
@@ -38,8 +37,6 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/fr/city-to-city`,
       },
-      aggregateRating: SCHEMA_AGGREGATE_RATING,
-      review: SCHEMA_REVIEWS_FR,
     },
     {
       "@type": "TaxiService",

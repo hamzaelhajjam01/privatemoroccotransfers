@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Day Trips from Marrakech & Morocco | Private Morocco Transfers" },
@@ -20,13 +19,13 @@ const jsonLd = {
       ],
     },
     {
-      "@type": "Product",
+      "@type": "Service",
       name: "Morocco Private Day Trips",
       description: "Full-day private driver excursions across Morocco with door-to-door hotel pickup, scenic stops, and flexible schedules.",
       image: `${SITE_URL}/cars/mercedes-vito.webp`,
       url: `${SITE_URL}/day-trips`,
-      brand: {
-        "@type": "Brand",
+      provider: {
+        "@type": "LocalBusiness",
         name: SITE_NAME,
       },
       offers: {
@@ -38,8 +37,6 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/day-trips`,
       },
-      aggregateRating: SCHEMA_AGGREGATE_RATING,
-      review: SCHEMA_REVIEWS_EN,
     },
     {
       "@type": "TouristInformationCenter",

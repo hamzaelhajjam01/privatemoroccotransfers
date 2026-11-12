@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Excursions à la Journée Maroc — Chauffeur Privé" },
@@ -20,13 +19,13 @@ const jsonLd = {
       ],
     },
     {
-      "@type": "Product",
+      "@type": "Service",
       name: "Excursions Privées d'une Journée au Maroc",
       description: "Excursions privées d'une journée avec chauffeur dédié, prise en charge à l'hôtel, arrêts panoramiques et retour le soir.",
       image: `${SITE_URL}/cars/mercedes-vito.webp`,
       url: `${SITE_URL}/fr/day-trips`,
-      brand: {
-        "@type": "Brand",
+      provider: {
+        "@type": "LocalBusiness",
         name: SITE_NAME,
       },
       offers: {
@@ -38,8 +37,6 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/fr/day-trips`,
       },
-      aggregateRating: SCHEMA_AGGREGATE_RATING,
-      review: SCHEMA_REVIEWS_FR,
     },
     {
       "@type": "TouristInformationCenter",

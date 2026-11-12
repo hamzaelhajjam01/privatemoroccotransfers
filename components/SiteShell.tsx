@@ -7,7 +7,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieBanner from "@/components/CookieBanner";
 import SiteScripts from "@/components/SiteScripts";
 import Motion from "@/components/Motion";
-import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_URL, WHATSAPP_NUMBER, SOCIAL_LINKS } from "@/lib/site";
 import "@/app/globals.css";
 import type { LanguageCode } from "@/lib/i18n";
 
@@ -71,6 +71,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#service`,
       name: "Private Morocco Transfers",
       alternateName: ["PMT", "PMT Private Morocco Transfers"],
+      sameAs: SOCIAL_LINKS,
       url: SITE_URL,
       telephone: `+${WHATSAPP_NUMBER}`,
       email: "contact@privatemoroccotransfers.com",

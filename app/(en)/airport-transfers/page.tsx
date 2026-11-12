@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Airport Transfers Morocco — Fixed Rates & Flight Tracking" },
@@ -20,13 +19,13 @@ const jsonLd = {
       ],
     },
     {
-      "@type": "Product",
+      "@type": "Service",
       name: "Morocco Airport Transfers",
       description: "Guaranteed fixed-price private airport transfers across Morocco with flight tracking and 45-min free wait time included.",
       image: `${SITE_URL}/cars/mercedes-vito.webp`,
       url: `${SITE_URL}/airport-transfers`,
-      brand: {
-        "@type": "Brand",
+      provider: {
+        "@type": "LocalBusiness",
         name: SITE_NAME,
       },
       offers: {
@@ -38,8 +37,6 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/airport-transfers`,
       },
-      aggregateRating: SCHEMA_AGGREGATE_RATING,
-      review: SCHEMA_REVIEWS_EN,
     },
     {
       "@type": "TaxiService",

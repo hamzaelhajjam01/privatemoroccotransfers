@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Private Driver in Morocco — Hire a Chauffeur, Fixed Prices" },
@@ -87,8 +86,6 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/private-driver`,
       },
-      aggregateRating: SCHEMA_AGGREGATE_RATING,
-      review: SCHEMA_REVIEWS_EN,
     },
     {
       "@type": "FAQPage",

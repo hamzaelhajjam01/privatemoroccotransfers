@@ -8,10 +8,10 @@ import {
   whatsappUrl,
   buildMultilingualAlternates,
   buildRouteMetaTitle,
+  buildRouteMetaDescription,
 } from "@/lib/site";
 import { buildDirectionalRouteCopy } from "@/lib/route-copy";
 import { EUR_RATE } from "@/lib/pricing";
-import { SCHEMA_AGGREGATE_RATING } from "@/lib/schema";
 import Icon from "@/components/Icon";
 import VehiclePriceTag from "@/components/VehiclePriceTag";
 import StickyMobileBookingBar from "@/components/StickyMobileBookingBar";
@@ -279,7 +279,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const toName = getLocalizedPlace(route.to, lang as LanguageCode);
 
   const title = buildRouteMetaTitle(fromName, toName, route.price_sedan, lang);
-  const description = u.sub(fromName, toName, route.duration, route.distance, route.price_sedan);
+  const description = buildRouteMetaDescription(fromName, toName, route.price_sedan, lang);
   const canonicalUrl = `${SITE_URL}/${lang}/transfers/${route.slug}`;
 
   return {
@@ -350,15 +350,14 @@ export default async function LocalizedRoutePage({ params }: Props) {
         ],
       },
       {
-        "@type": "Product",
+        "@type": "Service",
         name: u.h1(fromName, toName),
         image: `${SITE_URL}/cars/mercedes-vito.webp`,
         url: `${SITE_URL}/${lang}/transfers/${route.slug}`,
-        brand: {
-          "@type": "Brand",
-          name: SITE_NAME,
-        },
-        aggregateRating: SCHEMA_AGGREGATE_RATING,
+        provider: {
+        "@type": "LocalBusiness",
+        name: SITE_NAME,
+      },
         offers: {
           "@type": "Offer",
           price: route.price_sedan,

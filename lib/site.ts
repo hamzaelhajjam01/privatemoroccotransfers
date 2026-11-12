@@ -4,6 +4,12 @@ export const SITE_URL = "https://www.privatemoroccotransfers.com";
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "212760426269";
 export const SUPPORT_EMAIL = "contact@privatemoroccotransfers.com";
 
+/** Google Business Profile (Maps) — the real profile, used for schema sameAs and the review CTA. */
+export const GBP_URL = "https://maps.google.com/?cid=4065053668334298253";
+export const GBP_REVIEW_URL = "https://g.page/r/CY3k9hXG-Gk4EBI/review";
+/** Public social/profile links for JSON-LD sameAs. Add the Facebook page URL here once it exists. */
+export const SOCIAL_LINKS: string[] = [GBP_URL];
+
 export const SEO_LANGS = ["fr", "es", "it", "de", "ar", "pt", "nl"] as const;
 export type SeoLang = "en" | (typeof SEO_LANGS)[number];
 
@@ -65,6 +71,38 @@ export function buildRouteMetaTitle(from: string, to: string, priceEur: number, 
   if (full.length <= 60) return full;
 
   return `${prefix} ${compactPlace(from)} ${conn} ${compactPlace(to)} €${priceEur}`;
+}
+
+// Per-language route meta description: a lead clause always, plus a tail clause
+// only when the whole thing still fits under Google's ~160-char display cap.
+const META_LEAD: Record<string, (f: string, t: string, p: number) => string> = {
+  en: (f, t, p) => `Private transfer ${f} to ${t}: fixed €${p} per vehicle`,
+  fr: (f, t, p) => `Transfert privé ${f} vers ${t} : prix fixe €${p} par véhicule`,
+  es: (f, t, p) => `Traslado privado ${f} a ${t}: precio fijo €${p} por vehículo`,
+  it: (f, t, p) => `Transfer privato ${f} a ${t}: prezzo fisso €${p} a veicolo`,
+  de: (f, t, p) => `Privater Transfer ${f} nach ${t}: Festpreis €${p} pro Fahrzeug`,
+  ar: (f, t, p) => `توصيل خاص ${f} ← ${t}: سعر ثابت €${p} للسيارة`,
+  pt: (f, t, p) => `Transfer privado ${f} para ${t}: preço fixo €${p} por veículo`,
+  nl: (f, t, p) => `Privétransfer ${f} naar ${t}: vaste prijs €${p} per voertuig`,
+};
+
+const META_TAIL: Record<string, string> = {
+  en: "Licensed driver, fuel & tolls included. Book on WhatsApp.",
+  fr: "Chauffeur pro, carburant et péages inclus. Réservation WhatsApp.",
+  es: "Conductor profesional, combustible y peajes incluidos. Reserva por WhatsApp.",
+  it: "Autista professionale, carburante e pedaggi inclusi. Prenota su WhatsApp.",
+  de: "Lizenzierter Fahrer, Kraftstoff und Maut inklusive. Buchung per WhatsApp.",
+  ar: "سائق محترف، الوقود ورسوم الطريق مشمولة. الحجز عبر واتساب.",
+  pt: "Motorista profissional, combustível e portagens incluídos. Reserve no WhatsApp.",
+  nl: "Ervaren chauffeur, brandstof en tol inbegrepen. Boek via WhatsApp.",
+};
+
+/** Route meta description kept under 160 characters, in the page's own language. */
+export function buildRouteMetaDescription(from: string, to: string, priceEur: number, lang: string = "en"): string {
+  const lead = (META_LEAD[lang] || META_LEAD.en)(compactPlace(from), compactPlace(to), priceEur);
+  const tail = META_TAIL[lang] || META_TAIL.en;
+  const full = `${lead}. ${tail}`;
+  return full.length <= 160 ? full : `${lead}.`;
 }
 
 export function whatsappUrl(message: string) {

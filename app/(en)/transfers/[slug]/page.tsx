@@ -9,10 +9,10 @@ import {
   whatsappUrl,
   buildMultilingualAlternates,
   buildRouteMetaTitle,
+  buildRouteMetaDescription,
 } from "@/lib/site";
 import { buildDirectionalRouteCopy } from "@/lib/route-copy";
 import { EUR_RATE } from "@/lib/pricing";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 import Icon from "@/components/Icon";
 import VehiclePriceTag from "@/components/VehiclePriceTag";
 import StickyMobileBookingBar from "@/components/StickyMobileBookingBar";
@@ -55,9 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!route) return {};
 
   const title = buildRouteMetaTitle(route.from, route.to, route.price_sedan, "en");
-  const description =
-    route.seoDescription ||
-    `Private transfer from ${route.from} to ${route.to} at guaranteed fixed price €${route.price_sedan}. Door-to-door, licensed English-speaking chauffeur, all tolls and fuel included. Instant WhatsApp booking.`;
+  const description = buildRouteMetaDescription(route.from, route.to, route.price_sedan, "en");
   const canonicalUrl = `${SITE_URL}/transfers/${route.slug}`;
 
   return {
@@ -146,17 +144,15 @@ export default async function TransferRoutePage({ params }: Props) {
 
   const productLd = {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     name: route.h1 || `Private Transfer from ${route.from} to ${route.to}`,
     description: route.seoDescription,
     image: `${SITE_URL}/cars/mercedes-vito.webp`,
     url: `${SITE_URL}/transfers/${route.slug}`,
-    brand: {
-      "@type": "Brand",
-      name: SITE_NAME,
-    },
-    aggregateRating: SCHEMA_AGGREGATE_RATING,
-    review: SCHEMA_REVIEWS_EN,
+    provider: {
+        "@type": "LocalBusiness",
+        name: SITE_NAME,
+      },
     offers: [
       {
         "@type": "Offer",

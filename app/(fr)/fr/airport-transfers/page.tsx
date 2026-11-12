@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
-import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Transferts Aéroport Maroc — Prix Fixes & Suivi de Vol" },
@@ -20,13 +19,13 @@ const jsonLd = {
       ],
     },
     {
-      "@type": "Product",
+      "@type": "Service",
       name: "Transferts Aéroport au Maroc",
       description: "Transferts privés aéroport au Maroc à prix fixes garantis avec suivi de vol et 45 min d'attente gratuite.",
       image: `${SITE_URL}/cars/mercedes-vito.webp`,
       url: `${SITE_URL}/fr/airport-transfers`,
-      brand: {
-        "@type": "Brand",
+      provider: {
+        "@type": "LocalBusiness",
         name: SITE_NAME,
       },
       offers: {
@@ -38,8 +37,6 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/fr/airport-transfers`,
       },
-      aggregateRating: SCHEMA_AGGREGATE_RATING,
-      review: SCHEMA_REVIEWS_FR,
     },
     {
       "@type": "TaxiService",
