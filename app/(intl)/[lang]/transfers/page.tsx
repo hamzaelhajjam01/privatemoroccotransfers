@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import routesData from "@/content/routes.json";
 import { buildMultilingualAlternates } from "@/lib/site";
 import TransferDirectory from "@/components/TransferDirectory";
-import type { RouteItem } from "@/app/transfers/[slug]/page";
+import type { RouteItem } from "@/app/(en)/transfers/[slug]/page";
 import { LanguageCode } from "@/lib/i18n";
 
 const ALL_ROUTES = routesData as RouteItem[];

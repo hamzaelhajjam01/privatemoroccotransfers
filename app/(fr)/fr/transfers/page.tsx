@@ -9,7 +9,7 @@ import {
   buildMultilingualAlternates,
 } from "@/lib/site";
 import TransferDirectory from "@/components/TransferDirectory";
-import type { RouteItem } from "@/app/transfers/[slug]/page";
+import type { RouteItem } from "@/app/(en)/transfers/[slug]/page";
 import Icon from "@/components/Icon";
 
 const ALL_ROUTES = routesData as RouteItem[];

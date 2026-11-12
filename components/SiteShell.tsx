@@ -8,12 +8,13 @@ import CookieBanner from "@/components/CookieBanner";
 import SiteScripts from "@/components/SiteScripts";
 import Motion from "@/components/Motion";
 import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
-import "./globals.css";
+import "@/app/globals.css";
+import type { LanguageCode } from "@/lib/i18n";
 
 const interTight = Inter_Tight({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-inter-tight" });
 const plexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-plex-mono" });
 
-export const metadata: Metadata = {
+export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Private Morocco Transfers — Fixed Price Chauffeur Services",
@@ -180,9 +181,10 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+/** Shared <html> shell. Each language has its own root layout so <html lang> matches the page. */
+export default function SiteShell({ lang, children }: { lang: LanguageCode; children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${interTight.variable} ${plexMono.variable}`}>
+    <html lang={lang} className={`${interTight.variable} ${plexMono.variable}`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtm.js?id=GTM-TM2P4CWT"
