@@ -16,13 +16,13 @@ const ALL_ROUTES = routesData as RouteItem[];
 
 export const metadata: Metadata = {
   title: {
-    absolute: `Morocco Private Transfers Directory — 150+ Fixed Routes`,
+    absolute: `Private Transfers in Morocco — 150+ Fixed-Price Routes`,
   },
   description:
     "Explore 150+ private transfer routes across Morocco. Guaranteed fixed rates per vehicle between Marrakech, Casablanca, Tangier, Fes, Agadir, Chefchaouen, and all international airports. 24/7 WhatsApp booking.",
   alternates: buildMultilingualAlternates("/transfers", "en"),
   openGraph: {
-    title: "Morocco Private Transfers Directory — 150+ Routes & Fixed Prices",
+    title: "Private Transfers & Private Drivers in Morocco — 150+ Fixed-Price Routes",
     description:
       "Door-to-door private chauffeur transfers across Morocco. Flat rates per car, licensed drivers, zero upfront deposit under €300.",
     url: `${SITE_URL}/transfers`,
@@ -113,10 +113,10 @@ export default function TransfersDirectoryPage() {
             150+ Intercity &amp; Airport Routes · Door-to-Door Across Morocco
           </span>
           <h1 className="heading-xl" style={{ color: "var(--white)", maxWidth: "980px" }}>
-            Morocco Private Transfers &amp; Fixed Price Directory
+            Private Transfers in Morocco: Fixed-Price Directory
           </h1>
           <p className="hero-sub" style={{ maxWidth: "750px", marginTop: "18px" }}>
-            Browse guaranteed fixed rates for private chauffeur transfers across Morocco. Comfort sedans, spacious vans,
+            Browse guaranteed fixed rates for private transfers with your own private driver across Morocco. Comfort sedans, spacious vans,
             and private minibuses driven by licensed English and French-speaking professionals.
           </p>
 
