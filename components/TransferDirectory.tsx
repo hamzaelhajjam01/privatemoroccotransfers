@@ -444,12 +444,12 @@ export default function TransferDirectory({
                   className="listing-img"
                   style={{
                     backgroundImage: route.slug.includes("essaouira")
-                      ? "url(/img/routes/marrakech-essaouira.jpg)"
+                      ? "url(/img/routes/marrakech-essaouira.webp)"
                       : route.slug.includes("agadir")
-                      ? "url(/img/routes/marrakech-agadir.jpg)"
+                      ? "url(/img/routes/marrakech-agadir.webp)"
                       : route.slug.includes("merzouga")
-                      ? "url(/img/routes/marrakech-merzouga.jpg)"
-                      : "url(/img/hero-city-to-city.jpg)",
+                      ? "url(/img/routes/marrakech-merzouga.webp)"
+                      : "url(/img/hero-city-to-city.webp)",
                   }}
                 >
                   <span className="listing-badge">{ui.badgePrivate}</span>

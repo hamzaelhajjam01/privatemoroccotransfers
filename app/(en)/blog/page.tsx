@@ -75,7 +75,7 @@ export default function BlogPage() {
         <div className="container">
           <div className="blog-grid">
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around-morocco.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around-morocco.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Transport · 2026 Guide"}
                 </div>
@@ -101,7 +101,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/fes-tanneries-guide.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/fes-tanneries-guide.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Fes · Culture"}
                 </div>
@@ -127,7 +127,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Transport · Morocco"}
                 </div>
@@ -153,7 +153,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="route">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Marrakech · Essaouira"}
                 </div>
@@ -179,7 +179,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="faq">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Pricing · Morocco"}
                 </div>
@@ -205,7 +205,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Day Trips · Marrakech"}
                 </div>
@@ -231,7 +231,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="route">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Sahara · Merzouga"}
                 </div>
@@ -257,7 +257,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="airport">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Airport · Marrakech"}
                 </div>
@@ -283,7 +283,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Morocco · Travel Tips"}
                 </div>

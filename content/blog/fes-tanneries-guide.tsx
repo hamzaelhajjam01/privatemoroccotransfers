@@ -42,7 +42,7 @@ export default function Content() {
           className="ph post-feature"
           role="img"
           aria-label="Chouara Leather Tanneries in Fes Medina Morocco"
-          style={{ backgroundImage: "url(/img/blog/fes-tanneries-guide.jpg)" }}
+          style={{ backgroundImage: "url(/img/blog/fes-tanneries-guide.webp)" }}
         ></div>
       </div>
 

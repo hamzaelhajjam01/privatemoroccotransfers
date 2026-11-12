@@ -70,7 +70,7 @@ const PORTUGUESE_SERVICES = [
     title: "Transfers de Aeroporto",
     text: "Receção com placa com o seu nome na área de chegadas de todos os aeroportos marroquinos. Rastreio de voos em direto e 45 minutos de espera grátis.",
     meta: ["A partir de 30 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
-    image: "/img/blog/airport-transfer.jpg",
+    image: "/img/blog/airport-transfer.webp",
     href: "/pt/airport-transfers",
     cta: "Ver transfers de aeroporto",
   },
@@ -78,7 +78,7 @@ const PORTUGUESE_SERVICES = [
     title: "Viagens Entre Cidades",
     text: "De Marraquexe a Essaouira, de Casablanca a Fez, de Tânger a Chefchaouen. Serviço porta a porta em veículos confortáveis com paragens panorâmicas à escolha.",
     meta: ["Preço fixo por veículo", "Todo o Marrocos"],
-    image: "/img/routes/marrakech-merzouga.jpg",
+    image: "/img/routes/marrakech-merzouga.webp",
     href: "/pt/city-to-city",
     cta: "Ver rotas interurbanas",
   },
@@ -86,7 +86,7 @@ const PORTUGUESE_SERVICES = [
     title: "Passeios de um Dia",
     text: "Vale de Ourika, cascatas de Ouzoud, Essaouira ou o deserto de Agafay: um dia completo com o seu próprio motorista dedicado, regressando ao riad ao fim do dia.",
     meta: ["De Marraquexe, Fez, Agadir", "Dia inteiro"],
-    image: "/img/blog/day-trips.jpg",
+    image: "/img/blog/day-trips.webp",
     href: "/pt/day-trips",
     cta: "Descobrir passeios",
   },
@@ -94,7 +94,7 @@ const PORTUGUESE_SERVICES = [
     title: "Circuitos Privados no Deserto",
     text: "Roteiros de 3, 5 ou 7 dias por Marrocos com o mesmo motorista: deserto de Merzouga, cidades imperiais e o Alto Atlas.",
     meta: ["3 · 5 · 7 dias", "Personalizado"],
-    image: "/img/fleet-scenes/toyota-prado.jpg",
+    image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/pt/transfers",
     cta: "Explorar circuitos",
   },
@@ -226,7 +226,7 @@ export default function PortugueseHomePage() {
               className="ph purpose-photo"
               role="img"
               aria-label="Viatura de transfer privado em Marrocos"
-              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}
+              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}
             ></div>
           </div>
           <div className="split">

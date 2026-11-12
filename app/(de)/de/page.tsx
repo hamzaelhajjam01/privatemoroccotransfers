@@ -70,7 +70,7 @@ const GERMAN_SERVICES = [
     title: "Flughafentransfer",
     text: "Persönlicher Empfang mit Namensschild in der Ankunftshalle aller marokkanischen Flughäfen. Live-Flugverfolgung und 45 Minuten kostenlose Wartezeit.",
     meta: ["Ab 30 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
-    image: "/img/blog/airport-transfer.jpg",
+    image: "/img/blog/airport-transfer.webp",
     href: "/de/airport-transfers",
     cta: "Flughafentransfers ansehen",
   },
@@ -78,7 +78,7 @@ const GERMAN_SERVICES = [
     title: "Fernstrecken & Stadt-zu-Stadt",
     text: "Marrakesch nach Essaouira, Casablanca nach Fès, Agadir nach Marrakesch. Tür-zu-Tür-Service in modernen Fahrzeugen mit Fotostopps nach Wunsch.",
     meta: ["Festpreis pro Auto", "Ganz Marokko"],
-    image: "/img/routes/marrakech-merzouga.jpg",
+    image: "/img/routes/marrakech-merzouga.webp",
     href: "/de/city-to-city",
     cta: "Strecken ansehen",
   },
@@ -86,7 +86,7 @@ const GERMAN_SERVICES = [
     title: "Tagesausflüge",
     text: "Ourika-Tal, Ouzoud-Wasserfälle, Essaouira oder die Agafay-Steinwüste: ein ganzer Tag mit eigenem Fahrer, Rückkehr zum Hotel am Abend.",
     meta: ["Ab Marrakesch, Fès, Agadir", "Ganztägig"],
-    image: "/img/blog/day-trips.jpg",
+    image: "/img/blog/day-trips.webp",
     href: "/de/day-trips",
     cta: "Ausflüge entdecken",
   },
@@ -94,7 +94,7 @@ const GERMAN_SERVICES = [
     title: "Mehrtägige Rundreisen",
     text: "3, 5 oder 7 Tage quer durch Marokko mit demselben Fahrer und Fahrzeug: Sahara-Wüste, Königsstädte und Hoher Atlas.",
     meta: ["3 · 5 · 7 Tage", "Individuell"],
-    image: "/img/fleet-scenes/toyota-prado.jpg",
+    image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/de/transfers",
     cta: "Rundreisen erkunden",
   },
@@ -226,7 +226,7 @@ export default function GermanHomePage() {
               className="ph purpose-photo"
               role="img"
               aria-label="Transferfahrzeug in Marokko"
-              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}
+              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}
             ></div>
           </div>
           <div className="split">

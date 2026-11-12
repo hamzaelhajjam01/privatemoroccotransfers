@@ -61,7 +61,7 @@ const CITY_LISTINGS = [
     priceEur: 90,
     priceMad: 980,
     desc: "Autoroute et route côtière. Arrêt photo possible auprès des chèvres sur les arganiers.",
-    bg: "/img/routes/marrakech-essaouira.jpg",
+    bg: "/img/routes/marrakech-essaouira.webp",
   },
   {
     category: "marrakech",
@@ -72,7 +72,7 @@ const CITY_LISTINGS = [
     priceEur: 135,
     priceMad: 1480,
     desc: "Autoroute moderne A3 traversant le Haut Atlas. Dépose directe à votre surf camp ou resort.",
-    bg: "/img/routes/marrakech-agadir.jpg",
+    bg: "/img/routes/marrakech-agadir.webp",
   },
   {
     category: "casablanca",
@@ -83,7 +83,7 @@ const CITY_LISTINGS = [
     priceEur: 150,
     priceMad: 1650,
     desc: "Liaison autoroutière A7 de centre-ville à centre-ville ou vers votre riad dans la médina.",
-    bg: "/img/routes/marrakech-casablanca.jpg",
+    bg: "/img/routes/marrakech-casablanca.webp",
   },
   {
     category: "fes",
@@ -94,7 +94,7 @@ const CITY_LISTINGS = [
     priceEur: 140,
     priceMad: 1540,
     desc: "Route panoramique à travers les montagnes du Rif. Chauffeur expérimenté et climatisé.",
-    bg: "/img/routes/marrakech-chefchaouen.jpg",
+    bg: "/img/routes/marrakech-chefchaouen.webp",
   },
   {
     category: "marrakech",
@@ -105,7 +105,7 @@ const CITY_LISTINGS = [
     priceEur: 240,
     priceMad: 2640,
     desc: "Grande liaison autoroutière via Casablanca/Rabat ou via Beni Mellal avec arrêts déjeuner.",
-    bg: "/img/routes/marrakech-fes.jpg",
+    bg: "/img/routes/marrakech-fes.webp",
   },
   {
     category: "marrakech",
@@ -116,7 +116,7 @@ const CITY_LISTINGS = [
     priceEur: 120,
     priceMad: 1320,
     desc: "Franchissement mythique du col du Tizi n'Tichka (2 260 m). Arrêts panoramiques garantis.",
-    bg: "/img/routes/marrakech-merzouga.jpg",
+    bg: "/img/routes/marrakech-merzouga.webp",
   },
   {
     category: "tangier",
@@ -127,7 +127,7 @@ const CITY_LISTINGS = [
     priceEur: 90,
     priceMad: 980,
     desc: "Liaison directe depuis le port de Tanger ville ou l'aéroport TNG jusqu'à votre hôtel bleu.",
-    bg: "/img/routes/marrakech-tangier.jpg",
+    bg: "/img/routes/marrakech-tangier.webp",
   },
   {
     category: "casablanca",
@@ -138,7 +138,7 @@ const CITY_LISTINGS = [
     priceEur: 65,
     priceMad: 710,
     desc: "Transfert d'affaires ou de tourisme entre la capitale économique et la capitale administrative.",
-    bg: "/img/routes/marrakech-rabat.jpg",
+    bg: "/img/routes/marrakech-rabat.webp",
   },
 ];
 

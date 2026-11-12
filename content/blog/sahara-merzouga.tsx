@@ -51,7 +51,7 @@ export default function Content() {
         </div>
       </div>
       <div className="wrap">
-        <div className="ph post-feature" role="img" aria-label="" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.jpg)" }}></div>
+        <div className="ph post-feature" role="img" aria-label="" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.webp)" }}></div>
       </div>
       <div className="post-body">
         <div className="container-sm">
@@ -134,7 +134,7 @@ export default function Content() {
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Private Morocco Transfers"}
                 </div>
@@ -157,7 +157,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Day Trips"}
                 </div>
@@ -180,7 +180,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.jpg)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Sahara"}
                 </div>

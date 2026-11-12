@@ -39,7 +39,7 @@ const ARABIC_SERVICES = [
     title: "استقبال وتوصيل المطارات",
     text: "استقبال شخصي مع لوحة باسمكم في صالة الوصول بجميع مطارات المغرب (مراكش، كازابلانكا، طنجة، أكادير، فاس). متابعة مباشرة للرحلات و45 دقيقة انتظار مجاني.",
     meta: ["ابتداءً من 30€", "مراكش · كازا · طنجة · أكادير"],
-    image: "/img/blog/airport-transfer.jpg",
+    image: "/img/blog/airport-transfer.webp",
     href: "/ar/airport-transfers",
     cta: "تفاصيل توصيل المطارات",
   },
@@ -47,7 +47,7 @@ const ARABIC_SERVICES = [
     title: "تنقلات خاصة بين المدن",
     text: "من مراكش إلى الصويرة، من الدار البيضاء إلى فاس، من طنجة إلى شفشاون. سيارات حديثة ومريحة من الباب إلى الباب مع وقفات استراحة وتصوير حسب رغبتكم.",
     meta: ["سعر ثابت للسيارة بالكامل", "جميع مدن المغرب"],
-    image: "/img/routes/marrakech-merzouga.jpg",
+    image: "/img/routes/marrakech-merzouga.webp",
     href: "/ar/city-to-city",
     cta: "عرض خطوط السير",
   },
@@ -55,7 +55,7 @@ const ARABIC_SERVICES = [
     title: "رحلات يومية خاصة",
     text: "وادي أوريكا، شلالات أوزود، صحراء أكافاي، أو جبال الأطلس الكبير: يوم كامل مع سائقكم الخاص المخصص لكم ولعائلتكم مع العودة للفندق مساءً.",
     meta: ["من مراكش، فاس، أكادير", "يوم كامل خاص"],
-    image: "/img/blog/day-trips.jpg",
+    image: "/img/blog/day-trips.webp",
     href: "/ar/day-trips",
     cta: "استكشف الرحلات اليومية",
   },
@@ -63,7 +63,7 @@ const ARABIC_SERVICES = [
     title: "جولات وسياحة صحراوية VIP",
     text: "برامج 3 أو 5 أو 7 أيام مع نفس السائق والمركبة الفاخرة: كثبان مرزوكة، القرى التاريخية وقصور الأطلس.",
     meta: ["3 · 5 · 7 أيام", "برامج مخصصة بالكامل"],
-    image: "/img/fleet-scenes/toyota-prado.jpg",
+    image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/ar/transfers",
     cta: "عرض البرامج الخاصة",
   },
@@ -191,7 +191,7 @@ export default function ArabicHomePage() {
               className="ph purpose-photo"
               role="img"
               aria-label="سيارة توصيل فاخرة في المغرب"
-              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}
+              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}
             ></div>
           </div>
           <div className="split">

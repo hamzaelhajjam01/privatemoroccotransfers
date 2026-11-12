@@ -98,7 +98,7 @@ export default function DayTripsPage() {
           </div>
           <div className="listing-grid">
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>
@@ -148,7 +148,7 @@ export default function DayTripsPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-day-trips.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-day-trips.webp)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>
@@ -198,7 +198,7 @@ export default function DayTripsPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-city-to-city.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-city-to-city.webp)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>
@@ -248,7 +248,7 @@ export default function DayTripsPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-merzouga.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-merzouga.webp)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>
@@ -298,7 +298,7 @@ export default function DayTripsPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/day-trips.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>
@@ -348,7 +348,7 @@ export default function DayTripsPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-tours.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-tours.webp)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>

@@ -70,7 +70,7 @@ const ITALIAN_SERVICES = [
     title: "Transfer Aeroporto",
     text: "Accoglienza con cartello personalizzato nella hall arrivi di tutti gli aeroporti marocchini. Monitoraggio voli in tempo reale e 45 minuti di attesa inclusi.",
     meta: ["Da 30 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
-    image: "/img/blog/airport-transfer.jpg",
+    image: "/img/blog/airport-transfer.webp",
     href: "/it/airport-transfers",
     cta: "Scopri i transfer aeroporto",
   },
@@ -78,7 +78,7 @@ const ITALIAN_SERVICES = [
     title: "Collegamenti Tra Città",
     text: "Da Marrakech a Essaouira, da Casablanca a Fes, da Agadir a Marrakech. Servizio porta a porta su veicoli moderni con soste panoramiche incluse.",
     meta: ["Prezzo fisso per auto", "In tutto il Marocco"],
-    image: "/img/routes/marrakech-merzouga.jpg",
+    image: "/img/routes/marrakech-merzouga.webp",
     href: "/it/city-to-city",
     cta: "Visualizza i tragitti",
   },
@@ -86,7 +86,7 @@ const ITALIAN_SERVICES = [
     title: "Escursioni Giornaliere",
     text: "Valle dell'Ourika, cascate di Ouzoud, Essaouira o il deserto di Agafay: una giornata completa con il vostro autista privato dedicato, rientrando in riad in serata.",
     meta: ["Da Marrakech, Fes, Agadir", "Giornata intera"],
-    image: "/img/blog/day-trips.jpg",
+    image: "/img/blog/day-trips.webp",
     href: "/it/day-trips",
     cta: "Esplora le escursioni",
   },
@@ -94,7 +94,7 @@ const ITALIAN_SERVICES = [
     title: "Tour e Circuiti Privati",
     text: "Viaggi itineranti di 3, 5 o 7 giorni attraverso il Marocco con lo stesso autista e veicolo: Sahara di Merzouga, città imperiali e valli dell'Alto Atlante.",
     meta: ["3 · 5 · 7 giorni", "Su misura"],
-    image: "/img/fleet-scenes/toyota-prado.jpg",
+    image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/it/transfers",
     cta: "Scopri i tour privati",
   },
@@ -226,7 +226,7 @@ export default function ItalianHomePage() {
               className="ph purpose-photo"
               role="img"
               aria-label="Veicolo di trasferimento privato in Marocco"
-              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}
+              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}
             ></div>
           </div>
           <div className="split">

@@ -30,7 +30,7 @@ const DAY_TRIPS = [
     duration: "10h",
     priceEur: 120,
     priceMad: 1320,
-    bg: "/img/routes/marrakech-essaouira.jpg",
+    bg: "/img/routes/marrakech-essaouira.webp",
   },
   {
     title: {
@@ -45,7 +45,7 @@ const DAY_TRIPS = [
     duration: "8h",
     priceEur: 75,
     priceMad: 825,
-    bg: "/img/hero-day-trips.jpg",
+    bg: "/img/hero-day-trips.webp",
   },
   {
     title: {
@@ -60,7 +60,7 @@ const DAY_TRIPS = [
     duration: "8h",
     priceEur: 85,
     priceMad: 935,
-    bg: "/img/hero-city-to-city.jpg",
+    bg: "/img/hero-city-to-city.webp",
   },
   {
     title: {
@@ -75,7 +75,7 @@ const DAY_TRIPS = [
     duration: "11h",
     priceEur: 180,
     priceMad: 1980,
-    bg: "/img/fleet-scenes/toyota-prado.jpg",
+    bg: "/img/fleet-scenes/toyota-prado.webp",
   },
   {
     title: {
@@ -90,7 +90,7 @@ const DAY_TRIPS = [
     duration: "9h",
     priceEur: 120,
     priceMad: 1320,
-    bg: "/img/blog/day-trips.jpg",
+    bg: "/img/blog/day-trips.webp",
   },
   {
     title: {
@@ -105,7 +105,7 @@ const DAY_TRIPS = [
     duration: "5h",
     priceEur: 70,
     priceMad: 770,
-    bg: "/img/blog/sahara-merzouga.jpg",
+    bg: "/img/blog/sahara-merzouga.webp",
   },
 ];
 

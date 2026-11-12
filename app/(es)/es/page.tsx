@@ -70,7 +70,7 @@ const SPANISH_SERVICES = [
     title: "Traslados de Aeropuerto",
     text: "Recibimiento con cartel con su nombre en la sala de llegadas de todos los aeropuertos marroquíes. Rastreio de vuelo en directo y 45 minutos de espera gratuita.",
     meta: ["Desde 30 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
-    image: "/img/blog/airport-transfer.jpg",
+    image: "/img/blog/airport-transfer.webp",
     href: "/es/airport-transfers",
     cta: "Ver traslados de aeropuerto",
   },
@@ -78,7 +78,7 @@ const SPANISH_SERVICES = [
     title: "Rutas Entre Ciudades",
     text: "De Marrakech a Essaouira, de Casablanca a Fez, de Tánger a Chefchaouen. Servicio puerta a puerta en vehículos modernos con paradas panorámicas incluidas.",
     meta: ["Precio fijo por coche", "Todo Marruecos"],
-    image: "/img/routes/marrakech-merzouga.jpg",
+    image: "/img/routes/marrakech-merzouga.webp",
     href: "/es/city-to-city",
     cta: "Ver rutas interurbanas",
   },
@@ -86,7 +86,7 @@ const SPANISH_SERVICES = [
     title: "Excursiones de un Día",
     text: "Valle de Ourika, cascadas de Ouzoud, Essaouira o el desierto de Agafay: una jornada completa con su propio conductor privado, regresando a su hotel por la tarde.",
     meta: ["Desde Marrakech, Fez, Agadir", "Día completo"],
-    image: "/img/blog/day-trips.jpg",
+    image: "/img/blog/day-trips.webp",
     href: "/es/day-trips",
     cta: "Descubrir excursiones",
   },
@@ -94,7 +94,7 @@ const SPANISH_SERVICES = [
     title: "Rutas y Circuitos Privados",
     text: "Circuitos de 3, 5 o 7 días por Marruecos con el mismo chófer y vehículo: desierto del Sahara de Merzouga, ciudades imperiales y cordillera del Atlas.",
     meta: ["3 · 5 · 7 días", "A medida"],
-    image: "/img/fleet-scenes/toyota-prado.jpg",
+    image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/transfers",
     cta: "Explorar circuitos",
   },
@@ -235,7 +235,7 @@ export default function SpanishHomePage() {
               className="ph purpose-photo"
               role="img"
               aria-label="Vehículo de traslado en la costa marroquí"
-              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}
+              style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}
             ></div>
           </div>
           <div className="split">
@@ -259,7 +259,7 @@ export default function SpanishHomePage() {
           </div>
           <div className="route-cards">
             <Link className="card" href="/es/transfers/marrakech-to-essaouira">
-              <div className="ph light" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.jpg)" }}></div>
+              <div className="ph light" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}></div>
               <div className="card-bar">
                 <span>{"Marrakech → Essaouira"}</span>
                 <span className="btn btn-black no-ring" style={{ minWidth: "0", padding: "8px 12px", fontSize: "15px" }}>
@@ -268,7 +268,7 @@ export default function SpanishHomePage() {
               </div>
             </Link>
             <Link className="card" href="/es/transfers/marrakech-to-merzouga">
-              <div className="ph light" style={{ backgroundImage: "url(/img/hero-tours.jpg)" }}></div>
+              <div className="ph light" style={{ backgroundImage: "url(/img/hero-tours.webp)" }}></div>
               <div className="card-bar">
                 <span>{"Marrakech → Merzouga"}</span>
                 <span className="btn btn-black no-ring" style={{ minWidth: "0", padding: "8px 12px", fontSize: "15px" }}>

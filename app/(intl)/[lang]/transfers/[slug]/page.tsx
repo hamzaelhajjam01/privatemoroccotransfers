@@ -431,7 +431,7 @@ export default async function LocalizedRoutePage({ params }: Props) {
             <article className="vehicle-card" style={{ display: "flex", flexDirection: "column" }}>
               <div
                 className="vehicle-img has-photo"
-                style={{ backgroundImage: "url(/img/fleet-scenes/skoda-octavia.jpg)", minHeight: "200px" }}
+                style={{ backgroundImage: "url(/img/fleet-scenes/skoda-octavia.webp)", minHeight: "200px" }}
               >
                 <span className="vehicle-cat">Sedan</span>
                 <span className="vehicle-fixed">{u.priceBadge}</span>
@@ -471,7 +471,7 @@ export default async function LocalizedRoutePage({ params }: Props) {
             >
               <div
                 className="vehicle-img has-photo"
-                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-vito.jpg)", minHeight: "200px" }}
+                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-vito.webp)", minHeight: "200px" }}
               >
                 <span className="vehicle-cat">Van</span>
                 <span className="vehicle-fixed">{u.priceBadge}</span>
@@ -503,7 +503,7 @@ export default async function LocalizedRoutePage({ params }: Props) {
             <article className="vehicle-card" style={{ display: "flex", flexDirection: "column" }}>
               <div
                 className="vehicle-img has-photo"
-                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-sprinter.jpg)", minHeight: "200px" }}
+                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-sprinter.webp)", minHeight: "200px" }}
               >
                 <span className="vehicle-cat">Minibus</span>
                 <span className="vehicle-fixed">{u.priceBadge}</span>

@@ -4,10 +4,10 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 
 /** flip: mirror the photo so the car sits on the left, clear of the booking form */
 export const HERO_SLIDES = [
-  { src: "/img/hero-city-to-city.jpg", flip: true, alt: "Black Mercedes E-Class on the road from Marrakech toward the snow-capped Atlas at golden hour" },
-  { src: "/img/routes/marrakech-essaouira.jpg", flip: true, alt: "Black Mercedes Vito with its chauffeur above the Atlantic coast near Essaouira" },
-  { src: "/img/hero-day-trips.jpg", flip: true, alt: "Black Hyundai Tucson on a High Atlas valley road at sunrise" },
-  { src: "/img/blog/sahara-merzouga.jpg", flip: false, pos: "100% center", alt: "Black Toyota Prado driving toward the Erg Chebbi dunes at sunset" },
+  { src: "/img/hero-city-to-city.webp", flip: true, alt: "Black Mercedes E-Class on the road from Marrakech toward the snow-capped Atlas at golden hour" },
+  { src: "/img/routes/marrakech-essaouira.webp", flip: true, alt: "Black Mercedes Vito with its chauffeur above the Atlantic coast near Essaouira" },
+  { src: "/img/hero-day-trips.webp", flip: true, alt: "Black Hyundai Tucson on a High Atlas valley road at sunrise" },
+  { src: "/img/blog/sahara-merzouga.webp", flip: false, pos: "100% center", alt: "Black Toyota Prado driving toward the Erg Chebbi dunes at sunset" },
 ];
 
 const INTERVAL = 6000; // ms per slide

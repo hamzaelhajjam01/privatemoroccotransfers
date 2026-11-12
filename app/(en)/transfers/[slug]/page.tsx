@@ -332,7 +332,7 @@ export default async function TransferRoutePage({ params }: Props) {
             <article className="vehicle-card" style={{ display: "flex", flexDirection: "column" }}>
               <div
                 className="vehicle-img has-photo"
-                style={{ backgroundImage: "url(/img/fleet-scenes/skoda-octavia.jpg)", minHeight: "200px" }}
+                style={{ backgroundImage: "url(/img/fleet-scenes/skoda-octavia.webp)", minHeight: "200px" }}
               >
                 <span className="vehicle-cat">Sedan</span>
                 <span className="vehicle-fixed">Fixed price</span>
@@ -397,7 +397,7 @@ export default async function TransferRoutePage({ params }: Props) {
               </div>
               <div
                 className="vehicle-img has-photo"
-                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-vito.jpg)", minHeight: "200px" }}
+                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-vito.webp)", minHeight: "200px" }}
               >
                 <span className="vehicle-cat">Spacious Van</span>
                 <span className="vehicle-fixed">Fixed price</span>
@@ -436,7 +436,7 @@ export default async function TransferRoutePage({ params }: Props) {
             <article className="vehicle-card" style={{ display: "flex", flexDirection: "column" }}>
               <div
                 className="vehicle-img has-photo"
-                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-sprinter.jpg)", minHeight: "200px" }}
+                style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-sprinter.webp)", minHeight: "200px" }}
               >
                 <span className="vehicle-cat">Minibus</span>
                 <span className="vehicle-fixed">Fixed price</span>
@@ -822,10 +822,10 @@ export default async function TransferRoutePage({ params }: Props) {
                     className="listing-img"
                     style={{
                       backgroundImage: rel.slug.includes("essaouira")
-                        ? "url(/img/routes/marrakech-essaouira.jpg)"
+                        ? "url(/img/routes/marrakech-essaouira.webp)"
                         : rel.slug.includes("agadir")
-                        ? "url(/img/routes/marrakech-agadir.jpg)"
-                        : "url(/img/hero-city-to-city.jpg)",
+                        ? "url(/img/routes/marrakech-agadir.webp)"
+                        : "url(/img/hero-city-to-city.webp)",
                     }}
                   >
                     <span className="listing-badge">Private Transfer</span>

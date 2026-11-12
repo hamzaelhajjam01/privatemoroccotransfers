@@ -41,7 +41,7 @@ export const MULTI_DAY_TOURS: MultiDayTour[] = [
     includes: SAME_DRIVER,
     priceEur: 480,
     priceMad: 5280,
-    img: "/img/hero-tours.jpg",
+    img: "/img/hero-tours.webp",
     wa: {
       en: "Hello, I am interested in the 3-day Sahara tour.",
       fr: "Bonjour, je suis intéressé(e) par le circuit Sahara de 3 jours.",
@@ -69,7 +69,7 @@ export const MULTI_DAY_TOURS: MultiDayTour[] = [
     includes: SAME_DRIVER,
     priceEur: 800,
     priceMad: 8800,
-    img: "/img/hero-city-to-city.jpg",
+    img: "/img/hero-city-to-city.webp",
     wa: {
       en: "Hello, I am interested in the 5-day imperial cities tour.",
       fr: "Bonjour, je suis intéressé(e) par le circuit des villes impériales de 5 jours.",
@@ -97,7 +97,7 @@ export const MULTI_DAY_TOURS: MultiDayTour[] = [
     includes: SAME_DRIVER,
     priceEur: 1120,
     priceMad: 12320,
-    img: "/img/hero-tours.jpg",
+    img: "/img/hero-tours.webp",
     wa: {
       en: "Hello, I am interested in the 7-day Morocco circuit.",
       fr: "Bonjour, je suis intéressé(e) par le grand circuit du Maroc de 7 jours.",
@@ -134,7 +134,7 @@ export const MULTI_DAY_TOURS: MultiDayTour[] = [
     },
     priceEur: 580,
     priceMad: 6380,
-    img: "/img/blog/sahara-merzouga.jpg",
+    img: "/img/blog/sahara-merzouga.webp",
     wa: {
       en: "Hello, I am interested in the Fes to Marrakech Sahara Desert Tour.",
       fr: "Bonjour, je suis intéressé(e) par le circuit désert de Fès à Marrakech.",
@@ -171,7 +171,7 @@ export const MULTI_DAY_TOURS: MultiDayTour[] = [
     },
     priceEur: 1280,
     priceMad: 14080,
-    img: "/img/routes/marrakech-essaouira.jpg",
+    img: "/img/routes/marrakech-essaouira.webp",
     wa: {
       en: "Hello, I am interested in the 8-day Morocco Jewish Heritage Tour.",
       fr: "Bonjour, je suis intéressé(e) par le circuit du patrimoine juif de 8 jours.",
@@ -208,7 +208,7 @@ export const MULTI_DAY_TOURS: MultiDayTour[] = [
     },
     priceEur: 640,
     priceMad: 7040,
-    img: "/img/fleet-scenes/mercedes-vito.jpg",
+    img: "/img/fleet-scenes/mercedes-vito.webp",
     wa: {
       en: "Hello, I am interested in the 4-day Tangier & Northern Morocco Circuit.",
       fr: "Bonjour, je suis intéressé(e) par le circuit Tanger et nord du Maroc de 4 jours.",

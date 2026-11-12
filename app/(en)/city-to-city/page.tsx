@@ -99,7 +99,7 @@ export default function CityToCityPage() {
           </div>
           <div className="listing-grid">
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>
@@ -145,7 +145,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>
@@ -191,7 +191,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-merzouga.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-merzouga.webp)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>
@@ -237,7 +237,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-casablanca.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-casablanca.webp)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>
@@ -283,7 +283,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-tours.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-tours.webp)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>
@@ -329,7 +329,7 @@ export default function CityToCityPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-rabat.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-rabat.webp)" }}>
                 <span className="listing-badge">
                   {"City-to-City Transfers"}
                 </span>

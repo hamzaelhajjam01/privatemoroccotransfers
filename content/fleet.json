@@ -25,7 +25,7 @@
    "Rabat": "skoda-octavia-rabat-with-driver",
    "Essaouira": "skoda-octavia-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/skoda-octavia.jpg"
+  "scene": "/img/fleet-scenes/skoda-octavia.webp"
  },
  {
   "slug": "mercedes-e-class",
@@ -53,7 +53,7 @@
    "Rabat": "mercedes-e-class-rabat-with-driver",
    "Essaouira": "mercedes-e-class-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/mercedes-e-class.jpg"
+  "scene": "/img/fleet-scenes/mercedes-e-class.webp"
  },
  {
   "slug": "bmw-5-series",
@@ -81,7 +81,7 @@
    "Rabat": "bmw-5-series-rabat-with-driver",
    "Essaouira": "bmw-5-series-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/bmw-5-series.jpg"
+  "scene": "/img/fleet-scenes/bmw-5-series.webp"
  },
  {
   "slug": "hyundai-tucson",
@@ -109,7 +109,7 @@
    "Rabat": "hyundai-tucson-rabat-with-driver",
    "Essaouira": "hyundai-tucson-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/hyundai-tucson.jpg"
+  "scene": "/img/fleet-scenes/hyundai-tucson.webp"
  },
  {
   "slug": "toyota-prado",
@@ -137,7 +137,7 @@
    "Rabat": "toyota-prado-rabat-with-driver",
    "Essaouira": "toyota-prado-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/toyota-prado.jpg"
+  "scene": "/img/fleet-scenes/toyota-prado.webp"
  },
  {
   "slug": "mercedes-vito",
@@ -165,7 +165,7 @@
    "Rabat": "mercedes-vito-rabat-with-driver",
    "Essaouira": "mercedes-vito-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/mercedes-vito.jpg"
+  "scene": "/img/fleet-scenes/mercedes-vito.webp"
  },
  {
   "slug": "ford-tourneo",
@@ -193,7 +193,7 @@
    "Rabat": "ford-tourneo-rabat-with-driver",
    "Essaouira": "ford-tourneo-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/ford-tourneo.jpg"
+  "scene": "/img/fleet-scenes/ford-tourneo.webp"
  },
  {
   "slug": "renault-trafic",
@@ -209,7 +209,7 @@
   "listingSlugs": {
    "Agadir": "renault-trafic-agadir-with-driver"
   },
-  "scene": "/img/fleet-scenes/renault-trafic.jpg"
+  "scene": "/img/fleet-scenes/renault-trafic.webp"
  },
  {
   "slug": "mercedes-sprinter",
@@ -237,7 +237,7 @@
    "Rabat": "mercedes-sprinter-rabat-with-driver",
    "Essaouira": "mercedes-sprinter-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/mercedes-sprinter.jpg"
+  "scene": "/img/fleet-scenes/mercedes-sprinter.webp"
  },
  {
   "slug": "ford-transit",
@@ -265,6 +265,6 @@
    "Rabat": "ford-transit-rabat-with-driver",
    "Essaouira": "ford-transit-essaouira-with-driver"
   },
-  "scene": "/img/fleet-scenes/ford-transit.jpg"
+  "scene": "/img/fleet-scenes/ford-transit.webp"
  }
 ]

@@ -31,7 +31,7 @@ const CITY_ROUTES = [
     duration: "~2.5h",
     priceEur: 90,
     priceMad: 990,
-    bg: "/img/routes/marrakech-essaouira.jpg",
+    bg: "/img/routes/marrakech-essaouira.webp",
   },
   {
     title: {
@@ -47,7 +47,7 @@ const CITY_ROUTES = [
     duration: "~3h",
     priceEur: 135,
     priceMad: 1485,
-    bg: "/img/routes/marrakech-agadir.jpg",
+    bg: "/img/routes/marrakech-agadir.webp",
   },
   {
     title: {
@@ -63,7 +63,7 @@ const CITY_ROUTES = [
     duration: "~2.5h",
     priceEur: 150,
     priceMad: 1650,
-    bg: "/img/hero-city-to-city.jpg",
+    bg: "/img/hero-city-to-city.webp",
   },
   {
     title: {
@@ -79,7 +79,7 @@ const CITY_ROUTES = [
     duration: "~3.5h",
     priceEur: 120,
     priceMad: 1320,
-    bg: "/img/blog/chefchaouen.jpg",
+    bg: "/img/blog/chefchaouen.webp",
   },
   {
     title: {
@@ -95,7 +95,7 @@ const CITY_ROUTES = [
     duration: "~9h",
     priceEur: 360,
     priceMad: 3960,
-    bg: "/img/routes/marrakech-merzouga.jpg",
+    bg: "/img/routes/marrakech-merzouga.webp",
   },
   {
     title: {
@@ -111,7 +111,7 @@ const CITY_ROUTES = [
     duration: "~2h",
     priceEur: 80,
     priceMad: 880,
-    bg: "/img/blog/tangier-medina.jpg",
+    bg: "/img/blog/tangier-medina.webp",
   },
 ];
 

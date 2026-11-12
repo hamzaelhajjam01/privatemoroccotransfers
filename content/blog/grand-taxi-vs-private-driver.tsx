@@ -42,7 +42,7 @@ export default function Content() {
           className="ph post-feature"
           role="img"
           aria-label="Grand Taxi vs Private Chauffeur in Morocco"
-          style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver.jpg)" }}
+          style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver.webp)" }}
         ></div>
       </div>
 
@@ -306,7 +306,7 @@ export default function Content() {
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.jpg)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}></div>
               <span className="blog-tag">Driver FAQ</span>
               <h3 className="blog-title">
                 <Link href="/blog/driver-cost">How Much Does a Private Driver Cost in Morocco? 2026 Guide</Link>
@@ -318,7 +318,7 @@ export default function Content() {
             </div>
 
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.jpg)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.webp)" }}></div>
               <span className="blog-tag">Route Guides</span>
               <h3 className="blog-title">
                 <Link href="/blog/marrakech-essaouira">Marrakech to Essaouira by Private Driver</Link>
@@ -330,7 +330,7 @@ export default function Content() {
             </div>
 
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.jpg)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.webp)" }}></div>
               <span className="blog-tag">Airport Guides</span>
               <h3 className="blog-title">
                 <Link href="/blog/airport-transfer">Morocco Airport Transfers: Complete Arrival Guide</Link>

@@ -197,9 +197,9 @@ export default function Home() {
           </div>
         </div>
         <div className="wrap img-row">
-          <div className="ph" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.jpg)" }}></div>
-          <div className="ph" style={{ backgroundImage: "url(/img/textures/zellige.jpg)" }}></div>
-          <div className="ph" style={{ backgroundImage: "url(/img/textures/brass-lantern.jpg)" }}></div>
+          <div className="ph" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}></div>
+          <div className="ph" style={{ backgroundImage: "url(/img/textures/zellige.webp)" }}></div>
+          <div className="ph" style={{ backgroundImage: "url(/img/textures/brass-lantern.webp)" }}></div>
         </div>
       </section>
       <section className="section">
@@ -236,7 +236,7 @@ export default function Home() {
                 {"About us"}
               </Link>
             </div>
-            <div className="ph purpose-photo" role="img" aria-label="Black Ford Tourneo on the Atlantic coast road near Agadir at sunset" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}></div>
+            <div className="ph purpose-photo" role="img" aria-label="Black Ford Tourneo on the Atlantic coast road near Agadir at sunset" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}></div>
           </div>
           <div className="split">
             <p className="statement">
@@ -260,7 +260,7 @@ export default function Home() {
           </div>
           <div className="route-cards">
             <Link className="card" href="/blog/marrakech-essaouira">
-              <div className="ph light" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.jpg)" }}></div>
+              <div className="ph light" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}></div>
               <div className="card-bar">
                 <span>
                   {"Marrakech → Essaouira"}
@@ -271,7 +271,7 @@ export default function Home() {
               </div>
             </Link>
             <Link className="card" href="/blog/sahara-merzouga">
-              <div className="ph light" style={{ backgroundImage: "url(/img/hero-tours.jpg)" }}></div>
+              <div className="ph light" style={{ backgroundImage: "url(/img/hero-tours.webp)" }}></div>
               <div className="card-bar">
                 <span>
                   {"Marrakech → Merzouga"}
@@ -425,7 +425,7 @@ export default function Home() {
             </div>
           </div>
           <Link className="post-row" href="/blog/marrakech-essaouira">
-            <div className="ph light" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.jpg)" }}></div>
+            <div className="ph light" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.webp)" }}></div>
             <div className="post-right">
               <div>
                 <span className="label">
@@ -446,7 +446,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="post-row" href="/blog/driver-cost">
-            <div className="ph light" style={{ backgroundImage: "url(/img/blog/driver-cost.jpg)" }}></div>
+            <div className="ph light" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}></div>
             <div className="post-right">
               <div>
                 <span className="label">
@@ -467,7 +467,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="post-row" href="/blog/day-trips">
-            <div className="ph light" style={{ backgroundImage: "url(/img/blog/day-trips.jpg)" }}></div>
+            <div className="ph light" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}></div>
             <div className="post-right">
               <div>
                 <span className="label">
@@ -567,7 +567,7 @@ export default function Home() {
             </p>
           </div>
           <div className="split">
-            <div className="ph light" style={{ backgroundImage: "url(/img/textures/tadelakt.jpg)", minHeight: "420px" }}></div>
+            <div className="ph light" style={{ backgroundImage: "url(/img/textures/tadelakt.webp)", minHeight: "420px" }}></div>
             <form className="brief" id="briefForm">
               <div className="brief-head">
                 <span>

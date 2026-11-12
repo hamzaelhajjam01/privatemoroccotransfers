@@ -122,7 +122,7 @@ export default function AirportTransfersPage() {
           </div>
           <div className="listing-grid">
             <div className="listing-card" data-category="marrakech">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.webp)" }}>
                 <span className="listing-badge">
                   {"Airport Transfer"}
                 </span>
@@ -176,7 +176,7 @@ export default function AirportTransfersPage() {
               </div>
             </div>
             <div className="listing-card" data-category="marrakech">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-day-trips.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/hero-day-trips.webp)" }}>
                 <span className="listing-badge">
                   {"Airport Transfer"}
                 </span>
@@ -232,7 +232,7 @@ export default function AirportTransfersPage() {
               </div>
             </div>
             <div className="listing-card" data-category="casablanca">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-e-class.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/fleet-scenes/mercedes-e-class.webp)" }}>
                 <span className="listing-badge">
                   {"Airport Transfer"}
                 </span>
@@ -286,7 +286,7 @@ export default function AirportTransfersPage() {
               </div>
             </div>
             <div className="listing-card" data-category="agadir">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}>
                 <span className="listing-badge">
                   {"Airport Transfer"}
                 </span>
@@ -340,7 +340,7 @@ export default function AirportTransfersPage() {
               </div>
             </div>
             <div className="listing-card" data-category="fes">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/fleet-scenes/skoda-octavia.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/fleet-scenes/skoda-octavia.webp)" }}>
                 <span className="listing-badge">
                   {"Airport Transfer"}
                 </span>
@@ -394,7 +394,7 @@ export default function AirportTransfersPage() {
               </div>
             </div>
             <div className="listing-card" data-category="tangier">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.jpg)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/routes/marrakech-agadir.webp)" }}>
                 <span className="listing-badge">
                   {"Airport Transfer"}
                 </span>

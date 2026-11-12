@@ -31,7 +31,7 @@ const AIRPORT_LISTINGS = [
     tag: "RAK Airport",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/blog/airport-transfer.jpg",
+    bg: "/img/blog/airport-transfer.webp",
   },
   {
     category: "marrakech",
@@ -47,7 +47,7 @@ const AIRPORT_LISTINGS = [
     tag: "RAK Airport",
     priceEur: 35,
     priceMad: 385,
-    bg: "/img/fleet-scenes/mercedes-e-class.jpg",
+    bg: "/img/fleet-scenes/mercedes-e-class.webp",
   },
   {
     category: "casablanca",
@@ -63,7 +63,7 @@ const AIRPORT_LISTINGS = [
     tag: "CMN Airport",
     priceEur: 40,
     priceMad: 440,
-    bg: "/img/fleet-scenes/bmw-5-series.jpg",
+    bg: "/img/fleet-scenes/bmw-5-series.webp",
   },
   {
     category: "casablanca",
@@ -79,7 +79,7 @@ const AIRPORT_LISTINGS = [
     tag: "CMN Airport",
     priceEur: 145,
     priceMad: 1595,
-    bg: "/img/hero-city-to-city.jpg",
+    bg: "/img/hero-city-to-city.webp",
   },
   {
     category: "agadir",
@@ -95,7 +95,7 @@ const AIRPORT_LISTINGS = [
     tag: "AGA Airport",
     priceEur: 35,
     priceMad: 385,
-    bg: "/img/routes/marrakech-agadir.jpg",
+    bg: "/img/routes/marrakech-agadir.webp",
   },
   {
     category: "fes",
@@ -111,7 +111,7 @@ const AIRPORT_LISTINGS = [
     tag: "FEZ Airport",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/fleet-scenes/skoda-octavia.jpg",
+    bg: "/img/fleet-scenes/skoda-octavia.webp",
   },
   {
     category: "tangier",
@@ -127,7 +127,7 @@ const AIRPORT_LISTINGS = [
     tag: "TNG Airport",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/fleet-scenes/mercedes-vito.jpg",
+    bg: "/img/fleet-scenes/mercedes-vito.webp",
   },
   {
     category: "rabat",
@@ -143,7 +143,7 @@ const AIRPORT_LISTINGS = [
     tag: "RBA Airport",
     priceEur: 30,
     priceMad: 330,
-    bg: "/img/fleet-scenes/mercedes-sprinter.jpg",
+    bg: "/img/fleet-scenes/mercedes-sprinter.webp",
   },
 ];
 

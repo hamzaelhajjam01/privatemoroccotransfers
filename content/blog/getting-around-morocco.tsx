@@ -42,7 +42,7 @@ export default function Content() {
           className="ph post-feature"
           role="img"
           aria-label="Getting Around Morocco Transport Options"
-          style={{ backgroundImage: "url(/img/blog/getting-around-morocco.jpg)" }}
+          style={{ backgroundImage: "url(/img/blog/getting-around-morocco.webp)" }}
         ></div>
       </div>
 
