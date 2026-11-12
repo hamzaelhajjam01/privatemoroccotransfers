@@ -21,7 +21,7 @@ const REVEAL = [
 ].join(",");
 const WORDS = [".huge", ".heading-lg", ".heading-xl", ".quote-main", ".cta-band h2", ".footer-col h4"].join(",");
 const IMAGES = [".ph", ".listing-img", ".blog-img", ".vehicle-img", ".fleet-img"].join(",");
-const SKIP = ".hero, .page-hero, .post-hero, .booking-widget, .mobile-nav, .site-header";
+const SKIP = ".hero, .page-hero, .post-hero, .booking-widget, .mobile-nav, .site-header, .tf";
 
 function splitWords(el: HTMLElement) {
   if (el.dataset.split) return;

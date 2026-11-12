@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: { absolute: "City-to-City Transfers Morocco — Fixed Price | Private Morocco Transfers" },
+  title: { absolute: "City-to-City Transfers Morocco — Fixed Rates per Vehicle" },
   description: "Fixed-price intercity transfers between all major Moroccan cities. Marrakech to Essaouira, Casablanca to Marrakech, Fes to Chefchaouen. Flat rates per car, tolls and fuel included.",
-  alternates: {
-    canonical: `${SITE_URL}/city-to-city`,
-    languages: {
-      "en": `${SITE_URL}/city-to-city`,
-      "fr": `${SITE_URL}/fr/city-to-city`,
-      "x-default": `${SITE_URL}/city-to-city`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/city-to-city", "en"),
 };
 
 const jsonLd = {

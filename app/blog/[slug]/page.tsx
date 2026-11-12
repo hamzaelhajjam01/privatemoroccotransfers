@@ -35,14 +35,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = PAGES[slug as Slug];
   if (!page) return {};
   const canonicalUrl = `${SITE_URL}/blog/${slug}`;
+  const rawBlogTitle = page.title.replace(/\s*\|\s*Private Morocco Transfers$/i, "").trim();
+  const metaTitle =
+    rawBlogTitle.length <= 65
+      ? rawBlogTitle
+      : rawBlogTitle.includes(":") && rawBlogTitle.split(":")[0].trim().length >= 30 && rawBlogTitle.split(":")[0].trim().length <= 65
+      ? rawBlogTitle.split(":")[0].trim()
+      : `${rawBlogTitle.slice(0, 62).trimEnd()}...`;
   return {
-    title: { absolute: page.title },
+    title: { absolute: metaTitle },
     description: page.description,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: page.title,
+      title: metaTitle,
       description: page.description,
       url: canonicalUrl,
       siteName: SITE_NAME,
@@ -51,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: page.title,
+      title: metaTitle,
       description: page.description,
       images: [`/img/blog/${slug}.jpg`],
     },

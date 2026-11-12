@@ -30,7 +30,7 @@ const CALC_CONTENT: Record<
   }
 > = {
   es: {
-    title: `Calculadora de Precios — Chófer Privado en Marruecos | ${SITE_NAME}`,
+    title: `Calculadora de Precios — Chófer Privado en Marruecos`,
     desc: "Calcule el precio fijo garantizado de su traslado privado en Marruecos. Tarifas instantáneas entre Marrakech, Casablanca, Agadir, Fez, Tánger y aeropuertos.",
     home: "Inicio",
     breadcrumb: "Calculadora de Precios",
@@ -39,7 +39,7 @@ const CALC_CONTENT: Record<
     sub: "Seleccione sus ciudades de origen y destino para calcular el precio exacto cerrado de su traslado con chófer privado en Marruecos.",
   },
   it: {
-    title: `Calcolatore di Prezzi — Autista Privato in Marocco | ${SITE_NAME}`,
+    title: `Calcolatore di Prezzi — Autista Privato in Marocco`,
     desc: "Calcolate la tariffa fissa garantita per il vostro transfer privato in Marocco. Prezzi immediati tra Marrakech, Casablanca, Agadir, Fes, Tangeri e aeroporti.",
     home: "Home",
     breadcrumb: "Calcolatore Tariffe",
@@ -48,7 +48,7 @@ const CALC_CONTENT: Record<
     sub: "Selezionate la città di partenza e la destinazione per ottenere il preventivo esatto e all-inclusive per il vostro viaggio.",
   },
   de: {
-    title: `Tarifrechner — Privatchauffeur & Transfers Marokko | ${SITE_NAME}`,
+    title: `Tarifrechner — Privatchauffeur & Transfers Marokko`,
     desc: "Berechnen Sie den garantierten Festpreis für Ihren privaten Transfer in Marokko. Sofortige Preisauskunft zwischen Marrakesch, Casablanca, Fès, Agadir und Tanger.",
     home: "Startseite",
     breadcrumb: "Tarifrechner",
@@ -57,7 +57,7 @@ const CALC_CONTENT: Record<
     sub: "Wählen Sie Abfahrts- und Zielort, um sofort den verbindlichen Festpreis für Ihren privaten Chauffeur in Marokko zu berechnen.",
   },
   ar: {
-    title: `حاسبة أسعار التوصيل والسائق الخاص في المغرب | ${SITE_NAME}`,
+    title: `حاسبة أسعار التوصيل والسائق الخاص في المغرب`,
     desc: "احسب السعر الثابت والمؤكد لرحلتك الخاصة في المغرب. أسعار فورية وشاملة بين مراكش، الدار البيضاء، فاس، طنجة، أكادير والمطارات.",
     home: "الرئيسية",
     breadcrumb: "حاسبة الأسعار",
@@ -66,7 +66,7 @@ const CALC_CONTENT: Record<
     sub: "اختر نقطة الانطلاق والوجهة لحساب السعر الصافي لسيارتك الخاصة مع سائق محترف في المغرب.",
   },
   pt: {
-    title: `Calculadora de Preços — Transfers Privados em Marrocos | ${SITE_NAME}`,
+    title: `Calculadora de Preços — Transfers Privados em Marrocos`,
     desc: "Calcule a tarifa fixa garantida do seu transfer privado em Marrocos. Preços imediatos entre Marraquexe, Casablanca, Agadir, Fez, Tânger e aeroportos.",
     home: "Início",
     breadcrumb: "Calculadora de Preços",
@@ -75,7 +75,7 @@ const CALC_CONTENT: Record<
     sub: "Escolha as cidades de partida e destino para ver o custo exato do seu transfer particular com tudo incluído.",
   },
   nl: {
-    title: `Tarieven Calculator — Privé Chauffeur Marokko | ${SITE_NAME}`,
+    title: `Tarieven Calculator — Privé Chauffeur Marokko`,
     desc: "Bereken het gegarandeerde vaste all-in tarief voor uw privé transfer in Marokko. Directe prijsopgave voor Marrakech, Casablanca, Agadir, Fes en vliegvelden.",
     home: "Home",
     breadcrumb: "Tarieven Calculator",

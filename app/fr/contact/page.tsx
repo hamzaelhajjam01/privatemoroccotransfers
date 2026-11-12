@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact & Réservation — Chauffeur Privé au Maroc | Private Morocco Transfers" },
+  title: { absolute: "Contact & Réservation — Chauffeur Privé Maroc" },
   description: "Réservez votre chauffeur privé au Maroc. Envoyez votre itinéraire et vos dates pour obtenir un tarif fixe immédiat sur WhatsApp. Aucun paiement requis à la réservation sous 300 €.",
-  alternates: {
-    canonical: `${SITE_URL}/fr/contact`,
-    languages: {
-      "fr": `${SITE_URL}/fr/contact`,
-      "en": `${SITE_URL}/contact`,
-      "x-default": `${SITE_URL}/contact`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/contact", "fr"),
 };
 
 export default function FrenchContactPage() {

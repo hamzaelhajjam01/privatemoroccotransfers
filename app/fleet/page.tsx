@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import Fleet from "@/components/Fleet";
 import Link from "next/link";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, buildMultilingualAlternates } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Our Fleet — Sedan, SUV & Minivan | Private Morocco Transfers" },
   description: "View our private driver fleet in Morocco. Economy sedan, comfort SUV and premium minivan for all group sizes.",
-  alternates: {
-    canonical: `${SITE_URL}/fleet`,
-  },
+  alternates: buildMultilingualAlternates("/fleet", "en"),
   openGraph: {
     title: "Our Fleet — Chauffeur Vehicles in Morocco | Private Morocco Transfers",
     description: "Modern, air-conditioned sedans, SUVs, and minivans with licensed English-speaking drivers across Morocco.",

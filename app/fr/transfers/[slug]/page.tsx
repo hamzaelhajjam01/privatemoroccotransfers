@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import routesData from "@/content/routes.json";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, whatsappUrl } from "@/lib/site";
+import {
+  SITE_NAME,
+  SITE_URL,
+  WHATSAPP_NUMBER,
+  whatsappUrl,
+  buildMultilingualAlternates,
+  buildRouteMetaTitle,
+} from "@/lib/site";
+import { buildDirectionalRouteCopy } from "@/lib/route-copy";
 import { EUR_RATE } from "@/lib/pricing";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 import Icon from "@/components/Icon";
@@ -90,22 +98,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fromFr = getFrPlace(route.from);
   const toFr = getFrPlace(route.to);
 
-  const title = `Transfert Privé ${fromFr} à ${toFr} | Prix Fixe €${route.price_sedan} | ${SITE_NAME}`;
+  const title = buildRouteMetaTitle(fromFr, toFr, route.price_sedan, "fr");
   const description = `Réservez votre transfert privé de ${fromFr} à ${toFr} avec ${SITE_NAME}. Tarif fixe garanti €${route.price_sedan}, chauffeur professionnel bilingue, accueil aéroport ou hôtel, péages et carburant inclus, 0% d'acompte. WhatsApp 24/7.`;
   const canonicalUrl = `${SITE_URL}/fr/transfers/${route.slug}`;
-  const enUrl = `${SITE_URL}/transfers/${route.slug}`;
 
   return {
     title: { absolute: title },
     description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        "fr": canonicalUrl,
-        "en": enUrl,
-        "x-default": enUrl,
-      },
-    },
+    alternates: buildMultilingualAlternates(`/transfers/${route.slug}`, "fr"),
     openGraph: {
       title,
       description,
@@ -249,7 +249,20 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
     },
   };
 
+  const dCopy = buildDirectionalRouteCopy({
+    lang: "fr",
+    fromLocal: fromFr,
+    toLocal: toFr,
+    fromEn: route.from,
+    toEn: route.to,
+    distance: route.distance,
+    duration: route.duration,
+    highway: route.highway,
+    priceSedan: route.price_sedan,
+  });
+
   const frFaqs = [
+    ...dCopy.faqs,
     {
       q: `Où le chauffeur m'accueille-t-il pour le trajet ${fromFr} - ${toFr} ?`,
       a: `Pour une prise en charge à l'aéroport, votre chauffeur vous attend à l'intérieur du hall des arrivées avec une pancarte personnalisée à votre nom. Pour un hôtel ou un riad, le rendez-vous est fixé à la réception ou au point accessible le plus proche.`
@@ -586,55 +599,54 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
         </div>
       </section>
 
-      {/* Highlights & What to Expect */}
-      {route.highlights && route.highlights.length > 0 && (
-        <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
-          <div className="container">
-            <div className="section-header">
-              <div>
-                <span className="section-label">Détails du Trajet</span>
-                <h2 className="heading-lg">Ce qui est inclus dans votre voyage</h2>
-              </div>
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: "24px",
-              }}
-            >
-              {route.highlights.map((highlight, idx) => (
-                <div
-                  key={idx}
+      {/* Directional Logistics & What to Expect */}
+      <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+        <div className="container">
+          <div style={{ maxWidth: "820px", marginBottom: "28px" }}>
+            <span className="section-label">{dCopy.sectionLabel}</span>
+            <h2 className="heading-lg mt-12">{dCopy.heading}</h2>
+            <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.65, marginTop: "14px" }}>
+              {dCopy.introParagraph}
+            </p>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "24px",
+            }}
+          >
+            {dCopy.logisticsBullets.map((highlight, idx) => (
+              <div
+                key={idx}
+                style={{
+                  padding: "24px",
+                  background: "var(--sand)",
+                  border: "1px solid var(--rule)",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "16px",
+                }}
+              >
+                <span
                   style={{
-                    padding: "24px",
-                    background: "var(--sand)",
-                    border: "1px solid var(--rule)",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    gap: "16px",
+                    fontFamily: "var(--mono)",
+                    fontSize: "14px",
+                    color: "var(--muted)",
+                    flexShrink: 0,
+                    marginTop: "2px",
                   }}
                 >
-                  <span
-                    style={{
-                      fontFamily: "var(--mono)",
-                      fontSize: "14px",
-                      color: "var(--muted)",
-                      flexShrink: 0,
-                      marginTop: "2px",
-                    }}
-                  >
-                    0{idx + 1}
-                  </span>
-                  <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.5 }}>
-                    {highlight}
-                  </p>
-                </div>
-              ))}
-            </div>
+                  0{idx + 1}
+                </span>
+                <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.5 }}>
+                  {highlight}
+                </p>
+              </div>
+            ))}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* How It Works: 3 Simple Steps */}
       <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>

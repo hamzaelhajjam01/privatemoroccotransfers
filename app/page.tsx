@@ -7,7 +7,7 @@ import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Private Driver in Morocco & Airport Transfers — Fixed Prices | Private Morocco Transfers" },
+  title: { absolute: "Private Driver in Morocco & Airport Transfers — Fixed Prices" },
   description: "Reliable private driver and transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed English-speaking drivers, 24/7 WhatsApp booking.",
   alternates: {
     canonical: SITE_URL,

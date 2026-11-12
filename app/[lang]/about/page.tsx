@@ -42,7 +42,7 @@ const CONTENT: Record<
   }
 > = {
   fr: {
-    title: `À Propos de Nous — Chauffeur Privé au Maroc | ${SITE_NAME}`,
+    title: `À Propos de Nous — Chauffeur Privé au Maroc`,
     desc: "Service de chauffeurs privés basé à Marrakech avec prix fixes garantis, chauffeurs agréés et voyages sereins à travers tout le Maroc.",
     home: "Accueil",
     breadcrumb: "À Propos de Nous",
@@ -64,7 +64,7 @@ const CONTENT: Record<
     val3Desc: "Réservez en toute confiance sans sortir votre carte bancaire. Vous réglez directement le jour de la prise en charge.",
   },
   es: {
-    title: `Sobre Nosotros — Chófer Privado en Marruecos | ${SITE_NAME}`,
+    title: `Sobre Nosotros — Chófer Privado en Marruecos`,
     desc: "Servicio de chófer privado con sede en Marrakech. Precios fijos, conductores autorizados y viajes tranquilos por todo Marruecos.",
     home: "Inicio",
     breadcrumb: "Sobre Nosotros",
@@ -86,7 +86,7 @@ const CONTENT: Record<
     val3Desc: "Reserve sin tarjeta bancaria para viajes menores de 300 €. Pague tranquilamente el día de su viaje.",
   },
   it: {
-    title: `Chi Siamo — Servizio Autista Privato in Marocco | ${SITE_NAME}`,
+    title: `Chi Siamo — Servizio Autista Privato in Marocco`,
     desc: "Servizio di noleggio con conducente con sede a Marrakech. Tariffe fisse garantite, autisti abilitati e trasferimenti sereni in tutto il Marocco.",
     home: "Home",
     breadcrumb: "Chi Siamo",
@@ -108,7 +108,7 @@ const CONTENT: Record<
     val3Desc: "Confermate la vostra prenotazione senza carta di credito. Pagate direttamente all'autista.",
   },
   de: {
-    title: `Über Uns — Privatchauffeur & Transfers Marokko | ${SITE_NAME}`,
+    title: `Über Uns — Privatchauffeur & Transfers Marokko`,
     desc: "Ihr privater Chauffeurservice mit Sitz in Marrakesch. Feste Pauschalpreise, lizenzierte Fahrer und erstklassiger Reiseservice in ganz Marokko.",
     home: "Startseite",
     breadcrumb: "Über Uns",
@@ -130,7 +130,7 @@ const CONTENT: Record<
     val3Desc: "Buchen Sie ohne Kreditkarte und ohne Risiko. Die Bezahlung erfolgt bequem vor Ort.",
   },
   ar: {
-    title: `من نحن — خدمات السائق الخاص بالمغرب | ${SITE_NAME}`,
+    title: `من نحن — خدمات السائق الخاص بالمغرب`,
     desc: "فريق محلي متخصص في خدمات السائق الخاص والسياحة الفاخرة بالمغرب. أسعار ثابتة وسيارات حديثة وسائقون مرخصون.",
     home: "الرئيسية",
     breadcrumb: "من نحن",
@@ -152,7 +152,7 @@ const CONTENT: Record<
     val3Desc: "احجز رحلتك بثقة كاملة بدون دفع إلكتروني مسبق، وادفع عند وصولك للسائق.",
   },
   pt: {
-    title: `Sobre Nós — Motorista Privado em Marrocos | ${SITE_NAME}`,
+    title: `Sobre Nós — Motorista Privado em Marrocos`,
     desc: "Serviço de motorista privado sediado em Marraquexe com preços fixos, condutores experientes e viagens seguras por todo o Marrocos.",
     home: "Início",
     breadcrumb: "Sobre Nós",
@@ -174,7 +174,7 @@ const CONTENT: Record<
     val3Desc: "Reserve com comodidade e sem cartão de crédito. Paga diretamente ao motorista no dia do serviço.",
   },
   nl: {
-    title: `Over Ons — Privé Chauffeur Marokko | ${SITE_NAME}`,
+    title: `Over Ons — Privé Chauffeur Marokko`,
     desc: "Professionele privéchauffeur service gevestigd in Marrakech. Vaste tarieven, gediplomeerde chauffeurs en comfortabel vervoer door heel Marokko.",
     home: "Home",
     breadcrumb: "Over Ons",

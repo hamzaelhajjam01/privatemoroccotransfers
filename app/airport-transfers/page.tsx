@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: { absolute: "Airport Transfers Morocco — Fixed Price | Private Morocco Transfers" },
+  title: { absolute: "Airport Transfers Morocco — Fixed Rates & Flight Tracking" },
   description: "Reliable airport transfers across Morocco with guaranteed fixed prices. Marrakech (RAK), Casablanca (CMN), Agadir (AGA), Fes (FEZ), Tangier (TNG). 45-min free wait time and flight tracking included.",
-  alternates: {
-    canonical: `${SITE_URL}/airport-transfers`,
-    languages: {
-      "en": `${SITE_URL}/airport-transfers`,
-      "fr": `${SITE_URL}/fr/airport-transfers`,
-      "x-default": `${SITE_URL}/airport-transfers`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/airport-transfers", "en"),
 };
 
 const jsonLd = {

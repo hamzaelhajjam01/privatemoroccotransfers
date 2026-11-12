@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildMultilingualAlternates } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "About Us | Private Morocco Transfers" },
   description: "A Marrakech-based private driver service with fixed prices, licensed drivers and calm, comfortable journeys across Morocco.",
-  alternates: {
-    canonical: "https://www.privatemoroccotransfers.com/about",
-  },
+  alternates: buildMultilingualAlternates("/about", "en"),
 };
 
 export default function AboutPage() {

@@ -22,12 +22,16 @@ const STATIC_HUBS = [
   { path: "/multi-day-tours", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/calculator", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/fleet", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/trip-finder", priority: 0.85, changeFrequency: "monthly" as const },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" as const },
+  { path: "/become-a-driver", priority: 0.65, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/faq", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.6, changeFrequency: "monthly" as const },
+  { path: "/support", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/terms", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/privacy", priority: 0.4, changeFrequency: "yearly" as const },
+  { path: "/cookie", priority: 0.4, changeFrequency: "yearly" as const },
   { path: "/cancellation", priority: 0.4, changeFrequency: "yearly" as const },
 ];
 
@@ -97,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65,
   }));
 
-  const LOCALIZED_HUBS = ["airport-transfers", "city-to-city", "day-trips", "fleet", "calculator", "faq", "about", "contact"];
+  const LOCALIZED_HUBS = ["airport-transfers", "city-to-city", "day-trips", "trip-finder", "fleet", "calculator", "faq", "about", "contact"];
   const ALL_LANGS = ["fr", "es", "it", "de", "ar", "pt", "nl"];
 
   const localizedHubEntries: MetadataRoute.Sitemap = ALL_LANGS.flatMap((lang) =>

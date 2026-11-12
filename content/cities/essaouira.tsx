@@ -114,7 +114,7 @@ export default function Content() {
               <div className="route-meta"><span>{"360 km"}</span></div>
               <div className="route-price">{"€200 (2,200 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
-            <Link href="/transfers/essaouira-airport-to-essaouira" className="route-card" style={{ display: "block", textDecoration: "none" }}>
+            <Link href="/transfers/essaouira-airport-esu-to-essaouira" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Essaouira Airport → Medina"}</h3>
               <div className="route-meta"><span>{"18 km"}</span></div>

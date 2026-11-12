@@ -8,7 +8,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 import type { Review } from "@/content/reviews";
 
 export const metadata: Metadata = {
-  title: { absolute: "Autista Privato e Trasferimenti in Marocco — Prezzi Fissi | Private Morocco Transfers" },
+  title: { absolute: "Autista Privato e Trasferimenti in Marocco — Prezzi Fissi" },
   description: "Servizio di autista privato e transfer in Marocco a prezzi fissi garantiti. Accoglienza in aeroporto, tratte tra città ed escursioni con autisti esperti. Prenotazione WhatsApp 24/7.",
   alternates: {
     canonical: `${SITE_URL}/it`,
@@ -251,53 +251,53 @@ export default function ItalianHomePage() {
           <div className="route-table">
             <div className="route-tr">
               <span>
-                <Link href="/transfers/marrakech-airport-to-marrakech" style={{ color: "inherit", textDecoration: "none" }}>
+                <Link href="/it/transfers/marrakech-airport-to-marrakech" style={{ color: "inherit", textDecoration: "none" }}>
                   {"Aeroporto Marrakech → Médina"}
                 </Link>
               </span>
               <span className="muted">{"6 km"}</span>
               <span className="muted">{"15 min"}</span>
               <span>{"€30 (330 MAD)"}</span>
-              <Link href="/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
+              <Link href="/it/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Dettagli"}
               </Link>
             </div>
             <div className="route-tr">
               <span>
-                <Link href="/transfers/marrakech-to-essaouira" style={{ color: "inherit", textDecoration: "none" }}>
+                <Link href="/it/transfers/marrakech-to-essaouira" style={{ color: "inherit", textDecoration: "none" }}>
                   {"Marrakech → Essaouira"}
                 </Link>
               </span>
               <span className="muted">{"180 km"}</span>
               <span className="muted">{"2.5 h"}</span>
               <span>{"€90 (980 MAD)"}</span>
-              <Link href="/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
+              <Link href="/it/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Dettagli"}
               </Link>
             </div>
             <div className="route-tr">
               <span>
-                <Link href="/transfers/marrakech-to-agadir" style={{ color: "inherit", textDecoration: "none" }}>
+                <Link href="/it/transfers/marrakech-to-agadir" style={{ color: "inherit", textDecoration: "none" }}>
                   {"Marrakech → Agadir"}
                 </Link>
               </span>
               <span className="muted">{"240 km"}</span>
               <span className="muted">{"3 h"}</span>
               <span>{"€135 (1.480 MAD)"}</span>
-              <Link href="/transfers/marrakech-to-agadir" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
+              <Link href="/it/transfers/marrakech-to-agadir" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Dettagli"}
               </Link>
             </div>
             <div className="route-tr">
               <span>
-                <Link href="/transfers/casablanca-airport-to-marrakech" style={{ color: "inherit", textDecoration: "none" }}>
+                <Link href="/it/transfers/casablanca-airport-to-marrakech" style={{ color: "inherit", textDecoration: "none" }}>
                   {"Aeroporto Casablanca (CMN) → Marrakech"}
                 </Link>
               </span>
               <span className="muted">{"220 km"}</span>
               <span className="muted">{"2.5 h"}</span>
               <span>{"€150 (1.650 MAD)"}</span>
-              <Link href="/transfers/casablanca-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
+              <Link href="/it/transfers/casablanca-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Dettagli"}
               </Link>
             </div>

@@ -47,7 +47,7 @@ const CONTACT_CONTENT: Record<
   }
 > = {
   es: {
-    title: `Contacto y Reservas — Chófer Privado en Marruecos | ${SITE_NAME}`,
+    title: `Contacto y Reservas — Chófer Privado en Marruecos`,
     desc: "Reserve su chófer privado en Marruecos. Envíenos su itinerario y fechas para recibir confirmación de precio fijo inmediato en WhatsApp.",
     home: "Inicio",
     breadcrumb: "Contacto y Reservas",
@@ -78,7 +78,7 @@ const CONTACT_CONTENT: Record<
     btnWaDirect: "Hablar directamente por WhatsApp",
   },
   it: {
-    title: `Contatti e Prenotazioni — Autista Privato Marocco | ${SITE_NAME}`,
+    title: `Contatti e Prenotazioni — Autista Privato Marocco`,
     desc: "Prenotate il vostro autista privato in Marocco. Inviate i dettagli del viaggio per ricevere la conferma a tariffa fissa su WhatsApp in pochi minuti.",
     home: "Home",
     breadcrumb: "Contatti e Prenotazioni",
@@ -109,7 +109,7 @@ const CONTACT_CONTENT: Record<
     btnWaDirect: "Parla con noi su WhatsApp",
   },
   de: {
-    title: `Kontakt & Buchung — Privatchauffeur Marokko | ${SITE_NAME}`,
+    title: `Kontakt & Buchung — Privatchauffeur Marokko`,
     desc: "Buchen Sie Ihren privaten Chauffeur in Marokko. Senden Sie uns Ihre Reisedaten für ein verbindliches Festpreisangebot über WhatsApp.",
     home: "Startseite",
     breadcrumb: "Kontakt & Buchung",
@@ -140,7 +140,7 @@ const CONTACT_CONTENT: Record<
     btnWaDirect: "Direkt per WhatsApp anfragen",
   },
   ar: {
-    title: `التواصل والحجز — سائق خاص في المغرب | ${SITE_NAME}`,
+    title: `التواصل والحجز — سائق خاص في المغرب`,
     desc: "احجز خدمة سائق خاص في المغرب. أرسل خط سيرك وتواريخ رحلتك للحصول على تأكيد فوري وسعر ثابت عبر واتساب.",
     home: "الرئيسية",
     breadcrumb: "التواصل والحجز",
@@ -171,7 +171,7 @@ const CONTACT_CONTENT: Record<
     btnWaDirect: "محادثة فورية عبر واتساب",
   },
   pt: {
-    title: `Contacto e Reservas — Motorista Privado em Marrocos | ${SITE_NAME}`,
+    title: `Contacto e Reservas — Motorista Privado em Marrocos`,
     desc: "Reserve o seu motorista privado em Marrocos. Envie o seu itinerário para receber confirmação imediata de preço fixo no WhatsApp.",
     home: "Início",
     breadcrumb: "Contacto e Reservas",
@@ -202,7 +202,7 @@ const CONTACT_CONTENT: Record<
     btnWaDirect: "Falar direto no WhatsApp",
   },
   nl: {
-    title: `Contact & Boeken — Privé Chauffeur Marokko | ${SITE_NAME}`,
+    title: `Contact & Boeken — Privé Chauffeur Marokko`,
     desc: "Boek uw privéchauffeur in Marokko. Stuur uw reisdetails door en ontvang direct een vaste prijsbevestiging via WhatsApp.",
     home: "Home",
     breadcrumb: "Contact & Boeken",

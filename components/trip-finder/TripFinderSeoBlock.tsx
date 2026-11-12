@@ -38,11 +38,9 @@ export default function TripFinderSeoBlock({ lang }: { lang: LanguageCode }) {
       </div>
       <noscript>
         <div style={{ padding: "40px 20px", maxWidth: "800px", margin: "0 auto", color: "#f3efe8" }}>
-          <h1>{data.h1}</h1>
+          <h2>{data.h1}</h2>
           <p>{data.desc}</p>
-          <p>
-            Please enable JavaScript in your browser to experience the interactive 3D Morocco Trip Finder, or contact us directly on WhatsApp at +212 760-426269 for an instant fixed price quote.
-          </p>
+          <p>{data.noscriptPrompt}</p>
         </div>
       </noscript>
     </>

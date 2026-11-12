@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Calculator from "@/components/Calculator";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, buildMultilingualAlternates } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Calculateur de Prix — Chauffeur Privé au Maroc | Private Morocco Transfers" },
+  title: { absolute: "Calculateur de Prix — Chauffeur Privé au Maroc" },
   description: "Calculez le tarif fixe exact de votre transfert privé au Maroc. Prix immédiat pour chaque trajet — Marrakech, Casablanca, Agadir, Fès, Essaouira et aéroports.",
-  alternates: {
-    canonical: `${SITE_URL}/fr/calculator`,
-    languages: {
-      "fr": `${SITE_URL}/fr/calculator`,
-      "en": `${SITE_URL}/calculator`,
-      "x-default": `${SITE_URL}/calculator`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/calculator", "fr"),
   openGraph: {
     title: "Calculateur de Tarif Chauffeur Privé Maroc | Prix Fixes Immédiats",
     description: "Estimez votre tarif fixe garanti pour tout transfert aéroport, liaison interville ou circuit privé au Maroc.",

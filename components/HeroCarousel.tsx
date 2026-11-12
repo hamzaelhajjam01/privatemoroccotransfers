@@ -20,8 +20,10 @@ export default function HeroCarousel({ children }: { children: React.ReactNode }
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [cycle, setCycle] = useState(0); // restarts the timer and progress bar after a manual jump
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setPlaying(!reduce);
     const onVis = () => setPlaying(!reduce && document.visibilityState === "visible");
@@ -41,16 +43,23 @@ export default function HeroCarousel({ children }: { children: React.ReactNode }
     <HeroCtx.Provider value={{ index, count: HERO_SLIDES.length, go, playing }}>
       <section className="hero" aria-roledescription="carousel" aria-label="Private Morocco Transfers">
         <div className="hero-media">
-          {HERO_SLIDES.map((s, i) => (
-            <div
-              key={s.src}
-              className={`hero-slide${i === index ? " active" : ""}${s.flip ? " flip" : ""}`}
-              style={{ backgroundImage: `url(${s.src})`, backgroundPosition: "pos" in s ? s.pos : undefined }}
-              role="img"
-              aria-label={s.alt}
-              aria-hidden={i !== index}
-            />
-          ))}
+          {HERO_SLIDES.map((s, i) => {
+            // Defer off-screen slides until after mount so mobile LCP fetches only the active hero photo first.
+            const shouldLoadBg = i === 0 || (mounted && (i === index || i === (index + 1) % HERO_SLIDES.length));
+            return (
+              <div
+                key={s.src}
+                className={`hero-slide${i === index ? " active" : ""}${s.flip ? " flip" : ""}`}
+                style={{
+                  backgroundImage: shouldLoadBg ? `url(${s.src})` : undefined,
+                  backgroundPosition: "pos" in s ? s.pos : undefined,
+                }}
+                role="img"
+                aria-label={s.alt}
+                aria-hidden={i !== index}
+              />
+            );
+          })}
         </div>
         {children}
       </section>

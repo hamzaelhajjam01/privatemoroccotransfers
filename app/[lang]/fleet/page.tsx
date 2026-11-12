@@ -37,7 +37,7 @@ const FLEET_CONTENT: Record<
   }
 > = {
   fr: {
-    title: `Notre Flotte de Véhicules — Berline, SUV & Van Privé | ${SITE_NAME}`,
+    title: `Notre Flotte de Véhicules — Berline, SUV & Van Privé`,
     desc: "Découvrez notre flotte de véhicules avec chauffeur privé au Maroc. Berlines tout confort, vans spacieux et minibus modernes pour tous vos trajets.",
     home: "Accueil",
     fleetBreadcrumb: "Notre Flotte",
@@ -53,7 +53,7 @@ const FLEET_CONTENT: Record<
     waText: "Bonjour! Je souhaite réserver un chauffeur privé avec un véhicule au Maroc. Pouvez-vous me confirmer vos tarifs fixes?",
   },
   es: {
-    title: `Nuestra Flota — Sedán, SUV y Monovolumen con Chófer | ${SITE_NAME}`,
+    title: `Nuestra Flota — Sedán, SUV y Monovolumen con Chófer`,
     desc: "Conozca nuestra flota de vehículos privados con chófer en Marruecos. Sedanes ejecutivos, amplios monovolúmenes y minibuses con tarifas fijas.",
     home: "Inicio",
     fleetBreadcrumb: "Nuestra Flota",
@@ -69,7 +69,7 @@ const FLEET_CONTENT: Record<
     waText: "¡Hola! Quisiera información y precio para un vehículo con chófer privado en Marruecos. ¿Podrían confirmarme disponibilidad?",
   },
   it: {
-    title: `La Nostra Flotta — Berline, SUV e Van con Autista in Marocco | ${SITE_NAME}`,
+    title: `La Nostra Flotta — Berline, SUV e Van con Autista in Marocco`,
     desc: "Scoprite i veicoli del nostro servizio NCC in Marocco. Berline comfort, spaziosi van Mercedes e minibus con aria condizionata e prezzi fissi.",
     home: "Home",
     fleetBreadcrumb: "La Nostra Flotta",
@@ -85,7 +85,7 @@ const FLEET_CONTENT: Record<
     waText: "Buongiorno! Vorrei prenotare un veicolo con autista privato in Marocco. Potete confermarmi le disponibilità e i prezzi fissi?",
   },
   de: {
-    title: `Unsere Fahrzeugflotte — Limousinen, SUVs & Vans in Marokko | ${SITE_NAME}`,
+    title: `Unsere Fahrzeugflotte — Limousinen, SUVs & Vans in Marokko`,
     desc: "Übersicht unserer modernen Chauffeurfahrzeuge in Marokko. Komfort-Limousinen, geräumige Vans und Minibusse zum garantierten Festpreis.",
     home: "Startseite",
     fleetBreadcrumb: "Fahrzeugflotte",
@@ -101,7 +101,7 @@ const FLEET_CONTENT: Record<
     waText: "Guten Tag! Ich interessiere mich für ein Chauffeurfahrzeug in Marokko. Können Sie mir die Verfügbarkeit und Festpreise mitteilen?",
   },
   ar: {
-    title: `أسطول سياراتنا الفاخرة — سيدان، دفع رباعي وفانات VIP | ${SITE_NAME}`,
+    title: `أسطول سياراتنا الفاخرة — سيدان، دفع رباعي وفانات VIP`,
     desc: "تعرف على أسطول سيارات النقل السياحي والسائق الخاص في المغرب. سيارات مرسيدس وفانات عائلية مكيفة بأحدث المواصفات وأسعار ثابتة.",
     home: "الرئيسية",
     fleetBreadcrumb: "أسطول السيارات",
@@ -117,7 +117,7 @@ const FLEET_CONTENT: Record<
     waText: "السلام عليكم، أود الاستفسار عن حجز سيارة مع سائق خاص في المغرب. هل يمكنكم تزويدي بالأسعار والتوافر؟",
   },
   pt: {
-    title: `A Nossa Frota — Berlinas, SUVs e Minivans em Marrocos | ${SITE_NAME}`,
+    title: `A Nossa Frota — Berlinas, SUVs e Minivans em Marrocos`,
     desc: "Conheça a nossa frota de veículos com motorista privado em Marrocos. Viaturas modernas, confortáveis e climatizadas com preços fixos garantidos.",
     home: "Início",
     fleetBreadcrumb: "A Nossa Frota",
@@ -133,7 +133,7 @@ const FLEET_CONTENT: Record<
     waText: "Olá! Gostaria de reservar uma viatura com motorista privado em Marrocos. Poderiam confirmar a disponibilidade e os preços fixos?",
   },
   nl: {
-    title: `Onze Voertuigen — Sedans, SUVs en Minibusjes in Marokko | ${SITE_NAME}`,
+    title: `Onze Voertuigen — Sedans, SUVs en Minibusjes in Marokko`,
     desc: "Bekijk onze moderne vloot met privéchauffeur in Marokko. Luxe sedans, comfortabele familiebusjes en touring minivans voor vaste all-inclusive tarieven.",
     home: "Home",
     fleetBreadcrumb: "Onze Vloot",

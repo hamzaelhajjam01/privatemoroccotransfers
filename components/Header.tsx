@@ -105,6 +105,10 @@ export default function Header() {
   const homeUrl = currentLang === "en" ? "/" : `/${currentLang}`;
   const contactUrl = currentLang === "en" ? "/contact" : `/${currentLang}/contact`;
 
+  if (/^\/(?:[a-z]{2}\/)?trip-finder\/?$/.test(pathname || "")) {
+    return null;
+  }
+
   const cls = [
     "site-header",
     isHome && "overlay",

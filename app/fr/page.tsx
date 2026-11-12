@@ -8,7 +8,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 import type { Review } from "@/content/reviews";
 
 export const metadata: Metadata = {
-  title: { absolute: "Chauffeur Privé & Transferts au Maroc — Prix Fixes Garantis | Private Morocco Transfers" },
+  title: { absolute: "Chauffeur Privé & Transferts au Maroc — Prix Fixes Garantis" },
   description: "Service de chauffeur privé et transferts au Maroc à prix fixes garantis. Accueil aéroport personnalisé, liaisons intervilles et excursions. Chauffeurs professionnels bilingues, réservation WhatsApp 24/7.",
   alternates: {
     canonical: `${SITE_URL}/fr`,

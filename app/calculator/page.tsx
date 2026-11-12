@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Calculator from "@/components/Calculator";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, SITE_URL, buildMultilingualAlternates } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Price Calculator — Private Morocco Transfers" },
   description: "Calculate the exact fixed price for your private driver in Morocco. Instant price for any route — Marrakech, Casablanca, Agadir, Fes and more.",
-  alternates: {
-    canonical: `${SITE_URL}/calculator`,
-    languages: {
-      "en": `${SITE_URL}/calculator`,
-      "fr": `${SITE_URL}/fr/calculator`,
-      "x-default": `${SITE_URL}/calculator`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/calculator", "en"),
   openGraph: {
     title: "Morocco Private Transfer Price Calculator | Instant Fixed Rates",
     description: "Calculate guaranteed fixed prices for private airport pickups, city-to-city transfers, and desert tours in Morocco.",

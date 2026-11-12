@@ -30,7 +30,7 @@ const FAQ_ITEMS: Record<
   }
 > = {
   fr: {
-    title: `FAQ — Questions Fréquentes sur les Chauffeurs au Maroc | ${SITE_NAME}`,
+    title: `FAQ — Questions Fréquentes sur les Chauffeurs au Maroc`,
     desc: "Réponses à vos questions : tarifs fixes, acompte, annulation gratuite, transferts aéroport et véhicules avec chauffeur au Maroc.",
     home: "Accueil",
     breadcrumb: "FAQ",
@@ -61,7 +61,7 @@ const FAQ_ITEMS: Record<
     ],
   },
   es: {
-    title: `Preguntas Frecuentes — Chófer Privado en Marruecos | ${SITE_NAME}`,
+    title: `Preguntas Frecuentes — Chófer Privado en Marruecos`,
     desc: "Todo lo que necesita saber sobre precios fijos, cancelaciones, conductores, sillas infantiles y recogida en aeropuertos de Marruecos.",
     home: "Inicio",
     breadcrumb: "Preguntas Frecuentes",
@@ -92,7 +92,7 @@ const FAQ_ITEMS: Record<
     ],
   },
   it: {
-    title: `Domande Frequenti — Transfer Privati in Marocco | ${SITE_NAME}`,
+    title: `Domande Frequenti — Transfer Privati in Marocco`,
     desc: "Risposte a tutte le domande: tariffe fisse, pagamenti, cancellazione gratuita, ritardi aerei e veicoli con autista in Marocco.",
     home: "Home",
     breadcrumb: "FAQ",
@@ -123,7 +123,7 @@ const FAQ_ITEMS: Record<
     ],
   },
   de: {
-    title: `FAQ — Häufige Fragen zu Privatchauffeur Marokko | ${SITE_NAME}`,
+    title: `FAQ — Häufige Fragen zu Privatchauffeur Marokko`,
     desc: "Antworten zu Festpreisen, Anzahlung, Stornierung, Flugverfolgung und Fahrzeugen mit privatem Fahrer in Marokko.",
     home: "Startseite",
     breadcrumb: "FAQ",
@@ -154,7 +154,7 @@ const FAQ_ITEMS: Record<
     ],
   },
   ar: {
-    title: `الأسئلة الشائعة — خدمات السائق الخاص بالمغرب | ${SITE_NAME}`,
+    title: `الأسئلة الشائعة — خدمات السائق الخاص بالمغرب`,
     desc: "إجابات وافية حول الأسعار الثابتة، الدفع، الإلغاء المجاني، استقبال المطارات ومواصفات السيارات مع سائق خاص بالمغرب.",
     home: "الرئيسية",
     breadcrumb: "الأسئلة الشائعة",
@@ -185,7 +185,7 @@ const FAQ_ITEMS: Record<
     ],
   },
   pt: {
-    title: `Perguntas Frequentes — Motorista Privado em Marrocos | ${SITE_NAME}`,
+    title: `Perguntas Frequentes — Motorista Privado em Marrocos`,
     desc: "Tudo o que precisa de saber sobre preços fixos, cancelamentos, voos atrasados e transporte particular em Marrocos.",
     home: "Início",
     breadcrumb: "FAQ",
@@ -216,7 +216,7 @@ const FAQ_ITEMS: Record<
     ],
   },
   nl: {
-    title: `Veelgestelde Vragen — Privé Chauffeur Marokko | ${SITE_NAME}`,
+    title: `Veelgestelde Vragen — Privé Chauffeur Marokko`,
     desc: "Antwoorden over all-in vaste prijzen, aanbetalingen, gratis annuleren, vliegveld pick-up en auto's met chauffeur in Marokko.",
     home: "Home",
     breadcrumb: "Veelgestelde Vragen",

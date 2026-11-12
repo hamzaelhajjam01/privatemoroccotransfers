@@ -21,15 +21,6 @@ export const metadata: Metadata = {
   },
   description:
     "Reliable private transfers across Morocco at guaranteed fixed prices. Airport pickups, intercity routes, and day trips. Licensed drivers, 24/7 WhatsApp booking.",
-  keywords: [
-    "Morocco private transfers",
-    "private driver Morocco",
-    "Marrakech airport transfer",
-    "Casablanca to Marrakech transfer",
-    "Morocco chauffeur service",
-    "Essaouira to Marrakech taxi",
-    "private taxi Morocco",
-  ],
   openGraph: {
     siteName: "Private Morocco Transfers",
     type: "website",

@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, buildMultilingualAlternates } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "FAQ — Frequently Asked Questions | Private Morocco Transfers" },
-  alternates: {
-    canonical: "https://www.privatemoroccotransfers.com/faq",
-  },
+  alternates: buildMultilingualAlternates("/faq", "en"),
   description: "Answers about booking a private driver in Morocco: fixed prices, payment, cancellation, airport pickups, drivers and vehicles.",
 };
 

@@ -93,8 +93,8 @@ const CITY_ROUTES = [
     slug: "marrakech-to-merzouga",
     distance: "560 km",
     duration: "~9h",
-    priceEur: 330,
-    priceMad: 3630,
+    priceEur: 360,
+    priceMad: 3960,
     bg: "/img/routes/marrakech-merzouga.jpg",
   },
   {
@@ -145,7 +145,7 @@ const CONTENT: Record<
   }
 > = {
   es: {
-    title: `Traslados Entre Ciudades en Marruecos — Precio Fijo | ${SITE_NAME}`,
+    title: `Traslados Entre Ciudades en Marruecos — Precio Fijo`,
     desc: "Traslados privados puerta a puerta entre todas las ciudades de Marruecos. Marrakech a Essaouira, Casablanca a Marrakech, Fez a Chefchaouen. Precios fijos por coche.",
     home: "Inicio",
     breadcrumb: "Rutas Entre Ciudades",
@@ -171,7 +171,7 @@ const CONTENT: Record<
     waText: "¡Hola! Me gustaría cotizar un traslado entre ciudades en Marruecos",
   },
   it: {
-    title: `Trasferimenti Tra Città in Marocco — Prezzi Fissi Garantiti | ${SITE_NAME}`,
+    title: `Trasferimenti Tra Città in Marocco — Prezzi Fissi Garantiti`,
     desc: "Transfer privati porta a porta tra tutte le città del Marocco. Da Marrakech a Essaouira, Casablanca a Marrakech, Fes a Chefchaouen. Prezzi fissi per auto.",
     home: "Home",
     breadcrumb: "Tratte Tra Città",
@@ -197,7 +197,7 @@ const CONTENT: Record<
     waText: "Buongiorno! Vorrei prenotare un collegamento tra città in Marocco",
   },
   de: {
-    title: `Fernstrecken & Stadt-zu-Stadt Transfers Marokko | ${SITE_NAME}`,
+    title: `Fernstrecken & Stadt-zu-Stadt Transfers Marokko`,
     desc: "Private Fernstrecken-Transfers von Tür zu Tür zwischen allen Städten Marokkos. Marrakesch nach Essaouira, Casablanca nach Marrakesch, Fès nach Chefchaouen.",
     home: "Startseite",
     breadcrumb: "Fernstrecken",
@@ -223,7 +223,7 @@ const CONTENT: Record<
     waText: "Guten Tag! Ich interessiere mich für einen Stadt-zu-Stadt Transfer in Marokko",
   },
   ar: {
-    title: `خدمات التنقل الخاص والتوصيل بين المدن بالمغرب | ${SITE_NAME}`,
+    title: `خدمات التنقل الخاص والتوصيل بين المدن بالمغرب`,
     desc: "تنقلات خاصة ومريحة من الباب إلى الباب بين كافة المدن المغربية. مراكش إلى الصويرة، كازا إلى مراكش، فاس إلى شفشاون. أسعار ثابتة شاملة للسيارة.",
     home: "الرئيسية",
     breadcrumb: "التنقل بين المدن",
@@ -249,7 +249,7 @@ const CONTENT: Record<
     waText: "السلام عليكم، أود الاستفسار عن رحلة وتوصيل بين المدن في المغرب",
   },
   pt: {
-    title: `Viagens Entre Cidades em Marrocos — Preços Fixos | ${SITE_NAME}`,
+    title: `Viagens Entre Cidades em Marrocos — Preços Fixos`,
     desc: "Transfers privados de porta a porta entre todas as cidades de Marrocos. Marraquexe a Essaouira, Casablanca a Marraquexe, Fez a Chefchaouen.",
     home: "Início",
     breadcrumb: "Viagens Entre Cidades",
@@ -275,7 +275,7 @@ const CONTENT: Record<
     waText: "Olá! Gostaria de consultar o preço para uma viagem entre cidades em Marrocos",
   },
   nl: {
-    title: `Stad naar Stad Transfers Marokko — Vaste All-In Tarieven | ${SITE_NAME}`,
+    title: `Stad naar Stad Transfers Marokko — Vaste All-In Tarieven`,
     desc: "Deur-tot-deur privévervoer tussen alle steden in Marokko. Marrakech naar Essaouira, Casablanca naar Marrakech, Fes naar Chefchaouen. Vaste prijzen per auto.",
     home: "Home",
     breadcrumb: "Stad naar Stad ritten",

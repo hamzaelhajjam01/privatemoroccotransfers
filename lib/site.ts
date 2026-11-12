@@ -4,6 +4,59 @@ export const SITE_URL = "https://www.privatemoroccotransfers.com";
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "212760426269";
 export const SUPPORT_EMAIL = "contact@privatemoroccotransfers.com";
 
+export const SEO_LANGS = ["fr", "es", "it", "de", "ar", "pt", "nl"] as const;
+export type SeoLang = "en" | (typeof SEO_LANGS)[number];
+
+/** Builds symmetric 8-locale canonical + hreflang alternates for a route path (e.g. "/faq" or "/transfers/slug"). */
+export function buildMultilingualAlternates(enPath: string, currentLang: SeoLang = "en") {
+  const clean = enPath.startsWith("/") ? enPath : `/${enPath}`;
+  const isRoot = clean === "/";
+  const suffix = isRoot ? "" : clean;
+  const enUrl = isRoot ? SITE_URL : `${SITE_URL}${clean}`;
+  const languages: Record<string, string> = {
+    en: enUrl,
+    "x-default": enUrl,
+  };
+  for (const l of SEO_LANGS) {
+    languages[l] = `${SITE_URL}/${l}${suffix}`;
+  }
+  const canonical = currentLang === "en" ? enUrl : `${SITE_URL}/${currentLang}${suffix}`;
+  return { canonical, languages };
+}
+
+const TITLE_PREFIX: Record<string, string> = {
+  en: "Transfer",
+  fr: "Transfert",
+  es: "Traslado",
+  it: "Transfer",
+  de: "Transfer",
+  ar: "توصيل",
+  pt: "Transfer",
+  nl: "Transfer",
+};
+
+function compactPlace(name: string): string {
+  return name.replace(/\s*\([^)]*\)/g, "").trim();
+}
+
+/** Keeps route meta titles under ~65 characters while preserving route endpoints, rate, and brand. */
+export function buildRouteMetaTitle(from: string, to: string, priceEur: number, lang: string = "en"): string {
+  const prefix = TITLE_PREFIX[lang] || "Transfer";
+  const arrow = lang === "ar" ? "←" : "to";
+  const full = `${prefix} ${from} ${arrow} ${to} €${priceEur} | ${SITE_NAME}`;
+  if (full.length <= 65) return full;
+
+  const fShort = compactPlace(from);
+  const tShort = compactPlace(to);
+  const withPrefix = `${prefix} ${fShort} → ${tShort} €${priceEur} | ${SITE_NAME}`;
+  if (withPrefix.length <= 65) return withPrefix;
+
+  const concise = `${fShort} → ${tShort} €${priceEur} | ${SITE_NAME}`;
+  if (concise.length <= 65) return concise;
+
+  return `${fShort} → ${tShort} €${priceEur}`;
+}
+
 export function whatsappUrl(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }

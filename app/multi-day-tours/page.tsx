@@ -1,17 +1,52 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Multi-Day Private Tours Morocco | Private Morocco Transfers" },
   description: "3, 5 and 7-day private tours across Morocco with a dedicated driver. Sahara, imperial cities, Atlantic coast.",
   alternates: {
-    canonical: "https://www.privatemoroccotransfers.com/multi-day-tours",
+    canonical: `${SITE_URL}/multi-day-tours`,
   },
 };
 
 export default function MultiDayToursPage() {
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Multi-Day Private Tours", item: `${SITE_URL}/multi-day-tours` },
+    ],
+  };
+
+  const serviceLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Multi-Day Private Tours Across Morocco",
+    description:
+      "3, 5 and 7-day private chauffeur tours from Marrakech and Casablanca to the Sahara Desert (Merzouga), Imperial Cities (Fes, Rabat, Meknes), and the Atlantic coast.",
+    url: `${SITE_URL}/multi-day-tours`,
+    provider: {
+      "@type": "LocalBusiness",
+      name: SITE_NAME,
+      telephone: `+${WHATSAPP_NUMBER}`,
+      url: SITE_URL,
+    },
+    areaServed: { "@type": "Country", name: "Morocco" },
+    offers: {
+      "@type": "Offer",
+      price: 480,
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/multi-day-tours`,
+    },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }} />
       <div className="page-hero">
         <div className="container">
           <div className="breadcrumb">

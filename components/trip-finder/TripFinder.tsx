@@ -89,21 +89,23 @@ export default function TripFinder({
             <b id="capT">{t.inset.tagline}</b>
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`${assetBase}world.png`} alt="" />
+          <img src={`${assetBase}world.png`} alt="Global departures to Morocco private driver map" />
         </div>
         <div className="topbar">
           <div className="tb-l">
             <button className="back" id="back" disabled>{t.back}</button>
           </div>
           <a className="logo" href={effectiveHome} aria-label="Private Morocco Transfers home">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/logo-gold.svg"
-              alt="Private Morocco Transfers"
-              width={180}
-              height={35}
-              style={{ height: "30px", width: "auto" }}
-            />
+            <svg viewBox="10 4 1230 204" aria-hidden="true" style={{ direction: "ltr" }}>
+              <g fill="#c9803f">
+                <path d="M27 169 113 39h27l29 49 78-49h32l-58 91h-24l29-47-66 44-31-52-58 76z M252 129l29-46h64q13 0 19-12t-10-11h-64l13-21h75q36 0 20 31-14 34-59 34h-40l-16 25z M418 39h100l-13 22h-36l-43 70h-28l43-70h-36z M13 206q143-97 445-64-243-12-364 64z M164 198l43-22 29 1-37 21z M250 168l42-10 22 2-42 13z M329 154l43-5 21 2-43 7z" />
+                <path d="M548 20h7v158h-7z" />
+              </g>
+              <g fill="#f3efe8" fontFamily="var(--tf-jost), Jost, Futura, sans-serif" fontWeight={500}>
+                <text x="590" y="92" fontSize="76" letterSpacing="1" textAnchor="start">MOROCCO</text>
+                <text x="590" y="166" fontSize="48" letterSpacing="2" textAnchor="start">PRIVATE TRANSFERS</text>
+              </g>
+            </svg>
           </a>
           <div className="tb-r">
             <div className="ring" aria-label="Progress">

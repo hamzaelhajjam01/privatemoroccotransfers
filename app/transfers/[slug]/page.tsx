@@ -2,7 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import routesData from "@/content/routes.json";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, whatsappUrl } from "@/lib/site";
+import {
+  SITE_NAME,
+  SITE_URL,
+  WHATSAPP_NUMBER,
+  whatsappUrl,
+  buildMultilingualAlternates,
+  buildRouteMetaTitle,
+} from "@/lib/site";
+import { buildDirectionalRouteCopy } from "@/lib/route-copy";
 import { EUR_RATE } from "@/lib/pricing";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 import Icon from "@/components/Icon";
@@ -46,26 +54,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const route = ALL_ROUTES.find((r) => r.slug === slug);
   if (!route) return {};
 
-  const title =
-    route.seoTitle ||
-    `${route.h1 || `Private Transfer from ${route.from} to ${route.to}`} | Fixed Price €${route.price_sedan} | ${SITE_NAME}`;
+  const title = buildRouteMetaTitle(route.from, route.to, route.price_sedan, "en");
   const description =
     route.seoDescription ||
     `Private transfer from ${route.from} to ${route.to} at guaranteed fixed price €${route.price_sedan}. Door-to-door, licensed English-speaking chauffeur, all tolls and fuel included. Instant WhatsApp booking.`;
   const canonicalUrl = `${SITE_URL}/transfers/${route.slug}`;
-  const frUrl = `${SITE_URL}/fr/transfers/${route.slug}`;
 
   return {
     title: { absolute: title },
     description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        "en": canonicalUrl,
-        "fr": frUrl,
-        "x-default": canonicalUrl,
-      },
-    },
+    alternates: buildMultilingualAlternates(`/transfers/${route.slug}`, "en"),
     openGraph: {
       title,
       description,
@@ -205,12 +203,25 @@ export default async function TransferRoutePage({ params }: Props) {
     },
   };
 
+  const dCopy = buildDirectionalRouteCopy({
+    lang: "en",
+    fromLocal: route.from,
+    toLocal: route.to,
+    fromEn: route.from,
+    toEn: route.to,
+    distance: route.distance,
+    duration: route.duration,
+    highway: route.highway,
+    priceSedan: route.price_sedan,
+  });
+  const allFaqs = [...dCopy.faqs, ...(route.faqs || [])];
+
   const faqLd =
-    route.faqs && route.faqs.length > 0
+    allFaqs.length > 0
       ? {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: route.faqs.map((f) => ({
+          mainEntity: allFaqs.map((f) => ({
             "@type": "Question",
             name: f.q,
             acceptedAnswer: {
@@ -699,6 +710,45 @@ export default async function TransferRoutePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Directional Pickup & Route Logistics */}
+      <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+        <div className="container">
+          <div style={{ maxWidth: "820px", marginBottom: "28px" }}>
+            <span className="section-label">{dCopy.sectionLabel}</span>
+            <h2 className="heading-lg mt-12">{dCopy.heading}</h2>
+            <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.65, marginTop: "14px" }}>
+              {dCopy.introParagraph}
+            </p>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "20px",
+            }}
+          >
+            {dCopy.logisticsBullets.map((item, idx) => (
+              <div
+                key={idx}
+                style={{
+                  padding: "22px",
+                  background: "var(--sand)",
+                  border: "1px solid var(--rule)",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "14px",
+                }}
+              >
+                <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold)", flexShrink: 0, marginTop: "2px" }}>
+                  0{idx + 1}
+                </span>
+                <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.55 }}>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Sister Agency Partner Block (Storey Architecture Dark Section) */}
       <section className="section dark" style={{ borderTop: "1px solid var(--rule-dark)" }}>
         <div className="container">
@@ -728,7 +778,7 @@ export default async function TransferRoutePage({ params }: Props) {
       </section>
 
       {/* FAQ Section (Using Site's Native Accordion Classes) */}
-      {route.faqs && route.faqs.length > 0 && (
+      {allFaqs.length > 0 && (
         <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
           <div className="container" style={{ maxWidth: "900px" }}>
             <div className="section-header" style={{ display: "block", paddingBottom: "24px", marginBottom: "32px" }}>
@@ -738,7 +788,7 @@ export default async function TransferRoutePage({ params }: Props) {
               <h2 className="heading-lg">FAQs for {route.from} to {route.to}</h2>
             </div>
             <div className="faq-list">
-              {route.faqs.map((faq, idx) => (
+              {allFaqs.map((faq, idx) => (
                 <div key={idx} className="faq-item">
                   <div className="faq-question">
                     <span>{faq.q}</span>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { openWhatsApp } from "@/lib/site";
 import Icon from "./Icon";
 
@@ -12,6 +13,7 @@ const OPTIONS = [
 ];
 
 export default function WhatsAppFloat() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -20,6 +22,10 @@ export default function WhatsAppFloat() {
     document.addEventListener("click", close);
     return () => document.removeEventListener("click", close);
   }, []);
+
+  if (/^\/(?:[a-z]{2}\/)?trip-finder\/?$/.test(pathname || "")) {
+    return null;
+  }
 
   return (
     <div className="wa-float" ref={ref}>

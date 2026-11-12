@@ -160,55 +160,45 @@ const W = (() => {
   const deckEl=$("#deck"), stackEl=deckEl.querySelector(".dk-stack"), ambEls=[...deckEl.querySelectorAll(".dk-amb")];
   const DK={top:null,name:null,amb:0};
   function deckLayout(){const W=deckEl.clientWidth,H=deckEl.clientHeight; if(!W||!H) return;
-    const wideNow=W>1023;
-    const isMobile=!wideNow && W<640;
-    const horiz=!wideNow; // Desktop: vertical card. Mobile/Tablet: horizontal card.
-    const x0=wideNow?(isRTL?0:Math.min(580,W*.5)):0;
-    const top=wideNow?96:(isMobile?66:76);
-    const bot=wideNow?H-40:Math.max(top+(isMobile?210:250),H-(isMobile?20:28));
-    const bw=W-(wideNow?Math.min(580,W*.5):0)-(wideNow?48:(isMobile?20:32));
-    const bh=bot-top;
-    const ar=horiz?0.54:1.24;
-    const w=wideNow
-      ? Math.min(bw*.9, bh*.92/ar, 480)
-      : (isMobile ? Math.min(W - 20, 420) : Math.min(bw * .95, 740));
-    deckEl.classList.toggle("narrow",!wideNow);
-    deckEl.classList.toggle("horiz",horiz);
-    stackEl.style.width=w+"px";
-    const baseW = wideNow ? 340 : (isMobile ? 310 : 480);
-    deckEl.style.setProperty("--cs",(w/baseW).toFixed(3));
-    const h=DK.top?DK.top.offsetHeight:Math.round(w*ar);
-    const leftPos = wideNow
-      ? (isRTL ? ((W - Math.min(580, W * .5) - w) / 2) : (x0 + (W - x0 - w) / 2))
-      : ((W - w) / 2);
-    const topPos = top + Math.max(0, (bh - h) / 2);
-    Object.assign(stackEl.style,{height:h+"px",left:leftPos+"px",top:topPos+"px"});
+    const wideNow=W>1023, x0=wideNow?(isRTL?0:Math.min(580,W*.5)):0, top=wideNow?84:58, bot=wideNow?H-40:H-14;
+    const panelW=wideNow?(W-Math.min(580,W*.5)):W;
+    const bw=panelW-(wideNow?48:32), bh=bot-top, horiz=!wideNow;
+    /* desktop: tall card filling the visual panel. phones/tablets: horizontal card (photo left, details right) filling the top half */
+    const ar=horiz?.64:1.2, w=horiz?Math.min(bw*.97,bh*.95/ar,900):Math.min(bw*.84,bh*.95/ar,720);
+    const cs=horiz?Math.min(1.2,Math.max(.95,w/520)):Math.min(1.4,w/380);
+    deckEl.classList.toggle("narrow",!wideNow); deckEl.classList.toggle("horiz",horiz); stackEl.style.width=w+"px"; deckEl.style.setProperty("--cs",cs.toFixed(3));
+    const h=w*ar;
+    Object.assign(stackEl.style,{height:h+"px",left:(x0+(panelW-w)/2)+"px",top:(top+(bh-h)/2)+"px"});
   }
   observe(new ResizeObserver(deckLayout)).observe(deckEl);
   function cardEl(name,info){const el=document.createElement("article"); el.className="dk-card";
     const f=CARFILE[name]||"mercedes-vito";
-    el.innerHTML=`<header class="dk-t">${name}</header><div class="dk-ph"><img src="${A}cars/${f}.webp" alt="${name}" decoding="async"></div>
-      <div class="dk-ic">${["seat","bag","ac","shield"].map(k=>`<span>${PI[k]}</span>`).join("")}<em>${info&&info.tier?info.tier:""}</em></div>
-      <p class="dk-d">${info?info.text:""}</p>`; return el;}
+    const tier=info&&info.tier?info.tier:"";
+    el.innerHTML=`<div class="dk-ph"><img src="${A}cars/${f}.webp" alt="${name}" decoding="async"></div>
+      <div class="dk-c tl"><header class="dk-t">${name}</header></div>
+      <div class="dk-c tr"${tier?"":" hidden"}><em class="dk-tier">${tier}</em></div>
+      <div class="dk-c bl"><div class="dk-ic">${["seat","bag","ac","shield"].map(k=>`<span>${PI[k]}</span>`).join("")}</div></div>
+      <div class="dk-c br"><p class="dk-d">${info?(info.html||info.text):""}</p></div>`; return el;}
   function setAmb(name){const f=CARFILE[name]||"mercedes-vito", n=ambEls[DK.amb^1]; n.style.backgroundImage=`url(${A}cars/${f}.webp)`; n.classList.add("on"); ambEls[DK.amb].classList.remove("on"); DK.amb^=1;}
-  function idle(el){}
+  function idle(el){ /* no looping motion: the card stays still once it lands */ }
   function deckShow(name,info){ deckLayout();
     if(DK.top&&DK.name===name){ if(info) deckInfo(info); return; }
     const old=DK.top, el=cardEl(name,info); DK.top=el; DK.name=name; setAmb(name);
     stackEl.appendChild(el); deckLayout(); el.querySelector("img").addEventListener("load",deckLayout,{once:true});
     if(!G||reduce){ if(old) old.remove(); return; }
     if(old){ G.killTweensOf(old); G.killTweensOf(old.querySelector("img"));
+      /* the next card waits in the fan, the current one tips forward and drops out of frame */
       G.set(el,{rotation:-7,x:-14,y:10,scale:.93,opacity:1,zIndex:2}); G.set(old,{zIndex:3});
       G.timeline().to(old,{y:"+=26",rotation:-2,duration:.22,ease:"power2.out"})
         .to(old,{y:"118%",rotation:6,rotationX:-24,scale:1.05,opacity:0,duration:.62,ease:"power3.in",onComplete:()=>old.remove()})
         .to(el,{rotation:0,x:0,y:0,scale:1,duration:.75,ease:"power3.out",onStart:()=>G.set(el,{zIndex:4}),onComplete:()=>idle(el)},"-=.35")
-        .from(el.querySelectorAll(".dk-t,.dk-ic,.dk-d"),{opacity:0,y:8,stagger:.06,duration:.45,ease:"power2.out"},"-=.45");
+        .from(el.querySelectorAll(".dk-c"),{opacity:0,y:8,stagger:.06,duration:.45,ease:"power2.out"},"-=.45");
     } else {
       G.timeline().from(deckEl.querySelectorAll(".dk-back"),{opacity:0,rotation:0,x:0,y:30,stagger:.08,duration:.7,ease:"power3.out"})
         .from(el,{y:60,opacity:0,rotation:3,duration:.8,ease:"power3.out",onComplete:()=>idle(el)},"-=.55")
-        .from(el.querySelectorAll(".dk-t,.dk-ic,.dk-d"),{opacity:0,y:8,stagger:.06,duration:.45},"-=.4"); } }
-  function deckInfo(info){const el=DK.top; if(!el) return; const d=el.querySelector(".dk-d"), t=el.querySelector(".dk-ic em");
-    if(t) t.textContent=info.tier||""; if(info.html===d.innerHTML) return;
+        .from(el.querySelectorAll(".dk-c"),{opacity:0,y:8,stagger:.06,duration:.45},"-=.4"); } }
+  function deckInfo(info){const el=DK.top; if(!el) return; const d=el.querySelector(".dk-d"), t=el.querySelector(".dk-tier");
+    if(t){ t.textContent=info.tier||""; t.parentNode.hidden=!info.tier; } if(info.html===d.innerHTML) return;
     if(!G){d.innerHTML=info.html||info.text;return;}
     G.to(d,{opacity:0,y:-6,duration:.2,onComplete:()=>{d.innerHTML=info.html||info.text; d.classList.toggle("trip",!!info.html); deckLayout(); G.fromTo(d,{opacity:0,y:8},{opacity:1,y:0,duration:.45,ease:"power2.out"});}});}
   function deckHide(){ if(DK.top){ if(G){G.killTweensOf(DK.top);} DK.top.remove(); } DK.top=null; DK.name=null; }
@@ -230,8 +220,9 @@ const W = (() => {
     podium:()=>({x:CARP.x-(wide?2:1.5),y:3.3,z:CARP.z+(wide?20:16.5),tx:CARP.x+(wide?.3:0),ty:2.3,tz:CARP.z}),
     result:()=>({x:CARP.x+(wide?1.4:0),y:3.9,z:CARP.z+(wide?24:18),tx:CARP.x+(wide?1.2:0),ty:2.4,tz:CARP.z})
   };
+  /* stacked layouts: frame the whole country, Western Sahara included, inside the clear part of the map panel */
   const OUTLINE=[[35.92,-5.9],[35.1,-2.0],[32.1,-1.1],[29.2,-3.6],[27.67,-8.67],[21.33,-13.0],[20.77,-17.1],[23.7,-16.0],[27.9,-12.9],[31.5,-9.85],[33.6,-7.6]].map(([a,b])=>P(a,b));
-  function fitMap(){const tmp=new THREE.PerspectiveCamera(cam.fov,(W0||1)/(H0||1),.1,800), top=Math.min(.3,70/(H0||400)), bot=.8, tw=.88, th=(bot-top)*2*.92, tcy=1-(top+bot);
+  function fitMap(){const tmp=new THREE.PerspectiveCamera(cam.fov,(W0||1)/(H0||1),.1,800), top=Math.min(.3,70/(H0||400)), bot=.9, tw=.88, th=(bot-top)*2*.92, tcy=1-(top+bot);
     const dir=new THREE.Vector3(0,160,52).normalize(), sinE=dir.y, tanH=Math.tan(cam.fov*Math.PI/360), c=C.clone(); c.y=0; let dist=170; const v=new THREE.Vector3();
     for(let i=0;i<14;i++){ tmp.position.copy(c).addScaledVector(dir,dist); tmp.lookAt(c); tmp.updateMatrixWorld(); tmp.updateProjectionMatrix();
       let x0=9,x1=-9,y0=9,y1=-9; for(const q of OUTLINE){v.copy(q).project(tmp); x0=Math.min(x0,v.x);x1=Math.max(x1,v.x);y0=Math.min(y0,v.y);y1=Math.max(y1,v.y);}
@@ -446,10 +437,9 @@ function projTrip(q){
     <div class="pj-row pj-hide-m"><span class="it"><b>${T.projTexts.fromFixed(q.price)}</b></span><span class="sep"></span><span class="it">${PI.seat}<b>${S.pax}</b></span><span class="sep pj-hide-m"></span><span class="it pj-hide-m">${PI.clock}<b>${S.when}</b></span></div>`);
   requestAnimationFrame(()=>animate(false));
 }
-function carInfo(car,tier){const c=cls(); return {tier:tier||"",text:`<b>${c.name} · ${T.labels.upToSeats(c.max)}</b><br>${T.labels.privateDriver} · ${T.labels.fuelTollsAcIncluded}`};}
+function carInfo(car,tier){const c=cls(); return {tier:tier||"",text:`<small>${c.name} · ${T.labels.fuelTollsAcIncluded}</small><b>${T.labels.upToSeats(c.max)}</b>`};}
 function tripInfo(q){const dur=q.tour?T.tours.sameDriver(S.days):hrs(q.km).replace("~","");
-  const paxLabel = S.pax > 1 ? T.labels.travellers : T.labels.traveller;
-  return {tier:q.comfort,html:`<span class="dk-route">${q.an} → ${q.bn}</span>${q.km.toLocaleString(LANG)} km · ${dur} · ${S.pax} ${paxLabel}<span class="dk-price">${T.labels.fromPrice(q.price)}</span>`};}
+  return {tier:q.comfort,html:`<small>${q.an} → ${q.bn} · ${q.km.toLocaleString(LANG)} km · ${dur}</small><b>${T.labels.fromPrice(q.price)}</b>`};}
 const tierOf=car=>{const c=cls(),i=c.cars.indexOf(car);return i>=0?COMFORT[i].n:"";};
 function vehicle(car,tier,fresh){ if(!W) return; W.showCar(car,carInfo(car,tier)); later(()=>projVehicle(car,tier),fresh?750:350); }
 
@@ -529,7 +519,7 @@ const steps=[
         <div class="pax-row"><div class="big" id="paxN"><span>${S.pax}</span></div>
           <div class="pms"><button class="pm" data-d="-1" aria-label="${T.steps.s3.fewerPax}">−</button><button class="pm" data-d="1" aria-label="${T.steps.s3.morePax}">+</button></div></div>
         <div class="seats" id="seats">${seats()}</div>
-        <div class="veh-meta"><span class="cap">${T.labels.vehiclePrefix} · <b id="vn">${cls().name} · ${cls().hero}</b></span><span class="cap"><b>${T.labels.upToSeats(cls().max)}</b></span></div>
+        <div class="veh-meta"><span class="cap">${T.labels.vehiclePrefix} · <b id="vn">${cls().name} · ${cls().hero}</b></span><span class="cap"><b id="vs">${T.labels.upToSeats(cls().max)}</b></span></div>
       </div>
       <div class="foot a"><button class="btn" id="next">${T.steps.s3.continueBtn}</button></div>`,
     bind(el){
@@ -540,7 +530,7 @@ const steps=[
         G&&G.fromTo(sp,{yPercent:d>0?100:-100},{yPercent:0,duration:.5,ease:"expo.out"});
         el.querySelector("#seats").innerHTML=seats();
         if(before!==cls().key){ vehicle(cls().hero,"",false); setCap(`${cls().name} · ${T.labels.upToSeats(cls().max)}`,cls().hero); G&&G.fromTo(el.querySelector("#vn"),{opacity:0,x:-10},{opacity:1,x:0,duration:.5}); }
-        el.querySelector("#vn").textContent=`${cls().name} · ${cls().hero}`; el.querySelector("#vs").textContent=cls().max;
+        el.querySelector("#vn").textContent=`${cls().name} · ${cls().hero}`; const vsEl=el.querySelector("#vs"); if(vsEl) vsEl.textContent=T.labels.upToSeats(cls().max);
       });
       el.querySelector("#next").onclick=()=>go(1);
     }
@@ -558,7 +548,7 @@ const steps=[
     html:()=>`${H(T.steps.s5.title)}
       <p class="sub a">${T.steps.s5.subtitle}</p>
       ${rowsHTML(WHEN.map(w=>({k:w,n:w})),S.when,"w")}
-      <blockquote class="quote a">“${T.quote.text}”<span class="cap">${T.quote.author}</span></blockquote>`,
+      <blockquote class="quote a">${T.quote.text}<span class="cap">${T.quote.author}</span></blockquote>`,
     bind(el){el.querySelectorAll("[data-w]").forEach(b=>b.onclick=()=>{S.when=b.dataset.w;pick(b);auto(450,runLoading);});}
   }
 ];
@@ -637,7 +627,7 @@ function showResult(q){
     <div class="chat a">
       <div class="chat-h">
         <span class="av"><svg viewBox="10 30 360 180" aria-hidden="true"><path fill="#c9803f" d="M27 169 113 39h27l29 49 78-49h32l-58 91h-24l29-47-66 44-31-52-58 76z M252 129l29-46h64q13 0 19-12t-10-11h-64l13-21h75q36 0 20 31-14 34-59 34h-40l-16 25z M13 206q143-97 445-64-243-12-364 64z"/></svg></span>
-        <span class="who"><b>Private Morocco Transfers</b><span class="num">+212 760-426269</span></span>
+        <span class="who"><b>Private Morocco Transfers</b><span class="num" dir="ltr">+212 760-426269</span></span>
         <span class="on">${T.result.onlineStatus}</span>
       </div>
       <div class="chat-b"><span class="cap">${T.result.msgAlreadyWritten}</span><div class="bubble" id="bub">${msg.replace(/</g,"&lt;")}<time>${new Date().toTimeString().slice(0,5)} ✓✓</time></div></div>

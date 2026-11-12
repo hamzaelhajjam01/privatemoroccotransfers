@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_EN } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Day Trips from Marrakech & Morocco | Private Morocco Transfers" },
   description: "Book a private driver for full-day excursions across Morocco: Atlas Mountains, Ourika Valley, Essaouira, Agafay Desert, Ouzoud Waterfalls. Fixed prices per vehicle.",
-  alternates: {
-    canonical: `${SITE_URL}/day-trips`,
-    languages: {
-      "en": `${SITE_URL}/day-trips`,
-      "fr": `${SITE_URL}/fr/day-trips`,
-      "x-default": `${SITE_URL}/day-trips`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/day-trips", "en"),
 };
 
 const jsonLd = {

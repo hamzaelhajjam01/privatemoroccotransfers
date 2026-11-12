@@ -196,7 +196,7 @@ export default function Content() {
           </p>
           <ul style={{ paddingLeft: "20px", marginBottom: "28px", lineHeight: "1.8" }}>
             <li>
-              <Link href="/transfers/marrakech-to-marrakech-menara-airport"><strong>Marrakech Airport (RAK) to Medina:</strong></Link> Fixed from €30 (~330 MAD). Includes 45 min complimentary flight delay waiting.
+              <Link href="/transfers/marrakech-airport-to-marrakech"><strong>Marrakech Airport (RAK) to Medina:</strong></Link> Fixed from €30 (~330 MAD). Includes 45 min complimentary flight delay waiting.
             </li>
             <li>
               <Link href="/transfers/marrakech-to-essaouira"><strong>Marrakech to Essaouira:</strong></Link> Fixed €85 per sedan (~935 MAD). 2.5 hours door-to-door with argan photo stops.

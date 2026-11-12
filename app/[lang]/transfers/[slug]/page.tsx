@@ -2,7 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import routesData from "@/content/routes.json";
-import { SITE_NAME, SITE_URL, whatsappUrl } from "@/lib/site";
+import {
+  SITE_NAME,
+  SITE_URL,
+  whatsappUrl,
+  buildMultilingualAlternates,
+  buildRouteMetaTitle,
+} from "@/lib/site";
+import { buildDirectionalRouteCopy } from "@/lib/route-copy";
 import { EUR_RATE } from "@/lib/pricing";
 import { SCHEMA_AGGREGATE_RATING } from "@/lib/schema";
 import Icon from "@/components/Icon";
@@ -271,27 +278,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const fromName = getLocalizedPlace(route.from, lang as LanguageCode);
   const toName = getLocalizedPlace(route.to, lang as LanguageCode);
 
-  const title = `${u.h1(fromName, toName)} | €${route.price_sedan} | ${SITE_NAME}`;
+  const title = buildRouteMetaTitle(fromName, toName, route.price_sedan, lang);
   const description = u.sub(fromName, toName, route.duration, route.distance, route.price_sedan);
   const canonicalUrl = `${SITE_URL}/${lang}/transfers/${route.slug}`;
 
   return {
     title: { absolute: title },
     description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: {
-        en: `${SITE_URL}/transfers/${route.slug}`,
-        fr: `${SITE_URL}/fr/transfers/${route.slug}`,
-        es: `${SITE_URL}/es/transfers/${route.slug}`,
-        it: `${SITE_URL}/it/transfers/${route.slug}`,
-        de: `${SITE_URL}/de/transfers/${route.slug}`,
-        ar: `${SITE_URL}/ar/transfers/${route.slug}`,
-        pt: `${SITE_URL}/pt/transfers/${route.slug}`,
-        nl: `${SITE_URL}/nl/transfers/${route.slug}`,
-        "x-default": `${SITE_URL}/transfers/${route.slug}`,
-      },
-    },
+    alternates: buildMultilingualAlternates(`/transfers/${route.slug}`, lang as LanguageCode),
     openGraph: {
       title,
       description,
@@ -321,10 +315,32 @@ export default async function LocalizedRoutePage({ params }: Props) {
   const isRtl = lang === "ar";
   const fromName = getLocalizedPlace(route.from, lang as LanguageCode);
   const toName = getLocalizedPlace(route.to, lang as LanguageCode);
+  const dCopy = buildDirectionalRouteCopy({
+    lang: lang as LanguageCode,
+    fromLocal: fromName,
+    toLocal: toName,
+    fromEn: route.from,
+    toEn: route.to,
+    distance: route.distance,
+    duration: route.duration,
+    highway: route.highway,
+    priceSedan: route.price_sedan,
+  });
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "FAQPage",
+        mainEntity: dCopy.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.a,
+          },
+        })),
+      },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -544,6 +560,70 @@ export default async function LocalizedRoutePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Directional Pickup & Route Logistics */}
+      <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+        <div className="container">
+          <div style={{ maxWidth: "820px", marginBottom: "28px" }}>
+            <span className="section-label">{dCopy.sectionLabel}</span>
+            <h2 className="heading-lg mt-12">{dCopy.heading}</h2>
+            <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.65, marginTop: "14px" }}>
+              {dCopy.introParagraph}
+            </p>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "20px",
+            }}
+          >
+            {dCopy.logisticsBullets.map((item, idx) => (
+              <div
+                key={idx}
+                style={{
+                  padding: "22px",
+                  background: "var(--sand)",
+                  border: "1px solid var(--rule)",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "14px",
+                }}
+              >
+                <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold)", flexShrink: 0, marginTop: "2px" }}>
+                  0{idx + 1}
+                </span>
+                <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.55 }}>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Localized FAQ Section */}
+      {dCopy.faqs.length > 0 && (
+        <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+          <div className="container" style={{ maxWidth: "900px" }}>
+            <div className="section-header" style={{ display: "block", paddingBottom: "24px", marginBottom: "32px" }}>
+              <span className="section-label" style={{ display: "block", marginBottom: "12px" }}>
+                FAQ
+              </span>
+              <h2 className="heading-lg">{u.faqTitle}: {fromName} → {toName}</h2>
+            </div>
+            <div className="faq-list">
+              {dCopy.faqs.map((faq, idx) => (
+                <div key={idx} className="faq-item">
+                  <div className="faq-question">
+                    <span>{faq.q}</span>
+                    <span className="faq-icon">+</span>
+                  </div>
+                  <div className="faq-answer">{faq.a}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Band */}
       <section className="cta-band">

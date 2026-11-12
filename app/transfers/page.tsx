@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import routesData from "@/content/routes.json";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, whatsappUrl } from "@/lib/site";
+import {
+  SITE_NAME,
+  SITE_URL,
+  WHATSAPP_NUMBER,
+  whatsappUrl,
+  buildMultilingualAlternates,
+} from "@/lib/site";
 import TransferDirectory from "@/components/TransferDirectory";
 import type { RouteItem } from "@/app/transfers/[slug]/page";
 import Icon from "@/components/Icon";
@@ -10,18 +16,11 @@ const ALL_ROUTES = routesData as RouteItem[];
 
 export const metadata: Metadata = {
   title: {
-    absolute: `All Morocco Private Transfers — Complete Route & Fixed Price Directory 2026 | ${SITE_NAME}`,
+    absolute: `Morocco Private Transfers Directory — 150+ Fixed Routes`,
   },
   description:
     "Explore 150+ private transfer routes across Morocco. Guaranteed fixed rates per vehicle between Marrakech, Casablanca, Tangier, Fes, Agadir, Chefchaouen, and all international airports. 24/7 WhatsApp booking.",
-  alternates: {
-    canonical: `${SITE_URL}/transfers`,
-    languages: {
-      "en": `${SITE_URL}/transfers`,
-      "fr": `${SITE_URL}/fr/transfers`,
-      "x-default": `${SITE_URL}/transfers`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/transfers", "en"),
   openGraph: {
     title: "Morocco Private Transfers Directory — 150+ Routes & Fixed Prices",
     description:

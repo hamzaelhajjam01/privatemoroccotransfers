@@ -43,7 +43,7 @@ const AIRPORT_LISTINGS = [
       pt: "Aeroporto de Marraquexe (RAK) → Palmeraie",
       nl: "Luchthaven Marrakech (RAK) → Palmeraie",
     },
-    slug: "marrakech-airport-to-palmeraie",
+    slug: "marrakech-airport-to-palmeraie-marrakech",
     tag: "RAK Airport",
     priceEur: 35,
     priceMad: 385,
@@ -179,7 +179,7 @@ const AIRPORT_CONTENT: Record<
   }
 > = {
   es: {
-    title: `Traslados de Aeropuerto en Marruecos — Precio Fijo Garantizado | ${SITE_NAME}`,
+    title: `Traslados de Aeropuerto en Marruecos — Precio Fijo Garantizado`,
     desc: "Traslados fiables en todos los aeropuertos de Marruecos. Marrakech (RAK), Casablanca (CMN), Agadir (AGA), Fez (FEZ), Tánger (TNG). Seguimiento de vuelos y 45 min de espera gratis.",
     home: "Inicio",
     breadcrumb: "Traslados de Aeropuerto",
@@ -207,7 +207,7 @@ const AIRPORT_CONTENT: Record<
     waText: "¡Hola! Quisiera reservar un traslado de aeropuerto en Marruecos con chófer privado",
   },
   it: {
-    title: `Transfer Aeroporto in Marocco — Prezzi Fissi Garantiti | ${SITE_NAME}`,
+    title: `Transfer Aeroporto in Marocco — Prezzi Fissi Garantiti`,
     desc: "Transfer aeroportuali puntuali in Marocco. Marrakech (RAK), Casablanca (CMN), Agadir (AGA), Fes (FEZ), Tangeri (TNG). Monitoraggio voli e 45 min di attesa gratuita.",
     home: "Home",
     breadcrumb: "Transfer Aeroporto",
@@ -235,7 +235,7 @@ const AIRPORT_CONTENT: Record<
     waText: "Buongiorno! Vorrei prenotare un transfer aeroporto in Marocco",
   },
   de: {
-    title: `Flughafentransfer Marokko — Garantierter Festpreis | ${SITE_NAME}`,
+    title: `Flughafentransfer Marokko — Garantierter Festpreis`,
     desc: "Zuverlässige Flughafentransfers in ganz Marokko. Marrakesch (RAK), Casablanca (CMN), Agadir (AGA), Fès (FEZ), Tanger (TNG). Live-Flugverfolgung und 45 Min. Wartezeit inklusive.",
     home: "Startseite",
     breadcrumb: "Flughafentransfers",
@@ -263,7 +263,7 @@ const AIRPORT_CONTENT: Record<
     waText: "Guten Tag! Ich möchte einen Flughafentransfer in Marokko buchen",
   },
   ar: {
-    title: `خدمات استقبال وتوصيل المطارات في المغرب — أسعار ثابتة | ${SITE_NAME}`,
+    title: `خدمات استقبال وتوصيل المطارات في المغرب — أسعار ثابتة`,
     desc: "استقبال وتوصيل فاخر في جميع مطارات المغرب. مراكش (RAK)، الدار البيضاء (CMN)، أكادير (AGA)، فاس (FEZ)، طنجة (TNG). متابعة الرحلات و45 دقيقة انتظار مجاني.",
     home: "الرئيسية",
     breadcrumb: "استقبال وتوصيل المطارات",
@@ -291,7 +291,7 @@ const AIRPORT_CONTENT: Record<
     waText: "السلام عليكم، أود حجز استقبال وتوصيل من المطار في المغرب",
   },
   pt: {
-    title: `Transfers de Aeroporto em Marrocos — Preço Fixo Garantido | ${SITE_NAME}`,
+    title: `Transfers de Aeroporto em Marrocos — Preço Fixo Garantido`,
     desc: "Transfers pontuais em todos os aeroportos de Marrocos. Marraquexe (RAK), Casablanca (CMN), Agadir (AGA), Fez (FEZ), Tânger (TNG). Rastreio de voos e 45 min de espera grátis.",
     home: "Início",
     breadcrumb: "Transfers de Aeroporto",
@@ -319,7 +319,7 @@ const AIRPORT_CONTENT: Record<
     waText: "Olá! Gostaria de reservar um transfer de aeroporto em Marrocos",
   },
   nl: {
-    title: `Luchthaven Transfers Marokko — Gegarandeerde Vaste Prijzen | ${SITE_NAME}`,
+    title: `Luchthaven Transfers Marokko — Gegarandeerde Vaste Prijzen`,
     desc: "Betrouwbaar vliegveldvervoer in heel Marokko. Marrakech (RAK), Casablanca (CMN), Agadir (AGA), Fes (FEZ), Tanger (TNG). Vluchtmonitoring en 45 min gratis wachttijd.",
     home: "Home",
     breadcrumb: "Luchthaven Transfers",

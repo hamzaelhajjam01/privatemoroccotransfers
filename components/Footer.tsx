@@ -229,6 +229,9 @@ const FOOTER_I18N: Record<
 
 export default function Footer() {
   const pathname = usePathname();
+  if (/^\/(?:[a-z]{2}\/)?trip-finder\/?$/.test(pathname || "")) {
+    return null;
+  }
   const currentLang = getLangFromPathname(pathname);
   const t = FOOTER_I18N[currentLang] || FOOTER_I18N.en;
 

@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: { absolute: "Transferts Intervilles au Maroc — Prix Fixes Garantis | Private Morocco Transfers" },
+  title: { absolute: "Transferts Intervilles Maroc — Prix Fixes Garantis" },
   description: "Transferts intervilles privés à prix fixes entre toutes les villes du Maroc. Marrakech à Essaouira, Casablanca à Marrakech, Fès à Chefchaouen. Péages, carburant et arrêts photos inclus.",
-  alternates: {
-    canonical: `${SITE_URL}/fr/city-to-city`,
-    languages: {
-      "fr": `${SITE_URL}/fr/city-to-city`,
-      "en": `${SITE_URL}/city-to-city`,
-      "x-default": `${SITE_URL}/city-to-city`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/city-to-city", "fr"),
 };
 
 const jsonLd = {

@@ -17,11 +17,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const l = getListing((await params).slug);
   if (!l) return {};
+  const cleanTitle = l.title.replace(/\s*\|\s*Morocco Private Drivers?$/i, "").trim();
+  const metaTitle = cleanTitle.length <= 45 ? `${cleanTitle} | Chauffeur Maroc` : cleanTitle;
   return {
-    title: { absolute: `${l.title} | ${SITE_NAME}` },
+    title: { absolute: metaTitle },
     description: l.description,
     alternates: { canonical: `${SITE_URL}/fr/details/${l.slug}` },
-    openGraph: { title: `${l.title} | ${SITE_NAME}`, description: l.description, locale: "fr_FR", images: [`/img/fleet-scenes/${l.modelKey}.jpg`] },
+    openGraph: { title: metaTitle, description: l.description, locale: "fr_FR", images: [`/img/fleet-scenes/${l.modelKey}.jpg`] },
   };
 }
 

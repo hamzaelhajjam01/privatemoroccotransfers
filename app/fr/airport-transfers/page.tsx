@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: { absolute: "Transferts Aéroport au Maroc — Prix Fixes Garantis | Private Morocco Transfers" },
+  title: { absolute: "Transferts Aéroport Maroc — Prix Fixes & Suivi de Vol" },
   description: "Transferts aéroport fiables à prix fixes au Maroc. Marrakech (RAK), Casablanca (CMN), Agadir (AGA), Fès (FEZ), Tanger (TNG), Rabat (RBA). Suivi de vol en direct et 45 min d'attente offerte.",
-  alternates: {
-    canonical: `${SITE_URL}/fr/airport-transfers`,
-    languages: {
-      "fr": `${SITE_URL}/fr/airport-transfers`,
-      "en": `${SITE_URL}/airport-transfers`,
-      "x-default": `${SITE_URL}/airport-transfers`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/airport-transfers", "fr"),
 };
 
 const jsonLd = {
@@ -73,7 +66,7 @@ const AIRPORT_LISTINGS = [
   {
     category: "marrakech",
     title: "Aéroport de Marrakech (RAK) → Palmeraie",
-    slug: "marrakech-airport-to-palmeraie",
+    slug: "marrakech-airport-to-palmeraie-marrakech",
     tag: "Aéroport RAK",
     pax: "1–3 passagers",
     type: "Berline Confort",

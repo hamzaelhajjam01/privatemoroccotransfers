@@ -138,7 +138,7 @@ const CONTENT: Record<
   }
 > = {
   es: {
-    title: `Excursiones de un Día en Marruecos con Chófer Privado | ${SITE_NAME}`,
+    title: `Excursiones de un Día en Marruecos con Chófer Privado`,
     desc: "Excursiones privadas de un día en Marruecos: Valle de Ourika, Cascadas de Ouzoud, Essaouira, Desierto de Agafay, Aït Ben Haddou. Precios cerrados por vehículo.",
     home: "Inicio",
     breadcrumb: "Excursiones de un Día",
@@ -163,7 +163,7 @@ const CONTENT: Record<
     waText: "¡Hola! Quisiera reservar una excursión de un día en Marruecos",
   },
   it: {
-    title: `Escursioni Giornaliere in Marocco con Autista Privato | ${SITE_NAME}`,
+    title: `Escursioni Giornaliere in Marocco con Autista Privato`,
     desc: "Escursioni giornaliere private in Marocco: Valle dell'Ourika, Cascate di Ouzoud, Essaouira, Deserto di Agafay, Aït Ben Haddou. Tariffe fisse per auto.",
     home: "Home",
     breadcrumb: "Escursioni Giornaliere",
@@ -188,7 +188,7 @@ const CONTENT: Record<
     waText: "Buongiorno! Vorrei prenotare un'escursione in Marocco",
   },
   de: {
-    title: `Tagesausflüge in Marokko mit Privatchauffeur | ${SITE_NAME}`,
+    title: `Tagesausflüge in Marokko mit Privatchauffeur`,
     desc: "Private Ganztagesausflüge in Marokko: Ourika-Tal, Ouzoud-Wasserfälle, Essaouira, Agafay-Wüste, Aït Ben Haddou. Feste Pauschalpreise pro Fahrzeug.",
     home: "Startseite",
     breadcrumb: "Tagesausflüge",
@@ -213,7 +213,7 @@ const CONTENT: Record<
     waText: "Guten Tag! Ich möchte einen Tagesausflug in Marokko buchen",
   },
   ar: {
-    title: `رحلات وجولات يومية خاصة في المغرب مع سائق خاص | ${SITE_NAME}`,
+    title: `رحلات وجولات يومية خاصة في المغرب مع سائق خاص`,
     desc: "جولات سياحية يومية خاصة بالمغرب: وادي أوريكا، شلالات أوزود، الصويرة، صحراء أكافاي، قصر آيت بن حدو. أسعار ثابتة ومؤكدة للمركبة.",
     home: "الرئيسية",
     breadcrumb: "رحلات يومية خاصة",
@@ -238,7 +238,7 @@ const CONTENT: Record<
     waText: "السلام عليكم، أود حجز رحلة يومية خاصة في المغرب",
   },
   pt: {
-    title: `Passeios de um Dia em Marrocos com Motorista Privado | ${SITE_NAME}`,
+    title: `Passeios de um Dia em Marrocos com Motorista Privado`,
     desc: "Passeios particulares de um dia em Marrocos: Vale de Ourika, Cascatas de Ouzoud, Essaouira, Deserto de Agafay, Aït Ben Haddou. Preços fixos por viatura.",
     home: "Início",
     breadcrumb: "Passeios de um Dia",
@@ -263,7 +263,7 @@ const CONTENT: Record<
     waText: "Olá! Gostaria de reservar um passeio privado de um dia em Marrocos",
   },
   nl: {
-    title: `Dagtochten in Marokko met Privéchauffeur | ${SITE_NAME}`,
+    title: `Dagtochten in Marokko met Privéchauffeur`,
     desc: "Volledig verzorgde dagtrips in Marokko: Ourika-vallei, Ouzoud-watervallen, Essaouira, Agafay-woestijn, Aït Ben Haddou. Vaste prijzen per voertuig.",
     home: "Home",
     breadcrumb: "Dagtochten",

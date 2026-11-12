@@ -6883,5 +6883,50 @@
         "a": "Simply message us on WhatsApp with your travel date, pickup location, and passenger count. We will confirm your driver and trip details instantly."
       }
     ]
+  },
+  {
+    "slug": "marrakech-to-merzouga",
+    "from": "Marrakech",
+    "to": "Merzouga (Sahara)",
+    "fromRaw": "Marrakech",
+    "toRaw": "Merzouga (Sahara)",
+    "distance": "560 km",
+    "duration": "8h30",
+    "price_sedan": 360,
+    "price_van": 440,
+    "price_minibus": 650,
+    "highway": "N9 High Atlas Tizi n'Tichka Pass & Draa-Tafilalet Valley",
+    "popular": true,
+    "seoTitle": "Marrakech to Merzouga Private Transfer — €360 Fixed",
+    "seoDescription": "Book a private transfer from Marrakech to Merzouga (Sahara) from €360 flat rate. Licensed chauffeur via Tizi n'Tichka Pass and Dades Valley, tolls and fuel included.",
+    "h1": "Private Transfer from Marrakech to Merzouga (Sahara)",
+    "highlights": [
+      "Door-to-door private transfer from Marrakech directly to your Merzouga desert camp or hotel (~560 km)",
+      "Scenic crossing over the High Atlas Tizi n'Tichka Pass with flexible photo and lunch stops (Ouarzazate, Dades)",
+      "Modern air-conditioned comfort sedan, SUV/4x4, or Mercedes van with fluent English & French driver",
+      "Guaranteed fixed rate of €360 per sedan including fuel, highway/mountain logistics, and luggage care"
+    ],
+    "faqs": [
+      {
+        "q": "How long is the private transfer from Marrakech to Merzouga (Sahara)?",
+        "a": "The journey covers around 560 km across the High Atlas Mountains via the Tizi n'Tichka Pass, Ouarzazate, and Todra Valley, taking approximately 8h30 to 9h of driving time plus optional photo and lunch breaks."
+      },
+      {
+        "q": "Can the driver pick us up directly from our Marrakech riad and drop us at our Merzouga camp meeting point?",
+        "a": "Yes. If your Marrakech riad is inside a pedestrian-only medina lane, your chauffeur meets you at the nearest accessible gate. In Merzouga, we deliver you directly to your hotel or desert camp 4x4 transfer point."
+      },
+      {
+        "q": "Can we stop at Ait Benhaddou or Dades Gorge along the way?",
+        "a": "Yes! Because the vehicle and chauffeur are exclusively yours, you can request scenic photo stops at Tizi n'Tichka, Ait Benhaddou, or Todra Gorge along the route, or inquire via WhatsApp to split the journey with an overnight stop."
+      },
+      {
+        "q": "How does payment work for Marrakech to Merzouga (€360)?",
+        "a": "For transfers exceeding 3,300 MAD (€300), a 30% confirmation deposit secures your vehicle and driver, with the remaining 70% payable in cash (EUR or MAD) upon arrival in Merzouga."
+      },
+      {
+        "q": "Can we book the return transfer from Merzouga and save 10%?",
+        "a": "Yes! We offer a 10% discount on the return leg when you book a round-trip desert transfer, or onward routes such as Merzouga to Fes via Ziz Valley."
+      }
+    ]
   }
 ]

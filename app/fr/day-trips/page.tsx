@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER } from "@/lib/site";
+import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, buildMultilingualAlternates } from "@/lib/site";
 import { SCHEMA_AGGREGATE_RATING, SCHEMA_REVIEWS_FR } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: { absolute: "Excursions d'une Journée au Maroc avec Chauffeur Privé | Private Morocco Transfers" },
+  title: { absolute: "Excursions à la Journée Maroc — Chauffeur Privé" },
   description: "Réservez un chauffeur privé pour vos excursions à la journée au Maroc : Haut Atlas, Vallée de l'Ourika, Cascades d'Ouzoud, Essaouira, Désert d'Agafay. Tarifs fixes par véhicule.",
-  alternates: {
-    canonical: `${SITE_URL}/fr/day-trips`,
-    languages: {
-      "fr": `${SITE_URL}/fr/day-trips`,
-      "en": `${SITE_URL}/day-trips`,
-      "x-default": `${SITE_URL}/day-trips`,
-    },
-  },
+  alternates: buildMultilingualAlternates("/day-trips", "fr"),
 };
 
 const jsonLd = {
