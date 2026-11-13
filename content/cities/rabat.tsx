@@ -33,30 +33,30 @@ export default function Content() {
             {"Morocco's administrative capital is a refined, European-influenced city of wide boulevards, the medieval Chellah ruins and the Kasbah of the Udayas. Our Rabat drivers cover the capital and all intercity routes."}
           </p>
           <div className="booking-widget" style={{ marginTop: "48px" }}>
-            <h3 className="widget-question">
+            <h2 className="widget-question">
               {"Get your fixed price"}
-            </h3>
+            </h2>
             <form id="bookingWidget">
-              <label className="field-label">
+              <label className="field-label" htmlFor="bw-from">
                 {"From"}
               </label>
-              <input className="field-input" name="from" type="text" placeholder="e.g. Rabat Airport (RBA)" />
-              <label className="field-label">
+              <input id="bw-from" className="field-input" name="from" type="text" placeholder="e.g. Rabat Airport (RBA)" />
+              <label className="field-label" htmlFor="bw-to">
                 {"To"}
               </label>
-              <input className="field-input" name="to" type="text" placeholder="e.g. Your Hotel in Rabat" />
+              <input id="bw-to" className="field-input" name="to" type="text" placeholder="e.g. Your Hotel in Rabat" />
               <div className="field-row">
                 <div>
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="bw-date">
                     {"Date"}
                   </label>
-                  <input className="field-input" name="date" type="date" />
+                  <input id="bw-date" className="field-input" name="date" type="date" />
                 </div>
                 <div>
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="bw-passengers">
                     {"Passengers"}
                   </label>
-                  <select className="field-input calc-select" name="passengers">
+                  <select id="bw-passengers" className="field-input calc-select" name="passengers">
                     <option>
                       {"1–3 (Sedan)"}
                     </option>

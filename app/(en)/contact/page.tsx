@@ -55,26 +55,26 @@ export default function ContactPage() {
               </div>
               <form id="contactForm">
                 <div id="step-1" className="form-step active">
-                  <h3 className="heading-sm mb-24">
+                  <h2 className="heading-sm mb-24">
                     {"Where are you going?"}
-                  </h3>
-                  <label className="field-label">
+                  </h2>
+                  <label className="field-label" htmlFor="cf-from">
                     {"From"}
                   </label>
                   <input className="field-input" id="cf-from" type="text" placeholder="e.g. Marrakech Airport (RAK)" />
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="cf-to">
                     {"To"}
                   </label>
                   <input className="field-input" id="cf-to" type="text" placeholder="e.g. Medina, Marrakech" />
                   <div className="field-row">
                     <div>
-                      <label className="field-label">
+                      <label className="field-label" htmlFor="cf-date">
                         {"Date"}
                       </label>
                       <input className="field-input" id="cf-date" type="date" />
                     </div>
                     <div>
-                      <label className="field-label">
+                      <label className="field-label" htmlFor="cf-time">
                         {"Time"}
                       </label>
                       <input className="field-input" id="cf-time" type="time" />
@@ -82,7 +82,7 @@ export default function ContactPage() {
                   </div>
                   <div className="field-row">
                     <div>
-                      <label className="field-label">
+                      <label className="field-label" htmlFor="cf-vehicle">
                         {"Vehicle Type"}
                       </label>
                       <select className="field-input calc-select" id="cf-vehicle">
@@ -98,7 +98,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="field-label">
+                      <label className="field-label" htmlFor="cf-pax">
                         {"Passengers"}
                       </label>
                       <select className="field-input calc-select" id="cf-pax">
@@ -134,26 +134,26 @@ export default function ContactPage() {
                   </button>
                 </div>
                 <div id="step-2" className="form-step">
-                  <h3 className="heading-sm mb-24">
+                  <h2 className="heading-sm mb-24">
                     {"Your contact details"}
-                  </h3>
-                  <label className="field-label">
+                  </h2>
+                  <label className="field-label" htmlFor="cf-name">
                     {"Full Name"}
                   </label>
                   <input className="field-input" id="cf-name" type="text" placeholder="Your name" />
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="cf-email">
                     {"Email"}
                   </label>
                   <input className="field-input" id="cf-email" type="email" placeholder="your@email.com" />
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="cf-phone">
                     {"Phone / WhatsApp"}
                   </label>
                   <input className="field-input" id="cf-phone" type="tel" placeholder="+1 234 567 890" />
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="cf-flight">
                     {"Flight Number (if airport pickup)"}
                   </label>
                   <input className="field-input" id="cf-flight" type="text" placeholder="e.g. AT 123" />
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="cf-notes">
                     {"Special Requests"}
                   </label>
                   <textarea className="field-input" id="cf-notes" rows={3} style={{ resize: "vertical" }} placeholder="Child seat, extra luggage, specific stops..."></textarea>
@@ -167,9 +167,9 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div id="step-3" className="form-step">
-                  <h3 className="heading-sm mb-24">
+                  <h2 className="heading-sm mb-24">
                     {"Confirm your booking"}
-                  </h3>
+                  </h2>
                   <div className="form-confirm-card">
                     <div className="confirm-row">
                       <span className="confirm-label">
@@ -254,9 +254,9 @@ export default function ContactPage() {
               </form>
             </div>
             <div>
-              <h3 className="heading-sm mb-24">
+              <h2 className="heading-sm mb-24">
                 {"Get in touch"}
-              </h3>
+              </h2>
               <div style={{ borderTop: "1px solid var(--rule)", paddingTop: "24px", marginBottom: "32px" }}>
                 <p style={{ fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--grey-500)", marginBottom: "8px" }}>
                   {"WhatsApp"}

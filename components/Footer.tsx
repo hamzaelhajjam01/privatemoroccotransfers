@@ -248,7 +248,7 @@ export default function Footer({ lang }: { lang: LanguageCode }) {
       <div className="footer-grid">
         {/* Column 1: Core Services */}
         <div className="footer-col">
-          <h4>{t.colServices}</h4>
+          <h2>{t.colServices}</h2>
           <ul>
             {currentLang === "en" && (
               <li>
@@ -275,7 +275,7 @@ export default function Footer({ lang }: { lang: LanguageCode }) {
 
         {/* Column 2: Company & Tools */}
         <div className="footer-col">
-          <h4>{t.colCompany}</h4>
+          <h2>{t.colCompany}</h2>
           <ul>
             <li>
               <Link href={getUrl("/fleet")}>{t.fleet}</Link>
@@ -297,7 +297,7 @@ export default function Footer({ lang }: { lang: LanguageCode }) {
 
         {/* Column 3: Major Cities */}
         <div className="footer-col">
-          <h4>{t.colCities}</h4>
+          <h2>{t.colCities}</h2>
           <ul>
             <li>
               <Link href="/cities/marrakech">Marrakech</Link>
@@ -325,7 +325,7 @@ export default function Footer({ lang }: { lang: LanguageCode }) {
 
         {/* Column 4: Contact & Partner */}
         <div className="footer-col">
-          <h4>{t.colContact}</h4>
+          <h2>{t.colContact}</h2>
           <ul>
             <li>
               <a

@@ -135,26 +135,26 @@ export default function ArabicHomePage() {
               {"من أين تود أن نبدأ رحلتك؟"}
             </h2>
             <form id="bookingWidget">
-              <label className="field-label">
+              <label className="field-label" htmlFor="bw-from">
                 {"نقطة الانطلاق"}
               </label>
-              <input className="field-input" name="from" type="text" placeholder="مثال: مطار مراكش (RAK)" />
-              <label className="field-label">
+              <input id="bw-from" className="field-input" name="from" type="text" placeholder="مثال: مطار مراكش (RAK)" />
+              <label className="field-label" htmlFor="bw-to">
                 {"الوجهة"}
               </label>
-              <input className="field-input" name="to" type="text" placeholder="مثال: فندق، رياض، أو مدينة أخرى..." />
+              <input id="bw-to" className="field-input" name="to" type="text" placeholder="مثال: فندق، رياض، أو مدينة أخرى..." />
               <div className="field-row">
                 <div>
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="bw-date">
                     {"التاريخ"}
                   </label>
-                  <input className="field-input" name="date" type="date" />
+                  <input id="bw-date" className="field-input" name="date" type="date" />
                 </div>
                 <div>
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="bw-passengers">
                     {"عدد الركاب"}
                   </label>
-                  <select className="calc-select" name="passengers">
+                  <select id="bw-passengers" className="calc-select" name="passengers">
                     <option>{"1–3 (صالون فاخرة)"}</option>
                     <option>{"4–5 (SUV)"}</option>
                     <option>{"6–8 (فان عائلي)"}</option>

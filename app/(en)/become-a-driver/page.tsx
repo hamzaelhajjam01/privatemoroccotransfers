@@ -37,34 +37,28 @@ export default function BecomeADriverPage() {
               </span>
               <div className="steps-grid" style={{ marginTop: "24px" }}>
                 <div className="step-item">
-                  <div className="step-num">
-                    {"01"}
-                  </div>
-                  <h3 className="step-title">
+                  <div className="step-num" aria-hidden="true" data-n="01" />
+                  <h2 className="step-title">
                     {"International Clients"}
-                  </h3>
+                  </h2>
                   <p className="step-body">
                     {"We handle marketing to international travelers so you can focus on driving. English-speaking clients, clear expectations, fixed prices agreed in advance."}
                   </p>
                 </div>
                 <div className="step-item">
-                  <div className="step-num">
-                    {"02"}
-                  </div>
-                  <h3 className="step-title">
+                  <div className="step-num" aria-hidden="true" data-n="02" />
+                  <h2 className="step-title">
                     {"Consistent Work"}
-                  </h3>
+                  </h2>
                   <p className="step-body">
                     {"Receive bookings from our platform. Build a regular client base with airport transfers, day trips and multi-day tours across Morocco."}
                   </p>
                 </div>
                 <div className="step-item">
-                  <div className="step-num">
-                    {"03"}
-                  </div>
-                  <h3 className="step-title">
+                  <div className="step-num" aria-hidden="true" data-n="03" />
+                  <h2 className="step-title">
                     {"Simple Process"}
-                  </h3>
+                  </h2>
                   <p className="step-body">
                     {"Everything is managed via WhatsApp. No complicated systems to learn. Accept a booking, show up on time, deliver excellent service."}
                   </p>

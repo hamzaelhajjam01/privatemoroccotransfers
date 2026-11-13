@@ -63,6 +63,8 @@ const UI = {
     distBadge: "Distancia",
     durBadge: "Tiempo estimado",
     priceBadge: "Tarifa fija",
+    vehicleLabel: "Elija su vehículo",
+    ratesTitle: "Tarifas fijas",
     perVehicle: "por vehículo",
     sedan: "Berlina Confort",
     sedanPax: "1–4 Pasajeros",
@@ -98,6 +100,8 @@ const UI = {
     distBadge: "Distanza",
     durBadge: "Tempo stimato",
     priceBadge: "Tariffa fissa",
+    vehicleLabel: "Scegli il veicolo",
+    ratesTitle: "Tariffe fisse",
     perVehicle: "per veicolo",
     sedan: "Berlina Comfort",
     sedanPax: "1–4 Passeggeri",
@@ -133,6 +137,8 @@ const UI = {
     distBadge: "Distanz",
     durBadge: "Fahrzeit ca.",
     priceBadge: "Festpreis",
+    vehicleLabel: "Fahrzeug wählen",
+    ratesTitle: "Festpreise",
     perVehicle: "pro Fahrzeug",
     sedan: "Komfort-Limousine",
     sedanPax: "1–4 Passagiere",
@@ -168,6 +174,8 @@ const UI = {
     distBadge: "المسافة",
     durBadge: "الوقت المقدر",
     priceBadge: "سعر ثابت",
+    vehicleLabel: "اختر سيارتك",
+    ratesTitle: "أسعار ثابتة",
     perVehicle: "للسيارة بالكامل",
     sedan: "سيارة صالون مريحة",
     sedanPax: "1–4 ركاب",
@@ -203,6 +211,8 @@ const UI = {
     distBadge: "Distância",
     durBadge: "Duração estimada",
     priceBadge: "Preço fixo",
+    vehicleLabel: "Escolha o veículo",
+    ratesTitle: "Preços fixos",
     perVehicle: "por viatura",
     sedan: "Sedan Conforto",
     sedanPax: "1–4 Passageiros",
@@ -238,6 +248,8 @@ const UI = {
     distBadge: "Afstand",
     durBadge: "Geschatte reistijd",
     priceBadge: "Vaste prijs",
+    vehicleLabel: "Kies uw voertuig",
+    ratesTitle: "Vaste prijzen",
     perVehicle: "per voertuig",
     sedan: "Comfort Sedan",
     sedanPax: "1–4 Passagiers",
@@ -425,6 +437,14 @@ export default async function LocalizedRoutePage({ params }: Props) {
 
       <section className="section">
         <div className="container">
+          <div className="section-header">
+            <div>
+              <span className="section-label">{u.vehicleLabel}</span>
+              <h2 className="heading-lg">
+                {u.ratesTitle}: {fromName} → {toName}
+              </h2>
+            </div>
+          </div>
           <div className="vehicle-cards-grid">
             {/* Sedan */}
             <article className="vehicle-card" style={{ display: "flex", flexDirection: "column" }}>
@@ -589,7 +609,7 @@ export default async function LocalizedRoutePage({ params }: Props) {
                   gap: "14px",
                 }}
               >
-                <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold)", flexShrink: 0, marginTop: "2px" }}>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold-ink)", flexShrink: 0, marginTop: "2px" }}>
                   0{idx + 1}
                 </span>
                 <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.55 }}>{item}</p>

@@ -119,9 +119,7 @@ export default function AboutPage() {
           </div>
           <div className="values-grid">
             <div className="value-item">
-              <div className="value-num">
-                {"01"}
-              </div>
+              <div className="value-num" aria-hidden="true" data-n="01" />
               <h3 className="value-title">
                 {"Transparency"}
               </h3>
@@ -130,9 +128,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="value-item">
-              <div className="value-num">
-                {"02"}
-              </div>
+              <div className="value-num" aria-hidden="true" data-n="02" />
               <h3 className="value-title">
                 {"Punctuality"}
               </h3>
@@ -141,9 +137,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="value-item">
-              <div className="value-num">
-                {"03"}
-              </div>
+              <div className="value-num" aria-hidden="true" data-n="03" />
               <h3 className="value-title">
                 {"Safety"}
               </h3>
@@ -152,9 +146,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="value-item">
-              <div className="value-num">
-                {"04"}
-              </div>
+              <div className="value-num" aria-hidden="true" data-n="04" />
               <h3 className="value-title">
                 {"Local Knowledge"}
               </h3>

@@ -375,7 +375,7 @@ export default function CityToCityPage() {
           <div style={{ textAlign: "center", marginTop: "40px" }}>
             <p style={{ fontSize: "0.9rem", color: "var(--grey-500)" }}>
               {"Don't see your route? "}
-              <Link href="/calculator" style={{ color: "var(--gold)", fontWeight: "500" }}>
+              <Link href="/calculator" style={{ color: "var(--gold-deep)", fontWeight: "500" }}>
                 {"Use our Price Calculator →"}
               </Link>
             </p>

@@ -724,7 +724,7 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
                   <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500 }}>
                     Critère
                   </th>
-                  <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500, background: "var(--gold)", color: "var(--white)" }}>
+                  <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500, background: "var(--gold-deep)", color: "var(--white)" }}>
                     Private Morocco Transfers
                   </th>
                   <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500 }}>

@@ -105,28 +105,28 @@ export default function Content() {
           <h2>5 Essential Tips for Visiting Without Stress</h2>
           <div className="purpose-grid" style={{ display: "grid", gap: "18px", margin: "24px 0" }}>
             <div style={{ padding: "18px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
-              <h4 style={{ margin: "0 0 6px 0" }}>1. Accept the Mint Sprig</h4>
+              <h3 style={{ margin: "0 0 6px 0", fontSize: "1em" }}>1. Accept the Mint Sprig</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
                 Upon entering any rooftop leather cooperative, attendants will hand you fresh sprigs of Moroccan spearmint.
                 Hold this close to your nose—it effectively masks the strong ammonia aroma from the pigeon guano vats.
               </p>
             </div>
             <div style={{ padding: "18px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
-              <h4 style={{ margin: "0 0 6px 0" }}>2. Rooftop Viewing is Free (Tip Respectfully)</h4>
+              <h3 style={{ margin: "0 0 6px 0", fontSize: "1em" }}>2. Rooftop Viewing is Free (Tip Respectfully)</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
                 You view the tanneries from leather store terraces overlooking the vats. You are never obligated to buy a leather
                 jacket or pouf. If you only take photos, tipping the attendant 10 to 20 MAD (~€1–2) is customary and appreciated.
               </p>
             </div>
             <div style={{ padding: "18px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
-              <h4 style={{ margin: "0 0 6px 0" }}>3. Visit in the Morning</h4>
+              <h3 style={{ margin: "0 0 6px 0", fontSize: "1em" }}>3. Visit in the Morning</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
                 Workers fill the dye vats and wash hides between 9:00 AM and 11:30 AM. Morning light also produces the best
                 photographs, and temperatures are much cooler than during hot mid-day hours.
               </p>
             </div>
             <div style={{ padding: "18px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
-              <h4 style={{ margin: "0 0 6px 0" }}>4. Ignore Unofficial Street Touts</h4>
+              <h3 style={{ margin: "0 0 6px 0", fontSize: "1em" }}>4. Ignore Unofficial Street Touts</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
                 Never follow aggressive young men in the alleys insisting the &quot;tanneries are closed on this side&quot; or
                 &quot;there is a special festival today.&quot; Walk confidently toward Rue Chouara or have an official guide arrange your visit.

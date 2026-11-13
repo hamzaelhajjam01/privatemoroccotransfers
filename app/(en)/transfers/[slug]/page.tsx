@@ -658,7 +658,7 @@ export default async function TransferRoutePage({ params }: Props) {
                   <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500 }}>
                     Feature
                   </th>
-                  <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500, background: "var(--gold)", color: "var(--white)" }}>
+                  <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500, background: "var(--gold-deep)", color: "var(--white)" }}>
                     Private Morocco Transfers
                   </th>
                   <th style={{ padding: "16px 20px", textAlign: "left", fontFamily: "var(--mono)", fontWeight: 500 }}>
@@ -735,7 +735,7 @@ export default async function TransferRoutePage({ params }: Props) {
                   gap: "14px",
                 }}
               >
-                <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold)", flexShrink: 0, marginTop: "2px" }}>
+                <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold-ink)", flexShrink: 0, marginTop: "2px" }}>
                   0{idx + 1}
                 </span>
                 <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.55 }}>{item}</p>

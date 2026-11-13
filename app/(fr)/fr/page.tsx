@@ -200,26 +200,26 @@ export default function FrenchHomePage() {
               {"Où devons-nous venir vous chercher ?"}
             </h2>
             <form id="bookingWidget">
-              <label className="field-label">
+              <label className="field-label" htmlFor="bw-from">
                 {"Lieu de départ"}
               </label>
-              <input className="field-input" name="from" type="text" placeholder="ex. Aéroport Marrakech (RAK)" />
-              <label className="field-label">
+              <input id="bw-from" className="field-input" name="from" type="text" placeholder="ex. Aéroport Marrakech (RAK)" />
+              <label className="field-label" htmlFor="bw-to">
                 {"Destination"}
               </label>
-              <input className="field-input" name="to" type="text" placeholder="ex. Médina de Marrakech, Hôtel, Riad..." />
+              <input id="bw-to" className="field-input" name="to" type="text" placeholder="ex. Médina de Marrakech, Hôtel, Riad..." />
               <div className="field-row">
                 <div>
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="bw-date">
                     {"Date"}
                   </label>
-                  <input className="field-input" name="date" type="date" />
+                  <input id="bw-date" className="field-input" name="date" type="date" />
                 </div>
                 <div>
-                  <label className="field-label">
+                  <label className="field-label" htmlFor="bw-passengers">
                     {"Passagers"}
                   </label>
-                  <select className="calc-select" name="passengers">
+                  <select id="bw-passengers" className="calc-select" name="passengers">
                     <option>{"1–3 (berline)"}</option>
                     <option>{"4–5 (SUV)"}</option>
                     <option>{"6–8 (van)"}</option>

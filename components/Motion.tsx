@@ -19,7 +19,7 @@ const REVEAL = [
   ".cta-buttons", ".city-tabs", ".quote-by", ".svc-meta", ".pagination", ".section-label", ".label",
   ".cta-band p", ".post-body h2", ".post-body p", ".post-body li", ".section-header",
 ].join(",");
-const WORDS = [".huge", ".heading-lg", ".heading-xl", ".quote-main", ".cta-band h2", ".footer-col h4"].join(",");
+const WORDS = [".huge", ".heading-lg", ".heading-xl", ".quote-main", ".cta-band h2", ".footer-col h2"].join(",");
 const IMAGES = [".ph", ".listing-img", ".blog-img", ".vehicle-img", ".fleet-img"].join(",");
 const SKIP = ".hero, .page-hero, .post-hero, .booking-widget, .mobile-nav, .site-header, .tf";
 

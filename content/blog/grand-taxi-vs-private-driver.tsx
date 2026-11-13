@@ -142,7 +142,7 @@ export default function Content() {
                 <tr style={{ background: "var(--sand)", borderBottom: "1px solid var(--rule)" }}>
                   <th style={{ padding: "14px 16px", textAlign: "left", fontWeight: 600 }}>Feature</th>
                   <th style={{ padding: "14px 16px", textAlign: "left", fontWeight: 600 }}>Grand Taxi</th>
-                  <th style={{ padding: "14px 16px", textAlign: "left", fontWeight: 600, color: "var(--gold)" }}>
+                  <th style={{ padding: "14px 16px", textAlign: "left", fontWeight: 600, color: "var(--gold-ink)" }}>
                     Private Driver (PMT)
                   </th>
                 </tr>

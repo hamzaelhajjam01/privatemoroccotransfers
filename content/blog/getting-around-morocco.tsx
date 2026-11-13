@@ -109,7 +109,7 @@ export default function Content() {
                   <td style={{ padding: "12px 8px" }}>Yes (High deposit & traffic stress)</td>
                 </tr>
                 <tr style={{ background: "rgba(197, 160, 89, 0.08)", borderBottom: "2px solid var(--gold)" }}>
-                  <td style={{ padding: "12px 8px", fontWeight: "700", color: "var(--gold)" }}>Private Chauffeur Service</td>
+                  <td style={{ padding: "12px 8px", fontWeight: "700", color: "var(--gold-ink)" }}>Private Chauffeur Service</td>
                   <td style={{ padding: "12px 8px" }}>Couples, families, luggage, scenic freedom</td>
                   <td style={{ padding: "12px 8px" }}>★★★★★ (Executive sedan, SUV or van)</td>
                   <td style={{ padding: "12px 8px" }}>Unlimited suitcases</td>
@@ -168,21 +168,21 @@ export default function Content() {
           </p>
           <div className="purpose-grid" style={{ display: "grid", gap: "20px", margin: "28px 0" }}>
             <div style={{ padding: "20px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
-              <h4 style={{ margin: "0 0 8px 0" }}>Direct Riad-to-Hotel Doorstep Service</h4>
+              <h3 style={{ margin: "0 0 8px 0", fontSize: "1em" }}>Direct Riad-to-Hotel Doorstep Service</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
                 No hauling heavy wheeled suitcases across crowded cobblestone alleys to find a remote taxi rank or train station.
                 Your driver meets you directly in your riad lobby or the airport arrivals hall with a name sign.
               </p>
             </div>
             <div style={{ padding: "20px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
-              <h4 style={{ margin: "0 0 8px 0" }}>Guaranteed Flat Rates with Zero Haggling</h4>
+              <h3 style={{ margin: "0 0 8px 0", fontSize: "1em" }}>Guaranteed Flat Rates with Zero Haggling</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
                 Every price is locked before you depart—inclusive of dedicated driver, vehicle fuel, highway toll booths, and air
                 conditioning. No unexpected surcharges, no meter tampering, no cash disputes.
               </p>
             </div>
             <div style={{ padding: "20px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
-              <h4 style={{ margin: "0 0 8px 0" }}>Custom Scenic Stops on Your Schedule</h4>
+              <h3 style={{ margin: "0 0 8px 0", fontSize: "1em" }}>Custom Scenic Stops on Your Schedule</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
                 Heading to Essaouira? Pause to photograph tree-climbing goats and visit a women’s argan oil cooperative. Crossing
                 the Tizi n’Tichka Atlas pass? Stop whenever you want for panoramic valley photos, clean restrooms, and fresh mint tea.

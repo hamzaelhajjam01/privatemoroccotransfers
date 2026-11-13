@@ -126,7 +126,7 @@ export default function MultiDayTours({ lang }: { lang: LanguageCode }) {
           <div style={{ textAlign: "center", marginTop: "40px" }}>
             <p style={{ fontSize: "0.9rem", color: "var(--grey-500)" }}>
               {c.notSee}
-              <Link href={calcUrl} style={{ color: "var(--gold)", fontWeight: "500" }}>
+              <Link href={calcUrl} style={{ color: "var(--gold-deep)", fontWeight: "500" }}>
                 {c.calcLink}
               </Link>
             </p>

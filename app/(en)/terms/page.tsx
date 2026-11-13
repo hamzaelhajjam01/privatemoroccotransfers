@@ -66,7 +66,7 @@ export default function TermsPage() {
             </h2>
             <p>
               {"See our "}
-              <Link href="/cancellation" style={{ color: "var(--gold)" }}>
+              <Link href="/cancellation" style={{ color: "var(--gold-deep)" }}>
                 {"Cancellation Policy"}
               </Link>
               {" for full details."}

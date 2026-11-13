@@ -11,7 +11,7 @@ function Avatar({ r, size = 48 }: { r: Review; size?: number }) {
 
 function Stars({ n }: { n: number }) {
   return (
-    <span className="rev-stars" aria-label={`${n} out of 5 stars`}>
+    <span className="rev-stars" role="img" aria-label={`${n} out of 5 stars`}>
       {Array.from({ length: 5 }, (_, i) => <Icon key={i} name="star" size={15} className={i < n ? "on" : "off"} />)}
     </span>
   );

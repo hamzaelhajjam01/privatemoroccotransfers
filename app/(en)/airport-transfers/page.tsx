@@ -461,9 +461,7 @@ export default function AirportTransfersPage() {
           </div>
           <div className="steps-grid">
             <div className="step-item">
-              <div className="step-num">
-                {"01"}
-              </div>
+              <div className="step-num" aria-hidden="true" data-n="01" />
               <h3 className="step-title">
                 {"Meet & Greet"}
               </h3>
@@ -472,9 +470,7 @@ export default function AirportTransfersPage() {
               </p>
             </div>
             <div className="step-item">
-              <div className="step-num">
-                {"02"}
-              </div>
+              <div className="step-num" aria-hidden="true" data-n="02" />
               <h3 className="step-title">
                 {"45-min Free Wait"}
               </h3>
@@ -483,9 +479,7 @@ export default function AirportTransfersPage() {
               </p>
             </div>
             <div className="step-item">
-              <div className="step-num">
-                {"03"}
-              </div>
+              <div className="step-num" aria-hidden="true" data-n="03" />
               <h3 className="step-title">
                 {"All-Inclusive Price"}
               </h3>

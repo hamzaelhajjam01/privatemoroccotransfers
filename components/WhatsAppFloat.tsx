@@ -29,7 +29,7 @@ export default function WhatsAppFloat() {
 
   return (
     <div className="wa-float" ref={ref}>
-      <button type="button" className="wa-float-btn" onClick={() => setOpen((o) => !o)}><Icon name="whatsapp" size={18} /><span>WhatsApp</span></button>
+      <button type="button" className="wa-float-btn" aria-label="Chat with us on WhatsApp" aria-expanded={open} onClick={() => setOpen((o) => !o)}><Icon name="whatsapp" size={18} /><span>WhatsApp</span></button>
       <div className={`wa-popup${open ? " open" : ""}`}>
         <div className="wa-popup-title">Select a service</div>
         {OPTIONS.map((o) => (

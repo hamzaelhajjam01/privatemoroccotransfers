@@ -389,7 +389,7 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 .site-footer { padding: clamp(64px, 7vw, 120px) var(--g) var(--g); }
 .site-footer .container { padding: 0; }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: var(--g); }
-.footer-col h4, .footer-brand .logo { font-size: var(--fs-h3); letter-spacing: -0.04em; margin-bottom: 20px; font-weight: 400; }
+.footer-col h2, .footer-brand .logo { font-size: var(--fs-h3); letter-spacing: -0.04em; margin-bottom: 20px; font-weight: 400; }
 .footer-col ul li { margin-bottom: 8px; }
 .footer-col ul li a { font-size: 16px; color: #BDBDBD; }
 .footer-col ul li a:hover { color: #fff; }
@@ -589,6 +589,9 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 .step-item, .value-item { padding: 20px var(--g) 40px 0; }
 .step-num, .value-num { font-size: clamp(64px, 6vw, 110px); color: var(--faint); letter-spacing: -0.06em; line-height: .85; margin-bottom: 40px; }
 .step-title, .value-title { font-size: var(--fs-h3); margin-bottom: 12px; }
+/* Decorative step numbers are drawn by CSS (no text in the page), so the deliberately
+   pale colour isn't read by screen readers or flagged as low-contrast text. */
+.step-num[data-n]::before, .value-num[data-n]::before, .num-pale[data-n]::before { content: attr(data-n); }
 .step-body, .value-desc { font-size: 16px; color: var(--muted); line-height: 1.45; max-width: 380px; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 var(--g); }
 .stat-item { padding: 64px 0; border-top: 1px solid var(--rule); }
@@ -702,6 +705,7 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 :root {
   --gold: #B8955A;          /* brand sand-gold */
   --gold-deep: #8C6D3C;     /* gold text on white (AA contrast) */
+  --gold-ink: #7A5E32;      /* small gold text on sand/beige panels (AA contrast) */
   --gold-soft: #E9DCC4;
   --sand: #F4EEE4;          /* warm surface */
   --sand-2: #E8DDCB;
@@ -711,7 +715,7 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 .dark, .hero, .page-hero, .post-hero, .reviews-section, .stats-band, .cta-band,
 .site-footer, .mobile-nav, .cookie-banner, .calc-header, .calc-result-header,
 .post-cta-inline, [style*="background:var(--black)"] {
-  --gold: #C9A66B; --gold-deep: #C9A66B; --faint: #2A241A; --rule: #2E2A22;
+  --gold: #C9A66B; --gold-deep: #C9A66B; --gold-ink: #C9A66B; --faint: #2A241A; --rule: #2E2A22;
 }
 
 /* accent text */

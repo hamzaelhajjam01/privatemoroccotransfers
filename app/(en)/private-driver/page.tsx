@@ -163,7 +163,7 @@ export default function PrivateDriverPage() {
                   </h3>
                   <p style={{ color: "var(--grey-500)", fontSize: "0.9rem", marginBottom: "16px" }}>{u.desc}</p>
                   <Link href={u.href} className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>
-                    {"Learn more"}
+                    {`See ${u.title.toLowerCase()}`}
                   </Link>
                 </div>
               </div>

@@ -83,11 +83,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Morocco Tips"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/getting-around-morocco">
                   {"Getting Around Morocco in 2026: Train, Bus, Grand Taxi or Private Driver?"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"High-speed Al Boraq trains, CTM coaches, grand taxis, or a dedicated chauffeur. Full breakdown of costs, comfort, and luggage space."}
               </p>
@@ -109,11 +109,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Morocco Tips"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/fes-tanneries-guide">
                   {"Visiting the Fes Chouara Tanneries: 2026 Guide, Scams to Avoid & Day Trips"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"The mint leaf ritual, rooftop terraces, treading vats, avoiding faux guides, and booking day trips to Volubilis, Meknes, and Chefchaouen."}
               </p>
@@ -135,11 +135,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Morocco Tips"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/grand-taxi-vs-private-driver">
                   {"Grand Taxi vs Private Driver in Morocco: The 2026 Honest Comparison"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"Luggage limits, shared seating, air conditioning, and price breakdowns. Everything you need to decide between a grand taxi and a private chauffeur."}
               </p>
@@ -161,11 +161,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Route Guides"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/marrakech-essaouira">
                   {"Marrakech to Essaouira by Private Driver: Complete 2026 Guide"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"The most scenic route in Morocco. Everything you need to know — distance, duration, price, and what to see along the way."}
               </p>
@@ -187,11 +187,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Driver FAQ"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/driver-cost">
                   {"How Much Does a Private Driver Cost in Morocco? Full 2026 Price Guide"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"A transparent breakdown of private driver costs across Morocco — per km, per day and per route."}
               </p>
@@ -213,11 +213,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Morocco Tips"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/day-trips">
                   {"Top 7 Day Trips from Marrakech with a Private Driver"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"Atlas Mountains, Essaouira, Ourika Valley and more — the best day excursions from Marrakech with your own driver."}
               </p>
@@ -239,11 +239,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Route Guides"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/sahara-merzouga">
                   {"Marrakech to Merzouga Sahara: Private Driver Complete Guide"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"Everything you need to plan the legendary desert route from Marrakech to Merzouga, including price, duration and highlights."}
               </p>
@@ -265,11 +265,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Airport Guides"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog/airport-transfer">
                   {"Marrakech Airport Transfer: What to Expect When You Land"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"First time at Marrakech Menara Airport? Here's exactly what to do from the moment you land — including transfer options and prices."}
               </p>
@@ -291,11 +291,11 @@ export default function BlogPage() {
               <span className="blog-tag">
                 {"Morocco Tips"}
               </span>
-              <h3 className="blog-title">
+              <h2 className="blog-title">
                 <Link href="/blog">
                   {"Getting Around Morocco: Trains, Buses, Taxis or Private Driver?"}
                 </Link>
-              </h3>
+              </h2>
               <p className="blog-excerpt">
                 {"A practical comparison of transport options in Morocco to help you choose the right way to travel between cities."}
               </p>
