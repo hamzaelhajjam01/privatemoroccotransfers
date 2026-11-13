@@ -1,0 +1,3 @@
+# Keep line endings consistent (LF) whatever editor or OS saves a file,
+# so Windows-style CRLF saves never show up as changed files.
+* text=auto eol=lf
