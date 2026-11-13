@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "./Icon";
 import { FLEET_CITIES, listingFor, vehiclesIn, type FleetCity, type Vehicle } from "@/lib/fleet";
-import { EUR_RATE } from "@/lib/pricing";
+import { EUR_RATE } from "@/lib/currency";
 import { openWhatsApp } from "@/lib/site";
 import { getLangFromPathname, getLocalizedPlace, LanguageCode } from "@/lib/i18n";
 

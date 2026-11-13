@@ -8,7 +8,6 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Jost } from "next/font/google";
-import { initTripFinder } from "./engine";
 import { TRIP_FINDER_TRANSLATIONS, TripFinderI18n } from "./i18n";
 import { LanguageCode, getLangFromPathname } from "@/lib/i18n";
 import "./trip-finder.css";
@@ -51,16 +50,27 @@ export default function TripFinder({
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!rootRef.current) return;
-    const destroy = initTripFinder(rootRef.current, {
-      whatsappNumber,
-      assetBase,
-      leadEndpoint,
-      lang: currentLang,
-      t,
-      rtl: isRTL,
+    const root = rootRef.current;
+    if (!root) return;
+    // Load the 3D engine (three.js + gsap, ~180 KB) only when this page mounts,
+    // so pages that merely link here don't download it through prefetching.
+    let destroy: (() => void) | undefined;
+    let cancelled = false;
+    import("./engine").then(({ initTripFinder }) => {
+      if (cancelled) return;
+      destroy = initTripFinder(root, {
+        whatsappNumber,
+        assetBase,
+        leadEndpoint,
+        lang: currentLang,
+        t,
+        rtl: isRTL,
+      });
     });
-    return destroy;
+    return () => {
+      cancelled = true;
+      destroy?.();
+    };
   }, [whatsappNumber, assetBase, leadEndpoint, currentLang, isRTL, t]);
 
   return (

@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Icon from "./Icon";
-import { EUR_RATE } from "@/lib/pricing";
+import { EUR_RATE } from "@/lib/currency";
 import { whatsappUrl } from "@/lib/site";
 import { getLocalizedPlace, type LanguageCode } from "@/lib/i18n";
 import type { RouteItem } from "@/app/(en)/transfers/[slug]/page";

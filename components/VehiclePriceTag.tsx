@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { convertPrice, Currency, EUR_RATE } from "@/lib/pricing";
+import { convertPrice, type Currency, EUR_RATE } from "@/lib/currency";
 
 type Props = {
   priceEur: number;

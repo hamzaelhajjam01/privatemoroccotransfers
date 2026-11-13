@@ -20,7 +20,7 @@ export default function CookieBanner() {
   if (!show) return null;
   return (
     <div className="cookie-banner" style={{ display: "flex" }}>
-      <p>We use one cookie to remember your choice. <Link href="/cookie">Learn more</Link></p>
+      <p>We use one cookie to remember your choice. <Link prefetch={false} href="/cookie">Learn more</Link></p>
       <div className="cookie-btns">
         <button type="button" className="btn btn-outline" onClick={() => choose("declined")}>Decline</button>
         <button type="button" className="btn btn-white" onClick={() => choose("accepted")}>Accept</button>

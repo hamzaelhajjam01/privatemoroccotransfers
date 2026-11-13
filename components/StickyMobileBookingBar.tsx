@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Icon from "./Icon";
 import { trackWhatsAppLead } from "@/lib/site";
-import { convertPrice, Currency } from "@/lib/pricing";
+import { convertPrice, type Currency } from "@/lib/currency";
 
 type Props = {
   from: string;

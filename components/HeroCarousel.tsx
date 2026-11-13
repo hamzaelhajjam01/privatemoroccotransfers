@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { preload } from "react-dom";
 
 /** flip: mirror the photo so the car sits on the left, clear of the booking form */
 export const HERO_SLIDES = [
@@ -17,6 +18,8 @@ const HeroCtx = createContext<Ctx>({ index: 0, count: HERO_SLIDES.length, go: ()
 
 /** Hero section with a crossfading photo carousel behind the content. */
 export default function HeroCarousel({ children }: { children: React.ReactNode }) {
+  // The first slide is the page's largest element: fetch it early and at high priority.
+  preload(HERO_SLIDES[0].src, { as: "image", fetchPriority: "high" });
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [cycle, setCycle] = useState(0); // restarts the timer and progress bar after a manual jump

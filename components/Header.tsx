@@ -122,13 +122,13 @@ export default function Header() {
     <>
       <header className={cls}>
         <nav className="nav-inner">
-          <Link href={homeUrl} className="logo" aria-label="Private Morocco Transfers — home">
+          <Link prefetch={false} href={homeUrl} className="logo" aria-label="Private Morocco Transfers — home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/brand/logo-white.svg" alt="Private Morocco Transfers" width={209} height={40} />
           </Link>
           <div className="nav-links">
             {navLinks.map((n) => (
-              <Link
+              <Link prefetch={false}
                 key={n.href}
                 href={n.href}
                 className={pathname.startsWith(n.href) ? "active" : undefined}
@@ -165,7 +165,7 @@ export default function Header() {
                 ))}
               </select>
             </div>
-            <Link href={contactUrl} className="btn">
+            <Link prefetch={false} href={contactUrl} className="btn">
               {t.nav.book}
             </Link>
             <button
@@ -187,13 +187,13 @@ export default function Header() {
         >
           ✕
         </button>
-        <Link href={homeUrl}>Home</Link>
+        <Link prefetch={false} href={homeUrl}>Home</Link>
         {navLinks.map((n) => (
-          <Link key={n.href} href={n.href}>
+          <Link prefetch={false} key={n.href} href={n.href}>
             {n.label}
           </Link>
         ))}
-        <Link href={contactUrl}>{t.nav.book}</Link>
+        <Link prefetch={false} href={contactUrl}>{t.nav.book}</Link>
         <div style={{ marginTop: "24px", display: "flex", flexDirection: "column", gap: "12px" }}>
           <div style={{ display: "flex", gap: "12px", alignItems: "center" }}>
             <span style={{ fontSize: "14px", color: "var(--muted)" }}>Language:</span>

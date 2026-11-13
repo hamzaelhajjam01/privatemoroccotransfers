@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Icon from "./Icon";
-import { getLangFromPathname, LanguageCode } from "@/lib/i18n";
+import type { LanguageCode } from "@/lib/i18n";
 import { WHATSAPP_NUMBER, GBP_REVIEW_URL } from "@/lib/site";
 
 const FOOTER_I18N: Record<
@@ -236,12 +233,9 @@ const FOOTER_I18N: Record<
   },
 };
 
-export default function Footer() {
-  const pathname = usePathname();
-  if (/^\/(?:[a-z]{2}\/)?trip-finder\/?$/.test(pathname || "")) {
-    return null;
-  }
-  const currentLang = getLangFromPathname(pathname);
+/** Server-rendered footer (no browser JavaScript). Hidden on Trip Finder by FooterGate. */
+export default function Footer({ lang }: { lang: LanguageCode }) {
+  const currentLang = lang;
   const t = FOOTER_I18N[currentLang] || FOOTER_I18N.en;
 
   const getUrl = (path: string) => {

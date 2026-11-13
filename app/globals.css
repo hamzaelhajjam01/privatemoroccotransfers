@@ -799,10 +799,11 @@ section[style*="background:var(--sand)"], [style*="background: var(--sand)"] { b
 .hero-lines button { position: relative; display: block; width: 72px; height: 18px; padding: 8px 0; cursor: pointer; background: none; }
 .hero-lines button::before { content: ""; position: absolute; left: 0; right: 0; top: 8px; height: 2px; background: rgba(255,255,255,.35); }
 .hero-lines button:hover::before { background: rgba(255,255,255,.6); }
-.hero-lines .fill { position: absolute; left: 0; top: 8px; height: 2px; width: 0; background: var(--gold); }
-.hero-lines .fill.full { width: 100%; }
+.hero-lines .fill { position: absolute; left: 0; top: 8px; height: 2px; width: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left center; }
+.hero-lines .fill.full { transform: none; }
 .hero-lines .fill.run { animation: hero-progress linear forwards; }
-@keyframes hero-progress { from { width: 0; } to { width: 100%; } }
+/* transform (not width): runs on the compositor, no layout work every frame */
+@keyframes hero-progress { from { transform: scaleX(0); } to { transform: none; } }
 @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
 
 /* ═══════════════════════════════════════════════════════
@@ -826,19 +827,22 @@ html.motion .rv-w.in .wi { transform: none; }
 html.motion .rv-img { clip-path: inset(100% 0 0 0); transform: scale(1.08); transition: clip-path 1.2s var(--ease-out), transform 1.6s var(--ease-out); }
 html.motion .rv-img.in { clip-path: inset(0 0 0 0); transform: none; }
 
-/* hero entrance (pure CSS, no waiting for JS) */
-@keyframes rise { from { opacity: 0; transform: translate3d(0, 30px, 0); } to { opacity: 1; transform: none; } }
-@keyframes unveil-up { from { clip-path: inset(0 0 100% 0); transform: translate3d(0, 40px, 0); } to { clip-path: inset(0 0 0 0); transform: none; } }
+/* hero entrance (pure CSS, no waiting for JS).
+   Transform-only: content is visible from the first frame, so it counts as
+   Largest Contentful Paint immediately (opacity-0 or clipped starts delay LCP). */
+@keyframes rise { from { transform: translate3d(0, 30px, 0); } to { transform: none; } }
+@keyframes unveil-up { from { transform: translate3d(0, 40px, 0); } to { transform: none; } }
+@keyframes settle { from { transform: scale(1.05); } to { transform: none; } }
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
 .hero .hero-lines, .hero .hero-statement p, .hero .hero-statement .btn, .hero .booking-widget { animation: rise 1.1s var(--ease-out) both; }
 .hero .hero-statement p { animation-delay: .15s; }
 .hero .hero-statement .btn { animation-delay: .3s; }
 .hero .booking-widget { animation-delay: .45s; }
-.hero .hero-media { animation: fade 1.6s ease both; will-change: transform; }
+.hero .hero-media { animation: settle 1.6s var(--ease-out) both; will-change: transform; }
 .page-hero h1, .post-hero h1 { animation: unveil-up 1.2s var(--ease-out) both; }
 .page-hero .hero-sub, .page-hero .breadcrumb, .page-hero .section-label, .post-hero .post-meta, .page-hero .booking-widget { animation: rise 1s var(--ease-out) .25s both; }
 
-/* page transition (app/template.tsx) */
+/* page transition: only on client-side navigation (components/PageEnter.tsx), never on first load */
 .page-enter { animation: fade .6s ease both; }
 
 /* header: hide on scroll down, show on scroll up */
@@ -1129,3 +1133,4 @@ html, body { overflow-x: clip; }
 .purpose-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: var(--g); }
 .purpose-photo { aspect-ratio: 2 / 1; }
 @media (max-width: 900px) { .purpose-top { grid-template-columns: minmax(0, 1fr); } .purpose-photo { aspect-ratio: 4 / 3; } }
+

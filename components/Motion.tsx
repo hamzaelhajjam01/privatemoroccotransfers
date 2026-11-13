@@ -109,17 +109,9 @@ export default function Motion() {
     const words = pick(WORDS);
     const reveals = pick(REVEAL).filter((el) => !el.matches(WORDS));
     const images = pick(IMAGES).filter((el) => !el.classList.contains("hero-media"));
-    // Only elements tagged here start hidden, so content rendered later (e.g. city tabs) is never stuck invisible
-    words.forEach((el) => { splitWords(el); el.classList.add("rv-w"); });
-    reveals.forEach((el) => el.classList.add("rv"));
-    images.forEach((el) => el.classList.add("rv-img"));
 
     // A fully clipped image never "intersects", so each image is triggered by its container instead
     const proxyFor = new Map<Element, HTMLElement[]>();
-    images.forEach((img) => {
-      const host = img.parentElement ?? img;
-      proxyFor.set(host, [...(proxyFor.get(host) ?? []), img]);
-    });
 
     const io = new IntersectionObserver(
       (entries) => {
@@ -143,7 +135,33 @@ export default function Motion() {
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
     );
-    [...reveals, ...words, ...proxyFor.keys()].forEach((el) => io.observe(el));
+
+    // Tag elements in small idle-time slices instead of one long burst at load,
+    // so this setup never creates a long task (keeps Total Blocking Time near 0).
+    // Only elements tagged here start hidden, so content rendered later is never stuck invisible.
+    const queue: Array<() => void> = [];
+    words.forEach((el) => queue.push(() => { splitWords(el); el.classList.add("rv-w"); io.observe(el); }));
+    reveals.forEach((el) => queue.push(() => { el.classList.add("rv"); io.observe(el); }));
+    images.forEach((img) =>
+      queue.push(() => {
+        img.classList.add("rv-img");
+        const host = img.parentElement ?? img;
+        proxyFor.set(host, [...(proxyFor.get(host) ?? []), img]);
+        io.observe(host);
+      })
+    );
+    let cancelled = false;
+    const idle = (cb: () => void) => {
+      if (typeof window.requestIdleCallback === "function") window.requestIdleCallback(cb, { timeout: 600 });
+      else setTimeout(cb, 16);
+    };
+    const runSlice = () => {
+      if (cancelled) return;
+      const t0 = performance.now();
+      while (queue.length && performance.now() - t0 < 8) queue.shift()!();
+      if (queue.length) idle(runSlice);
+    };
+    idle(runSlice);
 
     // Hero parallax — desktop only
     const hero = document.querySelector<HTMLElement>(".hero .hero-media");
@@ -161,6 +179,7 @@ export default function Motion() {
     if (hero && desktop) { onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); }
 
     return () => {
+      cancelled = true;
       io.disconnect();
       window.removeEventListener("scroll", onScroll);
     };

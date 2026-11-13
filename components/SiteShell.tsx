@@ -3,6 +3,7 @@ import Script from "next/script";
 import { IBM_Plex_Mono, Inter_Tight } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FooterGate from "@/components/FooterGate";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieBanner from "@/components/CookieBanner";
 import SiteScripts from "@/components/SiteScripts";
@@ -189,13 +190,13 @@ export default function SiteShell({ lang, children }: { lang: LanguageCode; chil
       <head>
         <Script
           src="https://www.googletagmanager.com/gtm.js?id=GTM-TM2P4CWT"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-8GZHQFFZ4Z"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -218,7 +219,9 @@ export default function SiteShell({ lang, children }: { lang: LanguageCode; chil
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Header />
         <main>{children}</main>
-        <Footer />
+        <FooterGate>
+          <Footer lang={lang} />
+        </FooterGate>
         <WhatsAppFloat />
         <CookieBanner />
         <SiteScripts />
