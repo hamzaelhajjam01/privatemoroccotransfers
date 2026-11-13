@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Icon from "./Icon";
 import type { LanguageCode } from "@/lib/i18n";
-import { WHATSAPP_NUMBER, GBP_REVIEW_URL } from "@/lib/site";
+import { WHATSAPP_NUMBER, GBP_REVIEW_URL, FACEBOOK_URL } from "@/lib/site";
 
 const FOOTER_I18N: Record<
   LanguageCode,
@@ -360,6 +360,9 @@ export default function Footer({ lang }: { lang: LanguageCode }) {
             <Link href={getUrl("/multi-day-tours")}>{t.privateTours}</Link>
             <a href={GBP_REVIEW_URL} target="_blank" rel="noopener">
               {t.leaveReview}
+            </a>
+            <a href={FACEBOOK_URL} target="_blank" rel="noopener">
+              {"Facebook"}
             </a>
           </div>
         </div>

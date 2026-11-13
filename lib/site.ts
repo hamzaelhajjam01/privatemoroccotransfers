@@ -7,8 +7,9 @@ export const SUPPORT_EMAIL = "contact@privatemoroccotransfers.com";
 /** Google Business Profile (Maps) — the real profile, used for schema sameAs and the review CTA. */
 export const GBP_URL = "https://maps.google.com/?cid=4065053668334298253";
 export const GBP_REVIEW_URL = "https://g.page/r/CY3k9hXG-Gk4EBI/review";
-/** Public social/profile links for JSON-LD sameAs. Add the Facebook page URL here once it exists. */
-export const SOCIAL_LINKS: string[] = [GBP_URL];
+export const FACEBOOK_URL = "https://www.facebook.com/profile.php?id=61596579149028";
+/** Public social/profile links for JSON-LD sameAs: tells Google these profiles are the same business. */
+export const SOCIAL_LINKS: string[] = [GBP_URL, FACEBOOK_URL];
 
 export const SEO_LANGS = ["fr", "es", "it", "de", "ar", "pt", "nl"] as const;
 export type SeoLang = "en" | (typeof SEO_LANGS)[number];
