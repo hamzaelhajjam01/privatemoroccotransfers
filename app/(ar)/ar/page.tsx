@@ -7,6 +7,7 @@ import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import type { Review } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
+import RoutePriceTable from "@/components/RoutePriceTable";
 
 export const metadata: Metadata = {
   title: { absolute: "سائق خاص وتوصيل VIP في المغرب — أسعار ثابتة ومضمونة" },
@@ -210,50 +211,10 @@ export default function ArabicHomePage() {
           <div className="head">
             <h2 className="huge">{"أشهر المسارات والتنقلات"}</h2>
             <p className="statement">
-              {"أسعار ثابتة للمركبة بالكامل (صالون مريح لغاية 3 أشخاص). تتوفر سيارات فان وميني باص للمجموعات والعائلات."}
+              {"أسعار ثابتة للمركبة بالكامل، شاملة الوقود ورسوم الطرق السيارة. اختر الذهاب فقط أو الذهاب والعودة واحجز بنقرة واحدة."}
             </p>
           </div>
-          <div className="route-table">
-            <div className="route-tr">
-              <span>
-                <Link href="/ar/transfers/marrakech-airport-to-marrakech" style={{ color: "inherit", textDecoration: "none" }}>
-                  {"مطار مراكش المنارة ← الفندق / المدينة"}
-                </Link>
-              </span>
-              <span className="muted">{"6 كم"}</span>
-              <span className="muted">{"15 دقيقة"}</span>
-              <span>{"€35 (380 درهم)"}</span>
-              <Link href="/ar/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
-                {"التفاصيل"}
-              </Link>
-            </div>
-            <div className="route-tr">
-              <span>
-                <Link href="/ar/transfers/marrakech-to-essaouira" style={{ color: "inherit", textDecoration: "none" }}>
-                  {"مراكش ← الصويرة"}
-                </Link>
-              </span>
-              <span className="muted">{"180 كم"}</span>
-              <span className="muted">{"2.5 ساعة"}</span>
-              <span>{"€97 (1,070 درهم)"}</span>
-              <Link href="/ar/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
-                {"التفاصيل"}
-              </Link>
-            </div>
-            <div className="route-tr">
-              <span>
-                <Link href="/ar/transfers/casablanca-airport-to-marrakech" style={{ color: "inherit", textDecoration: "none" }}>
-                  {"مطار كازابلانكا (محمد الخامس) ← مراكش"}
-                </Link>
-              </span>
-              <span className="muted">{"220 كم"}</span>
-              <span className="muted">{"2.5 ساعة"}</span>
-              <span>{"€157 (1,730 درهم)"}</span>
-              <Link href="/ar/transfers/casablanca-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
-                {"التفاصيل"}
-              </Link>
-            </div>
-          </div>
+          <RoutePriceTable lang="ar" />
         </div>
       </section>
 
