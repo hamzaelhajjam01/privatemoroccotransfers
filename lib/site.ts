@@ -61,24 +61,42 @@ function compactPlace(name: string): string {
 }
 
 /**
- * Route meta title: "{prefix} {from} {connector} {to} €{price}".
- * No brand suffix on route pages — the route and rate are the keywords, and the
- * 28-char brand suffix pushed most titles past Google's ~60-char display cap.
+ * Route meta title. English and French put "taxi" next to "transfer" because
+ * Search Console shows people search both words for the same route
+ * ("taxi marrakech to agadir", "transfer marrakech to agadir").
+ * Candidates are tried longest first and the first one that fits Google's
+ * ~60-char display cap is used. No brand suffix on route pages.
  */
 export function buildRouteMetaTitle(from: string, to: string, priceEur: number, lang: string = "en"): string {
-  const prefix = TITLE_PREFIX[lang] || "Transfer";
-  const conn = TITLE_CONNECTOR[lang] || "to";
-  const full = `${prefix} ${from} ${conn} ${to} €${priceEur}`;
-  if (full.length <= 60) return full;
-
-  return `${prefix} ${compactPlace(from)} ${conn} ${compactPlace(to)} €${priceEur}`;
+  const f = compactPlace(from);
+  const t = compactPlace(to);
+  let candidates: string[];
+  if (lang === "en") {
+    candidates = [
+      `${from} to ${to} Taxi & Private Transfer €${priceEur}`,
+      `${f} to ${t} Taxi & Private Transfer €${priceEur}`,
+      `${f} to ${t} Taxi & Transfer €${priceEur}`,
+      `${f} to ${t} Transfer €${priceEur}`,
+    ];
+  } else if (lang === "fr") {
+    candidates = [
+      `Taxi & transfert ${from} vers ${to} €${priceEur}`,
+      `Taxi & transfert ${f} vers ${t} €${priceEur}`,
+      `Transfert ${f} vers ${t} €${priceEur}`,
+    ];
+  } else {
+    const prefix = TITLE_PREFIX[lang] || "Transfer";
+    const conn = TITLE_CONNECTOR[lang] || "to";
+    candidates = [`${prefix} ${from} ${conn} ${to} €${priceEur}`, `${prefix} ${f} ${conn} ${t} €${priceEur}`];
+  }
+  return candidates.find((c) => c.length <= 60) || candidates[candidates.length - 1];
 }
 
 // Per-language route meta description: a lead clause always, plus a tail clause
 // only when the whole thing still fits under Google's ~160-char display cap.
 const META_LEAD: Record<string, (f: string, t: string, p: number) => string> = {
-  en: (f, t, p) => `Private transfer ${f} to ${t}: fixed €${p} per vehicle`,
-  fr: (f, t, p) => `Transfert privé ${f} vers ${t} : prix fixe €${p} par véhicule`,
+  en: (f, t, p) => `Private transfer or taxi from ${f} to ${t}: fixed €${p} per vehicle`,
+  fr: (f, t, p) => `Taxi et transfert privé ${f} vers ${t} : prix fixe €${p} par véhicule`,
   es: (f, t, p) => `Traslado privado ${f} a ${t}: precio fijo €${p} por vehículo`,
   it: (f, t, p) => `Transfer privato ${f} a ${t}: prezzo fisso €${p} a veicolo`,
   de: (f, t, p) => `Privater Transfer ${f} nach ${t}: Festpreis €${p} pro Fahrzeug`,
@@ -98,12 +116,27 @@ const META_TAIL: Record<string, string> = {
   nl: "Ervaren chauffeur, brandstof en tol inbegrepen. Boek via WhatsApp.",
 };
 
+// Airport routes: the meet-and-greet and van details people search for
+// ("vip airport transfer agadir", "mercedes vito airport transfer").
+const META_TAIL_AIRPORT: Record<string, string> = {
+  en: "Meet & greet, flight tracking, Mercedes Vito vans. Book on WhatsApp.",
+  fr: "Accueil à l'arrivée, suivi de vol, vans Mercedes Vito. Résa WhatsApp.",
+};
+
 /** Route meta description kept under 160 characters, in the page's own language. */
 export function buildRouteMetaDescription(from: string, to: string, priceEur: number, lang: string = "en"): string {
   const lead = (META_LEAD[lang] || META_LEAD.en)(compactPlace(from), compactPlace(to), priceEur);
-  const tail = META_TAIL[lang] || META_TAIL.en;
-  const full = `${lead}. ${tail}`;
-  return full.length <= 160 ? full : `${lead}.`;
+  const isAirport = /airport|aéroport/i.test(`${from} ${to}`);
+  const tails = [
+    isAirport ? META_TAIL_AIRPORT[lang] : undefined,
+    isAirport && lang === "en" ? "Meet & greet, flight tracking. Book on WhatsApp." : undefined,
+    META_TAIL[lang] || META_TAIL.en,
+  ].filter(Boolean) as string[];
+  for (const tail of tails) {
+    const full = `${lead}. ${tail}`;
+    if (full.length <= 160) return full;
+  }
+  return `${lead}.`;
 }
 
 export function whatsappUrl(message: string) {
