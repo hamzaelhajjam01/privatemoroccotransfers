@@ -199,7 +199,7 @@ export default function Home() {
         <div className="wrap img-row">
           <div className="ph" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}></div>
           <div className="ph" style={{ backgroundImage: "url(/img/textures/zellige.webp)" }}></div>
-          <div className="ph" style={{ backgroundImage: "url(/img/textures/brass-lantern.webp)" }}></div>
+          <div className="ph" style={{ backgroundImage: "url(/img/textures/brass-lantern.webp?v=2)" }}></div>
         </div>
       </section>
       <section className="section">
