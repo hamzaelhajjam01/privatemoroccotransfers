@@ -77,7 +77,7 @@ export default function Content() {
             {"Private Driver Cost"}
           </h2>
           <p>
-            {"A fixed-price private transfer from Marrakech to Merzouga starts from €360 (3,960 MAD) for a comfort sedan, €420 for an SUV / touring van, and €580 for a minibus. An SUV or 4x4 Prado is recommended for this route given the Atlas passes and final approach roads near Merzouga."}
+            {"A fixed-price private transfer from Marrakech to Merzouga starts from €370 (4,070 MAD) for a comfort sedan, €450 for an SUV / touring van, and €660 for a minibus. An SUV or 4x4 Prado is recommended for this route given the Atlas passes and final approach roads near Merzouga."}
           </p>
           <p>
             {"A two-day package (Marrakech to Merzouga on day 1, Merzouga to Marrakech on day 2) is available with a 10% round-trip discount."}
@@ -113,7 +113,7 @@ export default function Content() {
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
           <Link href="/transfers/marrakech-to-merzouga" className="btn btn-white" style={{ minWidth: "0", padding: "12px 20px" }}>
-            {"Direct Transfer (€360)"}
+            {"Direct Transfer (€370)"}
           </Link>
           <Link href="/multi-day-tours" className="btn btn-gold" style={{ minWidth: "0", padding: "12px 20px" }}>
             {"Multi-Day Tours ↗"}

@@ -1,7 +1,12 @@
 import { QuoteLeadData } from "./quote-email";
 
+const esc = (s: string) =>
+  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
+
 export function generateAdminAlertHtml(lead: QuoteLeadData): string {
-  const name = lead.name || "Anonymous Traveler";
+  const name = esc(lead.name || "Anonymous Traveler");
+  const phone = lead.phone ? esc(lead.phone) : "";
+  const message = lead.message ? esc(lead.message).replace(/\n/g, "<br>") : "";
   const email = lead.email;
   const q = lead.quote || {};
   const priceEur = q.priceEUR || 0;
@@ -35,11 +40,18 @@ export function generateAdminAlertHtml(lead: QuoteLeadData): string {
           <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5; font-weight: 600;">Email:</td>
           <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5;"><a href="mailto:${email}" style="color: #2563eb;">${email}</a></td>
         </tr>
+        ${phone ? `<tr>
+          <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5; font-weight: 600;">WhatsApp / Phone:</td>
+          <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5;"><a href="https://wa.me/${phone.replace(/[^0-9]/g, "")}" style="color: #2563eb;">${phone}</a></td>
+        </tr>` : ""}
         <tr>
           <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5; font-weight: 600;">Marketing Consent:</td>
           <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5;">${consent}</td>
         </tr>
       </table>
+
+      ${message ? `<h3 style="margin: 0 0 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: #71717a;">Trip Request</h3>
+      <div style="padding: 12px 14px; background: #fafafa; border: 1px solid #e4e4e7; border-radius: 6px; margin-bottom: 24px; line-height: 1.5;">${message}</div>` : ""}
 
       <h3 style="margin: 0 0 12px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; color: #71717a;">Quote Details</h3>
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">

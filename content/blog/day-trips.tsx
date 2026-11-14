@@ -65,7 +65,7 @@ export default function Content() {
             {"1. Essaouira (176 km)"}
           </h2>
           <p>
-            {"The most popular day trip from Marrakech. The UNESCO-listed blue-and-white port city takes around 2.5 hours to reach. Spend the day exploring the medina, eating fresh fish on the port, and walking the Atlantic ramparts. Return the same day or overnight. Driver cost from €90 (980 MAD) each way or €120 (1,320 MAD) for a full-day return excursion."}
+            {"The most popular day trip from Marrakech. The UNESCO-listed blue-and-white port city takes around 2.5 hours to reach. Spend the day exploring the medina, eating fresh fish on the port, and walking the Atlantic ramparts. Return the same day or overnight. Driver cost from €97 (1,070 MAD) each way or €215 (2,360 MAD) for a full-day return excursion."}
           </p>
           <h2>
             {"2. Ourika Valley (60 km)"}
@@ -125,7 +125,7 @@ export default function Content() {
             {"Browse Day Trips"}
           </Link>
           <Link href="/transfers/marrakech-to-agafay-desert" className="btn btn-gold" style={{ minWidth: "0", padding: "12px 20px" }}>
-            {"Agafay Desert (€40)"}
+            {"Agafay Desert (€140)"}
           </Link>
         </div>
       </div>

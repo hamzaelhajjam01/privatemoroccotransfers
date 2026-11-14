@@ -38,7 +38,7 @@ const ARABIC_SERVICES = [
   {
     title: "استقبال وتوصيل المطارات",
     text: "استقبال شخصي مع لوحة باسمكم في صالة الوصول بجميع مطارات المغرب (مراكش، كازابلانكا، طنجة، أكادير، فاس). متابعة مباشرة للرحلات و45 دقيقة انتظار مجاني.",
-    meta: ["ابتداءً من 30€", "مراكش · كازا · طنجة · أكادير"],
+    meta: ["ابتداءً من 35€", "مراكش · كازا · طنجة · أكادير"],
     image: "/img/blog/airport-transfer.webp",
     href: "/ar/airport-transfers",
     cta: "تفاصيل توصيل المطارات",
@@ -222,7 +222,7 @@ export default function ArabicHomePage() {
               </span>
               <span className="muted">{"6 كم"}</span>
               <span className="muted">{"15 دقيقة"}</span>
-              <span>{"€30 (330 درهم)"}</span>
+              <span>{"€35 (380 درهم)"}</span>
               <Link href="/ar/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"التفاصيل"}
               </Link>
@@ -235,7 +235,7 @@ export default function ArabicHomePage() {
               </span>
               <span className="muted">{"180 كم"}</span>
               <span className="muted">{"2.5 ساعة"}</span>
-              <span>{"€90 (980 درهم)"}</span>
+              <span>{"€97 (1,070 درهم)"}</span>
               <Link href="/ar/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"التفاصيل"}
               </Link>
@@ -248,7 +248,7 @@ export default function ArabicHomePage() {
               </span>
               <span className="muted">{"220 كم"}</span>
               <span className="muted">{"2.5 ساعة"}</span>
-              <span>{"€150 (1,650 درهم)"}</span>
+              <span>{"€157 (1,730 درهم)"}</span>
               <Link href="/ar/transfers/casablanca-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"التفاصيل"}
               </Link>

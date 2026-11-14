@@ -194,9 +194,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "One driver, one fixed price",
     },
     types: {
-      airport: { n: "Airport transfer", d: "Meet & greet in arrivals", e: "From €30" },
+      airport: { n: "Airport transfer", d: "Meet & greet in arrivals", e: "From €35" },
       city: { n: "City to city", d: "Door to door, any route", e: "150+ routes" },
-      day: { n: "Day trip", d: "Out by morning, back by evening", e: "From €60" },
+      day: { n: "Day trip", d: "Out by morning, back by evening", e: "From €140" },
       tour: { n: "Private tour", d: "3, 5 or 7 days, same driver", e: "Custom" },
     },
     day: {
@@ -394,9 +394,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "Un chauffeur, un tarif fixe garanti",
     },
     types: {
-      airport: { n: "Transfert aéroport", d: "Accueil personnalisé aux arrivées", e: "Dès 30 €" },
+      airport: { n: "Transfert aéroport", d: "Accueil personnalisé aux arrivées", e: "Dès 35 €" },
       city: { n: "Intervilles", d: "Porte-à-porte, tous trajets", e: "+150 trajets" },
-      day: { n: "Excursion d'une journée", d: "Départ le matin, retour le soir", e: "Dès 60 €" },
+      day: { n: "Excursion d'une journée", d: "Départ le matin, retour le soir", e: "Dès 140 €" },
       tour: { n: "Circuit privé", d: "3, 5 ou 7 jours, même chauffeur", e: "Sur mesure" },
     },
     day: {
@@ -594,9 +594,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "Un chófer privado, precio fijo garantizado",
     },
     types: {
-      airport: { n: "Traslado aeropuerto", d: "Bienvenida con cartel en llegadas", e: "Desde 30 €" },
+      airport: { n: "Traslado aeropuerto", d: "Bienvenida con cartel en llegadas", e: "Desde 35 €" },
       city: { n: "Ciudad a ciudad", d: "Puerta a puerta, cualquier ruta", e: "+150 rutas" },
-      day: { n: "Excursión de un día", d: "Salida por la mañana, regreso por la tarde", e: "Desde 60 €" },
+      day: { n: "Excursión de un día", d: "Salida por la mañana, regreso por la tarde", e: "Desde 140 €" },
       tour: { n: "Tour privado", d: "3, 5 o 7 días, mismo chófer", e: "A medida" },
     },
     day: {
@@ -794,9 +794,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "Un autista privato, tariffa fissa garantita",
     },
     types: {
-      airport: { n: "Transfer aeroporto", d: "Accoglienza agli arrivi con cartello", e: "Da 30 €" },
+      airport: { n: "Transfer aeroporto", d: "Accoglienza agli arrivi con cartello", e: "Da 35 €" },
       city: { n: "Città a città", d: "Porta a porta, qualsiasi itinerario", e: "+150 tratte" },
-      day: { n: "Escursione in giornata", d: "Partenza al mattino, ritorno la sera", e: "Da 60 €" },
+      day: { n: "Escursione in giornata", d: "Partenza al mattino, ritorno la sera", e: "Da 140 €" },
       tour: { n: "Tour privato", d: "3, 5 o 7 giorni, stesso autista", e: "Su misura" },
     },
     day: {
@@ -994,9 +994,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "Ein Privatchauffeur, garantierter Festpreis",
     },
     types: {
-      airport: { n: "Flughafentransfer", d: "Abholung mit Namensschild in der Ankunft", e: "Ab 30 €" },
+      airport: { n: "Flughafentransfer", d: "Abholung mit Namensschild in der Ankunft", e: "Ab 35 €" },
       city: { n: "Stadt zu Stadt", d: "Tür-zu-Tür, jede gewünschte Route", e: "150+ Strecken" },
-      day: { n: "Tagesausflug", d: "Morgens hin, abends zurück", e: "Ab 60 €" },
+      day: { n: "Tagesausflug", d: "Morgens hin, abends zurück", e: "Ab 140 €" },
       tour: { n: "Private Rundreise", d: "3, 5 oder 7 Tage mit demselben Fahrer", e: "Individuell" },
     },
     day: {
@@ -1194,9 +1194,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "سائق خاص بسعر ثابت ومضمون",
     },
     types: {
-      airport: { n: "توصيل المطار", d: "استقبال بالاسم في صالة الوصول", e: "من 30 €" },
+      airport: { n: "توصيل المطار", d: "استقبال بالاسم في صالة الوصول", e: "من 35 €" },
       city: { n: "بين المدن", d: "من الباب إلى الباب عبر كل المدن", e: "+150 مسار" },
-      day: { n: "رحلة يومية", d: "انطلاق صباحاً وعودة مساءً", e: "من 60 €" },
+      day: { n: "رحلة يومية", d: "انطلاق صباحاً وعودة مساءً", e: "من 140 €" },
       tour: { n: "جولة سياحية خاصة", d: "3، 5 أو 7 أيام مع نفس السائق", e: "مخصصة" },
     },
     day: {
@@ -1394,9 +1394,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "Um motorista particular, preço fixo garantido",
     },
     types: {
-      airport: { n: "Transfer de aeroporto", d: "Recepção com placa nas chegadas", e: "Desde 30 €" },
+      airport: { n: "Transfer de aeroporto", d: "Recepção com placa nas chegadas", e: "Desde 35 €" },
       city: { n: "Cidade a cidade", d: "Porta a porta, qualquer percurso", e: "+150 rotas" },
-      day: { n: "Passeio de um dia", d: "Partida de manhã, regresso à tarde", e: "Desde 60 €" },
+      day: { n: "Passeio de um dia", d: "Partida de manhã, regresso à tarde", e: "Desde 140 €" },
       tour: { n: "Circuito privado", d: "3, 5 ou 7 dias com o mesmo motorista", e: "À medida" },
     },
     day: {
@@ -1594,9 +1594,9 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
       tagline: "Eén privéchauffeur, vaste prijs gegarandeerd",
     },
     types: {
-      airport: { n: "Luchthaventransfer", d: "Ontvangst met naambordje in de aankomsthal", e: "Vanaf €30" },
+      airport: { n: "Luchthaventransfer", d: "Ontvangst met naambordje in de aankomsthal", e: "Vanaf €35" },
       city: { n: "Stad naar stad", d: "Deur-tot-deur, elke gewenste route", e: "150+ routes" },
-      day: { n: "Dagtocht", d: "Ochtend vertrek, avond terug", e: "Vanaf €60" },
+      day: { n: "Dagtocht", d: "Ochtend vertrek, avond terug", e: "Vanaf €140" },
       tour: { n: "Privé rondreis", d: "3, 5 of 7 dagen, zelfde chauffeur", e: "Op maat" },
     },
     day: {

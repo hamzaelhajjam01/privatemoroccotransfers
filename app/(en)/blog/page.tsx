@@ -354,7 +354,7 @@ export default function BlogPage() {
                 </span>
               </div>
               <div className="faq-answer">
-                {"Day rates for a licensed private driver in Morocco typically range from €90 to €160 (approx. 1,000 to 1,750 MAD) for city chauffeur service and short excursions, and €140 to €220 per day for multi-day touring circuits all-inclusive (driver fee, fuel, tolls, and insurance)."}
+                {"Day rates for a licensed private driver in Morocco typically range from €150 to €220 (approx. 1,650 to 2,420 MAD) for city chauffeur service and short excursions, and €180 to €240 per day for multi-day touring circuits all-inclusive (driver fee, fuel, tolls, and insurance)."}
               </div>
             </div>
             <div className="faq-item">

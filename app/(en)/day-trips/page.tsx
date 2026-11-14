@@ -31,8 +31,8 @@ const jsonLd = {
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
-        lowPrice: "90",
-        highPrice: "240",
+        lowPrice: "140",
+        highPrice: "285",
         offerCount: "12",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/day-trips`,
@@ -132,7 +132,7 @@ export default function DayTripsPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€120 (1,320 MAD)"}
+                      {"€215 (2,360 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle, return"}
@@ -182,7 +182,7 @@ export default function DayTripsPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€75 (825 MAD)"}
+                      {"€140 (1,540 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle, return"}
@@ -232,7 +232,7 @@ export default function DayTripsPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€85 (935 MAD)"}
+                      {"€150 (1,650 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle, return"}
@@ -282,7 +282,7 @@ export default function DayTripsPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€160 (1,760 MAD)"}
+                      {"€285 (3,140 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle, return"}
@@ -332,7 +332,7 @@ export default function DayTripsPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€110 (1,210 MAD)"}
+                      {"€195 (2,140 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle, return"}
@@ -382,7 +382,7 @@ export default function DayTripsPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€80 (880 MAD)"}
+                      {"€140 (1,540 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle, return"}

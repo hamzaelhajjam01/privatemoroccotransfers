@@ -100,19 +100,19 @@ export default function Content() {
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Tangier → Chefchaouen"}</h3>
               <div className="route-meta"><span>{"115 km"}</span></div>
-              <div className="route-price">{"€114 (1,254 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€121 (1,330 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/tangier-airport-to-tangier" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Tangier Airport → City Center"}</h3>
               <div className="route-meta"><span>{"15 km"}</span></div>
-              <div className="route-price">{"€30 (330 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€35 (380 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/tangier-to-casablanca-airport" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Tangier → Casablanca Airport"}</h3>
               <div className="route-meta"><span>{"340 km"}</span></div>
-              <div className="route-price">{"€245 (2,695 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€255 (2,800 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/tangier-to-rabat" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
@@ -162,7 +162,7 @@ export default function Content() {
                     </span>
                   </div>
                   <div className="faq-answer">
-                    {"Airport transfers in Tangier start from €30 (330 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
+                    {"Airport transfers in Tangier start from €35 (380 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
                   </div>
                 </div>
                 <div className="faq-item">

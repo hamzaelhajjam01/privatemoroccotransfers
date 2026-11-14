@@ -196,16 +196,16 @@ export default function Content() {
           </p>
           <ul style={{ paddingLeft: "20px", marginBottom: "28px", lineHeight: "1.8" }}>
             <li>
-              <Link href="/transfers/marrakech-airport-to-marrakech"><strong>Marrakech Airport (RAK) to Medina:</strong></Link> Fixed from €30 (~330 MAD). Includes 45 min complimentary flight delay waiting.
+              <Link href="/transfers/marrakech-airport-to-marrakech"><strong>Marrakech Airport (RAK) to Medina:</strong></Link> Fixed from €35 (~380 MAD). Includes 45 min complimentary flight delay waiting.
             </li>
             <li>
-              <Link href="/transfers/marrakech-to-essaouira"><strong>Marrakech to Essaouira:</strong></Link> Fixed €85 per sedan (~935 MAD). 2.5 hours door-to-door with argan photo stops.
+              <Link href="/transfers/marrakech-to-essaouira"><strong>Marrakech to Essaouira:</strong></Link> Fixed €97 per sedan (~1,070 MAD). 2.5 hours door-to-door with argan photo stops.
             </li>
             <li>
-              <Link href="/transfers/casablanca-to-marrakech"><strong>Casablanca Airport (CMN) to Marrakech:</strong></Link> Fixed €120 per vehicle (~1,320 MAD). Avoid connecting trains after a long international flight.
+              <Link href="/transfers/casablanca-to-marrakech"><strong>Casablanca Airport (CMN) to Marrakech:</strong></Link> Fixed €157 per vehicle (~1,730 MAD). Avoid connecting trains after a long international flight.
             </li>
             <li>
-              <Link href="/transfers/fes-to-chefchaouen"><strong>Fes to Chefchaouen:</strong></Link> Fixed €95 per vehicle (~1,045 MAD). Relax through the Rif mountains with clean A/C comfort.
+              <Link href="/transfers/fes-to-chefchaouen"><strong>Fes to Chefchaouen:</strong></Link> Fixed €202 per vehicle (~2,220 MAD). Relax through the Rif mountains with clean A/C comfort.
             </li>
           </ul>
 

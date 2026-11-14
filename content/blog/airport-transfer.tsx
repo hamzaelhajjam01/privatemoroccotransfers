@@ -86,7 +86,7 @@ export default function Content() {
             {"How Much Does a Marrakech Airport Transfer Cost?"}
           </h2>
           <p>
-            {"A private driver from Marrakech Airport (RAK) to the medina or a hotel in Marrakech city costs from €30 (330 MAD) for a comfort sedan (1–3 passengers). A touring van or SUV for larger groups or extra luggage costs from €40 to €45. These are guaranteed fixed prices — not metered — and include meet & greet, flight delay monitoring and luggage care."}
+            {"A private driver from Marrakech Airport (RAK) to the medina or a hotel in Marrakech city costs from €35 (380 MAD) for a comfort sedan (1–3 passengers). A touring van or SUV for larger groups or extra luggage costs from €45 to €45. These are guaranteed fixed prices — not metered — and include meet & greet, flight delay monitoring and luggage care."}
           </p>
           <h2>
             {"What to Avoid at Marrakech Airport"}
@@ -111,7 +111,7 @@ export default function Content() {
             {"Arriving at Marrakech Menara Airport (RAK)?"}
           </p>
           <span style={{ fontSize: "14px", color: "var(--muted)" }}>
-            {"Meet & Greet at arrivals with 45-min free wait time from €30 per car."}
+            {"Meet & Greet at arrivals with 45-min free wait time from €35 per car."}
           </span>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>

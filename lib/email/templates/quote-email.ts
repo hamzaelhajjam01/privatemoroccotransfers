@@ -18,6 +18,10 @@ export type QuoteLeadData = {
     priceEUR?: number;
   } | null;
   source?: string;
+  /** Phone / WhatsApp number left in the booking popup (optional). */
+  phone?: string;
+  /** Free-text trip details from the booking popup (optional). */
+  message?: string;
 };
 
 export function generateQuoteEmailHtml(lead: QuoteLeadData): string {

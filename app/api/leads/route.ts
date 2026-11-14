@@ -36,6 +36,8 @@ export async function POST(req: Request) {
     createdAt: String(body.createdAt ?? new Date().toISOString()),
     quote,
     source: String(body.source ?? "trip_finder"),
+    phone: typeof body.phone === "string" ? body.phone.slice(0, 40) : undefined,
+    message: typeof body.message === "string" ? body.message.slice(0, 2000) : undefined,
   };
 
   // 1. Process email delivery and marketing audience sync via Resend
