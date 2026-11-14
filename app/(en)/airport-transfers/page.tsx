@@ -119,7 +119,7 @@ export default function AirportTransfersPage() {
           </div>
           <div className="listing-grid">
             <div className="listing-card" data-category="marrakech">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.webp)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/airport-transfer-card.webp)" }}>
                 <span className="listing-badge">
                   {"Airport Transfer"}
                 </span>

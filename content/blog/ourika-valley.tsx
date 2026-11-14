@@ -49,9 +49,9 @@ export default function Content() {
         wa: "Hello! I read your Ourika Valley guide and would like a private day trip to the Ourika Valley.",
       }}
       related={[
-        { href: "/blog/agafay-desert", img: "/img/blog/agafay-desert.webp", tag: "Day Trips", title: "Agafay Desert from Marrakech", excerpt: "A stone desert, camel rides and sunset dinners 45 minutes from the city.", date: "2026-11-14" },
-        { href: "/blog/day-trips", img: "/img/blog/day-trips.webp", tag: "Morocco Tips", title: "Top 7 Day Trips from Marrakech with a Private Driver", excerpt: "The best day excursions from Marrakech.", date: "2026-10-20" },
-        { href: "/blog/getting-around-morocco", img: "/img/blog/getting-around-morocco.webp", tag: "Morocco Tips", title: "Getting Around Morocco in 2026", excerpt: "Train, bus, grand taxi or private driver: costs and comfort compared.", date: "2026-11-06" },
+        { href: "/blog/agafay-desert", img: "/img/blog/agafay-desert-card.webp", tag: "Day Trips", title: "Agafay Desert from Marrakech", excerpt: "A stone desert, camel rides and sunset dinners 45 minutes from the city.", date: "2026-11-14" },
+        { href: "/blog/day-trips", img: "/img/blog/day-trips-card.webp", tag: "Morocco Tips", title: "Top 7 Day Trips from Marrakech with a Private Driver", excerpt: "The best day excursions from Marrakech.", date: "2026-10-20" },
+        { href: "/blog/getting-around-morocco", img: "/img/blog/getting-around-morocco-card.webp", tag: "Morocco Tips", title: "Getting Around Morocco in 2026", excerpt: "Train, bus, grand taxi or private driver: costs and comfort compared.", date: "2026-11-06" },
       ]}
     >
       <p>

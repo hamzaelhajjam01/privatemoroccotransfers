@@ -1,5 +1,6 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { Children, cloneElement, isValidElement, type ReactElement, type ReactNode } from "react";
+import TableOfContents, { slugifyHeading } from "./TableOfContents";
 
 /**
  * Shared layout for destination and route guides in the journal.
@@ -24,7 +25,25 @@ export type GuideProps = {
   related: GuideRelated[];
 };
 
+/** Give each direct <h2> child an id and collect them for the table of contents. */
+function withHeadingIds(children: ReactNode) {
+  const toc: { id: string; title: string }[] = [];
+  const out = Children.map(children, (child) => {
+    if (isValidElement(child) && child.type === "h2") {
+      const el = child as ReactElement<{ children?: ReactNode; id?: string }>;
+      const title = Children.toArray(el.props.children).filter((c) => typeof c === "string").join("");
+      const id = el.props.id || slugifyHeading(title);
+      toc.push({ id, title });
+      return cloneElement(el, { id });
+    }
+    return child;
+  });
+  return { out, toc };
+}
+
 export default function GuidePost({ category, h1, date, readTime, image, imageAlt, imageCredit, children, faqs, cta, related }: GuideProps) {
+  const { out, toc } = withHeadingIds(children);
+  if (faqs.length > 0) toc.push({ id: "quick-answers", title: "Quick answers" });
   return (
     <>
       <div className="post-hero">
@@ -61,10 +80,13 @@ export default function GuidePost({ category, h1, date, readTime, image, imageAl
       </div>
       <div className="post-body">
         <div className="container-sm">
-          {children}
+          {/* Intro paragraph first, then the contents list, then the sections. */}
+          {out?.[0]}
+          <TableOfContents items={toc} />
+          {out?.slice(1)}
           {faqs.length > 0 && (
             <>
-              <h2>{"Quick answers"}</h2>
+              <h2 id="quick-answers">{"Quick answers"}</h2>
               {faqs.map((f) => (
                 <div key={f.q}>
                   <h3>{f.q}</h3>

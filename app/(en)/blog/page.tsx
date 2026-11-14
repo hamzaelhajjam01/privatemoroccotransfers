@@ -75,7 +75,7 @@ export default function BlogPage() {
         <div className="container">
           <div className="blog-grid">
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/agafay-desert.webp)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/agafay-desert-card.webp)" }}></div>
               <span className="blog-tag">
                 {"Day Trips"}
               </span>
@@ -97,7 +97,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/ourika-valley.webp)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/ourika-valley-card.webp)" }}></div>
               <span className="blog-tag">
                 {"Day Trips"}
               </span>
@@ -119,7 +119,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around-morocco.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around-morocco-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Transport · 2026 Guide"}
                 </div>
@@ -145,7 +145,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/fes-tanneries-guide.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/fes-tanneries-guide-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Fes · Culture"}
                 </div>
@@ -171,7 +171,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/grand-taxi-vs-private-driver-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Transport · Morocco"}
                 </div>
@@ -197,7 +197,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="route">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Marrakech · Essaouira"}
                 </div>
@@ -223,7 +223,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="faq">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Pricing · Morocco"}
                 </div>
@@ -249,7 +249,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Day Trips · Marrakech"}
                 </div>
@@ -275,7 +275,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="route">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Sahara · Merzouga"}
                 </div>
@@ -301,7 +301,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="airport">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Airport · Marrakech"}
                 </div>
@@ -327,7 +327,7 @@ export default function BlogPage() {
               </div>
             </div>
             <div className="blog-card" data-category="tips">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Morocco · Travel Tips"}
                 </div>

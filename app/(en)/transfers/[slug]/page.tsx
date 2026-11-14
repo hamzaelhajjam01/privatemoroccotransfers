@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import routesData from "@/content/routes.json";
+import { guidesForRoute } from "@/lib/route-guides";
 import {
   SITE_NAME,
   SITE_URL,
@@ -797,6 +798,33 @@ export default async function TransferRoutePage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* Travel guides: contextual links from every route page to the matching journal guides */}
+      <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+        <div className="container">
+          <div className="section-header">
+            <div>
+              <span className="section-label">Plan your trip</span>
+              <h2 className="heading-lg">Guides for this journey</h2>
+            </div>
+            <Link href="/blog" className="btn btn-outline">
+              All travel guides
+            </Link>
+          </div>
+          <div className="blog-grid">
+            {guidesForRoute(route.slug).map((g) => (
+              <div className="blog-card" key={g.href}>
+                <div className="blog-img" style={{ backgroundImage: `url(${g.img})` }}></div>
+                <span className="blog-tag">{g.tag}</span>
+                <h3 className="blog-title">
+                  <Link href={g.href}>{g.title}</Link>
+                </h3>
+                <p className="blog-excerpt">{g.excerpt}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Related Transfers Silo */}
       {fallbackRoutes.length > 0 && (

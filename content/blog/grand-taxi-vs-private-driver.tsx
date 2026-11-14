@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TableOfContents from "@/components/TableOfContents";
 
 export const title = "Grand Taxi vs Private Driver in Morocco: Full 2026 Comparison | Private Morocco Transfers";
 export const description = "Grand taxi vs private driver in Morocco: Compare costs, comfort, luggage, safety, and travel times. Discover when to take a taxi and when a private chauffeur is best.";
@@ -48,7 +49,8 @@ export default function Content() {
 
       <div className="post-body">
         <div className="container-sm">
-          <h2>The Big Moroccan Transportation Dilemma</h2>
+          <TableOfContents items={[{"id": "the-big-moroccan-transportation-dilemma", "title": "The Big Moroccan Transportation Dilemma"}, {"id": "moroccan-taxis-explained-petit-taxi-vs-grand-taxi", "title": "Moroccan Taxis Explained: Petit Taxi vs Grand Taxi"}, {"id": "how-a-grand-taxi-works-in-practice", "title": "How a Grand Taxi Works in Practice"}, {"id": "how-a-private-driver-chauffeur-prive-operates", "title": "How a Private Driver (Chauffeur Privé) Operates"}, {"id": "direct-comparison-matrix-grand-taxi-vs-private-chauffeur", "title": "Direct Comparison Matrix: Grand Taxi vs Private Chauffeur"}, {"id": "route-and-amp-price-comparisons-2026", "title": "Route & Price Comparisons (2026)"}, {"id": "safety-and-tourist-transport-regulations", "title": "Safety and Tourist Transport Regulations"}, {"id": "the-verdict-when-should-you-choose-which", "title": "The Verdict: When Should You Choose Which?"}]} />
+          <h2 id="the-big-moroccan-transportation-dilemma">The Big Moroccan Transportation Dilemma</h2>
           <p>
             When planning a trip across Morocco—whether heading from Marrakech to the coastal breeze of Essaouira,
             landing at Casablanca Airport, or journeying through the High Atlas Mountains—travelers are consistently
@@ -59,7 +61,7 @@ export default function Content() {
             not be more different. Here is the realistic, unvarnished breakdown of how both services compare in 2026.
           </p>
 
-          <h2>Moroccan Taxis Explained: Petit Taxi vs Grand Taxi</h2>
+          <h2 id="moroccan-taxis-explained-petit-taxi-vs-grand-taxi">Moroccan Taxis Explained: Petit Taxi vs Grand Taxi</h2>
           <p>
             First-time visitors to Morocco often confuse the two types of traditional taxis:
           </p>
@@ -77,7 +79,7 @@ export default function Content() {
             </li>
           </ul>
 
-          <h2>How a Grand Taxi Works in Practice</h2>
+          <h2 id="how-a-grand-taxi-works-in-practice">How a Grand Taxi Works in Practice</h2>
           <p>
             Grand Taxis operate primarily on a <strong>shared, fixed-route, station-to-station model</strong>. You make your
             way to the local grand taxi rank (often located on the dusty outskirts near a central bus station, such as Bab
@@ -95,7 +97,7 @@ export default function Content() {
             space for modern hard-shell luggage, which is frequently strapped to an open roof rack with ropes.
           </p>
 
-          <h2>How a Private Driver (Chauffeur Privé) Operates</h2>
+          <h2 id="how-a-private-driver-chauffeur-prive-operates">How a Private Driver (Chauffeur Privé) Operates</h2>
           <p>
             A <strong>licensed private driver</strong> operates under Morocco’s Ministry of Tourism and Transport
             (<em>Transport Touristique</em>). Unlike taxis, private transfers are pre-booked at guaranteed fixed rates
@@ -121,7 +123,7 @@ export default function Content() {
             </li>
           </ul>
 
-          <h2>Direct Comparison Matrix: Grand Taxi vs Private Chauffeur</h2>
+          <h2 id="direct-comparison-matrix-grand-taxi-vs-private-chauffeur">Direct Comparison Matrix: Grand Taxi vs Private Chauffeur</h2>
           <div
             style={{
               overflowX: "auto",
@@ -192,7 +194,7 @@ export default function Content() {
             </table>
           </div>
 
-          <h2>Route &amp; Price Comparisons (2026)</h2>
+          <h2 id="route-and-amp-price-comparisons-2026">Route &amp; Price Comparisons (2026)</h2>
           <p>
             Many travelers assume a private driver is drastically more expensive. However, when traveling as a couple,
             family, or small group, the price difference narrows dramatically—especially when factoring in the petit taxis
@@ -206,7 +208,8 @@ export default function Content() {
             at ~€60 with no guaranteed air conditioning.
             <br />
             <strong>Private Transfer:</strong> <strong>€97 (1,070 MAD)</strong> all-inclusive for the entire car. Riad pickup,
-            free argan tree photo stop, bottle of cold water, luggage care, and direct drop at your Essaouira accommodation.
+            free argan tree photo stop, bottle of cold water, luggage care, and direct drop at your Essaouira accommodation. See the{" "}
+            <Link href="/transfers/marrakech-to-essaouira">Marrakech to Essaouira transfer</Link>.
           </p>
 
           <h3>2. Casablanca Airport (CMN) to Marrakech (220 km / ~2.5 hrs)</h3>
@@ -216,7 +219,8 @@ export default function Content() {
             requires changing at Casa Oasis, carrying luggage across platforms, and adding 2 extra hours.
             <br />
             <strong>Private Transfer:</strong> <strong>€157 (1,730 MAD)</strong> fixed flat rate. Flight delay tracking, driver
-            waiting at international exit with name board, highway tolls included, direct delivery to your Marrakech riad.
+            waiting at international exit with name board, highway tolls included, direct delivery to your Marrakech riad. See the{" "}
+            <Link href="/transfers/casablanca-airport-to-marrakech">Casablanca Airport to Marrakech transfer</Link>.
           </p>
 
           <h3>3. Marrakech to Agadir / Taghazout (250 km / ~3 hrs)</h3>
@@ -227,7 +231,7 @@ export default function Content() {
             valleys. Comfortable leather seating, surfboard-friendly vans available, door-to-door.
           </p>
 
-          <h2>Safety and Tourist Transport Regulations</h2>
+          <h2 id="safety-and-tourist-transport-regulations">Safety and Tourist Transport Regulations</h2>
           <p>
             In Morocco, safety regulations differ substantially between standard urban transit and registered tourist transport:
           </p>
@@ -242,7 +246,7 @@ export default function Content() {
             private vehicle provides invaluable peace of mind.
           </p>
 
-          <h2>The Verdict: When Should You Choose Which?</h2>
+          <h2 id="the-verdict-when-should-you-choose-which">The Verdict: When Should You Choose Which?</h2>
           <p>
             <strong>Choose a Grand Taxi if:</strong>
           </p>
@@ -306,7 +310,7 @@ export default function Content() {
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost-card.webp)" }}></div>
               <span className="blog-tag">Driver FAQ</span>
               <h3 className="blog-title">
                 <Link href="/blog/driver-cost">How Much Does a Private Driver Cost in Morocco? 2026 Guide</Link>
@@ -318,7 +322,7 @@ export default function Content() {
             </div>
 
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.webp)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira-card.webp)" }}></div>
               <span className="blog-tag">Route Guides</span>
               <h3 className="blog-title">
                 <Link href="/blog/marrakech-essaouira">Marrakech to Essaouira by Private Driver</Link>
@@ -330,7 +334,7 @@ export default function Content() {
             </div>
 
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer.webp)" }}></div>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/airport-transfer-card.webp)" }}></div>
               <span className="blog-tag">Airport Guides</span>
               <h3 className="blog-title">
                 <Link href="/blog/airport-transfer">Morocco Airport Transfers: Complete Arrival Guide</Link>

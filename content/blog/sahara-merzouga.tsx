@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TableOfContents from "@/components/TableOfContents";
 
 export const title = "Marrakech to Merzouga Sahara: Private Driver Complete Guide | Private Morocco Transfers";
 export const description = "Marrakech to Merzouga by private driver: 560 km route, duration, prices, what to see and how to book the Sahara trip.";
@@ -55,46 +56,47 @@ export default function Content() {
       </div>
       <div className="post-body">
         <div className="container-sm">
-          <h2>
+          <TableOfContents items={[{"id": "the-ultimate-morocco-road-trip", "title": "The Ultimate Morocco Road Trip"}, {"id": "distance-and-duration", "title": "Distance & Duration"}, {"id": "what-you-ll-see-on-the-route", "title": "What You'll See on the Route"}, {"id": "private-driver-cost", "title": "Private Driver Cost"}, {"id": "what-to-do-in-merzouga", "title": "What to Do in Merzouga"}, {"id": "multi-day-tour-option", "title": "Multi-Day Tour Option"}, {"id": "how-to-book", "title": "How to Book"}]} />
+          <h2 id="the-ultimate-morocco-road-trip">
             {"The Ultimate Morocco Road Trip"}
           </h2>
           <p>
             {"The drive from Marrakech to Merzouga — gateway to the Erg Chebbi dunes of the Sahara — is one of the great road journeys of the world. At 560 kilometres, it crosses the High Atlas, drops through the Draa Valley of palm groves and kasbahs, skirts the pre-Saharan desert towns of Ouarzazate and Zagora, and finally deposits you at the base of the highest sand dunes in Morocco."}
           </p>
-          <h2>
+          <h2 id="distance-and-duration">
             {"Distance & Duration"}
           </h2>
           <p>
             {"Marrakech to Merzouga is 560 km one way. Allow 7 to 8 hours of driving with minimal stops. Most travelers prefer to break the journey over two days, stopping overnight in Ouarzazate or Zagora."}
           </p>
-          <h2>
+          <h2 id="what-you-ll-see-on-the-route">
             {"What You'll See on the Route"}
           </h2>
           <p>
             {"The Tizi n'Tichka mountain pass (2,260 m) offers some of the most dramatic scenery in Morocco. The Draa Valley south of Agdz is lined with thousands of date palms and traditional mud-brick villages. Ait Benhaddou — one of Morocco's most famous UNESCO sites — is passed en route and worth a 2-hour stop. The landscape gradually shifts from green valleys to pre-Saharan hamada (desert steppe) before Merzouga's dunes appear on the horizon."}
           </p>
-          <h2>
+          <h2 id="private-driver-cost">
             {"Private Driver Cost"}
           </h2>
           <p>
-            {"A fixed-price private transfer from Marrakech to Merzouga starts from €370 (4,070 MAD) for a comfort sedan, €450 for an SUV / touring van, and €660 for a minibus. An SUV or 4x4 Prado is recommended for this route given the Atlas passes and final approach roads near Merzouga."}
+            {"A fixed-price "}<Link href="/transfers/marrakech-to-merzouga">{"private transfer from Marrakech to Merzouga"}</Link>{" starts from €370 (4,070 MAD) for a comfort sedan, €450 for an SUV / touring van, and €660 for a minibus. An SUV or 4x4 Prado is recommended for this route given the Atlas passes and final approach roads near Merzouga."}
           </p>
           <p>
             {"A two-day package (Marrakech to Merzouga on day 1, Merzouga to Marrakech on day 2) is available with a 10% round-trip discount."}
           </p>
-          <h2>
+          <h2 id="what-to-do-in-merzouga">
             {"What to Do in Merzouga"}
           </h2>
           <p>
-            {"The Erg Chebbi dunes rise to 150 metres at their highest point. Most visitors arrive in the late afternoon to watch the sunset over the dunes before spending a night in a desert camp. A camel trek into the dunes at sunset is the classic experience."}
+            {"The Erg Chebbi dunes rise to 150 metres at their highest point. Most visitors arrive in the late afternoon to watch the sunset over the dunes before spending a night in a desert camp. A camel trek into the dunes at sunset is the classic experience. Short on time? The stone desert of "}<Link href="/blog/agafay-desert">{"Agafay, 45 minutes from Marrakech"}</Link>{", gives you a desert sunset in an afternoon."}
           </p>
-          <h2>
+          <h2 id="multi-day-tour-option">
             {"Multi-Day Tour Option"}
           </h2>
           <p>
-            {"We offer a popular 3-day private tour: Marrakech to Merzouga (via Ait Benhaddou and Ouarzazate), overnight in the Sahara, and return via the Todra Gorge and Dades Valley. Contact us for a fixed price for your group."}
+            {"We offer a popular "}<Link href="/multi-day-tours">{"3-day private tour"}</Link>{": Marrakech to Merzouga (via Ait Benhaddou and Ouarzazate), overnight in the Sahara, and return via the Todra Gorge and Dades Valley. Contact us for a fixed price for your group."}
           </p>
-          <h2>
+          <h2 id="how-to-book">
             {"How to Book"}
           </h2>
           <p>
@@ -134,7 +136,7 @@ export default function Content() {
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Private Morocco Transfers"}
                 </div>
@@ -157,7 +159,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Day Trips"}
                 </div>
@@ -180,7 +182,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Sahara"}
                 </div>

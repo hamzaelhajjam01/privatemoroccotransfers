@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TableOfContents from "@/components/TableOfContents";
 
 export const title = "How Much Does a Private Driver Cost in Morocco? Full 2026 Price Guide | Private Morocco Transfers";
 export const description = "How much a private driver costs in Morocco in 2026: prices per km, per vehicle and per route, and what is included.";
@@ -55,19 +56,20 @@ export default function Content() {
       </div>
       <div className="post-body">
         <div className="container-sm">
-          <h2>
+          <TableOfContents items={[{"id": "private-driver-prices-in-morocco-2026", "title": "Private Driver Prices in Morocco 2026"}, {"id": "how-private-driver-pricing-works", "title": "How Private Driver Pricing Works"}, {"id": "price-by-vehicle-type", "title": "Price by Vehicle Type"}, {"id": "example-route-prices-comfort-sedan-one-way", "title": "Example Route Prices (Comfort Sedan, One Way)"}, {"id": "what-is-included", "title": "What Is Included?"}, {"id": "how-to-pay", "title": "How to Pay"}, {"id": "is-a-private-driver-worth-it", "title": "Is a Private Driver Worth It?"}]} />
+          <h2 id="private-driver-prices-in-morocco-2026">
             {"Private Driver Prices in Morocco 2026"}
           </h2>
           <p>
             {"One of the most common questions from travelers planning a Morocco trip is: how much does a private driver actually cost? The honest answer is: it depends on the route, the vehicle type and what is included — but with a fixed-price model, there are no unpleasant surprises."}
           </p>
-          <h2>
+          <h2 id="how-private-driver-pricing-works">
             {"How Private Driver Pricing Works"}
           </h2>
           <p>
             {"In Morocco, private driver prices are typically quoted per vehicle for a specific route or day — not per person, and not by meter. This means a group of three people traveling together pays the same as one person, making it genuinely cost-effective for couples and small groups."}
           </p>
-          <h2>
+          <h2 id="price-by-vehicle-type">
             {"Price by Vehicle Type"}
           </h2>
           <p>
@@ -82,29 +84,29 @@ export default function Content() {
           <p>
             {"Executive Minibus (8–14 passengers, e.g. Mercedes Sprinter): from €65 (720 MAD) for airport runs, and €260–€300 per day for larger private delegations."}
           </p>
-          <h2>
+          <h2 id="example-route-prices-comfort-sedan-one-way">
             {"Example Route Prices (Comfort Sedan, One Way)"}
           </h2>
           <p>
-            {"Marrakech Airport to Medina: €35 (380 MAD). Marrakech to Essaouira (180 km): €97 (1,070 MAD). Marrakech to Agadir (240 km): €137 (1,510 MAD). Casablanca Airport to Marrakech (220 km): €157 (1,730 MAD). Marrakech to Fes (540 km): €274 (3,010 MAD). Marrakech to Merzouga Sahara (560 km): €370 (4,070 MAD)."}
+            {""}<Link href="/transfers/marrakech-airport-to-marrakech">{"Marrakech Airport to Medina"}</Link>{": €35 (380 MAD). "}<Link href="/transfers/marrakech-to-essaouira">{"Marrakech to Essaouira"}</Link>{" (180 km): €97 (1,070 MAD). "}<Link href="/transfers/marrakech-to-agadir">{"Marrakech to Agadir"}</Link>{" (240 km): €137 (1,510 MAD). "}<Link href="/transfers/casablanca-airport-to-marrakech">{"Casablanca Airport to Marrakech"}</Link>{" (220 km): €157 (1,730 MAD). Marrakech to Fes (540 km): €274 (3,010 MAD). Marrakech to Merzouga Sahara (560 km): €370 (4,070 MAD)."}
           </p>
-          <h2>
+          <h2 id="what-is-included">
             {"What Is Included?"}
           </h2>
           <p>
             {"All our prices include the dedicated licensed driver, vehicle, fuel, all highway tolls, parking permits and air conditioning. For airport arrivals, 45 minutes of free flight-delay waiting time and meet-and-greet in the arrivals hall are included. There are zero surprise fees or fuel surcharges at the end of your trip."}
           </p>
-          <h2>
+          <h2 id="how-to-pay">
             {"How to Pay"}
           </h2>
           <p>
             {"Transfers and single-day trips under €300 require 0% deposit — pay cash directly in EUR or MAD to your driver upon arrival. For multi-day circuits exceeding €300, a transparent 30% confirmation deposit secures your vehicle with the remaining 70% paid in Morocco."}
           </p>
-          <h2>
+          <h2 id="is-a-private-driver-worth-it">
             {"Is a Private Driver Worth It?"}
           </h2>
           <p>
-            {"For routes where public transport exists (like Marrakech to Essaouira by bus), a private driver costs more per person when traveling solo. But for groups of two or more, or on routes with limited public connections, a private driver is often the most practical, comfortable and cost-efficient option available."}
+            {"For routes where public transport exists (like Marrakech to Essaouira by bus), a private driver costs more per person when traveling solo. But for groups of two or more, or on routes with limited public connections, a private driver is often the most practical, comfortable and cost-efficient option available. For a full comparison, read "}<Link href="/blog/grand-taxi-vs-private-driver">{"grand taxi vs private driver in Morocco"}</Link>{"."}
           </p>
         </div>
       </div>
@@ -140,7 +142,7 @@ export default function Content() {
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Private Morocco Transfers"}
                 </div>
@@ -163,7 +165,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Day Trips"}
                 </div>
@@ -186,7 +188,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Sahara"}
                 </div>

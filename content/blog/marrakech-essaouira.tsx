@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TableOfContents from "@/components/TableOfContents";
 
 export const title = "Marrakech to Essaouira by Private Driver: Complete 2026 Guide | Private Morocco Transfers";
 export const description = "Marrakech to Essaouira by private driver: 180 km, about 2.5 hours, fixed price from €97 (1,070 MAD), plus what to see on the way.";
@@ -55,7 +56,8 @@ export default function Content() {
       </div>
       <div className="post-body">
         <div className="container-sm">
-          <h2>
+          <TableOfContents items={[{"id": "the-most-scenic-drive-in-morocco", "title": "The Most Scenic Drive in Morocco"}, {"id": "distance-and-duration", "title": "Distance & Duration"}, {"id": "what-does-a-private-driver-cost", "title": "What Does a Private Driver Cost?"}, {"id": "what-to-see-on-the-way", "title": "What to See on the Way"}, {"id": "why-private-driver-over-public-bus", "title": "Why Private Driver Over Public Bus?"}, {"id": "what-to-do-in-essaouira", "title": "What to Do in Essaouira"}, {"id": "how-to-book", "title": "How to Book"}]} />
+          <h2 id="the-most-scenic-drive-in-morocco">
             {"The Most Scenic Drive in Morocco"}
           </h2>
           <p>
@@ -64,19 +66,19 @@ export default function Content() {
           <p>
             {"By private driver, the trip takes approximately 2.5 hours non-stop. But with the right driver you can turn it into a half-day experience, stopping at viewpoints and local villages along the way."}
           </p>
-          <h2>
+          <h2 id="distance-and-duration">
             {"Distance & Duration"}
           </h2>
           <p>
             {"The one-way distance from Marrakech to Essaouira is 176 km. Allow around 2.5 hours by direct route on the A7 motorway, or up to 3.5 hours if you take the scenic coastal road."}
           </p>
-          <h2>
+          <h2 id="what-does-a-private-driver-cost">
             {"What Does a Private Driver Cost?"}
           </h2>
           <p>
-            {"A fixed-price private driver from Marrakech to Essaouira costs from €97 (1,070 MAD) for a comfort sedan (1–3 passengers), €142 for a touring van, and €211 for an executive minibus. Prices are per vehicle, not per person, and include driver, fuel, tolls and A/C. A round trip is available with a 10% discount on the return leg."}
+            {"A fixed-price "}<Link href="/transfers/marrakech-to-essaouira">{"private driver from Marrakech to Essaouira"}</Link>{" costs from €97 (1,070 MAD) for a comfort sedan (1–3 passengers), €142 for a touring van, and €211 for an executive minibus. Prices are per vehicle, not per person, and include driver, fuel, tolls and A/C. A round trip is available with a 10% discount on the return leg."}
           </p>
-          <h2>
+          <h2 id="what-to-see-on-the-way">
             {"What to See on the Way"}
           </h2>
           <p>
@@ -85,19 +87,19 @@ export default function Content() {
           <p>
             {"The small town of Chichaoua halfway along the route is worth a 10-minute stop for fresh orange juice and local bread."}
           </p>
-          <h2>
+          <h2 id="why-private-driver-over-public-bus">
             {"Why Private Driver Over Public Bus?"}
           </h2>
           <p>
-            {"Supratours runs a daily bus for around 80 MAD. It takes 3.5 hours with no stops, at fixed departure times, and leaves you at the bus station. A private driver picks you up from your riad, stops wherever you like, and drops you directly at your accommodation. For two or more people, the cost per person is often comparable."}
+            {"Supratours runs a daily bus for around 80 MAD. It takes 3.5 hours with no stops, at fixed departure times, and leaves you at the bus station. A private driver picks you up from your riad, stops wherever you like, and drops you directly at your accommodation. Compare every option in our "}<Link href="/blog/getting-around-morocco">{"guide to getting around Morocco"}</Link>{". For two or more people, the cost per person is often comparable."}
           </p>
-          <h2>
+          <h2 id="what-to-do-in-essaouira">
             {"What to Do in Essaouira"}
           </h2>
           <p>
             {"Essaouira is a UNESCO World Heritage medina famous for its blue-and-white fishing port, powerful Atlantic winds that make it a world-class kitesurfing destination, and its thriving arts scene. Allow at least a full day to explore the ramparts, souks and beach."}
           </p>
-          <h2>
+          <h2 id="how-to-book">
             {"How to Book"}
           </h2>
           <p>
@@ -137,7 +139,7 @@ export default function Content() {
           </div>
           <div className="blog-grid">
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/driver-cost-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Private Morocco Transfers"}
                 </div>
@@ -160,7 +162,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/day-trips-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Day Trips"}
                 </div>
@@ -183,7 +185,7 @@ export default function Content() {
               </div>
             </div>
             <div className="blog-card">
-              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga.webp)" }}>
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/sahara-merzouga-card.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Sahara"}
                 </div>

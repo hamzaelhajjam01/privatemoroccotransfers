@@ -295,7 +295,7 @@ export default function DayTripsPage() {
               </div>
             </div>
             <div className="listing-card">
-              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}>
+              <div className="listing-img" style={{ backgroundImage: "url(/img/blog/day-trips-card.webp)" }}>
                 <span className="listing-badge">
                   {"Day trip"}
                 </span>

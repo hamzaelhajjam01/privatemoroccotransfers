@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TableOfContents from "@/components/TableOfContents";
 
 export const title = "Getting Around Morocco in 2026: The Complete Transportation Guide | Private Morocco Transfers";
 export const description = "Complete guide to getting around Morocco in 2026: Trains (Al Boraq), CTM buses, grand taxis, self-drive rental vs hiring a private chauffeur. Real prices, luggage rules & safety tips.";
@@ -48,7 +49,8 @@ export default function Content() {
 
       <div className="post-body">
         <div className="container-sm">
-          <h2>Navigating Morocco: An Honest Overview</h2>
+          <TableOfContents items={[{"id": "navigating-morocco-an-honest-overview", "title": "Navigating Morocco: An Honest Overview"}, {"id": "quick-comparison-morocco-transport-modes", "title": "Quick Comparison: Morocco Transport Modes"}, {"id": "1-traveling-by-train-in-morocco-oncf", "title": "1. Traveling by Train in Morocco (ONCF)"}, {"id": "2-intercity-buses-ctm-and-supratours", "title": "2. Intercity Buses: CTM & Supratours"}, {"id": "3-the-grand-taxi-dilemma", "title": "3. The Grand Taxi Dilemma"}, {"id": "4-why-hire-a-private-driver-in-morocco", "title": "4. Why Hire a Private Driver in Morocco?"}, {"id": "key-popular-routes-and-fixed-prices", "title": "Key Popular Routes & Fixed Prices"}]} />
+          <h2 id="navigating-morocco-an-honest-overview">Navigating Morocco: An Honest Overview</h2>
           <p>
             Morocco is an exhilarating country of dramatic landscapes—from Atlantic coastal ramparts and imperial medinas
             to high-altitude Atlas mountain passes and the rolling sands of the Sahara. But getting between these iconic
@@ -60,7 +62,7 @@ export default function Content() {
             to Chefchaouen and Fes, here is your definitive, unvarnished 2026 guide to all Morocco transportation options.
           </p>
 
-          <h2>Quick Comparison: Morocco Transport Modes</h2>
+          <h2 id="quick-comparison-morocco-transport-modes">Quick Comparison: Morocco Transport Modes</h2>
           <div style={{ overflowX: "auto", margin: "24px 0" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "14px" }}>
               <thead>
@@ -119,7 +121,7 @@ export default function Content() {
             </table>
           </div>
 
-          <h2>1. Traveling by Train in Morocco (ONCF)</h2>
+          <h2 id="1-traveling-by-train-in-morocco-oncf">1. Traveling by Train in Morocco (ONCF)</h2>
           <p>
             Morocco operates the best rail network in Africa. If you are traveling between select major cities, trains
             are an efficient and budget-friendly choice:
@@ -139,7 +141,7 @@ export default function Content() {
             Ouarzazate, Chefchaouen, or the Sahara Desert</strong>. For these premier destinations, road transport is mandatory.
           </p>
 
-          <h2>2. Intercity Buses: CTM & Supratours</h2>
+          <h2 id="2-intercity-buses-ctm-and-supratours">2. Intercity Buses: CTM & Supratours</h2>
           <p>
             When trains do not reach a city, scheduled luxury coaches bridge the gap. The two reputable state-licensed operators
             are <strong>CTM</strong> and <strong>Supratours</strong> (run by the national railway ONCF):
@@ -150,7 +152,7 @@ export default function Content() {
             without roadside photo stops or flexibility.
           </p>
 
-          <h2>3. The Grand Taxi Dilemma</h2>
+          <h2 id="3-the-grand-taxi-dilemma">3. The Grand Taxi Dilemma</h2>
           <p>
             Traditional intercity shared taxis (grand taxis) operate from dusty stations (stations de grands taxis) outside medina
             walls. While cheap for solo locals, shared grand taxis wait until every single seat is filled—cramming 6 passengers
@@ -158,10 +160,11 @@ export default function Content() {
           </p>
           <p>
             You can negotiate to buy all 6 seats to have the car privately, but vehicles are often aging Dacia Lodgys or vintage
-            Mercedes 240Ds without English-speaking drivers or guaranteed safety standards.
+            Mercedes 240Ds without English-speaking drivers or guaranteed safety standards. Our full{" "}
+            <Link href="/blog/grand-taxi-vs-private-driver">grand taxi vs private driver comparison</Link> covers real prices and when each makes sense.
           </p>
 
-          <h2>4. Why Hire a Private Driver in Morocco?</h2>
+          <h2 id="4-why-hire-a-private-driver-in-morocco">4. Why Hire a Private Driver in Morocco?</h2>
           <p>
             Hiring a dedicated private chauffeur has become the premier way to experience Morocco effortlessly. Here is why
             discerning travelers, families, and couples overwhelmingly choose private transfers:
@@ -184,13 +187,13 @@ export default function Content() {
             <div style={{ padding: "20px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
               <h3 style={{ margin: "0 0 8px 0", fontSize: "1em" }}>Custom Scenic Stops on Your Schedule</h3>
               <p style={{ margin: 0, fontSize: "14px", color: "var(--muted)" }}>
-                Heading to Essaouira? Pause to photograph tree-climbing goats and visit a women’s argan oil cooperative. Crossing
+                Heading to <Link href="/blog/marrakech-essaouira">Essaouira</Link>? Pause to photograph tree-climbing goats and visit a women’s argan oil cooperative. Crossing
                 the Tizi n’Tichka Atlas pass? Stop whenever you want for panoramic valley photos, clean restrooms, and fresh mint tea.
               </p>
             </div>
           </div>
 
-          <h2>Key Popular Routes & Fixed Prices</h2>
+          <h2 id="key-popular-routes-and-fixed-prices">Key Popular Routes & Fixed Prices</h2>
           <p>
             Here is what you can expect to pay for a private chauffeur service across Morocco’s most requested transfers:
           </p>
@@ -202,7 +205,7 @@ export default function Content() {
               <Link href="/transfers/marrakech-to-essaouira"><strong>Marrakech to Essaouira:</strong></Link> Fixed €97 per sedan (~1,070 MAD). 2.5 hours door-to-door with argan photo stops.
             </li>
             <li>
-              <Link href="/transfers/casablanca-to-marrakech"><strong>Casablanca Airport (CMN) to Marrakech:</strong></Link> Fixed €157 per vehicle (~1,730 MAD). Avoid connecting trains after a long international flight.
+              <Link href="/transfers/casablanca-airport-to-marrakech"><strong>Casablanca Airport (CMN) to Marrakech:</strong></Link> Fixed €157 per vehicle (~1,730 MAD). Avoid connecting trains after a long international flight.
             </li>
             <li>
               <Link href="/transfers/fes-to-chefchaouen"><strong>Fes to Chefchaouen:</strong></Link> Fixed €202 per vehicle (~2,220 MAD). Relax through the Rif mountains with clean A/C comfort.

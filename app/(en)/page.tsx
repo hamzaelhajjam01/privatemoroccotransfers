@@ -310,15 +310,15 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <Link className="post-row" href="/blog/marrakech-essaouira">
-            <div className="ph light" style={{ backgroundImage: "url(/img/blog/marrakech-essaouira.webp)" }}></div>
+          <Link className="post-row" href="/blog/agafay-desert">
+            <div className="ph light" style={{ backgroundImage: "url(/img/blog/agafay-desert-card.webp)" }}></div>
             <div className="post-right">
               <div>
                 <span className="label">
-                  {"Route Guides · 2026-11-01"}
+                  {"Day Trips · 2026-11-14"}
                 </span>
                 <h3 className="mt-16">
-                  {"Marrakech to Essaouira by private driver: the complete 2026 guide"}
+                  {"Agafay Desert from Marrakech: day trip, camps and how to get there"}
                 </h3>
               </div>
               <div className="read">
@@ -332,7 +332,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="post-row" href="/blog/driver-cost">
-            <div className="ph light" style={{ backgroundImage: "url(/img/blog/driver-cost.webp)" }}></div>
+            <div className="ph light" style={{ backgroundImage: "url(/img/blog/driver-cost-card.webp)" }}></div>
             <div className="post-right">
               <div>
                 <span className="label">
@@ -353,7 +353,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="post-row" href="/blog/day-trips">
-            <div className="ph light" style={{ backgroundImage: "url(/img/blog/day-trips.webp)" }}></div>
+            <div className="ph light" style={{ backgroundImage: "url(/img/blog/day-trips-card.webp)" }}></div>
             <div className="post-right">
               <div>
                 <span className="label">

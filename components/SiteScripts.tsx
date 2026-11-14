@@ -69,7 +69,7 @@ function selectWidgetTab(tab: HTMLElement) {
   tabs.forEach((b) => {
     const on = b === tab;
     b.classList.toggle("active", on);
-    b.setAttribute("aria-selected", String(on));
+    b.setAttribute("aria-pressed", String(on));
   });
   const widget = tab.closest<HTMLElement>(".booking-widget");
   const form = widget?.querySelector<HTMLFormElement>("form");
@@ -283,9 +283,11 @@ export default function SiteScripts() {
     }
     // Make the service tabs keyboard- and screen-reader-friendly.
     document.querySelectorAll<HTMLElement>(".booking-widget .booking-tab:not(a)").forEach((tab) => {
-      tab.setAttribute("role", "tab");
+      // Toggle buttons rather than ARIA tabs: the row also holds a plain link
+      // (price calculator), and a role="tablist" may only contain tabs.
+      tab.setAttribute("role", "button");
       tab.setAttribute("tabindex", "0");
-      tab.setAttribute("aria-selected", String(tab.classList.contains("active")));
+      tab.setAttribute("aria-pressed", String(tab.classList.contains("active")));
     });
 
     document.addEventListener("click", onClick);

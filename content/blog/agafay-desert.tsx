@@ -53,9 +53,9 @@ export default function Content() {
         wa: "Hello! I read your Agafay Desert guide and would like a private driver to Agafay.",
       }}
       related={[
-        { href: "/blog/ourika-valley", img: "/img/blog/ourika-valley.webp", tag: "Day Trips", title: "Ourika Valley Day Trip from Marrakech", excerpt: "Waterfalls, riverside lunch and Berber villages, an hour from the city.", date: "2026-11-14" },
-        { href: "/blog/sahara-merzouga", img: "/img/blog/sahara-merzouga.webp", tag: "Route Guides", title: "Marrakech to Merzouga: Private Driver Guide", excerpt: "For real Sahara dunes: the route to Erg Chebbi.", date: "2026-10-15" },
-        { href: "/blog/day-trips", img: "/img/blog/day-trips.webp", tag: "Morocco Tips", title: "Top 7 Day Trips from Marrakech with a Private Driver", excerpt: "The best day excursions from Marrakech.", date: "2026-10-20" },
+        { href: "/blog/ourika-valley", img: "/img/blog/ourika-valley-card.webp", tag: "Day Trips", title: "Ourika Valley Day Trip from Marrakech", excerpt: "Waterfalls, riverside lunch and Berber villages, an hour from the city.", date: "2026-11-14" },
+        { href: "/blog/sahara-merzouga", img: "/img/blog/sahara-merzouga-card.webp", tag: "Route Guides", title: "Marrakech to Merzouga: Private Driver Guide", excerpt: "For real Sahara dunes: the route to Erg Chebbi.", date: "2026-10-15" },
+        { href: "/blog/day-trips", img: "/img/blog/day-trips-card.webp", tag: "Morocco Tips", title: "Top 7 Day Trips from Marrakech with a Private Driver", excerpt: "The best day excursions from Marrakech.", date: "2026-10-20" },
       ]}
     >
       <p>

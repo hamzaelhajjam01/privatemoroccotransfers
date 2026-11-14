@@ -108,7 +108,12 @@ export default function Motion() {
 
     const words = pick(WORDS);
     const reveals = pick(REVEAL).filter((el) => !el.matches(WORDS));
-    const images = pick(IMAGES).filter((el) => !el.classList.contains("hero-media"));
+    // Images already on screen at load are never clipped: hiding them until the
+    // reveal runs delays Largest Contentful Paint (e.g. a blog post's feature photo).
+    const fold = window.innerHeight;
+    const images = pick(IMAGES).filter(
+      (el) => !el.classList.contains("hero-media") && !el.classList.contains("post-feature") && el.getBoundingClientRect().top >= fold
+    );
 
     // A fully clipped image never "intersects", so each image is triggered by its container instead
     const proxyFor = new Map<Element, HTMLElement[]>();

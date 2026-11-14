@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TableOfContents from "@/components/TableOfContents";
 
 export const title = "Visiting the Fes Tanneries & Medina: 2026 Guide with Day Trips & Chauffeur Tips | Private Morocco Transfers";
 export const description = "Complete 2026 guide to visiting the iconic Chouara Tanneries in Fes. How to visit without scams, mint leaf tips, leather terraces, and the best day trips from Fes with a private driver.";
@@ -48,7 +49,8 @@ export default function Content() {
 
       <div className="post-body">
         <div className="container-sm">
-          <h2>The Timeless Wonder of the Fes Leather Tanneries</h2>
+          <TableOfContents items={[{"id": "the-timeless-wonder-of-the-fes-leather-tanneries", "title": "The Timeless Wonder of the Fes Leather Tanneries"}, {"id": "understanding-the-tanneries-chouara-vs-sidi-moussa", "title": "Understanding the Tanneries: Chouara vs. Sidi Moussa"}, {"id": "how-the-tanning-process-works", "title": "How the Tanning Process Works"}, {"id": "5-essential-tips-for-visiting-without-stress", "title": "5 Essential Tips for Visiting Without Stress"}, {"id": "top-day-trips-from-fes-with-a-private-driver", "title": "Top Day Trips from Fes with a Private Driver"}]} />
+          <h2 id="the-timeless-wonder-of-the-fes-leather-tanneries">The Timeless Wonder of the Fes Leather Tanneries</h2>
           <p>
             Tucked deep within the car-free labyrinth of <strong>Fes el-Bali</strong> (the medieval UNESCO World Heritage
             medina of Fes) lies one of the most recognizable visual spectacles on earth: the <strong>Chouara Tanneries</strong>.
@@ -62,7 +64,7 @@ export default function Content() {
             2026 insider guide to visiting the tanneries smoothly, followed by the best excursions and day trips from Fes.
           </p>
 
-          <h2>Understanding the Tanneries: Chouara vs. Sidi Moussa</h2>
+          <h2 id="understanding-the-tanneries-chouara-vs-sidi-moussa">Understanding the Tanneries: Chouara vs. Sidi Moussa</h2>
           <p>
             Fes actually houses three ancient tanneries, each with its own character:
           </p>
@@ -81,7 +83,7 @@ export default function Content() {
             </li>
           </ul>
 
-          <h2>How the Tanning Process Works</h2>
+          <h2 id="how-the-tanning-process-works">How the Tanning Process Works</h2>
           <p>
             The process is 100% natural and manual:
           </p>
@@ -102,7 +104,7 @@ export default function Content() {
             </li>
           </ol>
 
-          <h2>5 Essential Tips for Visiting Without Stress</h2>
+          <h2 id="5-essential-tips-for-visiting-without-stress">5 Essential Tips for Visiting Without Stress</h2>
           <div className="purpose-grid" style={{ display: "grid", gap: "18px", margin: "24px 0" }}>
             <div style={{ padding: "18px", border: "1px solid var(--rule)", background: "var(--sand-1)" }}>
               <h3 style={{ margin: "0 0 6px 0", fontSize: "1em" }}>1. Accept the Mint Sprig</h3>
@@ -134,10 +136,11 @@ export default function Content() {
             </div>
           </div>
 
-          <h2>Top Day Trips from Fes with a Private Driver</h2>
+          <h2 id="top-day-trips-from-fes-with-a-private-driver">Top Day Trips from Fes with a Private Driver</h2>
           <p>
             Fes is the spiritual and cultural heart of Morocco, making it the premier launchpad for unforgettable day excursions
-            across Northern and Central Morocco:
+            across Northern and Central Morocco. Heading south afterwards? See our{" "}
+            <Link href="/blog/sahara-merzouga">Sahara road trip guide</Link> and the <Link href="/transfers/fes-to-merzouga">Fes to Merzouga transfer</Link>:
           </p>
 
           <h3>1. Volubilis Roman Ruins, Moulay Idriss & Meknes (Full Day)</h3>
@@ -146,7 +149,7 @@ export default function Content() {
             Moulay Idriss Zerhoun, and admire the monumental Bab Mansour gateway in imperial Meknes.
           </p>
           <p>
-            <strong>Distance:</strong> ~75 km from Fes · <strong>Private Sedan:</strong> From €95 (~1,050 MAD) fixed.
+            <strong>Distance:</strong> ~75 km from Fes · <strong>Private Sedan:</strong> <Link href="/transfers/fes-to-meknes-volubilis">From €95 (~1,050 MAD) fixed</Link>.
           </p>
 
           <h3>2. Chefchaouen &quot;The Blue Pearl&quot; from Fes</h3>

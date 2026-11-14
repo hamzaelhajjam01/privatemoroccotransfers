@@ -648,6 +648,18 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: var(--track); line-height: 1;
 .post-body h3 { font-size: var(--fs-h3); margin: 40px 0 14px; }
 .post-body p, .post-body li { font-size: 19px; line-height: 1.55; margin-bottom: 18px; color: #2A2A2A; letter-spacing: -0.01em; }
 .post-body ul { list-style: disc; padding-left: 20px; }
+/* Anchored headings clear the fixed header when jumped to from the contents list. */
+.post-body h2[id] { scroll-margin-top: 96px; }
+/* In-text links must look like links. */
+.post-body p a, .post-body li a { color: inherit; text-decoration: underline; text-decoration-color: var(--gold-ink, #7A5E32); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.post-body p a:hover, .post-body li a:hover { color: var(--gold-ink, #7A5E32); }
+.post-toc { margin: 8px 0 48px; padding: 24px 28px; border: 1px solid var(--rule); background: var(--sand); }
+.post-toc-title { font-family: var(--mono, ui-monospace, monospace); font-size: 12px !important; letter-spacing: .08em; text-transform: uppercase; color: var(--muted) !important; margin: 0 0 12px !important; }
+.post-toc ol { margin: 0; padding-left: 22px; list-style: decimal; }
+.post-toc li { font-size: 16px !important; line-height: 1.45 !important; margin: 0 0 8px !important; }
+.post-toc li:last-child { margin-bottom: 0 !important; }
+.post-toc a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 3px; }
+.post-toc a:hover { text-decoration-color: currentColor; }
 .post-cta-inline { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; padding: 28px var(--g); }
 .post-cta-inline p { font-size: var(--fs-body); }
 
