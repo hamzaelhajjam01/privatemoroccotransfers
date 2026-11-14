@@ -42,7 +42,7 @@ export default function WhatsAppFloat() {
               openWhatsApp(o.msg, {
                 label: `WhatsApp Float: ${o.label}`,
                 route: typeof window !== "undefined" ? window.location.pathname : "/",
-              })
+              }, { direct: true })
             }
           >
             <span>{o.label}</span>

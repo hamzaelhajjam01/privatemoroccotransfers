@@ -43,6 +43,20 @@ export default function SiteScripts() {
       }
 
       const waLink = t.closest<HTMLAnchorElement>('a[href*="wa.me"]');
+      // Every WhatsApp link on the site opens the booking popup (WhatsApp / email / phone),
+      // except links marked data-wa-direct and ctrl/cmd-clicks (open in new tab as usual).
+      if (waLink && !waLink.closest("[data-wa-direct]") && !e.metaKey && !e.ctrlKey && !e.shiftKey) {
+        e.preventDefault();
+        let text = "";
+        try {
+          text = new URL(waLink.href).searchParams.get("text") || "";
+        } catch {}
+        openWhatsApp(text || "Hello, I would like a quote for a private driver in Morocco.", {
+          label: waLink.textContent?.trim() || "WhatsApp Link Click",
+          route: window.location.pathname,
+        });
+        return;
+      }
       if (waLink) {
         trackWhatsAppLead({
           label: waLink.textContent?.trim() || "WhatsApp Link Click",

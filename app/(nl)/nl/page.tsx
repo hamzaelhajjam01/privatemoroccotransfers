@@ -69,7 +69,7 @@ const DUTCH_SERVICES = [
   {
     title: "Luchthaven Transfers",
     text: "Persoonlijk welkom met naambord in de aankomsthal op alle Marokkaanse luchthavens. Live vluchtmonitoring en 45 minuten gratis wachttijd.",
-    meta: ["Vanaf €30", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Vanaf €35", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/nl/airport-transfers",
     cta: "Luchthaventransfers bekijken",
@@ -257,7 +257,7 @@ export default function DutchHomePage() {
               </span>
               <span className="muted">{"6 km"}</span>
               <span className="muted">{"15 min"}</span>
-              <span>{"€30 (330 MAD)"}</span>
+              <span>{"€35 (380 MAD)"}</span>
               <Link href="/nl/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
               </Link>
@@ -270,7 +270,7 @@ export default function DutchHomePage() {
               </span>
               <span className="muted">{"180 km"}</span>
               <span className="muted">{"2.5 uur"}</span>
-              <span>{"€90 (980 MAD)"}</span>
+              <span>{"€97 (1.070 MAD)"}</span>
               <Link href="/nl/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
               </Link>
@@ -283,7 +283,7 @@ export default function DutchHomePage() {
               </span>
               <span className="muted">{"240 km"}</span>
               <span className="muted">{"3 uur"}</span>
-              <span>{"€135 (1.480 MAD)"}</span>
+              <span>{"€137 (1.510 MAD)"}</span>
               <Link href="/nl/transfers/marrakech-to-agadir" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
               </Link>

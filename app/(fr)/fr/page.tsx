@@ -85,7 +85,7 @@ const FRENCH_SERVICES = [
   {
     title: "Transferts Aéroport",
     text: "Accueil personnalisé avec pancarte à votre nom dans le hall des arrivées de tous les aéroports marocains. Suivi de vol en temps réel et 45 min d'attente offerte.",
-    meta: ["Dès 30 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Dès 35 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/fr/airport-transfers",
     cta: "Découvrir les aéroports",
@@ -312,7 +312,7 @@ export default function FrenchHomePage() {
               </span>
               <span className="muted">{"6 km"}</span>
               <span className="muted">{"15 min"}</span>
-              <span>{"€30 (330 MAD)"}</span>
+              <span>{"€35 (380 MAD)"}</span>
               <Link href="/fr/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Détails"}
               </Link>
@@ -325,7 +325,7 @@ export default function FrenchHomePage() {
               </span>
               <span className="muted">{"180 km"}</span>
               <span className="muted">{"2.5 h"}</span>
-              <span>{"€90 (980 MAD)"}</span>
+              <span>{"€97 (1 070 MAD)"}</span>
               <Link href="/fr/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Détails"}
               </Link>
@@ -338,7 +338,7 @@ export default function FrenchHomePage() {
               </span>
               <span className="muted">{"240 km"}</span>
               <span className="muted">{"3 h"}</span>
-              <span>{"€135 (1 480 MAD)"}</span>
+              <span>{"€137 (1 510 MAD)"}</span>
               <Link href="/fr/transfers/marrakech-to-agadir" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Détails"}
               </Link>
@@ -351,7 +351,7 @@ export default function FrenchHomePage() {
               </span>
               <span className="muted">{"220 km"}</span>
               <span className="muted">{"2.5 h"}</span>
-              <span>{"€150 (1 650 MAD)"}</span>
+              <span>{"€157 (1 730 MAD)"}</span>
               <Link href="/fr/transfers/casablanca-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Détails"}
               </Link>
@@ -364,7 +364,7 @@ export default function FrenchHomePage() {
               </span>
               <span className="muted">{"540 km"}</span>
               <span className="muted">{"6 h"}</span>
-              <span>{"€240 (2 640 MAD)"}</span>
+              <span>{"€274 (3 010 MAD)"}</span>
               <Link href="/fr/transfers/marrakech-to-fes" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Détails"}
               </Link>

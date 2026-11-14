@@ -205,7 +205,7 @@ export default function Content() {
             privacy, you will pay 480 to 600 MAD (€45–€55). Add 50 MAD for a petit taxi to Bab Doukkala station, and you are
             at ~€60 with no guaranteed air conditioning.
             <br />
-            <strong>Private Transfer:</strong> <strong>€90 (980 MAD)</strong> all-inclusive for the entire car. Riad pickup,
+            <strong>Private Transfer:</strong> <strong>€97 (1,070 MAD)</strong> all-inclusive for the entire car. Riad pickup,
             free argan tree photo stop, bottle of cold water, luggage care, and direct drop at your Essaouira accommodation.
           </p>
 
@@ -215,7 +215,7 @@ export default function Content() {
             curbside bargaining (often demanding 1,500 to 2,000 MAD in cash with no receipts). Alternatively, taking the train
             requires changing at Casa Oasis, carrying luggage across platforms, and adding 2 extra hours.
             <br />
-            <strong>Private Transfer:</strong> <strong>€150 (1,650 MAD)</strong> fixed flat rate. Flight delay tracking, driver
+            <strong>Private Transfer:</strong> <strong>€157 (1,730 MAD)</strong> fixed flat rate. Flight delay tracking, driver
             waiting at international exit with name board, highway tolls included, direct delivery to your Marrakech riad.
           </p>
 
@@ -223,7 +223,7 @@ export default function Content() {
           <p>
             <strong>Grand Taxi:</strong> ~120 to 150 MAD (€12–€15) per seat, often involving a car swap in Chichaoua.
             <br />
-            <strong>Private Transfer:</strong> <strong>€135 (1,480 MAD)</strong> straight down the A3 highway through the Argan
+            <strong>Private Transfer:</strong> <strong>€137 (1,510 MAD)</strong> straight down the A3 highway through the Argan
             valleys. Comfortable leather seating, surfboard-friendly vans available, door-to-door.
           </p>
 

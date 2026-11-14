@@ -8,8 +8,10 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import CookieBanner from "@/components/CookieBanner";
 import SiteScripts from "@/components/SiteScripts";
 import Motion from "@/components/Motion";
+import BookingModal from "@/components/BookingModal";
 import { SITE_URL, WHATSAPP_NUMBER, SOCIAL_LINKS } from "@/lib/site";
 import "@/app/globals.css";
+import "@/components/booking-modal.css";
 import type { LanguageCode } from "@/lib/i18n";
 
 const interTight = Inter_Tight({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-inter-tight" });
@@ -77,7 +79,7 @@ const jsonLd = {
       telephone: `+${WHATSAPP_NUMBER}`,
       email: "contact@privatemoroccotransfers.com",
       image: `${SITE_URL}/brand/logo-gold.svg`,
-      priceRange: "€30 - €380",
+      priceRange: "€27 - €660",
       currenciesAccepted: "EUR, MAD, USD, GBP",
       paymentAccepted: "Cash, Credit Card",
       areaServed: [
@@ -225,6 +227,7 @@ export default function SiteShell({ lang, children }: { lang: LanguageCode; chil
         <WhatsAppFloat />
         <CookieBanner />
         <SiteScripts />
+        <BookingModal />
         <Motion />
       </body>
     </html>

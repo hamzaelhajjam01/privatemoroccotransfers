@@ -31,7 +31,7 @@ const jsonLd = {
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
-        lowPrice: "30",
+        lowPrice: "35",
         highPrice: "290",
         offerCount: "18",
         availability: "https://schema.org/InStock",
@@ -160,7 +160,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€30 (330 MAD)"}
+                      {"€35 (380 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}
@@ -270,7 +270,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€40 (440 MAD)"}
+                      {"€45 (500 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}
@@ -324,7 +324,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€30 (330 MAD)"}
+                      {"€35 (380 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}
@@ -378,7 +378,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€30 (330 MAD)"}
+                      {"€35 (380 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}
@@ -432,7 +432,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€30 (330 MAD)"}
+                      {"€35 (380 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}

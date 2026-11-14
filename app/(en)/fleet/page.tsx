@@ -30,7 +30,7 @@ const fleetJsonLd = {
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
-        lowPrice: "30",
+        lowPrice: "35",
         highPrice: "270",
       },
     },
@@ -42,7 +42,7 @@ const fleetJsonLd = {
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
-        lowPrice: "40",
+        lowPrice: "45",
         highPrice: "330",
       },
     },

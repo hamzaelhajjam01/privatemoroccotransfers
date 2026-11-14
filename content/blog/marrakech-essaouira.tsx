@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const title = "Marrakech to Essaouira by Private Driver: Complete 2026 Guide | Private Morocco Transfers";
-export const description = "Marrakech to Essaouira by private driver: 180 km, about 2.5 hours, fixed price from €90 (980 MAD), plus what to see on the way.";
+export const description = "Marrakech to Essaouira by private driver: 180 km, about 2.5 hours, fixed price from €97 (1,070 MAD), plus what to see on the way.";
 
 export default function Content() {
   return (
@@ -74,7 +74,7 @@ export default function Content() {
             {"What Does a Private Driver Cost?"}
           </h2>
           <p>
-            {"A fixed-price private driver from Marrakech to Essaouira costs from €90 (980 MAD) for a comfort sedan (1–3 passengers), €135 for a touring van, and €205 for an executive minibus. Prices are per vehicle, not per person, and include driver, fuel, tolls and A/C. A round trip is available with a 10% discount on the return leg."}
+            {"A fixed-price private driver from Marrakech to Essaouira costs from €97 (1,070 MAD) for a comfort sedan (1–3 passengers), €142 for a touring van, and €211 for an executive minibus. Prices are per vehicle, not per person, and include driver, fuel, tolls and A/C. A round trip is available with a 10% discount on the return leg."}
           </p>
           <h2>
             {"What to See on the Way"}
@@ -111,7 +111,7 @@ export default function Content() {
             {"Ready to travel from Marrakech to Essaouira?"}
           </p>
           <span style={{ fontSize: "14px", color: "var(--muted)" }}>
-            {"Guaranteed fixed rate from €90 per vehicle (all tolls & luggage included)."}
+            {"Guaranteed fixed rate from €97 per vehicle (all tolls & luggage included)."}
           </span>
         </div>
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>

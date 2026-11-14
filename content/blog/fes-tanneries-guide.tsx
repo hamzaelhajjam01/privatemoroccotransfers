@@ -146,7 +146,7 @@ export default function Content() {
             Moulay Idriss Zerhoun, and admire the monumental Bab Mansour gateway in imperial Meknes.
           </p>
           <p>
-            <strong>Distance:</strong> ~75 km from Fes · <strong>Private Sedan:</strong> From €90 (~990 MAD) fixed.
+            <strong>Distance:</strong> ~75 km from Fes · <strong>Private Sedan:</strong> From €95 (~1,050 MAD) fixed.
           </p>
 
           <h3>2. Chefchaouen &quot;The Blue Pearl&quot; from Fes</h3>
@@ -155,7 +155,7 @@ export default function Content() {
             Chefchaouen. Spend 4 to 5 hours exploring the medina, hiking up to the Spanish Mosque, and return to Fes by evening.
           </p>
           <p>
-            <strong>Distance:</strong> ~200 km · <strong>Private Car:</strong> <Link href="/transfers/fes-to-chefchaouen">Fixed €95 per vehicle</Link>.
+            <strong>Distance:</strong> ~200 km · <strong>Private Car:</strong> <Link href="/transfers/fes-to-chefchaouen">Fixed €202 per vehicle</Link>.
           </p>
 
           <h3>3. Middle Atlas Cedars: Ifrane & Azrou</h3>

@@ -31,8 +31,8 @@ const jsonLd = {
       offers: {
         "@type": "AggregateOffer",
         priceCurrency: "EUR",
-        lowPrice: "90",
-        highPrice: "240",
+        lowPrice: "140",
+        highPrice: "285",
         offerCount: "12",
         availability: "https://schema.org/InStock",
         url: `${SITE_URL}/fr/day-trips`,

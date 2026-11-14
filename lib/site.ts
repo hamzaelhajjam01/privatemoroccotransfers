@@ -151,10 +151,27 @@ export function trackWhatsAppLead(details?: LeadDetails) {
   }
 }
 
-export function openWhatsApp(message: string, details?: LeadDetails) {
+/** Event the booking popup (components/BookingModal.tsx) listens for. */
+export const BOOKING_EVENT = "pmt:book";
+export type BookingRequest = { message: string; details?: LeadDetails };
+
+/**
+ * Opens the "How would you like to book?" popup (WhatsApp / email / phone).
+ * Pass { direct: true } to skip the popup and go straight to WhatsApp.
+ */
+export function openWhatsApp(message: string, details?: LeadDetails, opts?: { direct?: boolean }) {
+  const w = window as unknown as { __pmtBookingReady?: boolean };
+  if (!opts?.direct && w.__pmtBookingReady) {
+    window.dispatchEvent(new CustomEvent<BookingRequest>(BOOKING_EVENT, { detail: { message, details } }));
+    return;
+  }
   trackWhatsAppLead({
     label: message.slice(0, 60),
     ...details,
   });
   window.open(whatsappUrl(message), "_blank", "noopener");
 }
+
+/** Phone number for tel: links (same line as WhatsApp). */
+export const PHONE_E164 = `+${WHATSAPP_NUMBER}`;
+export const PHONE_DISPLAY = `+${WHATSAPP_NUMBER.slice(0, 3)} ${WHATSAPP_NUMBER.slice(3, 6)} ${WHATSAPP_NUMBER.slice(6, 9)} ${WHATSAPP_NUMBER.slice(9)}`.trim();

@@ -69,7 +69,7 @@ const GERMAN_SERVICES = [
   {
     title: "Flughafentransfer",
     text: "Persönlicher Empfang mit Namensschild in der Ankunftshalle aller marokkanischen Flughäfen. Live-Flugverfolgung und 45 Minuten kostenlose Wartezeit.",
-    meta: ["Ab 30 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Ab 35 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/de/airport-transfers",
     cta: "Flughafentransfers ansehen",
@@ -257,7 +257,7 @@ export default function GermanHomePage() {
               </span>
               <span className="muted">{"6 km"}</span>
               <span className="muted">{"15 Min"}</span>
-              <span>{"€30 (330 MAD)"}</span>
+              <span>{"€35 (380 MAD)"}</span>
               <Link href="/de/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
               </Link>
@@ -270,7 +270,7 @@ export default function GermanHomePage() {
               </span>
               <span className="muted">{"180 km"}</span>
               <span className="muted">{"2.5 Std"}</span>
-              <span>{"€90 (980 MAD)"}</span>
+              <span>{"€97 (1.070 MAD)"}</span>
               <Link href="/de/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
               </Link>
@@ -283,7 +283,7 @@ export default function GermanHomePage() {
               </span>
               <span className="muted">{"240 km"}</span>
               <span className="muted">{"3 Std"}</span>
-              <span>{"€135 (1.480 MAD)"}</span>
+              <span>{"€137 (1.510 MAD)"}</span>
               <Link href="/de/transfers/marrakech-to-agadir" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
               </Link>
@@ -296,7 +296,7 @@ export default function GermanHomePage() {
               </span>
               <span className="muted">{"220 km"}</span>
               <span className="muted">{"2.5 Std"}</span>
-              <span>{"€150 (1.650 MAD)"}</span>
+              <span>{"€157 (1.730 MAD)"}</span>
               <Link href="/de/transfers/casablanca-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
               </Link>

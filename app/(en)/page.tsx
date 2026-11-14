@@ -296,7 +296,7 @@ export default function Home() {
                 {"15 min"}
               </span>
               <span>
-                {"€30 (330 MAD)"}
+                {"€35 (380 MAD)"}
               </span>
               <Link href="/transfers/marrakech-airport-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
@@ -315,7 +315,7 @@ export default function Home() {
                 {"2.5 h"}
               </span>
               <span>
-                {"€90 (980 MAD)"}
+                {"€97 (1,070 MAD)"}
               </span>
               <Link href="/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
@@ -334,7 +334,7 @@ export default function Home() {
                 {"3 h"}
               </span>
               <span>
-                {"€135 (1,480 MAD)"}
+                {"€137 (1,510 MAD)"}
               </span>
               <Link href="/transfers/marrakech-to-agadir" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
@@ -353,7 +353,7 @@ export default function Home() {
                 {"3 h"}
               </span>
               <span>
-                {"€150 (1,650 MAD)"}
+                {"€157 (1,730 MAD)"}
               </span>
               <Link href="/transfers/casablanca-to-marrakech" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
@@ -372,7 +372,7 @@ export default function Home() {
                 {"6 h"}
               </span>
               <span>
-                {"€240 (2,640 MAD)"}
+                {"€274 (3,010 MAD)"}
               </span>
               <Link href="/transfers/marrakech-to-fes" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
@@ -391,7 +391,7 @@ export default function Home() {
                 {"7 h"}
               </span>
               <span>
-                {"€360 (3,960 MAD)"}
+                {"€370 (4,070 MAD)"}
               </span>
               <Link href="/transfers/marrakech-to-merzouga" className="btn btn-black" style={{ minWidth: "0", padding: "8px 16px", fontSize: "14px" }}>
                 {"Details"}
