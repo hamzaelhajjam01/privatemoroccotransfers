@@ -27,6 +27,96 @@ function showStep(next: string) {
   }
 }
 
+
+/* ── Hero booking widget: service tabs + inline validation ── */
+type WidgetService = "airport" | "city" | "day";
+const WIDGET_SERVICES: WidgetService[] = ["airport", "city", "day"];
+type WidgetCopy = { q: string; from: string; to: string };
+const WIDGET_COPY: Record<string, Partial<Record<WidgetService, WidgetCopy>> & { service: string; missing: string }> = {
+  en: { service: "Service", missing: "Please fill in where from and where to.",
+    city: { q: "Where are you travelling?", from: "e.g. Marrakech", to: "e.g. Essaouira" },
+    day: { q: "Where would you like to go?", from: "e.g. Your hotel in Marrakech", to: "e.g. Ourika Valley" } },
+  fr: { service: "Service", missing: "Veuillez renseigner le départ et l'arrivée.",
+    city: { q: "Où allez-vous ?", from: "ex. Marrakech", to: "ex. Essaouira" },
+    day: { q: "Où souhaitez-vous aller ?", from: "ex. Votre hôtel à Marrakech", to: "ex. Vallée de l'Ourika" } },
+  es: { service: "Servicio", missing: "Por favor complete el origen y el destino.",
+    city: { q: "¿Adónde viaja?", from: "p. ej. Marrakech", to: "p. ej. Esauira" },
+    day: { q: "¿Adónde le gustaría ir?", from: "p. ej. Su hotel en Marrakech", to: "p. ej. Valle del Ourika" } },
+  it: { service: "Servizio", missing: "Si prega di indicare partenza e destinazione.",
+    city: { q: "Dove siete diretti?", from: "es. Marrakech", to: "es. Essaouira" },
+    day: { q: "Dove vorreste andare?", from: "es. Il vostro hotel a Marrakech", to: "es. Valle dell'Ourika" } },
+  de: { service: "Leistung", missing: "Bitte geben Sie Abfahrtsort und Zielort an.",
+    city: { q: "Wohin geht die Reise?", from: "z. B. Marrakesch", to: "z. B. Essaouira" },
+    day: { q: "Wohin möchten Sie fahren?", from: "z. B. Ihr Hotel in Marrakesch", to: "z. B. Ourika-Tal" } },
+  ar: { service: "الخدمة", missing: "يرجى تحديد مكان الانطلاق والوجهة.",
+    city: { q: "إلى أين تسافر؟", from: "مثال: مراكش", to: "مثال: الصويرة" },
+    day: { q: "إلى أين تود الذهاب؟", from: "مثال: فندقك في مراكش", to: "مثال: وادي أوريكا" } },
+  pt: { service: "Serviço", missing: "Por favor preencha o local de partida e de destino.",
+    city: { q: "Para onde vai viajar?", from: "ex. Marraquexe", to: "ex. Essaouira" },
+    day: { q: "Para onde gostaria de ir?", from: "ex. O seu hotel em Marraquexe", to: "ex. Vale de Ourika" } },
+  nl: { service: "Dienst", missing: "Vul alstublieft vertrek en bestemming in.",
+    city: { q: "Waar reist u naartoe?", from: "bijv. Marrakech", to: "bijv. Essaouira" },
+    day: { q: "Waar wilt u naartoe?", from: "bijv. Uw hotel in Marrakech", to: "bijv. Ourika-vallei" } },
+};
+const widgetLang = () => {
+  const l = (document.documentElement.lang || "en").slice(0, 2);
+  return WIDGET_COPY[l] ? l : "en";
+};
+
+/** Switches the hero widget to the clicked service tab: heading, placeholders and the WhatsApp message follow. */
+function selectWidgetTab(tab: HTMLElement) {
+  const tabs = Array.from(tab.parentElement?.querySelectorAll<HTMLElement>(".booking-tab:not(a)") || []);
+  tabs.forEach((b) => {
+    const on = b === tab;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-selected", String(on));
+  });
+  const widget = tab.closest<HTMLElement>(".booking-widget");
+  const form = widget?.querySelector<HTMLFormElement>("form");
+  if (!widget || !form) return;
+  const service = WIDGET_SERVICES[tabs.indexOf(tab)] || "airport";
+  const q = widget.querySelector<HTMLElement>(".widget-question");
+  const from = form.querySelector<HTMLInputElement>("[name=from]");
+  const to = form.querySelector<HTMLInputElement>("[name=to]");
+  // Remember the page's own (airport) wording the first time.
+  if (q && !q.dataset.airport) q.dataset.airport = q.textContent || "";
+  if (from && !from.dataset.airport) from.dataset.airport = from.placeholder;
+  if (to && !to.dataset.airport) to.dataset.airport = to.placeholder;
+  const copy = WIDGET_COPY[widgetLang()][service];
+  if (q) q.textContent = copy ? copy.q : q.dataset.airport || "";
+  if (from) from.placeholder = copy ? copy.from : from.dataset.airport || "";
+  if (to) to.placeholder = copy ? copy.to : to.dataset.airport || "";
+  form.dataset.service = service;
+  form.dataset.serviceLabel = tab.textContent?.trim() || "";
+  clearWidgetErrors(form);
+}
+
+function clearWidgetErrors(form: HTMLFormElement) {
+  form.querySelectorAll(".field-input.is-invalid").forEach((el) => {
+    el.classList.remove("is-invalid");
+    el.removeAttribute("aria-invalid");
+  });
+  form.querySelectorAll(".field-error").forEach((el) => el.remove());
+}
+
+/** Inline error under the empty fields (replaces the old alert(), which some in-app browsers block). */
+function showWidgetErrors(form: HTMLFormElement, fields: HTMLInputElement[], message: string) {
+  clearWidgetErrors(form);
+  fields.forEach((input) => {
+    input.classList.add("is-invalid");
+    input.setAttribute("aria-invalid", "true");
+  });
+  const first = fields[0];
+  const p = document.createElement("p");
+  p.className = "field-error";
+  p.setAttribute("role", "alert");
+  p.id = `${first.id || "bw"}-error`;
+  p.textContent = message;
+  first.setAttribute("aria-describedby", p.id);
+  first.insertAdjacentElement("afterend", p);
+  first.focus();
+}
+
 export default function SiteScripts() {
   useEffect(() => {
     function onClick(e: MouseEvent) {
@@ -73,10 +163,13 @@ export default function SiteScripts() {
         return;
       }
 
-      const tab = t.closest(".booking-tab");
+      const tab = t.closest<HTMLElement>(".booking-tab");
       if (tab && tab.tagName !== "A") {
-        tab.parentElement?.querySelectorAll(".booking-tab").forEach((b) => b.classList.remove("active"));
-        tab.classList.add("active");
+        if (tab.closest(".booking-widget")) selectWidgetTab(tab);
+        else {
+          tab.parentElement?.querySelectorAll(".booking-tab").forEach((b) => b.classList.remove("active"));
+          tab.classList.add("active");
+        }
         return;
       }
 
@@ -127,17 +220,13 @@ export default function SiteScripts() {
         const isNl = location.pathname.startsWith("/nl");
 
         if (!from || !to) {
-          const alertMsg = isFr ? "Veuillez renseigner le départ et l'arrivée."
-            : isEs ? "Por favor complete el origen y el destino."
-            : isIt ? "Si prega di indicare partenza e destinazione."
-            : isDe ? "Bitte geben Sie Abfahrtsort und Zielort an."
-            : isAr ? "يرجى تحديد مكان الانطلاق والوجهة."
-            : isPt ? "Por favor preencha o local de partida e de destino."
-            : isNl ? "Vul alstublieft vertrek en bestemming in."
-            : "Please fill in From and To.";
-          alert(alertMsg);
+          const empty = (["from", "to"] as const)
+            .map((n) => form.querySelector<HTMLInputElement>(`[name=${n}]`))
+            .filter((el): el is HTMLInputElement => !!el && !el.value.trim());
+          if (empty.length) showWidgetErrors(form, empty, WIDGET_COPY[widgetLang()].missing);
           return;
         }
+        clearWidgetErrors(form);
 
         const date = val(form, "[name=date]") || "TBD";
         const pass = val(form, "[name=passengers]") || "1–3";
@@ -151,7 +240,12 @@ export default function SiteScripts() {
         else if (isPt) text = `Olá! Gostaria de um orçamento com preço fixo:\n\nPartida: ${from}\nDestino: ${to}\nData: ${date}\nPassageiros: ${pass}\n\nObrigado!`;
         else if (isNl) text = `Hallo! Ik wil graag een offerte voor een vaste prijs:\n\nVertrek: ${from}\nBestemming: ${to}\nDatum: ${date}\nPassagiers: ${pass}\n\nBedankt!`;
 
-        openWhatsApp(text, { route: `${from} → ${to}`, label: "Hero Booking Widget" });
+        const serviceLabel = form.dataset.serviceLabel;
+        if (serviceLabel && form.dataset.service && form.dataset.service !== "airport") {
+          // e.g. "Service: City-to-City" right before the From line.
+          text = text.replace(/\n\n/, `\n\n${WIDGET_COPY[widgetLang()].service}: ${serviceLabel}\n`);
+        }
+        openWhatsApp(text, { route: `${from} → ${to}`, label: `Hero Booking Widget (${form.dataset.service || "airport"})` });
       } else if (form.id === "briefForm") {
         e.preventDefault();
         const v = (n: string) => val(form, `[name=${n}]`);
@@ -164,11 +258,37 @@ export default function SiteScripts() {
       }
     }
 
+    function onInput(e: Event) {
+      const el = e.target as HTMLElement;
+      if (el.classList?.contains("is-invalid")) {
+        el.classList.remove("is-invalid");
+        el.removeAttribute("aria-invalid");
+        el.nextElementSibling?.classList.contains("field-error") && el.nextElementSibling.remove();
+      }
+    }
+    function onKey(e: KeyboardEvent) {
+      const tab = (e.target as HTMLElement).closest?.<HTMLElement>(".booking-widget .booking-tab:not(a)");
+      if (tab && (e.key === "Enter" || e.key === " ")) {
+        e.preventDefault();
+        selectWidgetTab(tab);
+      }
+    }
+    // Make the service tabs keyboard- and screen-reader-friendly.
+    document.querySelectorAll<HTMLElement>(".booking-widget .booking-tab:not(a)").forEach((tab) => {
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("tabindex", "0");
+      tab.setAttribute("aria-selected", String(tab.classList.contains("active")));
+    });
+
     document.addEventListener("click", onClick);
     document.addEventListener("submit", onSubmit);
+    document.addEventListener("input", onInput);
+    document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("click", onClick);
       document.removeEventListener("submit", onSubmit);
+      document.removeEventListener("input", onInput);
+      document.removeEventListener("keydown", onKey);
     };
   }, []);
 
