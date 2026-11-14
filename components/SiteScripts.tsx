@@ -32,29 +32,29 @@ function showStep(next: string) {
 type WidgetService = "airport" | "city" | "day";
 const WIDGET_SERVICES: WidgetService[] = ["airport", "city", "day"];
 type WidgetCopy = { q: string; from: string; to: string };
-const WIDGET_COPY: Record<string, Partial<Record<WidgetService, WidgetCopy>> & { service: string; missing: string }> = {
-  en: { service: "Service", missing: "Please fill in where from and where to.",
+const WIDGET_COPY: Record<string, Partial<Record<WidgetService, WidgetCopy>> & { service: string; missing: string; price: string }> = {
+  en: { price: "Fixed price", service: "Service", missing: "Please fill in where from and where to.",
     city: { q: "Where are you travelling?", from: "e.g. Marrakech", to: "e.g. Essaouira" },
     day: { q: "Where would you like to go?", from: "e.g. Your hotel in Marrakech", to: "e.g. Ourika Valley" } },
-  fr: { service: "Service", missing: "Veuillez renseigner le départ et l'arrivée.",
+  fr: { price: "Prix fixe", service: "Service", missing: "Veuillez renseigner le départ et l'arrivée.",
     city: { q: "Où allez-vous ?", from: "ex. Marrakech", to: "ex. Essaouira" },
     day: { q: "Où souhaitez-vous aller ?", from: "ex. Votre hôtel à Marrakech", to: "ex. Vallée de l'Ourika" } },
-  es: { service: "Servicio", missing: "Por favor complete el origen y el destino.",
+  es: { price: "Precio fijo", service: "Servicio", missing: "Por favor complete el origen y el destino.",
     city: { q: "¿Adónde viaja?", from: "p. ej. Marrakech", to: "p. ej. Esauira" },
     day: { q: "¿Adónde le gustaría ir?", from: "p. ej. Su hotel en Marrakech", to: "p. ej. Valle del Ourika" } },
-  it: { service: "Servizio", missing: "Si prega di indicare partenza e destinazione.",
+  it: { price: "Prezzo fisso", service: "Servizio", missing: "Si prega di indicare partenza e destinazione.",
     city: { q: "Dove siete diretti?", from: "es. Marrakech", to: "es. Essaouira" },
     day: { q: "Dove vorreste andare?", from: "es. Il vostro hotel a Marrakech", to: "es. Valle dell'Ourika" } },
-  de: { service: "Leistung", missing: "Bitte geben Sie Abfahrtsort und Zielort an.",
+  de: { price: "Festpreis", service: "Leistung", missing: "Bitte geben Sie Abfahrtsort und Zielort an.",
     city: { q: "Wohin geht die Reise?", from: "z. B. Marrakesch", to: "z. B. Essaouira" },
     day: { q: "Wohin möchten Sie fahren?", from: "z. B. Ihr Hotel in Marrakesch", to: "z. B. Ourika-Tal" } },
-  ar: { service: "الخدمة", missing: "يرجى تحديد مكان الانطلاق والوجهة.",
+  ar: { price: "السعر الثابت", service: "الخدمة", missing: "يرجى تحديد مكان الانطلاق والوجهة.",
     city: { q: "إلى أين تسافر؟", from: "مثال: مراكش", to: "مثال: الصويرة" },
     day: { q: "إلى أين تود الذهاب؟", from: "مثال: فندقك في مراكش", to: "مثال: وادي أوريكا" } },
-  pt: { service: "Serviço", missing: "Por favor preencha o local de partida e de destino.",
+  pt: { price: "Preço fixo", service: "Serviço", missing: "Por favor preencha o local de partida e de destino.",
     city: { q: "Para onde vai viajar?", from: "ex. Marraquexe", to: "ex. Essaouira" },
     day: { q: "Para onde gostaria de ir?", from: "ex. O seu hotel em Marraquexe", to: "ex. Vale de Ourika" } },
-  nl: { service: "Dienst", missing: "Vul alstublieft vertrek en bestemming in.",
+  nl: { price: "Vaste prijs", service: "Dienst", missing: "Vul alstublieft vertrek en bestemming in.",
     city: { q: "Waar reist u naartoe?", from: "bijv. Marrakech", to: "bijv. Essaouira" },
     day: { q: "Waar wilt u naartoe?", from: "bijv. Uw hotel in Marrakech", to: "bijv. Ourika-vallei" } },
 };
@@ -240,6 +240,12 @@ export default function SiteScripts() {
         else if (isPt) text = `Olá! Gostaria de um orçamento com preço fixo:\n\nPartida: ${from}\nDestino: ${to}\nData: ${date}\nPassageiros: ${pass}\n\nObrigado!`;
         else if (isNl) text = `Hallo! Ik wil graag een offerte voor een vaste prijs:\n\nVertrek: ${from}\nBestemming: ${to}\nDatum: ${date}\nPassagiers: ${pass}\n\nBedankt!`;
 
+        // Fixed price shown by the From/To dropdowns (components/LocationFields.tsx).
+        if (form.dataset.price) {
+          const cut = text.lastIndexOf("\n\n");
+          const line = `${WIDGET_COPY[widgetLang()].price}: €${form.dataset.price}${form.dataset.vehicle ? ` (${form.dataset.vehicle})` : ""}`;
+          text = cut > 0 ? `${text.slice(0, cut)}\n${line}${text.slice(cut)}` : `${text}\n${line}`;
+        }
         const serviceLabel = form.dataset.serviceLabel;
         if (serviceLabel && form.dataset.service && form.dataset.service !== "airport") {
           // e.g. "Service: City-to-City" right before the From line.

@@ -6,6 +6,7 @@ import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import type { Review } from "@/content/reviews";
+import LocationFields from "@/components/LocationFields";
 
 export const metadata: Metadata = {
   title: { absolute: "سائق خاص وتوصيل VIP في المغرب — أسعار ثابتة ومضمونة" },
@@ -135,14 +136,13 @@ export default function ArabicHomePage() {
               {"من أين تود أن نبدأ رحلتك؟"}
             </h2>
             <form id="bookingWidget">
-              <label className="field-label" htmlFor="bw-from">
-                {"نقطة الانطلاق"}
-              </label>
-              <input id="bw-from" className="field-input" name="from" type="text" placeholder="مثال: مطار مراكش (RAK)" />
-              <label className="field-label" htmlFor="bw-to">
-                {"الوجهة"}
-              </label>
-              <input id="bw-to" className="field-input" name="to" type="text" placeholder="مثال: فندق، رياض، أو مدينة أخرى..." />
+              <LocationFields
+                lang="ar"
+                fromLabel={"نقطة الانطلاق"}
+                toLabel={"الوجهة"}
+                fromPlaceholder={"مثال: مطار مراكش (RAK)"}
+                toPlaceholder={"مثال: فندق، رياض، أو مدينة أخرى..."}
+              />
               <div className="field-row">
                 <div>
                   <label className="field-label" htmlFor="bw-date">

@@ -5,6 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+import LocationFields from "@/components/LocationFields";
 
 export const metadata: Metadata = {
   title: { absolute: "Private Driver in Morocco & Airport Transfers — Fixed Prices" },
@@ -140,14 +141,13 @@ export default function Home() {
               {"Where are we picking you up?"}
             </h2>
             <form id="bookingWidget">
-              <label className="field-label" htmlFor="bw-from">
-                {"From"}
-              </label>
-              <input id="bw-from" className="field-input" name="from" type="text" placeholder="e.g. Marrakech Airport (RAK)" />
-              <label className="field-label" htmlFor="bw-to">
-                {"To"}
-              </label>
-              <input id="bw-to" className="field-input" name="to" type="text" placeholder="e.g. Marrakech Medina" />
+              <LocationFields
+                lang="en"
+                fromLabel={"From"}
+                toLabel={"To"}
+                fromPlaceholder={"e.g. Marrakech Airport (RAK)"}
+                toPlaceholder={"e.g. Marrakech Medina"}
+              />
               <div className="field-row">
                 <div>
                   <label className="field-label" htmlFor="bw-date">
