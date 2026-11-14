@@ -270,6 +270,13 @@ html.bk-lock, html.bk-lock body { overflow: hidden; }
   display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, .8fr) repeat(3, minmax(0, 1fr)) auto;
   align-items: center; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--rule, #E3D9C9);
 }
+/* Desktop: every row shares the table's columns (subgrid), so the header lines
+   up with the prices even though only body rows have a "Book" button in the
+   last, content-sized column. */
+@media (min-width: 861px) {
+  .rpt-table { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, .8fr) repeat(3, minmax(0, 1fr)) auto; column-gap: 16px; }
+  .rpt-row { grid-column: 1 / -1; grid-template-columns: subgrid; }
+}
 .rpt-head { padding: 14px 0; color: var(--muted, #6B6B6B); font-family: var(--mono, ui-monospace, monospace); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; }
 .rpt-head small { display: block; margin-top: 3px; text-transform: none; letter-spacing: 0; font-size: 11.5px; }
 .rpt-num { text-align: center; }
