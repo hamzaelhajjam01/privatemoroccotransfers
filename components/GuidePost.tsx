@@ -17,13 +17,14 @@ export type GuideProps = {
   readTime: string;
   image: string;
   imageAlt: string;
+  imageCredit?: { name: string; url: string };
   children: ReactNode;
   faqs: GuideFaq[];
   cta: { title: string; sub: string; routeHref: string; routeLabel: string; wa: string };
   related: GuideRelated[];
 };
 
-export default function GuidePost({ category, h1, date, readTime, image, imageAlt, children, faqs, cta, related }: GuideProps) {
+export default function GuidePost({ category, h1, date, readTime, image, imageAlt, imageCredit, children, faqs, cta, related }: GuideProps) {
   return (
     <>
       <div className="post-hero">
@@ -50,6 +51,13 @@ export default function GuidePost({ category, h1, date, readTime, image, imageAl
       </div>
       <div className="wrap">
         <div className="ph post-feature" role="img" aria-label={imageAlt} style={{ backgroundImage: `url(${image})` }}></div>
+        {imageCredit && (
+          <p style={{ margin: "8px 0 0", fontSize: "13px", color: "var(--muted)" }}>
+            {"Photo: "}
+            <a href={imageCredit.url} rel="noopener" target="_blank" style={{ color: "inherit" }}>{imageCredit.name}</a>
+            {" on Unsplash"}
+          </p>
+        )}
       </div>
       <div className="post-body">
         <div className="container-sm">

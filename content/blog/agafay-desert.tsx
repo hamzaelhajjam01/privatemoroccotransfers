@@ -42,7 +42,8 @@ export default function Content() {
       date="2026-11-14"
       readTime="7 min read"
       image="/img/blog/agafay-desert.webp"
-      imageAlt="Private driver's black Toyota Land Cruiser Prado on a dry, rocky desert track at sunset"
+      imageAlt="Bare, rolling stone hills of the Agafay Desert with a dirt track and the High Atlas Mountains behind"
+      imageCredit={{ name: "Chloé Lefleur", url: "https://unsplash.com/photos/a-view-of-a-desert-landscape-with-mountains-in-the-distance-jMb3w4jsorA" }}
       faqs={faqs}
       cta={{
         title: "Heading to the Agafay Desert?",

@@ -38,7 +38,8 @@ export default function Content() {
       date="2026-11-14"
       readTime="7 min read"
       image="/img/blog/ourika-valley.webp"
-      imageAlt="Black Hyundai Tucson parked on a mountain road beside a river, with terraced fields, a Berber village and snowy High Atlas peaks behind"
+      imageAlt="Riverside café tables and cushions along the Ourika river, with willow trees and a footbridge"
+      imageCredit={{ name: "Matthew Fainman", url: "https://unsplash.com/photos/a-group-of-people-sitting-at-a-table-next-to-a-river-3yonP2JaGTU" }}
       faqs={faqs}
       cta={{
         title: "Planning a day in the Ourika Valley?",
