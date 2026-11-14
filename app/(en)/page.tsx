@@ -207,6 +207,51 @@ export default function Home() {
         <div className="wrap">
           <div className="head">
             <h2 className="huge">
+              {"Popular routes"}
+            </h2>
+            <p className="statement">
+              {"Fixed prices per vehicle, fuel and tolls included. Pick one way or round trip and book in one tap."}
+            </p>
+          </div>
+          <div className="route-cards">
+            <Link className="card" href="/blog/marrakech-essaouira">
+              <div className="ph light" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}></div>
+              <div className="card-bar">
+                <span>
+                  {"Marrakech → Essaouira"}
+                </span>
+                <span className="btn btn-black no-ring" style={{ minWidth: "0", padding: "8px 12px", fontSize: "15px" }}>
+                  {"Explore Route"}
+                </span>
+              </div>
+            </Link>
+            <Link className="card" href="/blog/sahara-merzouga">
+              <div className="ph light" style={{ backgroundImage: "url(/img/hero-tours.webp)" }}></div>
+              <div className="card-bar">
+                <span>
+                  {"Marrakech → Merzouga"}
+                </span>
+                <span className="btn btn-black no-ring" style={{ minWidth: "0", padding: "8px 12px", fontSize: "15px" }}>
+                  {"Explore Route"}
+                </span>
+              </div>
+            </Link>
+          </div>
+          <RoutePriceTable lang="en" />
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "36px" }}>
+            <Link href="/transfers" className="btn btn-gold">
+              {"Browse All 150+ Route Prices"}
+            </Link>
+            <Link href="/calculator" className="btn btn-outline">
+              {"Open Price Calculator"}
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="wrap">
+          <div className="head">
+            <h2 className="huge">
               {"Our services"}
             </h2>
             <p className="statement">
@@ -246,51 +291,6 @@ export default function Home() {
             <p className="statement muted">
               {"Our drivers are licensed, insured and based in the cities they serve. They speak English and French, and they know which road is quickest — and which one is worth the detour."}
             </p>
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="wrap">
-          <div className="head">
-            <h2 className="huge">
-              {"Popular routes"}
-            </h2>
-            <p className="statement">
-              {"Fixed prices per vehicle, fuel and tolls included. Pick one way or round trip and book in one tap."}
-            </p>
-          </div>
-          <div className="route-cards">
-            <Link className="card" href="/blog/marrakech-essaouira">
-              <div className="ph light" style={{ backgroundImage: "url(/img/routes/marrakech-essaouira.webp)" }}></div>
-              <div className="card-bar">
-                <span>
-                  {"Marrakech → Essaouira"}
-                </span>
-                <span className="btn btn-black no-ring" style={{ minWidth: "0", padding: "8px 12px", fontSize: "15px" }}>
-                  {"Explore Route"}
-                </span>
-              </div>
-            </Link>
-            <Link className="card" href="/blog/sahara-merzouga">
-              <div className="ph light" style={{ backgroundImage: "url(/img/hero-tours.webp)" }}></div>
-              <div className="card-bar">
-                <span>
-                  {"Marrakech → Merzouga"}
-                </span>
-                <span className="btn btn-black no-ring" style={{ minWidth: "0", padding: "8px 12px", fontSize: "15px" }}>
-                  {"Explore Route"}
-                </span>
-              </div>
-            </Link>
-          </div>
-          <RoutePriceTable lang="en" />
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", marginTop: "36px" }}>
-            <Link href="/transfers" className="btn btn-gold">
-              {"Browse All 150+ Route Prices"}
-            </Link>
-            <Link href="/calculator" className="btn btn-outline">
-              {"Open Price Calculator"}
-            </Link>
           </div>
         </div>
       </section>
