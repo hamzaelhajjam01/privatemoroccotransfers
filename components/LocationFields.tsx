@@ -11,7 +11,7 @@
  */
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import routeData from "@/content/route-prices.json";
-import { LOCATIONS, LOC_COPY, type Loc, type LocGroup } from "./widget-locations";
+import { FROM_GROUPS, LOCATIONS, LOC_COPY, type Loc, type LocGroup } from "./widget-locations";
 
 type Route = { from: string; to: string; price_sedan: number; price_van: number; price_minibus: number };
 const ROUTE_INDEX = new Map<string, Route>();
@@ -37,6 +37,47 @@ function tierPrice(r: Route, tier: number): number {
   return r.price_sedan;
 }
 
+/* ── Estimates for pairs without a fixed route ──
+   Start from the nearest real route (both ends closest) and scale it by distance.
+   Checked against the real price list: typically within ~5%. Shown with "≈". */
+const ROUTE_LIST = routeData as Route[];
+const COORD = new Map<string, [number, number]>();
+for (const l of LOCATIONS) for (const r of l.routes) COORD.set(r, l.at);
+function km(a: [number, number], b: [number, number]) {
+  const rad = Math.PI / 180;
+  const dLa = (b[0] - a[0]) * rad, dLo = (b[1] - a[1]) * rad;
+  const h = Math.sin(dLa / 2) ** 2 + Math.cos(a[0] * rad) * Math.cos(b[0] * rad) * Math.sin(dLo / 2) ** 2;
+  return Math.max(2 * 6371 * Math.asin(Math.sqrt(h)), 3);
+}
+const EST_CACHE = new Map<string, number>();
+function estimate(a: Loc, b: Loc, tier: number): number {
+  const key = `${a.key}|${b.key}|${tier}`;
+  const hit = EST_CACHE.get(key);
+  if (hit !== undefined) return hit;
+  let best: { cost: number; r: Route; x: [number, number]; y: [number, number] } | null = null;
+  for (const r of ROUTE_LIST) {
+    const p = COORD.get(r.from), q = COORD.get(r.to);
+    if (!p || !q) continue;
+    for (const [x, y] of [[p, q], [q, p]] as [[number, number], [number, number]][]) {
+      const cost = km(a.at, x) + km(b.at, y);
+      if (!best || cost < best.cost) best = { cost, r, x, y };
+    }
+  }
+  let price = 0;
+  if (best) {
+    const base = tierPrice(best.r, tier);
+    price = 30 + Math.max(base - 30, 5) * Math.pow(km(a.at, b.at) / km(best.x, best.y), 0.85);
+  }
+  price = Math.max(35, Math.round(price / 5) * 5);
+  EST_CACHE.set(key, price);
+  return price;
+}
+type PriceInfo = { price: number; fixed: boolean };
+function priceBetween(a: Loc, b: Loc, tier: number): PriceInfo {
+  const r = routeBetween(a, b);
+  return r ? { price: tierPrice(r, tier), fixed: true } : { price: estimate(a, b, tier), fixed: false };
+}
+
 const nameOf = (loc: Loc, lang: string) => (loc.names as Record<string, string>)[lang] || loc.names.en;
 
 function GroupIcon({ group }: { group: LocGroup }) {
@@ -54,12 +95,13 @@ type ComboProps = {
   placeholder: string;
   lang: string;
   exclude?: string;
-  priceFor?: (loc: Loc) => number | undefined;
+  priceFor?: (loc: Loc) => PriceInfo | undefined;
+  groups?: LocGroup[];
   onPick: (loc: Loc | null, text: string) => void;
   nextFocusId?: string;
 };
 
-function Combo({ id, name, placeholder, lang, exclude, priceFor, onPick, nextFocusId }: ComboProps) {
+function Combo({ id, name, placeholder, lang, exclude, priceFor, groups, onPick, nextFocusId }: ComboProps) {
   const c = LOC_COPY[lang] || LOC_COPY.en;
   const [text, setText] = useState("");
   const [picked, setPicked] = useState<Loc | null>(null);
@@ -76,7 +118,7 @@ function Combo({ id, name, placeholder, lang, exclude, priceFor, onPick, nextFoc
   const items = useMemo(() => {
     const q = norm(query);
     const words = q ? q.split(" ") : [];
-    const matches = LOCATIONS.filter((l) => l.key !== exclude).filter((l) => {
+    const matches = LOCATIONS.filter((l) => l.key !== exclude && (!groups || groups.includes(l.group))).filter((l) => {
       if (!words.length) return true;
       const hay = norm([...Object.values(l.names), l.terms || "", l.key].join(" "));
       return words.every((w) => hay.includes(w));
@@ -91,7 +133,7 @@ function Combo({ id, name, placeholder, lang, exclude, priceFor, onPick, nextFoc
     const exact = matches.some((l) => norm(nameOf(l, lang)) === q);
     if (q && !exact) out.push({ type: "custom", text: text.trim() });
     return out;
-  }, [query, text, exclude, lang]);
+  }, [query, text, exclude, lang, groups]);
 
   const selectable = items.map((it, i) => (it.type === "group" ? -1 : i)).filter((i) => i >= 0);
 
@@ -122,6 +164,16 @@ function Combo({ id, name, placeholder, lang, exclude, priceFor, onPick, nextFoc
     if (!open) return;
     listRef.current?.querySelector<HTMLElement>(`[data-i="${active}"]`)?.scrollIntoView({ block: "nearest" });
   }, [active, open]);
+
+  // Switching widget tab: drop a pick that this tab's list no longer offers.
+  useEffect(() => {
+    if (picked && groups && !groups.includes(picked.group)) {
+      setPicked(null);
+      setText("");
+      onPick(null, "");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [groups]);
 
   // If the excluded place (the other field) is now this one, clear it.
   useEffect(() => {
@@ -243,9 +295,13 @@ function Combo({ id, name, placeholder, lang, exclude, priceFor, onPick, nextFoc
               >
                 <span className="lc-ico"><GroupIcon group={it.loc.group} /></span>
                 <span className="lc-name">{nameOf(it.loc, lang)}</span>
-                {priceFor && priceFor(it.loc) !== undefined && (
-                  <span className="lc-price-tag">{c.from} €{priceFor(it.loc)}</span>
-                )}
+                {(() => {
+                  const pi = priceFor?.(it.loc);
+                  if (!pi) return null;
+                  return pi.fixed
+                    ? <span className="lc-price-tag">{c.from} €{pi.price}</span>
+                    : <span className="lc-price-tag est" title={c.est}>≈ €{pi.price}</span>;
+                })()}
               </li>
             ) : (
               <li
@@ -287,6 +343,17 @@ export default function LocationFields({
   const [from, setFrom] = useState<Loc | null>(null);
   const [to, setTo] = useState<Loc | null>(null);
   const [tier, setTier] = useState(0);
+  const [service, setService] = useState<"airport" | "city" | "day">("airport");
+
+  // The widget's Airport / City-to-City / Day Trip tabs (components/SiteScripts.tsx).
+  useEffect(() => {
+    const onService = (e: Event) => {
+      const s = (e as CustomEvent<string>).detail;
+      if (s === "airport" || s === "city" || s === "day") setService(s);
+    };
+    window.addEventListener("pmt:widget-service", onService);
+    return () => window.removeEventListener("pmt:widget-service", onService);
+  }, []);
   const priceRef = useRef<HTMLParagraphElement>(null);
 
   // Follow the widget's Passengers select (1–3 car / 4–5 SUV / 6–8 van …).
@@ -299,39 +366,39 @@ export default function LocationFields({
     return () => sel.removeEventListener("change", update);
   }, []);
 
-  const route = from && to ? routeBetween(from, to) : undefined;
-  const price = route ? tierPrice(route, tier) : undefined;
+  const info = from && to ? priceBetween(from, to, tier) : undefined;
+  const price = info?.price;
 
   // Let the widget's submit code put the price in the WhatsApp message.
   useEffect(() => {
     const form = (document.getElementById("bw-from") as HTMLInputElement | null)?.form;
     if (!form) return;
-    if (price) {
-      form.dataset.price = String(price);
-      form.dataset.vehicle = c.vehicles[Math.min(tier, 3)];
+    if (info) {
+      form.dataset.price = String(info.price);
+      form.dataset.priceLine = `${info.fixed ? c.fixed : c.est}: ${info.fixed ? "" : "≈"}€${info.price} (${c.vehicles[Math.min(tier, 3)]})`;
     } else {
       delete form.dataset.price;
-      delete form.dataset.vehicle;
+      delete form.dataset.priceLine;
     }
-  }, [price, tier, c]);
+  }, [info?.price, info?.fixed, tier, c]);
 
-  const priceFor = from ? (loc: Loc) => {
-    const r = routeBetween(from, loc);
-    return r ? tierPrice(r, tier) : undefined;
-  } : undefined;
+  const priceFor = from ? (loc: Loc) => priceBetween(from, loc, tier) : undefined;
 
   return (
     <>
       <label className="field-label" htmlFor="bw-from">{fromLabel}</label>
-      <Combo id="bw-from" name="from" placeholder={fromPlaceholder} lang={lang} exclude={to?.key} onPick={(l) => setFrom(l)} nextFocusId="bw-to" />
+      <Combo id="bw-from" name="from" placeholder={fromPlaceholder} lang={lang} exclude={to?.key} groups={FROM_GROUPS[service]} onPick={(l) => setFrom(l)} nextFocusId="bw-to" />
       <label className="field-label" htmlFor="bw-to">{toLabel}</label>
       <Combo id="bw-to" name="to" placeholder={toPlaceholder} lang={lang} exclude={from?.key} priceFor={priceFor} onPick={(l) => setTo(l)} />
-      <p className={`lc-quote${price ? " show" : ""}`} ref={priceRef} aria-live="polite">
-        {price ? (
+      <p className={`lc-quote${info ? " show" : ""}${info && !info.fixed ? " est" : ""}`} ref={priceRef} aria-live="polite">
+        {info ? (
           <>
-            <span className="lc-quote-label">{c.fixed}</span>
-            <strong>€{price}</strong>
-            <span className="lc-quote-sub">{c.perVehicle} · {c.vehicles[Math.min(tier, 3)]}</span>
+            <span className="lc-quote-label">{info.fixed ? c.fixed : c.est}</span>
+            <strong>{info.fixed ? "" : "≈ "}€{price}</strong>
+            <span className="lc-quote-sub">
+              {c.perVehicle} · {c.vehicles[Math.min(tier, 3)]}
+              {!info.fixed && <> · {c.estNote}</>}
+            </span>
           </>
         ) : null}
       </p>

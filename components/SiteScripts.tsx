@@ -88,6 +88,8 @@ function selectWidgetTab(tab: HTMLElement) {
   if (to) to.placeholder = copy ? copy.to : to.dataset.airport || "";
   form.dataset.service = service;
   form.dataset.serviceLabel = tab.textContent?.trim() || "";
+  // Tell the From/To dropdowns (components/LocationFields.tsx) which places to offer.
+  window.dispatchEvent(new CustomEvent("pmt:widget-service", { detail: service }));
   clearWidgetErrors(form);
 }
 
@@ -243,7 +245,7 @@ export default function SiteScripts() {
         // Fixed price shown by the From/To dropdowns (components/LocationFields.tsx).
         if (form.dataset.price) {
           const cut = text.lastIndexOf("\n\n");
-          const line = `${WIDGET_COPY[widgetLang()].price}: €${form.dataset.price}${form.dataset.vehicle ? ` (${form.dataset.vehicle})` : ""}`;
+          const line = form.dataset.priceLine || `${WIDGET_COPY[widgetLang()].price}: €${form.dataset.price}`;
           text = cut > 0 ? `${text.slice(0, cut)}\n${line}${text.slice(cut)}` : `${text}\n${line}`;
         }
         const serviceLabel = form.dataset.serviceLabel;
