@@ -219,3 +219,36 @@ html.bk-lock, html.bk-lock body { overflow: hidden; }
 .booking-widget .field-input.is-invalid { border-color: #B42318; }
 .booking-widget .field-error { margin: -8px 0 14px; color: #B42318; font-size: 13px; line-height: 1.35; }
 .booking-widget .booking-tab:focus-visible { outline: 2px solid var(--gold, #B8955A); outline-offset: 4px; }
+
+/* Hero booking widget: searchable From / To (components/LocationFields.tsx) */
+.lc { position: relative; margin-bottom: 14px; }
+.lc .lc-input { margin-bottom: 0; padding-inline-end: 40px; cursor: text; }
+.lc .field-error { margin: 6px 0 0; }
+.lc-caret {
+  position: absolute; top: 25px; inset-inline-end: 16px; width: 8px; height: 8px; pointer-events: none;
+  border-right: 1.5px solid #000; border-bottom: 1.5px solid #000; transform: translateY(-70%) rotate(45deg); transition: transform .2s;
+}
+.lc.open .lc-caret { transform: translateY(-20%) rotate(-135deg); }
+.lc.open .lc-input { border-color: var(--gold, #B8955A); }
+.lc-list {
+  position: absolute; z-index: 40; top: calc(100% - 1px); inset-inline: 0; max-height: min(340px, 52vh); overflow-y: auto;
+  margin: 0; padding: 6px 0; list-style: none; background: #fff; border: 1px solid var(--gold, #B8955A);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .14); overscroll-behavior: contain;
+}
+.lc-group {
+  padding: 12px 16px 6px; color: var(--gold-deep, #8C6D3C);
+  font-family: var(--mono, ui-monospace, monospace); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+}
+.lc-opt { display: flex; align-items: center; gap: 12px; padding: 10px 16px; cursor: pointer; font-size: 15px; color: #000; }
+.lc-opt.active { background: var(--sand, #F4EEE4); }
+.lc-opt.picked .lc-name { font-weight: 600; }
+.lc-ico { flex: none; display: grid; place-items: center; width: 20px; color: var(--gold-deep, #8C6D3C); font-size: 18px; line-height: 1; }
+.lc-name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lc-price-tag { flex: none; font-size: 13px; color: var(--gold-deep, #8C6D3C); font-variant-numeric: tabular-nums; }
+.lc-custom { border-top: 1px solid var(--rule, #E3D9C9); margin-top: 6px; padding-top: 12px; color: #3D3D3D; }
+.lc-empty { padding: 12px 16px; color: #6B6B6B; font-size: 14px; }
+.lc-quote { display: none; margin: -2px 0 16px; padding: 12px 14px; background: var(--sand, #F4EEE4); align-items: baseline; flex-wrap: wrap; gap: 4px 10px; }
+.lc-quote.show { display: flex; animation: bk-fade .2s ease-out; }
+.lc-quote-label { font-size: 14px; color: #3D3D3D; }
+.lc-quote strong { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; color: #000; }
+.lc-quote-sub { font-size: 13px; color: #6B6B6B; }
