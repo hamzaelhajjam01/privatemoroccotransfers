@@ -75,6 +75,50 @@ export default function BlogPage() {
         <div className="container">
           <div className="blog-grid">
             <div className="blog-card" data-category="tips">
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/agafay-desert.webp)" }}></div>
+              <span className="blog-tag">
+                {"Day Trips"}
+              </span>
+              <h2 className="blog-title">
+                <Link href="/blog/agafay-desert">
+                  {"Agafay Desert from Marrakech: Day Trip, Camps & How to Get There"}
+                </Link>
+              </h2>
+              <p className="blog-excerpt">
+                {"A stone desert 45 minutes from Marrakech: camel rides, sunset dinners, overnight camps and how to get there."}
+              </p>
+              <div className="blog-meta">
+                <span>
+                  {"2026-11-14"}
+                </span>
+                <span>
+                  {"7 min read"}
+                </span>
+              </div>
+            </div>
+            <div className="blog-card" data-category="tips">
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/ourika-valley.webp)" }}></div>
+              <span className="blog-tag">
+                {"Day Trips"}
+              </span>
+              <h2 className="blog-title">
+                <Link href="/blog/ourika-valley">
+                  {"Ourika Valley Day Trip from Marrakech: Waterfalls, Villages & Tips"}
+                </Link>
+              </h2>
+              <p className="blog-excerpt">
+                {"The Setti Fatma waterfalls, riverside lunch, Berber villages and the best season to visit."}
+              </p>
+              <div className="blog-meta">
+                <span>
+                  {"2026-11-14"}
+                </span>
+                <span>
+                  {"7 min read"}
+                </span>
+              </div>
+            </div>
+            <div className="blog-card" data-category="tips">
               <div className="blog-img" style={{ backgroundImage: "url(/img/blog/getting-around-morocco.webp)" }}>
                 <div className="blog-img-label" style={{ display: "none" }}>
                   {"Transport · 2026 Guide"}

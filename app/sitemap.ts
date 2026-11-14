@@ -55,6 +55,8 @@ const BLOG_SLUGS = [
   "sahara-merzouga",
   "getting-around-morocco",
   "fes-tanneries-guide",
+  "agafay-desert",
+  "ourika-valley",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -9,6 +9,8 @@ import * as MarrakechEssaouira from "@/content/blog/marrakech-essaouira";
 import * as SaharaMerzouga from "@/content/blog/sahara-merzouga";
 import * as GettingAroundMorocco from "@/content/blog/getting-around-morocco";
 import * as FesTanneriesGuide from "@/content/blog/fes-tanneries-guide";
+import * as AgafayDesert from "@/content/blog/agafay-desert";
+import * as OurikaValley from "@/content/blog/ourika-valley";
 
 const PAGES = {
   "airport-transfer": AirportTransfer,
@@ -19,6 +21,8 @@ const PAGES = {
   "sahara-merzouga": SaharaMerzouga,
   "getting-around-morocco": GettingAroundMorocco,
   "fes-tanneries-guide": FesTanneriesGuide,
+  "agafay-desert": AgafayDesert,
+  "ourika-valley": OurikaValley,
 } as const;
 
 type Slug = keyof typeof PAGES;
@@ -54,13 +58,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonicalUrl,
       siteName: SITE_NAME,
       type: "article",
-      images: [`/img/blog/${slug}.jpg`],
+      images: [`/img/blog/${slug}.webp`],
     },
     twitter: {
       card: "summary_large_image",
       title: metaTitle,
       description: page.description,
-      images: [`/img/blog/${slug}.jpg`],
+      images: [`/img/blog/${slug}.webp`],
     },
   };
 }
@@ -86,13 +90,20 @@ export default async function Page({ params }: Props) {
         headline: page.title.split(" | ")[0],
         description: page.description,
         url: `${SITE_URL}/blog/${slug}`,
-        image: `${SITE_URL}/img/blog/${slug}.jpg`,
+        image: `${SITE_URL}/img/blog/${slug}.webp`,
         publisher: {
           "@type": "Organization",
           name: SITE_NAME,
           url: SITE_URL,
         },
       },
+      // Guides that export FAQs also get FAQPage data (shown on the page as "Quick answers").
+      ...("faqs" in page && page.faqs.length
+        ? [{
+            "@type": "FAQPage",
+            mainEntity: page.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          }]
+        : []),
     ],
   };
 

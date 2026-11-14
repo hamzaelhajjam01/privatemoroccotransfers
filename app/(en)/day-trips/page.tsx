@@ -155,7 +155,7 @@ export default function DayTripsPage() {
               </div>
               <div className="listing-body">
                 <h3 className="listing-title">
-                  {"Ourika Valley"}
+                  <Link href="/blog/ourika-valley">{"Ourika Valley"}</Link>
                 </h3>
                 <div className="listing-features">
                   <span className="feature-tag">
@@ -355,7 +355,7 @@ export default function DayTripsPage() {
               </div>
               <div className="listing-body">
                 <h3 className="listing-title">
-                  {"Agafay Desert"}
+                  <Link href="/blog/agafay-desert">{"Agafay Desert"}</Link>
                 </h3>
                 <div className="listing-features">
                   <span className="feature-tag">
