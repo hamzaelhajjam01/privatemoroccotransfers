@@ -252,3 +252,4 @@ html.bk-lock, html.bk-lock body { overflow: hidden; }
 .lc-quote-label { font-size: 14px; color: #3D3D3D; }
 .lc-quote strong { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; color: #000; }
 .lc-quote-sub { font-size: 13px; color: #6B6B6B; }
+.lc-price-tag.est { color: #6B6B6B; }
