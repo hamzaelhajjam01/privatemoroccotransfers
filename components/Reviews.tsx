@@ -4,7 +4,7 @@ import { REVIEWS, type Review } from "@/content/reviews";
 function Avatar({ r, size = 48 }: { r: Review; size?: number }) {
   if (r.photo) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img className="rev-avatar" src={r.photo} alt="" width={size} height={size} loading="lazy" />;
+    return <img className="rev-avatar" src={r.photo} alt="" width={size} height={size} style={{ width: size, height: size }} loading="lazy" />;
   }
   return <span className="rev-avatar rev-initial" style={{ width: size, height: size }} aria-hidden="true">{r.name.charAt(0)}</span>;
 }
@@ -23,7 +23,7 @@ function Who({ r }: { r: Review }) {
       <Avatar r={r} />
       <div>
         <strong>{r.name}</strong>
-        <span>{r.country}{r.route ? ` · ${r.route}` : ""}</span>
+        {(r.country || r.route) && <span>{[r.country, r.route].filter(Boolean).join(" · ")}</span>}
       </div>
       {r.source === "Google" && (
         r.url
@@ -39,15 +39,29 @@ export default function Reviews({ items = REVIEWS }: { items?: Review[] }) {
   return (
     <section className="section dark reviews">
       <div className="wrap">
-        <span className="label">(05) Travelers</span>
-        <Stars n={main.rating} />
-        <p className="quote-main mt-24">“{main.text}”</p>
-        <Who r={main} />
-        <div className="quote-grid">
+        <div className="rev-feature">
+          <div className="rev-feature-text">
+            <Stars n={main.rating} />
+            <p className={`quote-main mt-24${main.text.length > 160 ? " long" : ""}`}>“{main.text}”</p>
+            {main.translatedFrom && <p className="rev-translated">{main.translatedFrom}</p>}
+            <Who r={main} />
+          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="rev-feature-img"
+            src="/img/reviews-group-airport.webp"
+            alt="A group of travelers with their PMT driver beside a black van at the airport"
+            width={1400}
+            height={1050}
+            loading="lazy"
+          />
+        </div>
+        <div className={`quote-grid n${rest.length}`}>
           {rest.map((r) => (
             <div key={r.name}>
               <Stars n={r.rating} />
               <p>“{r.text}”</p>
+              {r.translatedFrom && <p className="rev-translated">{r.translatedFrom}</p>}
               <Who r={r} />
             </div>
           ))}

@@ -5,7 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import type { Review } from "@/content/reviews";
+import { getReviews } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
 import RoutePriceTable from "@/components/RoutePriceTable";
 
@@ -99,23 +99,6 @@ const PORTUGUESE_SERVICES = [
     image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/pt/transfers",
     cta: "Explorar circuitos",
-  },
-];
-
-const PORTUGUESE_REVIEWS: Review[] = [
-  {
-    name: "Rodrigo S.",
-    country: "Portugal",
-    rating: 5,
-    route: "Aeroporto de Marraquexe → Riad",
-    text: "Excelente serviço! O motorista estava à nossa espera à saída das chegadas. Carro muito confortável, ar condicionado impecável e preço justo sem surpresas.",
-  },
-  {
-    name: "Mariana & Tiago",
-    country: "Brasil",
-    rating: 5,
-    route: "Marraquexe → Essaouira",
-    text: "Viagem muito tranquila e segura. O motorista foi muito gentil e fez paradas ótimas para fotos. Recomendo a todos os brasileiros que visitam o Marrocos.",
   },
 ];
 
@@ -267,7 +250,7 @@ export default function PortugueseHomePage() {
 
       <Fleet lang="pt" />
 
-      <Reviews items={PORTUGUESE_REVIEWS} />
+      <Reviews items={getReviews("pt")} />
 
       <section className="cta-band">
         <div className="container">

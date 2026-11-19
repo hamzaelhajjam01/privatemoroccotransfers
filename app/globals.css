@@ -1016,6 +1016,16 @@ html.lenis, html.lenis body { height: auto; }
 .rev-who .rev-initial { display: inline-flex; color: #000; font-size: 20px; font-weight: 500; line-height: 1; }
 .reviews .quote-grid .rev-initial { font-size: 17px; }
 .reviews .quote-grid .rev-who span { margin-top: 0; }
+.rev-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 96px); align-items: center; }
+.rev-feature .rev-stars { margin-top: 0; }
+.rev-feature-img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; }
+.quote-main.long { font-size: clamp(22px, 2vw, 32px); line-height: 1.2; letter-spacing: -0.03em; max-width: 34ch; }
+.rev-translated { margin-top: 12px; font-size: 13px !important; line-height: 1.4; color: var(--muted); }
+@media (min-width: 1001px) { .reviews .quote-grid.n2 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+  .rev-feature { grid-template-columns: 1fr; }
+  .rev-feature-img { order: -1; }
+}
 
 /* ── Lifestyle car photos ── */
 .vehicle-img.scene { display: block; background-size: cover; background-position: center; background-color: var(--sand-2); }

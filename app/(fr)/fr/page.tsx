@@ -5,7 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import type { Review } from "@/content/reviews";
+import { getReviews } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
 import RoutePriceTable from "@/components/RoutePriceTable";
 
@@ -115,37 +115,6 @@ const FRENCH_SERVICES = [
     image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/fr/transfers",
     cta: "Explorer les circuits",
-  },
-];
-
-const FRENCH_REVIEWS: Review[] = [
-  {
-    name: "Thomas B.",
-    country: "France",
-    rating: 5,
-    route: "Aéroport de Marrakech → Médina",
-    text: "Notre chauffeur nous attendait avec une pancarte dès la sortie des douanes. Véhicule impeccable, climatisation parfaite et tarif rigoureusement conforme au devis.",
-  },
-  {
-    name: "Élodie & Marc",
-    country: "Belgique",
-    rating: 5,
-    route: "Marrakech → Essaouira",
-    text: "Ponctuel, extrêmement professionnel et discret. Arrêt photo très apprécié sur la route des arganiers. Aucune surprise à l'arrivée.",
-  },
-  {
-    name: "Claire D.",
-    country: "Suisse",
-    rating: 5,
-    route: "Circuit 5 jours Haut Atlas & Merzouga",
-    text: "Cinq jours inoubliables avec un chauffeur attentif et rassurant sur les routes de montagne. Connaît les meilleurs points de vue et restaurants locaux.",
-  },
-  {
-    name: "Karim L.",
-    country: "Canada",
-    rating: 5,
-    route: "Aéroport Casablanca → Marrakech",
-    text: "Notre vol avait plus de 2 heures de retard. Le chauffeur a suivi le statut du vol et nous attendait sans aucun supplément. Un service haut de gamme.",
   },
 ];
 
@@ -327,7 +296,7 @@ export default function FrenchHomePage() {
 
       <Fleet lang="fr" />
 
-      <Reviews items={FRENCH_REVIEWS} />
+      <Reviews items={getReviews("fr")} />
 
       {/* Multi-Day Tours Banner */}
       <section className="section" style={{ background: "#0a0a0a", borderTop: "1px solid var(--rule-dark)", borderBottom: "1px solid var(--rule-dark)" }}>

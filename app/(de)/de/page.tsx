@@ -5,7 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import type { Review } from "@/content/reviews";
+import { getReviews } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
 import RoutePriceTable from "@/components/RoutePriceTable";
 
@@ -99,23 +99,6 @@ const GERMAN_SERVICES = [
     image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/de/transfers",
     cta: "Rundreisen erkunden",
-  },
-];
-
-const GERMAN_REVIEWS: Review[] = [
-  {
-    name: "Anna & Stefan K.",
-    country: "Deutschland",
-    rating: 5,
-    route: "Marrakesch Flughafen → Altstadt Riad",
-    text: "Pünktlich, professionell und absolut zuverlässig. Der Fahrer wartete pünktlich am Ausgang und brachte unser Gepäck sicher bis vor das Riad.",
-  },
-  {
-    name: "Markus W.",
-    country: "Schweiz",
-    rating: 5,
-    route: "Marrakesch → Essaouira",
-    text: "Sehr angenehme Fahrt, moderner Mercedes-Van und ein netter Stopp bei den Arganbäumen. Sehr zu empfehlen für entspanntes Reisen in Marokko.",
   },
 ];
 
@@ -267,7 +250,7 @@ export default function GermanHomePage() {
 
       <Fleet lang="de" />
 
-      <Reviews items={GERMAN_REVIEWS} />
+      <Reviews items={getReviews("de")} />
 
       <section className="cta-band">
         <div className="container">

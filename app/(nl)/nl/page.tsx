@@ -5,7 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import type { Review } from "@/content/reviews";
+import { getReviews } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
 import RoutePriceTable from "@/components/RoutePriceTable";
 
@@ -99,23 +99,6 @@ const DUTCH_SERVICES = [
     image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/nl/transfers",
     cta: "Rondreizen ontdekken",
-  },
-];
-
-const DUTCH_REVIEWS: Review[] = [
-  {
-    name: "Sander & Lisa",
-    country: "Nederland",
-    rating: 5,
-    route: "Luchthaven Marrakech → Riad",
-    text: "Fantastische service. De chauffeur stond keurig klaar met ons naambordje. Nette wagen, goede airco en exact de afgesproken prijs betaald.",
-  },
-  {
-    name: "Daan V.",
-    country: "België",
-    rating: 5,
-    route: "Marrakech → Essaouira",
-    text: "Heel ontspannen rit met een vriendelijke chauffeur. Onderweg gestopt voor foto's bij de arganbomen. Aanrader voor iedereen!",
   },
 ];
 
@@ -267,7 +250,7 @@ export default function DutchHomePage() {
 
       <Fleet lang="nl" />
 
-      <Reviews items={DUTCH_REVIEWS} />
+      <Reviews items={getReviews("nl")} />
 
       <section className="cta-band">
         <div className="container">

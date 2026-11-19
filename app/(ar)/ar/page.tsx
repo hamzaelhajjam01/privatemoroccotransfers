@@ -5,7 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import type { Review } from "@/content/reviews";
+import { getReviews } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
 import RoutePriceTable from "@/components/RoutePriceTable";
 
@@ -68,23 +68,6 @@ const ARABIC_SERVICES = [
     image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/ar/transfers",
     cta: "عرض البرامج الخاصة",
-  },
-];
-
-const ARABIC_REVIEWS: Review[] = [
-  {
-    name: "عبد العزيز آل سعود",
-    country: "المملكة العربية السعودية",
-    rating: 5,
-    route: "مطار كازا → مراكش (فان مرسيدس)",
-    text: "خدمة راقية جداً والتزام تام بالمواعيد. السائق كان في انتظارنا بالمطار بسيارة مرسيدس فيتو مريحة ونظيفة، وتعامل بأعلى درجات الأدب والاحترافية.",
-  },
-  {
-    name: "خالد المنصوري",
-    country: "الإمارات العربية المتحدة",
-    rating: 5,
-    route: "جولة عائلية 5 أيام (مراكش - الصحراء)",
-    text: "تجربة ممتازة للعائلة. السيارة مكيفة ومريحة والسائق ذو خبرة ممتازة بطرق الأطلس. السعر كان ثابتاً تماماً كما تم الاتفاق عليه عبر الواتساب بدون أي زيادات.",
   },
 ];
 
@@ -230,7 +213,7 @@ export default function ArabicHomePage() {
 
       <Fleet lang="ar" />
 
-      <Reviews items={ARABIC_REVIEWS} />
+      <Reviews items={getReviews("ar")} />
 
       <section className="cta-band">
         <div className="container">

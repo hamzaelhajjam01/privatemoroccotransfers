@@ -5,7 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import type { Review } from "@/content/reviews";
+import { getReviews } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
 import RoutePriceTable from "@/components/RoutePriceTable";
 
@@ -99,30 +99,6 @@ const SPANISH_SERVICES = [
     image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/transfers",
     cta: "Explorar circuitos",
-  },
-];
-
-const SPANISH_REVIEWS: Review[] = [
-  {
-    name: "Carlos M.",
-    country: "España",
-    rating: 5,
-    route: "Aeropuerto de Marrakech → Riad Médina",
-    text: "Puntualidad absoluta. El chófer nos esperaba con un cartel a la salida del aeropuerto. Coche comodísimo, aire acondicionado impecable y precio exactamente el acordado.",
-  },
-  {
-    name: "Elena G.",
-    country: "España",
-    rating: 5,
-    route: "Marrakech → Essaouira",
-    text: "Excelente servicio para viajar en familia. El conductor fue amabilísimo e hizo paradas para fotos. Muy recomendable frente a las complicaciones del taxi tradicional.",
-  },
-  {
-    name: "Javier R.",
-    country: "México",
-    rating: 5,
-    route: "Tour 4 días Fez & Merzouga",
-    text: "Cuatro días increíbles cruzando el Atlas y el desierto. Conductor seguro, prudente y con gran conocimiento del país. Sin duda repetiríamos.",
   },
 ];
 
@@ -297,7 +273,7 @@ export default function SpanishHomePage() {
 
       <Fleet lang="es" />
 
-      <Reviews items={SPANISH_REVIEWS} />
+      <Reviews items={getReviews("es")} />
 
       <section className="cta-band">
         <div className="container">

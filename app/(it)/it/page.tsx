@@ -5,7 +5,7 @@ import ServicesCarousel from "@/components/ServicesCarousel";
 import Link from "next/link";
 import HeroCarousel, { HeroLines } from "@/components/HeroCarousel";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
-import type { Review } from "@/content/reviews";
+import { getReviews } from "@/content/reviews";
 import LocationFields from "@/components/LocationFields";
 import RoutePriceTable from "@/components/RoutePriceTable";
 
@@ -99,23 +99,6 @@ const ITALIAN_SERVICES = [
     image: "/img/fleet-scenes/toyota-prado.webp",
     href: "/it/transfers",
     cta: "Scopri i tour privati",
-  },
-];
-
-const ITALIAN_REVIEWS: Review[] = [
-  {
-    name: "Marco V.",
-    country: "Italia",
-    rating: 5,
-    route: "Aeroporto di Marrakech → Médina",
-    text: "Puntualissimo! Ci aspettava con un cartello fuori dagli arrivi. Auto pulitissima, aria condizionata ottima e prezzo esattamente quello pattuito su WhatsApp.",
-  },
-  {
-    name: "Francesca & Matteo",
-    country: "Italia",
-    rating: 5,
-    route: "Marrakech → Essaouira",
-    text: "Autista gentile e discreto, guida sicura e sosta piacevole per fotografare le capre sugli arganier. Esperienza impeccabile per chi viaggia in coppia.",
   },
 ];
 
@@ -267,7 +250,7 @@ export default function ItalianHomePage() {
 
       <Fleet lang="it" />
 
-      <Reviews items={ITALIAN_REVIEWS} />
+      <Reviews items={getReviews("it")} />
 
       <section className="cta-band">
         <div className="container">
