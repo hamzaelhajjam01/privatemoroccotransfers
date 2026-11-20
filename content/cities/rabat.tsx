@@ -100,25 +100,25 @@ export default function Content() {
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Rabat → Casablanca"}</h3>
               <div className="route-meta"><span>{"90 km"}</span></div>
-              <div className="route-price">{"€75 (820 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€85 (940 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/rabat-to-casablanca-airport" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Rabat → Casablanca Airport"}</h3>
               <div className="route-meta"><span>{"90 km"}</span></div>
-              <div className="route-price">{"€85 (940 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€95 (1,040 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/rabat-to-marrakech" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Rabat → Marrakech"}</h3>
               <div className="route-meta"><span>{"320 km"}</span></div>
-              <div className="route-price">{"€205 (2,260 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€225 (2,480 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/rabat-airport-to-rabat" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Rabat Airport → City Center"}</h3>
               <div className="route-meta"><span>{"12 km"}</span></div>
-              <div className="route-price">{"€35 (380 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€40 (440 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function Content() {
                     </span>
                   </div>
                   <div className="faq-answer">
-                    {"Airport transfers in Rabat start from €35 (380 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
+                    {"Airport transfers in Rabat start from €40 (440 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
                   </div>
                 </div>
                 <div className="faq-item">

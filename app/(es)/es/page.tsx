@@ -71,7 +71,7 @@ const SPANISH_SERVICES = [
   {
     title: "Traslados de Aeropuerto",
     text: "Recibimiento con cartel con su nombre en la sala de llegadas de todos los aeropuertos marroquíes. Rastreio de vuelo en directo y 45 minutos de espera gratuita.",
-    meta: ["Desde 35 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Desde 40 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/es/airport-transfers",
     cta: "Ver traslados de aeropuerto",

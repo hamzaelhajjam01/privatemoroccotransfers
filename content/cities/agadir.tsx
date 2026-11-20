@@ -100,19 +100,19 @@ export default function Content() {
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Agadir → Marrakech"}</h3>
               <div className="route-meta"><span>{"240 km"}</span></div>
-              <div className="route-price">{"€137 (1,510 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€150 (1,650 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/agadir-to-essaouira" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Agadir → Essaouira"}</h3>
               <div className="route-meta"><span>{"175 km"}</span></div>
-              <div className="route-price">{"€117 (1,290 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€130 (1,430 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/agadir-airport-to-agadir" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Agadir Airport → City Center"}</h3>
               <div className="route-meta"><span>{"25 km"}</span></div>
-              <div className="route-price">{"€35 (380 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€40 (440 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/agadir-to-taghazout" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
@@ -162,7 +162,7 @@ export default function Content() {
                     </span>
                   </div>
                   <div className="faq-answer">
-                    {"Airport transfers in Agadir start from €35 (380 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
+                    {"Airport transfers in Agadir start from €40 (440 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
                   </div>
                 </div>
                 <div className="faq-item">

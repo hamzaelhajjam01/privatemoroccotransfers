@@ -160,7 +160,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€35 (380 MAD)"}
+                      {"€40 (440 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}
@@ -324,7 +324,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€35 (380 MAD)"}
+                      {"€40 (440 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}
@@ -378,7 +378,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€35 (380 MAD)"}
+                      {"€40 (440 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}
@@ -432,7 +432,7 @@ export default function AirportTransfersPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€35 (380 MAD)"}
+                      {"€40 (440 MAD)"}
                     </div>
                     <div className="listing-price-unit">
                       {"per vehicle"}

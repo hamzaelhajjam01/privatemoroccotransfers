@@ -73,13 +73,13 @@ export default function Content() {
             {"Price by Vehicle Type"}
           </h2>
           <p>
-            {"Comfort Sedan (1–3 passengers): from €35 (380 MAD) for local airport transfers, and €150–€220 per day for touring. Ideal for couples and solo travelers with standard luggage."}
+            {"Comfort Sedan (1–3 passengers): from €40 (440 MAD) for local airport transfers, and €150–€220 per day for touring. Ideal for couples and solo travelers with standard luggage."}
           </p>
           <p>
-            {"Luxury SUV / 4WD (1–4 passengers, e.g. Toyota Prado): from €45–€55 for airport pickups, and €185–€240 per day for High Atlas mountain passes and Sahara Desert expeditions."}
+            {"Luxury SUV / 4WD (1–4 passengers, e.g. Toyota Prado): from €50–€55 for airport pickups, and €185–€240 per day for High Atlas mountain passes and Sahara Desert expeditions."}
           </p>
           <p>
-            {"Comfort Touring Van (4–7 passengers, e.g. Mercedes Vito): from €45 (500 MAD) for airport transfers, and €190–€240 per day for families and group excursions."}
+            {"Comfort Touring Van (4–7 passengers, e.g. Mercedes Vito): from €50 (550 MAD) for airport transfers, and €190–€240 per day for families and group excursions."}
           </p>
           <p>
             {"Executive Minibus (8–14 passengers, e.g. Mercedes Sprinter): from €65 (720 MAD) for airport runs, and €260–€300 per day for larger private delegations."}
@@ -88,7 +88,7 @@ export default function Content() {
             {"Example Route Prices (Comfort Sedan, One Way)"}
           </h2>
           <p>
-            {""}<Link href="/transfers/marrakech-airport-to-marrakech">{"Marrakech Airport to Medina"}</Link>{": €35 (380 MAD). "}<Link href="/transfers/marrakech-to-essaouira">{"Marrakech to Essaouira"}</Link>{" (180 km): €97 (1,070 MAD). "}<Link href="/transfers/marrakech-to-agadir">{"Marrakech to Agadir"}</Link>{" (240 km): €137 (1,510 MAD). "}<Link href="/transfers/casablanca-airport-to-marrakech">{"Casablanca Airport to Marrakech"}</Link>{" (220 km): €157 (1,730 MAD). Marrakech to Fes (540 km): €274 (3,010 MAD). Marrakech to Merzouga Sahara (560 km): €370 (4,070 MAD)."}
+            {""}<Link href="/transfers/marrakech-airport-to-marrakech">{"Marrakech Airport to Medina"}</Link>{": €40 (440 MAD). "}<Link href="/transfers/marrakech-to-essaouira">{"Marrakech to Essaouira"}</Link>{" (180 km): €105 (1,160 MAD). "}<Link href="/transfers/marrakech-to-agadir">{"Marrakech to Agadir"}</Link>{" (240 km): €150 (1,650 MAD). "}<Link href="/transfers/casablanca-airport-to-marrakech">{"Casablanca Airport to Marrakech"}</Link>{" (220 km): €175 (1,920 MAD). Marrakech to Fes (540 km): €300 (3,300 MAD). Marrakech to Merzouga Sahara (560 km): €405 (4,460 MAD)."}
           </p>
           <h2 id="what-is-included">
             {"What Is Included?"}

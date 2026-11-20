@@ -71,7 +71,7 @@ const PORTUGUESE_SERVICES = [
   {
     title: "Transfers de Aeroporto",
     text: "Receção com placa com o seu nome na área de chegadas de todos os aeroportos marroquinos. Rastreio de voos em direto e 45 minutos de espera grátis.",
-    meta: ["A partir de 35 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["A partir de 40 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/pt/airport-transfers",
     cta: "Ver transfers de aeroporto",

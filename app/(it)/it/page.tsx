@@ -71,7 +71,7 @@ const ITALIAN_SERVICES = [
   {
     title: "Transfer Aeroporto",
     text: "Accoglienza con cartello personalizzato nella hall arrivi di tutti gli aeroporti marocchini. Monitoraggio voli in tempo reale e 45 minuti di attesa inclusi.",
-    meta: ["Da 35 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Da 40 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/it/airport-transfers",
     cta: "Scopri i transfer aeroporto",

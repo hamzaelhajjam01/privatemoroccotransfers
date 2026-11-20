@@ -67,7 +67,7 @@ export default function Content() {
             {"1. Essaouira (176 km)"}
           </h2>
           <p>
-            {"The most popular day trip from Marrakech. The UNESCO-listed blue-and-white port city takes around 2.5 hours to reach. Spend the day exploring the medina, eating fresh fish on the port, and walking the Atlantic ramparts. Return the same day or overnight. Read our "}<Link href="/blog/marrakech-essaouira">{"Marrakech to Essaouira guide"}</Link>{". Driver cost from €97 (1,070 MAD) each way or €215 (2,360 MAD) for a full-day return excursion."}
+            {"The most popular day trip from Marrakech. The UNESCO-listed blue-and-white port city takes around 2.5 hours to reach. Spend the day exploring the medina, eating fresh fish on the port, and walking the Atlantic ramparts. Return the same day or overnight. Read our "}<Link href="/blog/marrakech-essaouira">{"Marrakech to Essaouira guide"}</Link>{". Driver cost from €105 (1,160 MAD) each way or €215 (2,360 MAD) for a full-day return excursion."}
           </p>
           <h2 id="2-ourika-valley-60-km">
             {"2. Ourika Valley (60 km)"}

@@ -71,7 +71,7 @@ const GERMAN_SERVICES = [
   {
     title: "Flughafentransfer",
     text: "Persönlicher Empfang mit Namensschild in der Ankunftshalle aller marokkanischen Flughäfen. Live-Flugverfolgung und 45 Minuten kostenlose Wartezeit.",
-    meta: ["Ab 35 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Ab 40 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/de/airport-transfers",
     cta: "Flughafentransfers ansehen",

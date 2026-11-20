@@ -8,7 +8,7 @@ export const SERVICES = [
   {
     title: "Airport Transfers",
     text: "Meet and greet in the arrivals hall at every Moroccan airport. We follow your flight and wait 45 minutes free of charge.",
-    meta: ["From €35", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["From €40", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/airport-transfers",
     cta: "Explore transfers",

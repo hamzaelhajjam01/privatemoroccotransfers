@@ -100,13 +100,13 @@ export default function Content() {
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Casablanca Airport → Marrakech"}</h3>
               <div className="route-meta"><span>{"220 km"}</span></div>
-              <div className="route-price">{"€157 (1,730 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€175 (1,920 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/casablanca-to-marrakech" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Casablanca → Marrakech"}</h3>
               <div className="route-meta"><span>{"240 km"}</span></div>
-              <div className="route-price">{"€157 (1,730 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€175 (1,920 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/casablanca-airport-to-casablanca" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
@@ -118,7 +118,7 @@ export default function Content() {
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Casablanca → Rabat"}</h3>
               <div className="route-meta"><span>{"90 km"}</span></div>
-              <div className="route-price">{"€75 (820 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€85 (940 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
           </div>
         </div>

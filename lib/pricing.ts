@@ -205,7 +205,7 @@ export function quote(
 
     switch (vehicle) {
       case "sedan":
-        baseEur = Math.max(30, Math.round(km * 0.65));
+        baseEur = Math.max(35, Math.round(km * 0.72));
         break;
       case "suv":
         baseEur = Math.max(45, Math.round(km * 0.8));

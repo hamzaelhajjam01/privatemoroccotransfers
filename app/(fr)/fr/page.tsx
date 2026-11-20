@@ -87,7 +87,7 @@ const FRENCH_SERVICES = [
   {
     title: "Transferts Aéroport",
     text: "Accueil personnalisé avec pancarte à votre nom dans le hall des arrivées de tous les aéroports marocains. Suivi de vol en temps réel et 45 min d'attente offerte.",
-    meta: ["Dès 35 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Dès 40 €", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/fr/airport-transfers",
     cta: "Découvrir les aéroports",

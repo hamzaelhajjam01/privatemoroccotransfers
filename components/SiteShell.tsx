@@ -79,7 +79,7 @@ const jsonLd = {
       telephone: `+${WHATSAPP_NUMBER}`,
       email: "contact@privatemoroccotransfers.com",
       image: `${SITE_URL}/brand/logo-gold.svg`,
-      priceRange: "€27 - €660",
+      priceRange: "€30 - €660",
       currenciesAccepted: "EUR, MAD, USD, GBP",
       paymentAccepted: "Cash, Credit Card",
       areaServed: [

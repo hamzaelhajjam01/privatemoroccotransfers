@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const FAQ = [
   {
     q: "How much does a private driver in Morocco cost?",
-    a: "Prices are fixed per vehicle, not per person. A Marrakech airport pickup starts at €35, Marrakech to Essaouira at €97, and a full day with a driver from around €150. Multi-day tours start at €555 for a 3-day private Sahara trip. Fuel, tolls and the driver are always included.",
+    a: "Prices are fixed per vehicle, not per person. A Marrakech airport pickup starts at €40, Marrakech to Essaouira at €105, and a full day with a driver from around €150. Multi-day tours start at €555 for a 3-day private Sahara trip. Fuel, tolls and the driver are always included.",
   },
   {
     q: "Can I hire a private driver for several days or a whole trip?",

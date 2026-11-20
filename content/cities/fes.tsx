@@ -106,19 +106,19 @@ export default function Content() {
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Fes → Casablanca Airport"}</h3>
               <div className="route-meta"><span>{"290 km"}</span></div>
-              <div className="route-price">{"€192 (2,110 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€210 (2,310 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/fes-to-marrakech" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Fes → Marrakech"}</h3>
               <div className="route-meta"><span>{"530 km"}</span></div>
-              <div className="route-price">{"€274 (3,010 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€300 (3,300 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/fes-airport-to-fes" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Fes Airport → Medina"}</h3>
               <div className="route-meta"><span>{"15 km"}</span></div>
-              <div className="route-price">{"€35 (380 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€40 (440 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function Content() {
                     </span>
                   </div>
                   <div className="faq-answer">
-                    {"Airport transfers in Fes start from €35 (380 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
+                    {"Airport transfers in Fes start from €40 (440 MAD) for a comfort sedan. City-to-city transfers are priced by route — use our calculator or ask us on WhatsApp."}
                   </div>
                 </div>
                 <div className="faq-item">

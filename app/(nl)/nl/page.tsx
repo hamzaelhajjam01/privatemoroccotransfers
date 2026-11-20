@@ -71,7 +71,7 @@ const DUTCH_SERVICES = [
   {
     title: "Luchthaven Transfers",
     text: "Persoonlijk welkom met naambord in de aankomsthal op alle Marokkaanse luchthavens. Live vluchtmonitoring en 45 minuten gratis wachttijd.",
-    meta: ["Vanaf €35", "RAK · CMN · AGA · FEZ · TNG · RBA"],
+    meta: ["Vanaf €40", "RAK · CMN · AGA · FEZ · TNG · RBA"],
     image: "/img/blog/airport-transfer.webp",
     href: "/nl/airport-transfers",
     cta: "Luchthaventransfers bekijken",

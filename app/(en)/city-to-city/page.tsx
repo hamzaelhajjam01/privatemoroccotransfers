@@ -134,7 +134,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€97 (1,070 MAD)"}
+                      {"€105 (1,160 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>
@@ -180,7 +180,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€137 (1,510 MAD)"}
+                      {"€150 (1,650 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/marrakech-to-agadir" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>
@@ -226,7 +226,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€274 (3,010 MAD)"}
+                      {"€300 (3,300 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/marrakech-to-fes" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>
@@ -272,7 +272,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€157 (1,730 MAD)"}
+                      {"€175 (1,920 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/marrakech-to-casablanca" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>
@@ -318,7 +318,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€370 (4,070 MAD)"}
+                      {"€405 (4,460 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/marrakech-to-merzouga" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>
@@ -364,7 +364,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€75 (820 MAD)"}
+                      {"€85 (940 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/casablanca-to-rabat" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>
