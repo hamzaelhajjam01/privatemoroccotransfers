@@ -5,6 +5,7 @@
 import * as THREE from "three";
 import { gsap } from "gsap";
 import { TRIP_FINDER_TRANSLATIONS } from "./i18n";
+import ROUTE_PRICES from "../../content/route-prices.json";
 
 export function initTripFinder(root, opts = {}) {
 
@@ -49,7 +50,10 @@ const COUNTRIES=[
 const HTS={"RAK":0.1156,"CMN":0.0329,"AGA":0.0967,"FES":0.1655,"TNG":0.0391,"RBA":0.02,"ESS":0.0207,"MRZ":0.1856,"ourika":0.33,"atlas":0.7971,"agafay":0.1658,"benhaddou":0.3882,"essaouira":0.0207,"LAA":0.0178,"VIL":0.0032,"OZZ":0.2917,"CHF":0.3832,"SMA":0.0517,"TIN":0.3563,"CAR":0.1204};
 const AIRPORTS=T.airports;
 const D={"CMN-RAK":240,"AGA-RAK":240,"FES-RAK":540,"RAK-TNG":580,"RAK-RBA":330,"ESS-RAK":180,"MRZ-RAK":560,"AGA-CMN":460,"CMN-FES":300,"CMN-TNG":340,"CMN-RBA":90,"CMN-ESS":350,"CMN-MRZ":640,"AGA-FES":760,"AGA-TNG":800,"AGA-RBA":550,"AGA-ESS":175,"AGA-MRZ":720,"FES-TNG":300,"FES-RBA":210,"ESS-FES":720,"FES-MRZ":460,"RBA-TNG":250,"ESS-TNG":690,"MRZ-TNG":760,"ESS-RBA":440,"MRZ-RBA":670,"ESS-MRZ":740};
-const KNOWN={"ESS-RAK":90,"AGA-RAK":135,"CMN-RAK":150,"FES-RAK":240,"MRZ-RAK":360};
+/* English route names for looking up prices in route-prices.json (CITIES above are translated). */
+const EN_CITY={RAK:"marrakech",CMN:"casablanca",AGA:"agadir",FES:"fes",TNG:"tangier",RBA:"rabat",ESS:"essaouira",MRZ:"merzouga"};
+const routeName=s=>s.replace(/\s*\(.*?\)/g,"").trim().toLowerCase();
+const findRoute=(from,to)=>ROUTE_PRICES.find(r=>routeName(r.from)===from&&routeName(r.to)===to);
 const DAY={
   ourika:{n:T.day.ourika.n,p:70,km:65},
   atlas:{n:T.day.atlas.n,p:80,km:65},
@@ -338,15 +342,30 @@ const TYPECAM0={
 const TYPECAM=Object.fromEntries(Object.entries(TYPECAM0).map(([k,f])=>[k,()=>onMap(f)]));
 
 function H(text){return "<h2>"+text.replace(/\[([^\]]+)\]|(\S+)/g,(m,g,p)=>(g||p).split(" ").map(x=>`<span class="w ${g?"g":""}"><span class="wi">${x}</span></span>`).join(" "))+"</h2>";}
+/* Transfer prices come from content/route-prices.json, the same list as the price table,
+   route pages and booking popup. "Standard" comfort = the listed price; higher comfort adds its premium. */
+function tablePrice(from,to,cls){
+  const r=findRoute(from,to)||findRoute(to,from); if(!r) return null;
+  if(cls==="sedan") return r.price_sedan;
+  if(cls==="suv") return Math.round(Math.max(r.price_sedan*1.25,r.price_van));
+  if(cls==="van") return r.price_van;
+  return r.price_minibus;
+}
+/* Routes not in the list: same per-km estimate as lib/pricing.ts ([minimum €, € per km]). */
+const PER_KM={sedan:[35,.72],suv:[45,.8],van:[40,.85],minibus:[60,1.25]};
+const estimate=(km,cls)=>Math.max(PER_KM[cls][0],Math.round(km*PER_KM[cls][1]));
 function quote(){
-  let base=0,km=null,route="",an="",bn="";
-  if(S.type==="city"){km=D[pk(S.from,S.to)];base=KNOWN[pk(S.from,S.to)]||Math.max(45,r5(km*.5));route=`${CITIES[S.from]} → ${CITIES[S.to]}`;an=CITIES[S.from];bn=CITIES[S.to];}
+  let base=0,km=null,route="",an="",bn="",listed=null;const c=cls();
+  if(S.type==="city"){km=D[pk(S.from,S.to)];listed=tablePrice(EN_CITY[S.from],EN_CITY[S.to],c.key);base=estimate(km,c.key);route=`${CITIES[S.from]} → ${CITIES[S.to]}`;an=CITIES[S.from];bn=CITIES[S.to];}
   else if(S.type==="airport"){an=`${CITIES[S.airport]} airport`;
-    if(S.dest==="local"){km=15;base=30;route=`${CITIES[S.airport]} airport → ${T.steps.s2.yourHotel}`;bn=T.steps.s2.yourHotel;}
-    else{km=D[pk(S.airport,S.dest)];base=KNOWN[pk(S.airport,S.dest)]||Math.max(45,r5(km*.5));route=`${CITIES[S.airport]} airport → ${CITIES[S.dest]}`;bn=CITIES[S.dest];}}
+    if(S.dest==="local"){km=15;base=estimate(km,c.key);listed=tablePrice(EN_CITY[S.airport]+" airport",EN_CITY[S.airport],c.key);route=`${CITIES[S.airport]} airport → ${T.steps.s2.yourHotel}`;bn=T.steps.s2.yourHotel;}
+    else{km=D[pk(S.airport,S.dest)];listed=tablePrice(EN_CITY[S.airport]+" airport",EN_CITY[S.dest],c.key)??tablePrice(EN_CITY[S.airport],EN_CITY[S.dest],c.key);base=estimate(km,c.key);route=`${CITIES[S.airport]} airport → ${CITIES[S.dest]}`;bn=CITIES[S.dest];}}
   else if(S.type==="day"){km=DAY[S.day].km;base=DAY[S.day].p;route=`${CITIES.RAK} → ${DAY[S.day].n}`;an=CITIES.RAK;bn=DAY[S.day].n;}
   else{base=S.days*130;km=S.days*260;route=`${T.tours.sameDriver(S.days)} (${CITIES[S.start]})`;an=CITIES[S.start];bn=T.tours.loop(S.days);}
-  const c=cls(),ci=COMFORT.findIndex(x=>x.k===S.comfort),price=r5(base*c.m*COMFORT[ci].m);
+  const ci=COMFORT.findIndex(x=>x.k===S.comfort);
+  const transfer=S.type==="city"||S.type==="airport";
+  const perVehicle=listed??(transfer?base:base*c.m);
+  const price=ci===0&&listed!=null?listed:r5(perVehicle*COMFORT[ci].m);
   return {price,mad:Math.round(price*11/10)*10,km,route,an,bn,car:c.cars[ci],cname:c.name,comfort:COMFORT[ci].n,tour:S.type==="tour"};
 }
 function routeKeys(){

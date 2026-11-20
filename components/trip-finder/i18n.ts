@@ -245,8 +245,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["In the next 7 days", "This month", "In 1–3 months", "Still exploring"],
     quote: {
-      text: "“My flight was two hours late and the driver waited without charging extra.”",
-      author: "James O. · Casablanca airport",
+      text: "“Despite arriving late at night, the driver was waiting for us on time with a sign.”",
+      author: "Loraine H. · Google review, translated from Polish",
     },
     steps: {
       s1: {
@@ -445,8 +445,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["Dans les 7 prochains jours", "Ce mois-ci", "Dans 1 à 3 mois", "En cours de réflexion"],
     quote: {
-      text: "« Mon vol avait deux heures de retard et le chauffeur m'a attendu sans aucun supplément. »",
-      author: "Julien M. · Aéroport de Casablanca",
+      text: "« Malgré notre arrivée de nuit, le chauffeur nous attendait à l'heure avec une pancarte. »",
+      author: "Loraine H. · Avis Google, traduit du polonais",
     },
     steps: {
       s1: {
@@ -645,8 +645,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["En los próximos 7 días", "Este mes", "En 1 a 3 meses", "Aún organizando"],
     quote: {
-      text: "«Mi vuelo se retrasó dos horas y el chófer me esperó pacientemente sin cobrar ningún extra.»",
-      author: "Carlos R. · Aeropuerto de Casablanca",
+      text: "«Aunque llegamos de noche, el conductor nos esperaba puntual con un cartel.»",
+      author: "Loraine H. · Reseña de Google, traducida del polaco",
     },
     steps: {
       s1: {
@@ -845,8 +845,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["Nei prossimi 7 giorni", "Questo mese", "Tra 1 e 3 mesi", "Sto ancora valutando"],
     quote: {
-      text: "«Il mio volo ha fatto due ore di ritardo e l'autista mi ha aspettato senza chiedere alcun extra.»",
-      author: "Marco B. · Aeroporto di Casablanca",
+      text: "«Nonostante l'arrivo di notte, l'autista ci aspettava puntuale con un cartello.»",
+      author: "Loraine H. · Recensione Google, tradotta dal polacco",
     },
     steps: {
       s1: {
@@ -1045,8 +1045,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["In den nächsten 7 Tagen", "Diesen Monat", "In 1 bis 3 Monaten", "Noch in Planung"],
     quote: {
-      text: "„Unser Flug hatte zwei Stunden Verspätung und der Fahrer hat geduldig ohne Aufpreis auf uns gewartet.“",
-      author: "Michael K. · Flughafen Casablanca",
+      text: "„Trotz nächtlicher Ankunft wartete der Fahrer pünktlich mit einem Schild auf uns.“",
+      author: "Loraine H. · Google-Bewertung, aus dem Polnischen übersetzt",
     },
     steps: {
       s1: {
@@ -1245,8 +1245,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["خلال الـ 7 أيام القادمة", "خلال هذا الشهر", "خلال شهر إلى 3 أشهر", "ما زلت أستكشف وأخطط"],
     quote: {
-      text: "«تأخرت رحلتي الجوية ساعتين كاملتين، وانتظرني السائق بصبر بدون أي تكلفة إضافية.»",
-      author: "أحمد س. · مطار الدار البيضاء",
+      text: "«رغم وصولنا ليلاً، كان السائق في انتظارنا في الموعد حاملاً لافتة.»",
+      author: "Loraine H. · تقييم Google، مترجم من البولندية",
     },
     steps: {
       s1: {
@@ -1445,8 +1445,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["Nos próximos 7 dias", "Este mês", "Em 1 a 3 meses", "Ainda a planear"],
     quote: {
-      text: "«O meu voo atrasou duas horas e o motorista esperou pacientemente sem cobrar nada a mais.»",
-      author: "Pedro S. · Aeroporto de Casablanca",
+      text: "«Apesar de chegarmos à noite, o motorista esperava-nos pontualmente com uma placa.»",
+      author: "Loraine H. · Avaliação Google, traduzida do polaco",
     },
     steps: {
       s1: {
@@ -1645,8 +1645,8 @@ export const TRIP_FINDER_TRANSLATIONS: Record<LanguageCode, TripFinderI18n> = {
     },
     when: ["In de komende 7 dagen", "Deze maand", "Binnen 1–3 maanden", "Nog aan het oriënteren"],
     quote: {
-      text: "„Onze vlucht had twee uur vertraging en de chauffeur wachtte geduldig zonder extra kosten te rekenen.”",
-      author: "Daan V. · Luchthaven Casablanca",
+      text: "„Ondanks onze aankomst 's nachts stond de chauffeur stipt op ons te wachten met een bordje.”",
+      author: "Loraine H. · Google-review, vertaald uit het Pools",
     },
     steps: {
       s1: {
