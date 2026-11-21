@@ -57,5 +57,9 @@ export async function POST(req: Request) {
     }
   }
 
-  return NextResponse.json({ ok: true, email: emailResult });
+  // The forms treat any non-2xx as a failure and point the visitor to WhatsApp instead.
+  if (!emailResult.ok) {
+    return NextResponse.json({ ok: false, error: "email_not_sent" }, { status: 502 });
+  }
+  return NextResponse.json({ ok: true });
 }
