@@ -11,6 +11,7 @@ import {
   buildRouteMetaDescription,
 } from "@/lib/site";
 import { buildDirectionalRouteCopy } from "@/lib/route-copy";
+import { getLocalizedRouteContent } from "@/lib/route-i18n";
 import { EUR_RATE } from "@/lib/pricing";
 import Icon from "@/components/Icon";
 import VehiclePriceTag from "@/components/VehiclePriceTag";
@@ -289,9 +290,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const u = UI[lang as keyof typeof UI] || UI.es;
   const fromName = getLocalizedPlace(route.from, lang as LanguageCode);
   const toName = getLocalizedPlace(route.to, lang as LanguageCode);
+  const i18nContent = getLocalizedRouteContent(lang, route.slug, route);
 
-  const title = buildRouteMetaTitle(fromName, toName, route.price_sedan, lang);
-  const description = buildRouteMetaDescription(fromName, toName, route.price_sedan, lang);
+  const title = i18nContent
+    ? `${i18nContent.h1} | €${route.price_sedan}`
+    : buildRouteMetaTitle(fromName, toName, route.price_sedan, lang);
+  const description = i18nContent
+    ? i18nContent.heroSub
+    : buildRouteMetaDescription(fromName, toName, route.price_sedan, lang);
   const canonicalUrl = `${SITE_URL}/${lang}/transfers/${route.slug}`;
 
   return {
@@ -327,6 +333,8 @@ export default async function LocalizedRoutePage({ params }: Props) {
   const isRtl = lang === "ar";
   const fromName = getLocalizedPlace(route.from, lang as LanguageCode);
   const toName = getLocalizedPlace(route.to, lang as LanguageCode);
+  const i18nContent = getLocalizedRouteContent(lang, route.slug, route);
+
   const dCopy = buildDirectionalRouteCopy({
     lang: lang as LanguageCode,
     fromLocal: fromName,
@@ -339,12 +347,14 @@ export default async function LocalizedRoutePage({ params }: Props) {
     priceSedan: route.price_sedan,
   });
 
+  const finalFaqs = i18nContent?.faqs && i18nContent.faqs.length > 0 ? i18nContent.faqs : dCopy.faqs;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "FAQPage",
-        mainEntity: dCopy.faqs.map((f) => ({
+        mainEntity: finalFaqs.map((f) => ({
           "@type": "Question",
           name: f.q,
           acceptedAnswer: {
@@ -363,7 +373,8 @@ export default async function LocalizedRoutePage({ params }: Props) {
       },
       {
         "@type": "Service",
-        name: u.h1(fromName, toName),
+        name: i18nContent?.h1 || u.h1(fromName, toName),
+        description: i18nContent?.heroSub || u.sub(fromName, toName, route.duration, route.distance, route.price_sedan),
         image: `${SITE_URL}/cars/mercedes-vito.webp`,
         url: `${SITE_URL}/${lang}/transfers/${route.slug}`,
         provider: {
@@ -380,7 +391,8 @@ export default async function LocalizedRoutePage({ params }: Props) {
       },
       {
         "@type": "TaxiService",
-        name: u.h1(fromName, toName),
+        name: i18nContent?.h1 || u.h1(fromName, toName),
+        description: i18nContent?.heroSub || u.sub(fromName, toName, route.duration, route.distance, route.price_sedan),
         provider: {
           "@type": "LocalBusiness",
           name: SITE_NAME,
@@ -412,10 +424,10 @@ export default async function LocalizedRoutePage({ params }: Props) {
             {u.heroTag}
           </span>
           <h1 className="heading-xl mt-16" style={{ color: "var(--white)" }}>
-            {u.h1(fromName, toName)}
+            {i18nContent?.h1 || u.h1(fromName, toName)}
           </h1>
           <p className="hero-sub">
-            {u.sub(fromName, toName, route.duration, route.distance, route.price_sedan)}
+            {i18nContent?.heroSub || u.sub(fromName, toName, route.duration, route.distance, route.price_sedan)}
           </p>
 
           <div className="hero-route-badges">
@@ -580,57 +592,171 @@ export default async function LocalizedRoutePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Route Highlights */}
+      {i18nContent?.highlights && i18nContent.highlights.length > 0 && (
+        <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <span className="section-label">{i18nContent.highlightsTitle}</span>
+                <h2 className="heading-lg">{fromName} → {toName}</h2>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: "24px",
+              }}
+            >
+              {i18nContent.highlights.map((highlight, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: "24px",
+                    background: "var(--sand)",
+                    border: "1px solid var(--rule)",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "16px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: "14px",
+                      color: "var(--gold-ink)",
+                      flexShrink: 0,
+                      marginTop: "2px",
+                    }}
+                  >
+                    0{idx + 1}
+                  </span>
+                  <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.5 }}>
+                    {highlight}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Directional Pickup & Route Logistics */}
       <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
         <div className="container">
           <div style={{ maxWidth: "820px", marginBottom: "28px" }}>
-            <span className="section-label">{dCopy.sectionLabel}</span>
-            <h2 className="heading-lg mt-12">{dCopy.heading}</h2>
-            <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.65, marginTop: "14px" }}>
-              {dCopy.introParagraph}
-            </p>
-          </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "20px",
-            }}
-          >
-            {dCopy.logisticsBullets.map((item, idx) => (
-              <div
-                key={idx}
-                style={{
-                  padding: "22px",
-                  background: "var(--sand)",
-                  border: "1px solid var(--rule)",
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "14px",
-                }}
-              >
-                <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold-ink)", flexShrink: 0, marginTop: "2px" }}>
-                  0{idx + 1}
-                </span>
-                <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.55 }}>{item}</p>
+            <span className="section-label">{i18nContent ? (isRtl ? "تفاصيل المسار" : "Route Overview") : dCopy.sectionLabel}</span>
+            <h2 className="heading-lg mt-12">{i18nContent ? i18nContent.routeOverviewTitle : dCopy.heading}</h2>
+            {i18nContent ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "18px" }}>
+                {i18nContent.routeOverview.map((paragraph, idx) => (
+                  <p key={idx} style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.7, margin: 0 }}>
+                    {paragraph}
+                  </p>
+                ))}
               </div>
-            ))}
+            ) : (
+              <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.65, marginTop: "14px" }}>
+                {dCopy.introParagraph}
+              </p>
+            )}
           </div>
+          {!i18nContent && (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: "20px",
+              }}
+            >
+              {dCopy.logisticsBullets.map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: "22px",
+                    background: "var(--sand)",
+                    border: "1px solid var(--rule)",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "14px",
+                  }}
+                >
+                  <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold-ink)", flexShrink: 0, marginTop: "2px" }}>
+                    0{idx + 1}
+                  </span>
+                  <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.55 }}>{item}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
+      {/* What to see on the way */}
+      {i18nContent?.whatToSeeItems && i18nContent.whatToSeeItems.length > 0 && (
+        <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <span className="section-label">{isRtl ? "معالم على الطريق" : "Highlights & Stops"}</span>
+                <h2 className="heading-lg">{i18nContent.whatToSeeTitle}</h2>
+              </div>
+            </div>
+            {i18nContent.whatToSeeIntro && (
+              <p style={{ fontSize: "16px", color: "var(--muted)", maxWidth: "820px", marginBottom: "28px", lineHeight: 1.65 }}>
+                {i18nContent.whatToSeeIntro}
+              </p>
+            )}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: "24px",
+              }}
+            >
+              {i18nContent.whatToSeeItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: "24px",
+                    background: "var(--sand)",
+                    border: "1px solid var(--rule)",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
+                  <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold-ink)" }}>
+                    0{idx + 1}
+                  </span>
+                  <h3 style={{ fontSize: "17px", fontWeight: 500, color: "var(--ink)", margin: 0 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: "14px", color: "var(--muted)", lineHeight: 1.55, margin: 0 }}>
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Localized FAQ Section */}
-      {dCopy.faqs.length > 0 && (
+      {finalFaqs.length > 0 && (
         <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
           <div className="container" style={{ maxWidth: "900px" }}>
             <div className="section-header" style={{ display: "block", paddingBottom: "24px", marginBottom: "32px" }}>
               <span className="section-label" style={{ display: "block", marginBottom: "12px" }}>
                 FAQ
               </span>
-              <h2 className="heading-lg">{u.faqTitle}: {fromName} → {toName}</h2>
+              <h2 className="heading-lg">
+                {i18nContent?.faqsTitle || `${u.faqTitle}: ${fromName} → ${toName}`}
+              </h2>
             </div>
             <div className="faq-list">
-              {dCopy.faqs.map((faq, idx) => (
+              {finalFaqs.map((faq, idx) => (
                 <div key={idx} className="faq-item">
                   <div className="faq-question">
                     <span>{faq.q}</span>

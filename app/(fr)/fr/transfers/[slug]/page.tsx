@@ -12,6 +12,7 @@ import {
   buildRouteMetaDescription,
 } from "@/lib/site";
 import { buildDirectionalRouteCopy } from "@/lib/route-copy";
+import { getLocalizedRouteContent } from "@/lib/route-i18n";
 import { EUR_RATE } from "@/lib/pricing";
 import Icon from "@/components/Icon";
 import VehiclePriceTag from "@/components/VehiclePriceTag";
@@ -97,9 +98,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const fromFr = getFrPlace(route.from);
   const toFr = getFrPlace(route.to);
+  const i18nContent = getLocalizedRouteContent("fr", route.slug, route);
 
-  const title = buildRouteMetaTitle(fromFr, toFr, route.price_sedan, "fr");
-  const description = buildRouteMetaDescription(fromFr, toFr, route.price_sedan, "fr");
+  const title = i18nContent
+    ? `${i18nContent.h1} | Tarif Fixe €${route.price_sedan}`
+    : buildRouteMetaTitle(fromFr, toFr, route.price_sedan, "fr");
+  const description = i18nContent
+    ? i18nContent.heroSub
+    : buildRouteMetaDescription(fromFr, toFr, route.price_sedan, "fr");
   const canonicalUrl = `${SITE_URL}/fr/transfers/${route.slug}`;
 
   return {
@@ -138,6 +144,7 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
 
   const fromFr = getFrPlace(route.from);
   const toFr = getFrPlace(route.to);
+  const i18nContent = getLocalizedRouteContent("fr", route.slug, route);
 
   const relatedRoutes = ALL_ROUTES.filter(
     (r) =>
@@ -191,9 +198,9 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
   const productLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `Transfert Privé de ${fromFr} à ${toFr}`,
+    name: i18nContent?.h1 || `Transfert Privé de ${fromFr} à ${toFr}`,
     inLanguage: "fr",
-    description: `Service de transfert privé avec chauffeur professionnel entre ${fromFr} et ${toFr}. Tarif garanti tout compris.`,
+    description: i18nContent?.heroSub || `Service de transfert privé avec chauffeur professionnel entre ${fromFr} et ${toFr}. Tarif garanti tout compris.`,
     image: `${SITE_URL}/cars/mercedes-vito.webp`,
     url: `${SITE_URL}/fr/transfers/${route.slug}`,
     provider: {
@@ -231,9 +238,9 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
   const taxiServiceLd = {
     "@context": "https://schema.org",
     "@type": "TaxiService",
-    name: `Service Chauffeur Privé ${fromFr} à ${toFr}`,
+    name: i18nContent?.h1 || `Service Chauffeur Privé ${fromFr} à ${toFr}`,
     inLanguage: "fr",
-    description: `Service de transfert privé avec chauffeur professionnel entre ${fromFr} et ${toFr}.`,
+    description: i18nContent?.heroSub || `Service de transfert privé avec chauffeur professionnel entre ${fromFr} et ${toFr}.`,
     url: `${SITE_URL}/fr/transfers/${route.slug}`,
     provider: {
       "@type": "LocalBusiness",
@@ -283,10 +290,12 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
     }
   ];
 
+  const finalFaqs = i18nContent?.faqs && i18nContent.faqs.length > 0 ? i18nContent.faqs : frFaqs;
+
   const faqLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: frFaqs.map((f) => ({
+    mainEntity: finalFaqs.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: {
@@ -320,10 +329,11 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
             Prix Fixe Garanti · 100% Chauffeur Privé Porte-à-Porte
           </span>
           <h1 className="heading-xl" style={{ color: "var(--white)", maxWidth: "980px" }}>
-            Transfert Privé de {fromFr} à {toFr}
+            {i18nContent?.h1 || `Transfert Privé de ${fromFr} à ${toFr}`}
           </h1>
           <p className="hero-sub" style={{ maxWidth: "750px", marginTop: "18px" }}>
-            Transfert direct sans escale avec chauffeur privé certifié bilingue (français/anglais). Prise en charge à votre porte, péages autoroutiers, carburant, assistance bagages et suivi des vols inclus.
+            {i18nContent?.heroSub ||
+              `Transfert direct sans escale avec chauffeur privé certifié bilingue (français/anglais). Prise en charge à votre porte, péages autoroutiers, carburant, assistance bagages et suivi des vols inclus.`}
           </p>
 
           {/* Quick Route Facts Strip */}
@@ -597,54 +607,166 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Route Highlights */}
+      {i18nContent?.highlights && i18nContent.highlights.length > 0 && (
+        <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <span className="section-label">{i18nContent.highlightsTitle}</span>
+                <h2 className="heading-lg">Points forts &amp; spécificités du trajet</h2>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: "24px",
+              }}
+            >
+              {i18nContent.highlights.map((highlight, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: "24px",
+                    background: "var(--sand)",
+                    border: "1px solid var(--rule)",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "16px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: "14px",
+                      color: "var(--gold-ink)",
+                      flexShrink: 0,
+                      marginTop: "2px",
+                    }}
+                  >
+                    0{idx + 1}
+                  </span>
+                  <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.5 }}>
+                    {highlight}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Directional Logistics & What to Expect */}
       <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
         <div className="container">
           <div style={{ maxWidth: "820px", marginBottom: "28px" }}>
-            <span className="section-label">{dCopy.sectionLabel}</span>
-            <h2 className="heading-lg mt-12">{dCopy.heading}</h2>
-            <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.65, marginTop: "14px" }}>
-              {dCopy.introParagraph}
-            </p>
+            <span className="section-label">{i18nContent ? "Itinéraire & Conseils" : dCopy.sectionLabel}</span>
+            <h2 className="heading-lg mt-12">{i18nContent ? i18nContent.routeOverviewTitle : dCopy.heading}</h2>
+            {i18nContent ? (
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px", marginTop: "18px" }}>
+                {i18nContent.routeOverview.map((paragraph, idx) => (
+                  <p key={idx} style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.7, margin: 0 }}>
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <p style={{ fontSize: "16px", color: "var(--muted)", lineHeight: 1.65, marginTop: "14px" }}>
+                {dCopy.introParagraph}
+              </p>
+            )}
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "24px",
-            }}
-          >
-            {dCopy.logisticsBullets.map((highlight, idx) => (
-              <div
-                key={idx}
-                style={{
-                  padding: "24px",
-                  background: "var(--sand)",
-                  border: "1px solid var(--rule)",
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: "16px",
-                }}
-              >
-                <span
+          {!i18nContent && (
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: "24px",
+              }}
+            >
+              {dCopy.logisticsBullets.map((highlight, idx) => (
+                <div
+                  key={idx}
                   style={{
-                    fontFamily: "var(--mono)",
-                    fontSize: "14px",
-                    color: "var(--muted)",
-                    flexShrink: 0,
-                    marginTop: "2px",
+                    padding: "24px",
+                    background: "var(--sand)",
+                    border: "1px solid var(--rule)",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "16px",
                   }}
                 >
-                  0{idx + 1}
-                </span>
-                <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.5 }}>
-                  {highlight}
-                </p>
-              </div>
-            ))}
-          </div>
+                  <span
+                    style={{
+                      fontFamily: "var(--mono)",
+                      fontSize: "14px",
+                      color: "var(--muted)",
+                      flexShrink: 0,
+                      marginTop: "2px",
+                    }}
+                  >
+                    0{idx + 1}
+                  </span>
+                  <p style={{ fontSize: "15px", color: "var(--ink)", margin: 0, lineHeight: 1.5 }}>
+                    {highlight}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
+
+      {/* What to see on the way */}
+      {i18nContent?.whatToSeeItems && i18nContent.whatToSeeItems.length > 0 && (
+        <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <span className="section-label">Découvertes &amp; Paysages</span>
+                <h2 className="heading-lg">{i18nContent.whatToSeeTitle}</h2>
+              </div>
+            </div>
+            {i18nContent.whatToSeeIntro && (
+              <p style={{ fontSize: "16px", color: "var(--muted)", maxWidth: "820px", marginBottom: "28px", lineHeight: 1.65 }}>
+                {i18nContent.whatToSeeIntro}
+              </p>
+            )}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+                gap: "24px",
+              }}
+            >
+              {i18nContent.whatToSeeItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: "24px",
+                    background: "var(--sand)",
+                    border: "1px solid var(--rule)",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
+                  <span style={{ fontFamily: "var(--mono)", fontSize: "13px", color: "var(--gold-ink)" }}>
+                    Étape 0{idx + 1}
+                  </span>
+                  <h3 style={{ fontSize: "17px", fontWeight: 500, color: "var(--ink)", margin: 0 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: "14px", color: "var(--muted)", lineHeight: 1.55, margin: 0 }}>
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* How It Works: 3 Simple Steps */}
       <section className="section" style={{ borderTop: "1px solid var(--rule)" }}>
@@ -805,10 +927,12 @@ export default async function FrenchTransferRoutePage({ params }: Props) {
             <span className="section-label" style={{ display: "block", marginBottom: "12px" }}>
               Questions Fréquentes
             </span>
-            <h2 className="heading-lg">Tout savoir sur le trajet {fromFr} à {toFr}</h2>
+            <h2 className="heading-lg">
+              {i18nContent?.faqsTitle || `Tout savoir sur le trajet ${fromFr} à ${toFr}`}
+            </h2>
           </div>
           <div className="faq-list">
-            {frFaqs.map((faq, idx) => (
+            {finalFaqs.map((faq, idx) => (
               <div key={idx} className="faq-item">
                 <div className="faq-question">
                   <span>{faq.q}</span>
