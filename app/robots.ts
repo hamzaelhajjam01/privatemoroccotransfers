@@ -7,7 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/"],
+        // Don't block /_next/: it holds the CSS and JS search engines need to render pages.
+        disallow: ["/api/"],
       },
       {
         userAgent: ["Google-Extended", "GPTBot", "PerplexityBot", "ClaudeBot", "Amazonbot"],
