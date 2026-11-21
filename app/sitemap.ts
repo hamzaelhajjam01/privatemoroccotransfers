@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import routesData from "@/content/routes.json";
 import { LISTINGS } from "@/lib/listings";
 import { SITE_URL } from "@/lib/site";
+import { PRIORITY_ROUTE_SLUGS, isPriorityRoute } from "@/lib/priority-routes";
 
 const ALL_ROUTES = routesData as Array<{ slug: string }>;
 
@@ -60,47 +61,49 @@ const BLOG_SLUGS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Stable content date, not build time, so Google isn't told every URL changed on each deploy.
-  const now = new Date("2026-11-12");
+  // Real dates per URL: today for updated routes/hubs, stable date for unchanged pages.
+  const BASE_DATE = new Date("2026-11-12");
+  const TODAY = new Date("2026-11-21");
 
   const hubs: MetadataRoute.Sitemap = STATIC_HUBS.map((h) => ({
     url: `${SITE_URL}${h.path}`,
-    lastModified: now,
+    lastModified: h.path.includes("transfers") ? TODAY : BASE_DATE,
     changeFrequency: h.changeFrequency,
     priority: h.priority,
   }));
 
   const routes: MetadataRoute.Sitemap = ALL_ROUTES.map((r) => ({
     url: `${SITE_URL}/transfers/${r.slug}`,
-    lastModified: now,
+    lastModified: isPriorityRoute(r.slug) ? TODAY : BASE_DATE,
     changeFrequency: "weekly",
     priority: 0.8,
   }));
 
-  const frRoutes: MetadataRoute.Sitemap = ALL_ROUTES.map((r) => ({
-    url: `${SITE_URL}/fr/transfers/${r.slug}`,
-    lastModified: now,
+  // Part 3: Focus non-English route pages on the 20 priority corridors with enriched translations
+  const frRoutes: MetadataRoute.Sitemap = PRIORITY_ROUTE_SLUGS.map((slug) => ({
+    url: `${SITE_URL}/fr/transfers/${slug}`,
+    lastModified: TODAY,
     changeFrequency: "weekly",
-    priority: 0.8,
+    priority: 0.85,
   }));
 
   const frListings: MetadataRoute.Sitemap = LISTINGS.map((l) => ({
     url: `${SITE_URL}/fr/details/${l.slug}`,
-    lastModified: now,
+    lastModified: BASE_DATE,
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
   const cities: MetadataRoute.Sitemap = CITIES.map((c) => ({
     url: `${SITE_URL}/cities/${c}`,
-    lastModified: now,
+    lastModified: BASE_DATE,
     changeFrequency: "monthly",
     priority: 0.75,
   }));
 
   const blogPosts: MetadataRoute.Sitemap = BLOG_SLUGS.map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
-    lastModified: now,
+    lastModified: BASE_DATE,
     changeFrequency: "monthly",
     priority: 0.65,
   }));
@@ -111,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const localizedHubEntries: MetadataRoute.Sitemap = ALL_LANGS.flatMap((lang) =>
     LOCALIZED_HUBS.map((hub) => ({
       url: `${SITE_URL}/${lang}/${hub}`,
-      lastModified: now,
+      lastModified: BASE_DATE,
       changeFrequency: "weekly" as const,
       priority: 0.85,
     }))
@@ -122,15 +125,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const localizedRoutes: MetadataRoute.Sitemap = OTHER_LANGS.flatMap((lang) => [
     {
       url: `${SITE_URL}/${lang}/transfers`,
-      lastModified: now,
+      lastModified: TODAY,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
-    ...ALL_ROUTES.map((r) => ({
-      url: `${SITE_URL}/${lang}/transfers/${r.slug}`,
-      lastModified: now,
+    ...PRIORITY_ROUTE_SLUGS.map((slug) => ({
+      url: `${SITE_URL}/${lang}/transfers/${slug}`,
+      lastModified: TODAY,
       changeFrequency: "weekly" as const,
-      priority: 0.8,
+      priority: 0.85,
     })),
   ]);
 
