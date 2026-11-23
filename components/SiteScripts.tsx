@@ -149,7 +149,8 @@ export default function SiteScripts() {
         });
         return;
       }
-      if (waLink) {
+      // The booking popup records its own WhatsApp clicks; don't count them twice.
+      if (waLink && !waLink.closest(".bk-dialog")) {
         trackWhatsAppLead({
           label: waLink.textContent?.trim() || "WhatsApp Link Click",
           route: window.location.pathname,

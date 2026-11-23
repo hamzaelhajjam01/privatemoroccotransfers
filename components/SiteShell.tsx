@@ -207,6 +207,7 @@ export default function SiteShell({ lang, children }: { lang: LanguageCode; chil
             gtag('config', 'G-8GZHQFFZ4Z', {
               page_path: window.location.pathname,
             });
+            gtag('config', 'AW-587649176');
           `}
         </Script>
       </head>

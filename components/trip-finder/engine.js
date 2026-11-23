@@ -6,6 +6,7 @@ import * as THREE from "three";
 import { gsap } from "gsap";
 import { TRIP_FINDER_TRANSLATIONS } from "./i18n";
 import ROUTE_PRICES from "../../content/route-prices.json";
+import { trackWhatsAppLead } from "../../lib/site";
 
 export function initTripFinder(root, opts = {}) {
 
@@ -481,6 +482,7 @@ function bindMail(el,q){
     try{
       await submitLead(lead);
       track("quiz_email_submit",{price:q.price,trip:S.type,consent:ok.checked});
+      trackWhatsAppLead({label:"Trip Finder: email quote",route:q.route,value:q.price,currency:"EUR"});
       f.innerHTML=`<div class="mail-ok"><i></i><div><b>${T.result.thanksMsg(name, email)}</b>${ok.checked?`<span>${T.result.consentConfirmed}</span>`:""}</div></div>`;
       G&&G.fromTo(f.firstChild,{opacity:0,y:8},{opacity:1,y:0,duration:.6,ease:"expo.out"});
     }catch(err){
@@ -673,7 +675,7 @@ function showResult(q){
     G.fromTo(el.querySelector("#bub"),{clipPath:"inset(0 0 100% 0)",y:12},{clipPath:"inset(0 0 0% 0)",y:0,duration:1,ease:"expo.out",delay:1.4});
     G.fromTo(el.querySelector(".shine"),{xPercent:-110},{xPercent:110,duration:1,ease:"power2.inOut",delay:2.2}); }
   else pv.textContent=q.price;
-  el.querySelector("#wa").addEventListener("click",()=>track("quiz_whatsapp_click",{price:q.price,trip:S.type}));
+  el.querySelector("#wa").addEventListener("click",()=>{track("quiz_whatsapp_click",{price:q.price,trip:S.type});trackWhatsAppLead({label:"Trip Finder: WhatsApp",route:q.route,value:q.price,currency:"EUR"});});
   bindMail(el,q);
   el.querySelector("#redo").onclick=()=>{back.textContent=T.back;idx=0;render(-1);};
 }

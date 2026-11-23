@@ -150,7 +150,11 @@ export type LeadDetails = {
   currency?: string;
 };
 
-/** Fires conversion events to GA4 (gtag) and GTM (dataLayer) */
+/** Google Ads account tag and the "PMT lead - WhatsApp or email quote" conversion action. */
+export const GOOGLE_ADS_ID = "AW-587649176";
+const GOOGLE_ADS_LEAD_CONVERSION = "AW-587649176/_LXOCJrtl74dEJihm5gC";
+
+/** Fires conversion events to GA4 (gtag), Google Ads (gtag) and GTM (dataLayer) */
 export function trackWhatsAppLead(details?: LeadDetails) {
   if (typeof window === "undefined") return;
 
@@ -173,6 +177,15 @@ export function trackWhatsAppLead(details?: LeadDetails) {
   if (typeof w.gtag === "function") {
     w.gtag("event", "generate_lead", payload);
     w.gtag("event", "whatsapp_click", payload);
+
+    // Google Ads lead conversion. Copying the phone number isn't a real enquiry, so it doesn't count.
+    if (!/copy phone/i.test(payload.event_label)) {
+      w.gtag("event", "conversion", {
+        send_to: GOOGLE_ADS_LEAD_CONVERSION,
+        value: details?.value ?? 1,
+        currency: payload.currency,
+      });
+    }
   }
 
   // 2. Google Tag Manager custom event
