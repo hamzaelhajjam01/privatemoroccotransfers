@@ -36,12 +36,12 @@ type Slug = keyof typeof PAGES;
  * links added to every post).
  */
 const POST_META: Record<Slug, { published: string; modified: string; section: string }> = {
-  "airport-transfer": { published: "2026-10-10", modified: "2026-11-14", section: "Airport Guides" },
+  "airport-transfer": { published: "2026-10-10", modified: "2026-11-26", section: "Airport Guides" },
   "day-trips": { published: "2026-10-20", modified: "2026-11-26", section: "Day Trips" },
-  "driver-cost": { published: "2026-10-28", modified: "2026-11-14", section: "Driver FAQ" },
+  "driver-cost": { published: "2026-10-28", modified: "2026-11-26", section: "Driver FAQ" },
   "grand-taxi-vs-private-driver": { published: "2026-11-06", modified: "2026-11-26", section: "Morocco Tips" },
-  "marrakech-essaouira": { published: "2026-11-01", modified: "2026-11-14", section: "Route Guides" },
-  "sahara-merzouga": { published: "2026-10-15", modified: "2026-11-14", section: "Route Guides" },
+  "marrakech-essaouira": { published: "2026-11-01", modified: "2026-11-26", section: "Route Guides" },
+  "sahara-merzouga": { published: "2026-10-15", modified: "2026-11-26", section: "Route Guides" },
   "getting-around-morocco": { published: "2026-11-06", modified: "2026-11-26", section: "Morocco Tips" },
   "fes-tanneries-guide": { published: "2026-11-06", modified: "2026-11-26", section: "Morocco Tips" },
   "agafay-desert": { published: "2026-11-14", modified: "2026-11-14", section: "Day Trips" },

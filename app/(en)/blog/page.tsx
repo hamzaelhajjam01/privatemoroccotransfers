@@ -229,18 +229,18 @@ export default function BlogPage() {
               </span>
               <h2 className="blog-title">
                 <Link href="/blog/marrakech-essaouira">
-                  {"Marrakech to Essaouira by Private Driver: Complete 2026 Guide"}
+                  {"Marrakech to Essaouira: Bus, Day Trip or Private Driver?"}
                 </Link>
               </h2>
               <p className="blog-excerpt">
-                {"The most scenic route in Morocco. Everything you need to know — distance, duration, price, and what to see along the way."}
+                {"Coach vs private driver, argan stops on the way, day trip or overnight, and what to do in Essaouira."}
               </p>
               <div className="blog-meta">
                 <span>
                   {"2026-11-01"}
                 </span>
                 <span>
-                  {"5 min read"}
+                  {"7 min read"}
                 </span>
               </div>
             </div>
@@ -255,11 +255,11 @@ export default function BlogPage() {
               </span>
               <h2 className="blog-title">
                 <Link href="/blog/driver-cost">
-                  {"How Much Does a Private Driver Cost in Morocco? Full 2026 Price Guide"}
+                  {"How Much Does a Private Driver Cost in Morocco? 2026 Prices"}
                 </Link>
               </h2>
               <p className="blog-excerpt">
-                {"A transparent breakdown of private driver costs across Morocco — per km, per day and per route."}
+                {"Real 2026 prices per route, per day and per vehicle, what is included and how to pay."}
               </p>
               <div className="blog-meta">
                 <span>
@@ -281,11 +281,11 @@ export default function BlogPage() {
               </span>
               <h2 className="blog-title">
                 <Link href="/blog/day-trips">
-                  {"Top 7 Day Trips from Marrakech with a Private Driver"}
+                  {"7 Best Day Trips from Marrakech with a Private Driver"}
                 </Link>
               </h2>
               <p className="blog-excerpt">
-                {"Atlas Mountains, Essaouira, Ourika Valley and more — the best day excursions from Marrakech with your own driver."}
+                {"Essaouira, Ourika, Imlil, Aït Benhaddou, Ouzoud and Agafay: drive times and full-day prices."}
               </p>
               <div className="blog-meta">
                 <span>
@@ -307,11 +307,11 @@ export default function BlogPage() {
               </span>
               <h2 className="blog-title">
                 <Link href="/blog/sahara-merzouga">
-                  {"Marrakech to Merzouga Sahara: Private Driver Complete Guide"}
+                  {"Marrakech to Merzouga: Route, Stops and Private Driver Prices"}
                 </Link>
               </h2>
               <p className="blog-excerpt">
-                {"Everything you need to plan the legendary desert route from Marrakech to Merzouga, including price, duration and highlights."}
+                {"The road over the Atlas via Dades and Todra to the Erg Chebbi dunes, in one day or two."}
               </p>
               <div className="blog-meta">
                 <span>
@@ -333,7 +333,7 @@ export default function BlogPage() {
               </span>
               <h2 className="blog-title">
                 <Link href="/blog/airport-transfer">
-                  {"Marrakech Airport Transfer: What to Expect When You Land"}
+                  {"Marrakech Airport Transfer: Taxi, Bus or Private Driver?"}
                 </Link>
               </h2>
               <p className="blog-excerpt">

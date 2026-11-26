@@ -26,7 +26,7 @@ const G: Record<string, RouteGuide> = {
     href: "/blog/marrakech-essaouira",
     img: "/img/blog/marrakech-essaouira-card.webp",
     tag: "Route Guides",
-    title: "Marrakech to Essaouira by private driver: complete guide",
+    title: "Marrakech to Essaouira: bus, day trip or private driver?",
     excerpt: "Distance, drive time, what to see on the way and what it costs.",
   },
   sahara: {
@@ -47,14 +47,14 @@ const G: Record<string, RouteGuide> = {
     href: "/blog/airport-transfer",
     img: "/img/blog/airport-transfer-card.webp",
     tag: "Airport Guides",
-    title: "Marrakech airport transfer guide: arrival, meeting your driver, prices",
+    title: "Marrakech airport transfer: taxi, bus or private driver?",
     excerpt: "What happens after landing at RAK and how to avoid airport taxi hassle.",
   },
   dayTrips: {
     href: "/blog/day-trips",
     img: "/img/blog/day-trips-card.webp",
     tag: "Day Trips",
-    title: "Seven day trips from Marrakech with a private driver",
+    title: "7 best day trips from Marrakech with a private driver",
     excerpt: "Essaouira, Ourika, Ait Benhaddou, Imlil, Ouzoud, Agafay and Ouarzazate.",
   },
   casablanca: {
