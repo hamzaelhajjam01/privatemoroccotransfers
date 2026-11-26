@@ -12,6 +12,7 @@ import * as GettingAroundMorocco from "@/content/blog/getting-around-morocco";
 import * as FesTanneriesGuide from "@/content/blog/fes-tanneries-guide";
 import * as AgafayDesert from "@/content/blog/agafay-desert";
 import * as OurikaValley from "@/content/blog/ourika-valley";
+import * as CasablancaToMarrakech from "@/content/blog/casablanca-to-marrakech";
 
 const PAGES = {
   "airport-transfer": AirportTransfer,
@@ -24,6 +25,7 @@ const PAGES = {
   "fes-tanneries-guide": FesTanneriesGuide,
   "agafay-desert": AgafayDesert,
   "ourika-valley": OurikaValley,
+  "casablanca-to-marrakech": CasablancaToMarrakech,
 } as const;
 
 type Slug = keyof typeof PAGES;
@@ -35,15 +37,16 @@ type Slug = keyof typeof PAGES;
  */
 const POST_META: Record<Slug, { published: string; modified: string; section: string }> = {
   "airport-transfer": { published: "2026-10-10", modified: "2026-11-14", section: "Airport Guides" },
-  "day-trips": { published: "2026-10-20", modified: "2026-11-14", section: "Day Trips" },
+  "day-trips": { published: "2026-10-20", modified: "2026-11-26", section: "Day Trips" },
   "driver-cost": { published: "2026-10-28", modified: "2026-11-14", section: "Driver FAQ" },
-  "grand-taxi-vs-private-driver": { published: "2026-11-06", modified: "2026-11-14", section: "Morocco Tips" },
+  "grand-taxi-vs-private-driver": { published: "2026-11-06", modified: "2026-11-26", section: "Morocco Tips" },
   "marrakech-essaouira": { published: "2026-11-01", modified: "2026-11-14", section: "Route Guides" },
   "sahara-merzouga": { published: "2026-10-15", modified: "2026-11-14", section: "Route Guides" },
-  "getting-around-morocco": { published: "2026-11-06", modified: "2026-11-14", section: "Morocco Tips" },
-  "fes-tanneries-guide": { published: "2026-11-06", modified: "2026-11-14", section: "Morocco Tips" },
+  "getting-around-morocco": { published: "2026-11-06", modified: "2026-11-26", section: "Morocco Tips" },
+  "fes-tanneries-guide": { published: "2026-11-06", modified: "2026-11-26", section: "Morocco Tips" },
   "agafay-desert": { published: "2026-11-14", modified: "2026-11-14", section: "Day Trips" },
   "ourika-valley": { published: "2026-11-14", modified: "2026-11-14", section: "Day Trips" },
+  "casablanca-to-marrakech": { published: "2026-11-26", modified: "2026-11-26", section: "Route Guides" },
 };
 /** Times are stated at midday Morocco time so the calendar date is the same in every timezone. */
 const iso = (d: string) => `${d}T12:00:00+01:00`;

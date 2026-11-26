@@ -58,6 +58,7 @@ const BLOG_SLUGS = [
   "fes-tanneries-guide",
   "agafay-desert",
   "ourika-valley",
+  "casablanca-to-marrakech",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

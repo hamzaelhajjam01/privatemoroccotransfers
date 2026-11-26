@@ -57,6 +57,13 @@ const G: Record<string, RouteGuide> = {
     title: "Seven day trips from Marrakech with a private driver",
     excerpt: "Essaouira, Ourika, Ait Benhaddou, Imlil, Ouzoud, Agafay and Ouarzazate.",
   },
+  casablanca: {
+    href: "/blog/casablanca-to-marrakech",
+    img: "/img/blog/casablanca-to-marrakech-card.webp",
+    tag: "Route Guides",
+    title: "Casablanca to Marrakech: train, bus or private driver?",
+    excerpt: "Times, costs and the easiest way from Casablanca city or airport to Marrakech.",
+  },
   gettingAround: {
     href: "/blog/getting-around-morocco",
     img: "/img/blog/getting-around-morocco-card.webp",
@@ -82,6 +89,7 @@ export function guidesForRoute(slug: string): RouteGuide[] {
     : /essaouira/.test(s) && /marrakech/.test(s) ? G.essaouira
     : /imlil|ouzoud|ouarzazate|ait-ben|oukaimeden|lalla-takerkoust/.test(s) ? G.dayTrips
     : /(^|-)fes(-|$)/.test(s) && !/airport/.test(s) ? G.fes
+    : /casablanca/.test(s) && /marrakech/.test(s) ? G.casablanca
     : /marrakech-airport/.test(s) ? G.airport
     : G.gettingAround;
   return first === G.taxi ? [G.taxi] : [first, G.taxi];

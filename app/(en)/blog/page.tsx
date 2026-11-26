@@ -75,6 +75,28 @@ export default function BlogPage() {
         <div className="container">
           <div className="blog-grid">
             <div className="blog-card" data-category="tips">
+              <div className="blog-img" style={{ backgroundImage: "url(/img/blog/casablanca-to-marrakech-card.webp)" }}></div>
+              <span className="blog-tag">
+                {"Route Guides"}
+              </span>
+              <h2 className="blog-title">
+                <Link href="/blog/casablanca-to-marrakech">
+                  {"Casablanca to Marrakech: Train, Bus or Private Driver?"}
+                </Link>
+              </h2>
+              <p className="blog-excerpt">
+                {"Train, coach, grand taxi or private driver from Casablanca city or airport: times, costs and which to choose."}
+              </p>
+              <div className="blog-meta">
+                <span>
+                  {"2026-11-26"}
+                </span>
+                <span>
+                  {"7 min read"}
+                </span>
+              </div>
+            </div>
+            <div className="blog-card" data-category="tips">
               <div className="blog-img" style={{ backgroundImage: "url(/img/blog/agafay-desert-card.webp)" }}></div>
               <span className="blog-tag">
                 {"Day Trips"}
