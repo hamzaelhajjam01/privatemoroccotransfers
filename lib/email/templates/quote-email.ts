@@ -1,5 +1,6 @@
 import { SITE_NAME, SITE_URL, WHATSAPP_NUMBER, whatsappUrl } from "@/lib/site";
 import { EUR_RATE } from "@/lib/pricing";
+import { esc, num } from "./escape";
 
 export type QuoteLeadData = {
   name: string;
@@ -25,20 +26,24 @@ export type QuoteLeadData = {
 };
 
 export function generateQuoteEmailHtml(lead: QuoteLeadData): string {
-  const name = lead.name ? lead.name.trim() : "Traveler";
+  // Everything below comes from the visitor's browser: escape text and force numbers to be numbers.
   const q = lead.quote || {};
-  const priceEur = q.priceEUR || 0;
+  const rawRoute = String(q.route || "Morocco Private Transfer");
+  const rawVehicle = String(q.vehicle || "Comfort Private Vehicle");
+  const name = esc(lead.name ? String(lead.name).trim() : "Traveler");
+  const priceEur = num(q.priceEUR);
   const priceMad = Math.round(priceEur * (EUR_RATE || 11));
-  const route = q.route || "Morocco Private Transfer";
-  const vehicle = q.vehicle || "Comfort Private Vehicle";
-  const tripType = q.trip || "Private Transfer";
-  const pax = q.travellers ? `${q.travellers} passenger${q.travellers > 1 ? "s" : ""}` : "Private party";
-  const km = q.km ? `${q.km} km` : "";
-  const when = q.when || "Flexible / In planning";
+  const route = esc(rawRoute);
+  const vehicle = esc(rawVehicle);
+  const tripType = esc(q.trip || "Private Transfer");
+  const travellers = Math.floor(num(q.travellers));
+  const pax = travellers ? `${travellers} passenger${travellers > 1 ? "s" : ""}` : "Private party";
+  const km = num(q.km) ? `${num(q.km)} km` : "";
+  const when = esc(q.when || "Flexible / In planning");
 
-  // Pre-fill WhatsApp message
+  // Pre-fill WhatsApp message (plain text; whatsappUrl URL-encodes it)
   const waMsg = `Hello Private Morocco Transfers! 👋
-I received my quote #${route} for €${priceEur} (${vehicle}, ${pax}).
+I received my quote #${rawRoute} for €${priceEur} (${rawVehicle}, ${pax}).
 I would like to confirm availability and finalize my booking.`;
   const confirmLink = whatsappUrl(waMsg);
 

@@ -1,19 +1,18 @@
 import { QuoteLeadData } from "./quote-email";
-
-const esc = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
+import { esc, num } from "./escape";
 
 export function generateAdminAlertHtml(lead: QuoteLeadData): string {
+  // Everything below comes from the visitor's browser: escape text and force numbers to be numbers.
   const name = esc(lead.name || "Anonymous Traveler");
   const phone = lead.phone ? esc(lead.phone) : "";
   const message = lead.message ? esc(lead.message).replace(/\n/g, "<br>") : "";
-  const email = lead.email;
+  const email = esc(lead.email);
   const q = lead.quote || {};
-  const priceEur = q.priceEUR || 0;
-  const route = q.route || "Unspecified Route";
-  const vehicle = q.vehicle || "Standard";
-  const travellers = q.travellers || 1;
-  const when = q.when || "Not specified";
+  const priceEur = num(q.priceEUR);
+  const route = esc(q.route || "Unspecified Route");
+  const vehicle = esc(q.vehicle || "Standard");
+  const travellers = Math.floor(num(q.travellers)) || 1;
+  const when = esc(q.when || "Not specified");
   const consent = lead.marketingConsent ? "YES (Opted in to newsletter)" : "NO (Quote only)";
 
   return `<!DOCTYPE html>
@@ -77,7 +76,7 @@ export function generateAdminAlertHtml(lead: QuoteLeadData): string {
         </tr>
         <tr>
           <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5; font-weight: 600;">Source:</td>
-          <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5;">${lead.source || "trip_finder"}</td>
+          <td style="padding: 8px 0; border-bottom: 1px solid #f4f4f5;">${esc(lead.source || "trip_finder")}</td>
         </tr>
       </table>
 

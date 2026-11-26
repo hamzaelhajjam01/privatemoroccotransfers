@@ -1,6 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Don't advertise the framework in an "x-powered-by: Next.js" header.
+  poweredByHeader: false,
+  // Basic security headers on every page. No strict Content-Security-Policy on purpose:
+  // it would need tuning for Google Analytics, Google Ads and Tag Manager.
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "Strict-Transport-Security", value: "max-age=31536000" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+        ],
+      },
+    ];
+  },
   experimental: {
     cpus: 4,
     globalNotFound: true,
