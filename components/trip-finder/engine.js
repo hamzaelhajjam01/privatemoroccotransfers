@@ -65,7 +65,7 @@ const DAY={
 };
 const TOURS={3:["RAK","MRZ","RAK"],5:["RAK","MRZ","FES","RAK"],7:["RAK","MRZ","FES","TNG","RBA","RAK"]};
 const CLASSES=[
-  {max:3,key:"sedan",name:T.classes.sedan,cars:["Škoda Octavia","Mercedes E-Class","BMW 5 Series"],hero:"Mercedes E-Class",m:1},
+  {max:4,key:"sedan",name:T.classes.sedan,cars:["Škoda Octavia","Mercedes E-Class","BMW 5 Series"],hero:"Mercedes E-Class",m:1},
   {max:5,key:"suv",name:T.classes.suv,cars:["Hyundai Tucson","Toyota Prado","Toyota Prado"],hero:"Toyota Prado",m:1.25},
   {max:8,key:"van",name:T.classes.van,cars:["Renault Trafic","Ford Tourneo","Mercedes Vito"],hero:"Mercedes Vito",m:1.4},
   {max:16,key:"minibus",name:T.classes.minibus,cars:["Ford Transit","Mercedes Sprinter","Mercedes Sprinter"],hero:"Mercedes Sprinter",m:1.9}
