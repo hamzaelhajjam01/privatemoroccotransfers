@@ -2,7 +2,7 @@ import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
 
 export const title = "Grand Taxi vs Private Driver in Morocco: Full 2026 Comparison | Private Morocco Transfers";
-export const description = "Grand taxi vs private driver in Morocco: Compare costs, comfort, luggage, safety, and travel times. Discover when to take a taxi and when a private chauffeur is best.";
+export const description = "Grand taxi vs private driver in Morocco: compare cost, comfort, luggage, safety and travel time, and see when a private chauffeur is worth it.";
 
 export default function Content() {
   return (
@@ -267,6 +267,11 @@ export default function Content() {
             <li>You want door-to-door convenience without lugging bags across dusty taxi ranks.</li>
             <li>You want to enjoy Morocco's dramatic landscapes with scenic photo stops along the way.</li>
           </ul>
+
+          <p>
+            Ready to compare real prices? See fixed rates for <Link href="/city-to-city">city-to-city transfers</Link>,{" "}
+            <Link href="/airport-transfers">airport pickups</Link>, or <Link href="/private-driver">hire a private driver by the day</Link>.
+          </p>
         </div>
       </div>
 

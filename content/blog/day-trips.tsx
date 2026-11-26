@@ -67,13 +67,13 @@ export default function Content() {
             {"1. Essaouira (176 km)"}
           </h2>
           <p>
-            {"The most popular day trip from Marrakech. The UNESCO-listed blue-and-white port city takes around 2.5 hours to reach. Spend the day exploring the medina, eating fresh fish on the port, and walking the Atlantic ramparts. Return the same day or overnight. Read our "}<Link href="/blog/marrakech-essaouira">{"Marrakech to Essaouira guide"}</Link>{". Driver cost from €105 (1,160 MAD) each way or €215 (2,360 MAD) for a full-day return excursion."}
+            {"The most popular day trip from Marrakech. The UNESCO-listed blue-and-white port city takes around 2.5 hours to reach. Spend the day exploring the medina, eating fresh fish on the port, and walking the Atlantic ramparts. Return the same day or overnight. Read our "}<Link href="/blog/marrakech-essaouira">{"Marrakech to Essaouira guide"}</Link>{". Driver cost from €105 (1,160 MAD) each way or €215 (2,360 MAD) for a full-day return excursion. See the "}<Link href="/transfers/marrakech-to-essaouira">{"Marrakech to Essaouira private transfer"}</Link>{"."}
           </p>
           <h2 id="2-ourika-valley-60-km">
             {"2. Ourika Valley (60 km)"}
           </h2>
           <p>
-            {"The closest escape from Marrakech, just one hour south into the High Atlas. The Ourika Valley is dramatic year-round, with waterfalls accessible from Setti Fatma village at the end of the road. An ideal half-day or full-day trip. Plan it with our "}<Link href="/blog/ourika-valley">{"Ourika Valley day trip guide"}</Link>{"."}
+            {"The closest escape from Marrakech, just one hour south into the High Atlas. The Ourika Valley is dramatic year-round, with waterfalls accessible from Setti Fatma village at the end of the road. An ideal half-day or full-day trip. Plan it with our "}<Link href="/blog/ourika-valley">{"Ourika Valley day trip guide"}</Link>{" or book a "}<Link href="/transfers/marrakech-to-ourika-valley">{"private transfer to the Ourika Valley"}</Link>{"."}
           </p>
           <h2 id="3-ait-benhaddou-200-km">
             {"3. Ait Benhaddou (200 km)"}
@@ -109,7 +109,7 @@ export default function Content() {
             {"How to Book a Day Trip"}
           </h2>
           <p>
-            {"Tell us your chosen destination, your hotel address in Marrakech, your preferred departure time and the number of passengers. We confirm your fixed price on WhatsApp within 2 hours."}
+            {"Tell us your chosen destination, your hotel address in Marrakech, your preferred departure time and the number of passengers. We confirm your fixed price on WhatsApp within 2 hours."}{" Prefer to plan several days? "}<Link href="/private-driver">{"Hire a private driver"}</Link>{" for your whole trip."}
           </p>
         </div>
       </div>

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
 
-export const title = "Visiting the Fes Tanneries & Medina: 2026 Guide with Day Trips & Chauffeur Tips | Private Morocco Transfers";
-export const description = "Complete 2026 guide to visiting the iconic Chouara Tanneries in Fes. How to visit without scams, mint leaf tips, leather terraces, and the best day trips from Fes with a private driver.";
+export const title = "Fes Tanneries Guide: Visiting Chouara Tannery in 2026 | Private Morocco Transfers";
+export const description = "How to visit the Chouara Tannery in Fes in 2026: best terraces, avoiding scams, mint-leaf tips, and the best day trips from Fes with a private driver.";
 
 export default function Content() {
   return (

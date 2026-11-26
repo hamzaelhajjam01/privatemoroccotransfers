@@ -1,8 +1,8 @@
 import Link from "next/link";
 import TableOfContents from "@/components/TableOfContents";
 
-export const title = "Getting Around Morocco in 2026: The Complete Transportation Guide | Private Morocco Transfers";
-export const description = "Complete guide to getting around Morocco in 2026: Trains (Al Boraq), CTM buses, grand taxis, self-drive rental vs hiring a private chauffeur. Real prices, luggage rules & safety tips.";
+export const title = "Transportation in Morocco: How to Get Around in 2026 | Private Morocco Transfers";
+export const description = "Transportation in Morocco explained: trains, CTM buses, grand taxis, car rental and private drivers, with real 2026 prices, travel times and safety tips.";
 
 export default function Content() {
   return (
@@ -21,7 +21,7 @@ export default function Content() {
             Transport Guide · Morocco Travel Tips · 2026
           </span>
           <h1 className="heading-xl mt-16" style={{ color: "var(--white)", maxWidth: "920px" }}>
-            Getting Around Morocco in 2026: Train, Bus, Grand Taxi or Private Driver?
+            Transportation in Morocco: Train, Bus, Grand Taxi or Private Driver?
           </h1>
           <div className="post-meta">
             <span>2026-11-06</span>
@@ -49,8 +49,8 @@ export default function Content() {
 
       <div className="post-body">
         <div className="container-sm">
-          <TableOfContents items={[{"id": "navigating-morocco-an-honest-overview", "title": "Navigating Morocco: An Honest Overview"}, {"id": "quick-comparison-morocco-transport-modes", "title": "Quick Comparison: Morocco Transport Modes"}, {"id": "1-traveling-by-train-in-morocco-oncf", "title": "1. Traveling by Train in Morocco (ONCF)"}, {"id": "2-intercity-buses-ctm-and-supratours", "title": "2. Intercity Buses: CTM & Supratours"}, {"id": "3-the-grand-taxi-dilemma", "title": "3. The Grand Taxi Dilemma"}, {"id": "4-why-hire-a-private-driver-in-morocco", "title": "4. Why Hire a Private Driver in Morocco?"}, {"id": "key-popular-routes-and-fixed-prices", "title": "Key Popular Routes & Fixed Prices"}]} />
-          <h2 id="navigating-morocco-an-honest-overview">Navigating Morocco: An Honest Overview</h2>
+          <TableOfContents items={[{"id": "navigating-morocco-an-honest-overview", "title": "Transportation in Morocco: An Honest Overview"}, {"id": "quick-comparison-morocco-transport-modes", "title": "Quick Comparison: Morocco Transport Modes"}, {"id": "1-traveling-by-train-in-morocco-oncf", "title": "1. Traveling by Train in Morocco (ONCF)"}, {"id": "2-intercity-buses-ctm-and-supratours", "title": "2. Intercity Buses: CTM & Supratours"}, {"id": "3-the-grand-taxi-dilemma", "title": "3. The Grand Taxi Dilemma"}, {"id": "4-why-hire-a-private-driver-in-morocco", "title": "4. Why Hire a Private Driver in Morocco?"}, {"id": "key-popular-routes-and-fixed-prices", "title": "Key Popular Routes & Fixed Prices"}]} />
+          <h2 id="navigating-morocco-an-honest-overview">Transportation in Morocco: An Honest Overview</h2>
           <p>
             Morocco is an exhilarating country of dramatic landscapes—from Atlantic coastal ramparts and imperial medinas
             to high-altitude Atlas mountain passes and the rolling sands of the Sahara. But getting between these iconic
@@ -60,6 +60,15 @@ export default function Content() {
           <p>
             Whether you are arriving at Casablanca Airport, exploring the souks of Marrakech, or planning an overland circuit
             to Chefchaouen and Fes, here is your definitive, unvarnished 2026 guide to all Morocco transportation options.
+          </p>
+          <p>
+            <strong>Transportation in Morocco at a glance:</strong> trains (ONCF) are the best value between Tangier, Rabat,
+            Casablanca, Marrakech and Fes, and the Al Boraq high-speed line links Tangier and Casablanca. There is no train to
+            Essaouira, Agadir, Chefchaouen or the Sahara, so for those you take a CTM or Supratours coach, a shared grand taxi, a
+            rental car, or a <Link href="/private-driver">private driver</Link>. A private driver costs more than a bus seat but
+            is priced per vehicle, goes door to door, and makes sense for families, groups, heavy luggage,{" "}
+            <Link href="/airport-transfers">airport arrivals</Link> and{" "}
+            <Link href="/city-to-city">city-to-city routes</Link> that trains don&apos;t reach.
           </p>
 
           <h2 id="quick-comparison-morocco-transport-modes">Quick Comparison: Morocco Transport Modes</h2>
