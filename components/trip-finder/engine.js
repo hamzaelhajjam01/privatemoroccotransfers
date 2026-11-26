@@ -55,12 +55,13 @@ const D={"CMN-RAK":240,"AGA-RAK":240,"FES-RAK":540,"RAK-TNG":580,"RAK-RBA":330,"
 const EN_CITY={RAK:"marrakech",CMN:"casablanca",AGA:"agadir",FES:"fes",TNG:"tangier",RBA:"rabat",ESS:"essaouira",MRZ:"merzouga"};
 const routeName=s=>s.replace(/\s*\(.*?\)/g,"").trim().toLowerCase();
 const findRoute=(from,to)=>ROUTE_PRICES.find(r=>routeName(r.from)===from&&routeName(r.to)===to);
+/* Full-day return prices per sedan, kept in line with the /day-trips page; km is one way. */
 const DAY={
-  ourika:{n:T.day.ourika.n,p:70,km:65},
-  atlas:{n:T.day.atlas.n,p:80,km:65},
-  agafay:{n:T.day.agafay.n,p:60,km:40},
-  benhaddou:{n:T.day.benhaddou.n,p:130,km:190},
-  essaouira:{n:T.day.essaouira.n,p:130,km:180}
+  ourika:{n:T.day.ourika.n,p:140,km:45},
+  atlas:{n:T.day.atlas.n,p:150,km:65},
+  agafay:{n:T.day.agafay.n,p:140,km:30},
+  benhaddou:{n:T.day.benhaddou.n,p:285,km:200},
+  essaouira:{n:T.day.essaouira.n,p:215,km:180}
 };
 const TOURS={3:["RAK","MRZ","RAK"],5:["RAK","MRZ","FES","RAK"],7:["RAK","MRZ","FES","TNG","RBA","RAK"]};
 const CLASSES=[
@@ -353,6 +354,8 @@ function tablePrice(from,to,cls){
   return r.price_minibus;
 }
 /* Routes not in the list: same per-km estimate as lib/pricing.ts ([minimum €, € per km]). */
+/* Multi-day tours: sedan price per day, the low end of the €150–220 day rate. */
+const TOUR_PER_DAY=150;
 const PER_KM={sedan:[35,.72],suv:[45,.8],van:[40,.85],minibus:[60,1.25]};
 const estimate=(km,cls)=>Math.max(PER_KM[cls][0],Math.round(km*PER_KM[cls][1]));
 function quote(){
@@ -362,7 +365,7 @@ function quote(){
     if(S.dest==="local"){km=15;base=estimate(km,c.key);listed=tablePrice(EN_CITY[S.airport]+" airport",EN_CITY[S.airport],c.key);route=`${CITIES[S.airport]} airport → ${T.steps.s2.yourHotel}`;bn=T.steps.s2.yourHotel;}
     else{km=D[pk(S.airport,S.dest)];listed=tablePrice(EN_CITY[S.airport]+" airport",EN_CITY[S.dest],c.key)??tablePrice(EN_CITY[S.airport],EN_CITY[S.dest],c.key);base=estimate(km,c.key);route=`${CITIES[S.airport]} airport → ${CITIES[S.dest]}`;bn=CITIES[S.dest];}}
   else if(S.type==="day"){km=DAY[S.day].km;base=DAY[S.day].p;route=`${CITIES.RAK} → ${DAY[S.day].n}`;an=CITIES.RAK;bn=DAY[S.day].n;}
-  else{base=S.days*130;km=S.days*260;route=`${T.tours.sameDriver(S.days)} (${CITIES[S.start]})`;an=CITIES[S.start];bn=T.tours.loop(S.days);}
+  else{base=S.days*TOUR_PER_DAY;km=S.days*260;route=`${T.tours.sameDriver(S.days)} (${CITIES[S.start]})`;an=CITIES[S.start];bn=T.tours.loop(S.days);}
   const ci=COMFORT.findIndex(x=>x.k===S.comfort);
   const transfer=S.type==="city"||S.type==="airport";
   const perVehicle=listed??(transfer?base:base*c.m);
