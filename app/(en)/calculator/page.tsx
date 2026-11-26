@@ -91,7 +91,7 @@ export default function CalculatorPage() {
                   </span>
                 </div>
                 <div className="route-price">
-                  {"€105 (1,160 MAD) "}
+                  {"€170 (1,870 MAD) "}
                   <span>
                     {"sedan / vehicle"}
                   </span>
@@ -110,7 +110,7 @@ export default function CalculatorPage() {
                   </span>
                 </div>
                 <div className="route-price">
-                  {"€150 (1,650 MAD) "}
+                  {"€170 (1,870 MAD) "}
                   <span>
                     {"sedan / vehicle"}
                   </span>

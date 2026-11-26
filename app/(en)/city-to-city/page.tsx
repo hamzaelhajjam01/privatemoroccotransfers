@@ -134,7 +134,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€105 (1,160 MAD)"}
+                      {"€170 (1,870 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/marrakech-to-essaouira" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>
@@ -180,7 +180,7 @@ export default function CityToCityPage() {
                       {"From"}
                     </div>
                     <div className="listing-price-amount">
-                      {"€150 (1,650 MAD)"}
+                      {"€170 (1,870 MAD)"}
                     </div>
                   </div>
                   <Link href="/transfers/marrakech-to-agadir" className="btn btn-black" style={{ padding: "10px 18px", fontSize: "0.72rem", minWidth: "0" }}>{"View Rates"}</Link>

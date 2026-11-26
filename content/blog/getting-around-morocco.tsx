@@ -211,7 +211,7 @@ export default function Content() {
               <Link href="/transfers/marrakech-airport-to-marrakech"><strong>Marrakech Airport (RAK) to Medina:</strong></Link> Fixed from €40 (~440 MAD). Includes 45 min complimentary flight delay waiting.
             </li>
             <li>
-              <Link href="/transfers/marrakech-to-essaouira"><strong>Marrakech to Essaouira:</strong></Link> Fixed €105 per sedan (~1,070 MAD). 2.5 hours door-to-door with argan photo stops.
+              <Link href="/transfers/marrakech-to-essaouira"><strong>Marrakech to Essaouira:</strong></Link> Fixed €170 per sedan (~1,870 MAD). 2.5 hours door-to-door with argan photo stops.
             </li>
             <li>
               <Link href="/transfers/casablanca-airport-to-marrakech"><strong>Casablanca Airport (CMN) to Marrakech:</strong></Link> Fixed €175 per vehicle (~1,730 MAD). Avoid connecting trains after a long international flight.

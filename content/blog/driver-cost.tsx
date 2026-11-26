@@ -13,8 +13,8 @@ const airportMinibus = airport?.price_minibus ?? 65;
 /** Example routes shown in the price table, with fallbacks if a slug is missing. */
 const EXAMPLES: { slug: string; label: string; km: string; time: string; sedan: number; van: number; minibus: number }[] = [
   { slug: "marrakech-airport-to-marrakech", label: "Marrakech airport to medina", km: "6 km", time: "15 min", sedan: 40, van: 50, minibus: 65 },
-  { slug: "marrakech-to-essaouira", label: "Marrakech to Essaouira", km: "180 km", time: "2h30", sedan: 105, van: 142, minibus: 211 },
-  { slug: "marrakech-to-agadir", label: "Marrakech to Agadir", km: "240 km", time: "3h", sedan: 150, van: 175, minibus: 237 },
+  { slug: "marrakech-to-essaouira", label: "Marrakech to Essaouira", km: "180 km", time: "2h30", sedan: 170, van: 200, minibus: 270 },
+  { slug: "marrakech-to-agadir", label: "Marrakech to Agadir", km: "240 km", time: "3h", sedan: 170, van: 200, minibus: 270 },
   { slug: "casablanca-airport-to-marrakech", label: "Casablanca airport to Marrakech", km: "220 km", time: "2h45", sedan: 175, van: 205, minibus: 267 },
   { slug: "marrakech-to-fes", label: "Marrakech to Fes", km: "530 km", time: "6h30", sedan: 300, van: 345, minibus: 511 },
   { slug: "marrakech-to-merzouga", label: "Marrakech to Merzouga (Sahara)", km: "560 km", time: "8h30", sedan: 405, van: 470, minibus: 660 },

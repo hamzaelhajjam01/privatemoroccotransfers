@@ -100,7 +100,7 @@ export default function Content() {
               <p className="route-from-to">{"Direct Private Transfer"}</p>
               <h3 className="route-name">{"Essaouira → Marrakech"}</h3>
               <div className="route-meta"><span>{"180 km"}</span></div>
-              <div className="route-price">{"€105 (1,160 MAD) "}<span>{"/ vehicle"}</span></div>
+              <div className="route-price">{"€170 (1,870 MAD) "}<span>{"/ vehicle"}</span></div>
             </Link>
             <Link href="/transfers/essaouira-to-agadir" className="route-card" style={{ display: "block", textDecoration: "none" }}>
               <p className="route-from-to">{"Direct Private Transfer"}</p>

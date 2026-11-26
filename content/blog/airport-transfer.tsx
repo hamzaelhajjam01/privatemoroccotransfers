@@ -10,8 +10,8 @@ const sedan = city?.price_sedan ?? 40;
 const van = city?.price_van ?? 50;
 const minibus = city?.price_minibus ?? 65;
 const palmeraie = price("marrakech-airport-to-palmeraie-marrakech")?.price_sedan ?? 50;
-const essaouira = price("marrakech-airport-to-essaouira")?.price_sedan ?? 105;
-const agadir = price("marrakech-airport-to-agadir")?.price_sedan ?? 150;
+const essaouira = price("marrakech-airport-to-essaouira")?.price_sedan ?? 170;
+const agadir = price("marrakech-airport-to-agadir")?.price_sedan ?? 170;
 
 export const title = "Marrakech Airport Transfer: Taxi, Bus or Private Driver? | Private Morocco Transfers";
 export const description = `Marrakech Menara Airport (RAK) to the medina or your hotel: private transfer from €${sedan}, petit taxi or the airport bus, plus what to expect when you land.`;

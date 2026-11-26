@@ -4,9 +4,9 @@ import routeData from "@/content/route-prices.json";
 
 type RoutePrice = { slug: string; price_sedan: number; price_van: number; price_minibus: number };
 const r = (routeData as RoutePrice[]).find((x) => x.slug === "marrakech-to-essaouira");
-const sedan = r?.price_sedan ?? 105;
-const van = r?.price_van ?? 142;
-const minibus = r?.price_minibus ?? 211;
+const sedan = r?.price_sedan ?? 170;
+const van = r?.price_van ?? 200;
+const minibus = r?.price_minibus ?? 270;
 /** Full-day return excursion price, as listed on /day-trips. */
 const DAY_TRIP = 215;
 

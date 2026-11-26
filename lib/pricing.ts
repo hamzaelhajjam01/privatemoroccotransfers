@@ -123,6 +123,13 @@ const DISTANCE_MATRIX: Record<string, number> = {
   "fes-merzouga": 460,
   "rabat-tangier": 250,
   "rabat-fes": 200,
+  "fes-tangier": 250,
+  "fes-agadir": 780,
+  "fes-essaouira": 720,
+  "rabat-agadir": 550,
+  "rabat-essaouira": 460,
+  "tangier-agadir": 800,
+  "tangier-essaouira": 710,
 };
 
 export function getRouteRecord(from: string, to: string): RouteRecord | null {
@@ -196,8 +203,9 @@ export function quote(
     }
   } else {
     // Dynamic fallback calibrated to market rates
-    const fromC = cleanCity(from);
-    const toC = cleanCity(to);
+    // An airport uses its city's distance (e.g. "Fes Airport (FEZ)" → "fes").
+    const fromC = cleanCity(from).replace(/airport$/, "");
+    const toC = cleanCity(to).replace(/airport$/, "");
     const pairKey1 = `${fromC}-${toC}`;
     const pairKey2 = `${toC}-${fromC}`;
     km = DISTANCE_MATRIX[pairKey1] ?? DISTANCE_MATRIX[pairKey2] ?? 120;
